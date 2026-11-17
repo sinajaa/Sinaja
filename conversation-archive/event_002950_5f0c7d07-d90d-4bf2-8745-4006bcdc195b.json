@@ -1,0 +1,28 @@
+{
+  "id": "5f0c7d07-d90d-4bf2-8745-4006bcdc195b",
+  "timestamp": "2026-11-17T13:10:34.237501",
+  "source": "user",
+  "parent_id": "59ea922f-fbeb-45ae-a2f6-07dcd6023beb",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Tapi di profil llm aku versi thinking abliterated jadi udh aman lah ya soalnya juga ada thinking juga"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

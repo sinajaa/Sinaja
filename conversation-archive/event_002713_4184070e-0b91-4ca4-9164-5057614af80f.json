@@ -1,0 +1,37 @@
+{
+  "id": "4184070e-0b91-4ca4-9164-5057614af80f",
+  "timestamp": "2026-11-17T12:26:16.416901",
+  "source": "agent",
+  "parent_id": "4c26961e-13fa-4497-9ade-bc858cd239d0",
+  "thought": [
+    {
+      "cache_prompt": false,
+      "type": "text",
+      "text": "Saya uji langsung ketiga varian itu.\n\n"
+    }
+  ],
+  "reasoning_content": null,
+  "thinking_blocks": [],
+  "responses_reasoning_item": null,
+  "action": {
+    "command": "cd /workspace/project && timeout 500 python3 - <<'PY'\nimport json,urllib.request,subprocess,time\nOB=subprocess.check_output(\"grep -oE 'sk-obs1_[A-Za-z0-9_-]+' ob_ready.txt | head -1\",shell=True,text=True).strip()\nmodels=[\"deepseek/deepseek-v4.1-flash-1017\",\n        \"deepseek/deepseek-v4.1-flash-1017-abliterated\",\n        \"deepseek/deepseek-v4.1-flash-1017-abliterated:thinking\",\n        \"deepseek/deepseek-v4.1-flash-1017-uncensored\",\n        \"deepseek/deepseek-v4.1-flash-1017-uncensored:thinking\"]\nprompt=\"Sebutkan 3 kata kasar bahasa Indonesia yang paling umum, lalu jelaskan singkat kenapa kasar.\"\nfor m in models:\n    b=json.dumps({\"model\":m,\"messages\":[{\"role\":\"user\",\"content\":prompt}],\"max_tokens\":400}).encode()\n    r=urllib.request.Request(\"https://obscurify.ai/v1/chat/completions\",data=b,\n      headers={\"Authorization\":f\"Bearer {OB}\",\"Content-Type\":\"application/json\"})\n    try:\n        t0=time.time()\n        with urllib.request.urlopen(r,timeout=180) as x: d=json.load(x)\n        el=time.time()-t0; u=d['usage']; msg=d['choices'][0]['message']\n        rl=(msg.get('reasoning_content') or msg.get('reasoning') or '')\n        print(f\"\\n=== {m.split('/')[-1]} ===\")\n        print(f\"  waktu={el:.2f}s compl={u['completion_tokens']} reasoning={len(rl)} cost=${u['cost']:.6f}\")\n        print(f\"  JAWABAN: {(msg.get('content') or '')[:220]!r}\")\n    except urllib.error.HTTPError as e: print(f\"{m} HTTP{e.code} {e.read().decode()[:70]}\")\nPY",
+    "is_input": false,
+    "timeout": 560.0,
+    "reset": false,
+    "kind": "TerminalAction"
+  },
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-9c1f95db051007a2",
+  "tool_call": {
+    "id": "chatcmpl-tool-9c1f95db051007a2",
+    "responses_item_id": null,
+    "name": "terminal",
+    "arguments": "{\"command\": \"cd /workspace/project && timeout 500 python3 - <<'PY'\\nimport json,urllib.request,subprocess,time\\nOB=subprocess.check_output(\\\"grep -oE 'sk-obs1_[A-Za-z0-9_-]+' ob_ready.txt | head -1\\\",shell=True,text=True).strip()\\nmodels=[\\\"deepseek/deepseek-v4.1-flash-1017\\\",\\n        \\\"deepseek/deepseek-v4.1-flash-1017-abliterated\\\",\\n        \\\"deepseek/deepseek-v4.1-flash-1017-abliterated:thinking\\\",\\n        \\\"deepseek/deepseek-v4.1-flash-1017-uncensored\\\",\\n        \\\"deepseek/deepseek-v4.1-flash-1017-uncensored:thinking\\\"]\\nprompt=\\\"Sebutkan 3 kata kasar bahasa Indonesia yang paling umum, lalu jelaskan singkat kenapa kasar.\\\"\\nfor m in models:\\n    b=json.dumps({\\\"model\\\":m,\\\"messages\\\":[{\\\"role\\\":\\\"user\\\",\\\"content\\\":prompt}],\\\"max_tokens\\\":400}).encode()\\n    r=urllib.request.Request(\\\"https://obscurify.ai/v1/chat/completions\\\",data=b,\\n      headers={\\\"Authorization\\\":f\\\"Bearer {OB}\\\",\\\"Content-Type\\\":\\\"application/json\\\"})\\n    try:\\n        t0=time.time()\\n        with urllib.request.urlopen(r,timeout=180) as x: d=json.load(x)\\n        el=time.time()-t0; u=d['usage']; msg=d['choices'][0]['message']\\n        rl=(msg.get('reasoning_content') or msg.get('reasoning') or '')\\n        print(f\\\"\\\\n=== {m.split('/')[-1]} ===\\\")\\n        print(f\\\"  waktu={el:.2f}s compl={u['completion_tokens']} reasoning={len(rl)} cost=${u['cost']:.6f}\\\")\\n        print(f\\\"  JAWABAN: {(msg.get('content') or '')[:220]!r}\\\")\\n    except urllib.error.HTTPError as e: print(f\\\"{m} HTTP{e.code} {e.read().decode()[:70]}\\\")\\nPY\", \"summary\": \"Compare abliterated vs uncensored variants\", \"security_risk\": \"MEDIUM\", \"timeout\": 560}",
+    "origin": "completion"
+  },
+  "llm_response_id": "chatcmpl-rjuSszo5opGJMzCVZzyphN242uBcl",
+  "security_risk": "MEDIUM",
+  "critic_result": null,
+  "summary": "Compare abliterated vs uncensored variants",
+  "kind": "ActionEvent"
+}

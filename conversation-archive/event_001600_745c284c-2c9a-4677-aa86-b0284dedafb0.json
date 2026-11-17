@@ -1,0 +1,36 @@
+{
+  "id": "745c284c-2c9a-4677-aa86-b0284dedafb0",
+  "timestamp": "2026-11-17T09:27:52.459783",
+  "source": "environment",
+  "parent_id": "4eb761b0-a3ff-469e-822e-d1a460a44a5a",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-81e5d48258b4f70a",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "\u25b8 workspace=default\n\n  \u2713 Service created: inktest1\n  Status          \u25cb queued\n  Endpoint        https://inktest1.us-east-1.gists.org"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project/apps/inktest && export PATH=\"$HOME/.npm-global/bin:$PATH\"; export INK_API_KEY='dk_live_b6fa078ef6101c5c0cb43debb5152a8e619d72e45c907dcfa977bf2f7e001677'; timeout 300 ink deploy inktest1 --repo inktest1 --memory 256Mi --vcpu 0.25 --port 8080 2>&1 | tail -25",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 71910,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project/apps/inktest",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "78146475-a1fd-445d-8b60-0f355706d6a2",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "f96903a4-e404-4565-8526-868c5b6513b9",
+  "timestamp": "2026-11-17T07:14:20.759283",
+  "source": "environment",
+  "parent_id": "d07f552d-87ae-4020-861e-23307cd05518",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-b33cf8075ce1390c",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "# Catatan proyek (harvester akun + proxy)\n\n## Peran proxy\nProxy (Proxidize, ResiFactory) HANYA untuk tugas keluar: daftar akun massal,\ncek endpoint, scraping. **Jangan** pasang proxy global di OpenHands \u2014 bisa\nmemutus koneksi ke app.all-hands.dev. Detail: `proxy.md`.\n\n## Skrip\n\n| skrip | fungsi |\n|---|---|\n| `ob.py <n> [proxy]` | daftar akun obscurify + ambil key + cek saldo |\n| `nm.py <email>` | satu akun nomask: daftar, spin, ambil key |\n| `nmbatch.py <n>` | batch nomask, hasil ke `nm2_api.txt` + `nm2_results.jsonl` |\n| `nmfix.sh <id\\|--all> [key\\|next]` | perbaiki chat nomask (flag + key) |\n| `nmrotate.sh [key] \\| --dry` | rotasi key nomask ke semua chat uncensored |\n| `nmdry.py` | helper daftar chat yang akan disentuh nmrotate |\n\n## Obscurify: bonus $1 ditentukan IP\n- IP rumah (34.29.175.97) sudah jenuh -> `create_account` 201 tapi saldo **$0.00**.\n- Lewat proxy residensial (`ob.py <n> rf`) -> **$1.00 penuh, 100%**. Ini wajib.\n- Verifikasi key: `GET /get_user_balance` + `POST /v1/chat/completions`\n  (model `deepseek/deepseek-v4.1-flash-1017-uncensored`). Endpoint `/api/me` 404.\n\n## Aturan penting\n- nomask menolak `content` berbentuk list -> wajib `force_string_serializer: true`.\n  Hanya bisa dipasang via API (switch_llm), TIDAK ada kolomnya di GUI.\n- Profil GUI membuang `force_string_serializer` setiap disimpan.\n- Ganti model di GUI saja (tanpa skrip) -> nomask error \"content must be a string\".\n- Key nomask: ambil via `POST /api/keys {\"name\": ...}`, key penuh ada di\n  `props.newlyCreatedKey.key` (bukan daftar `keys` yang tersamar).\n- Email nomask: `+` dan `_` diblokir; pakai titik (`kebumenlur.q1234567@gmail.com`).\n- Riwayat chat aman saat ganti model/key; hanya hilang kalau sandbox/chat dihapus.\n\n## HEX (hexapi.io)\n\nSkrip: `hexflow.py` (signup/login/trial/confirm), `hexget.py <email> <name> [proxy]`,\n`hextrial.py <key> <email>`, `hexreg.py`. Hasil akun -> `hex_accounts.txt`.\n\n- Signup + login + trial butuh Turnstile (captchaai, sitekey `0x4AAAAAAF3EU-q7sNrfjP5Q`).\n- Trial $0.25 per akun; `trial/email` 429 = rate limit per **akun/key**, bukan IP.\n  Login ulang akun yang sama lalu coba lagi -> 200 (`sent: true`).\n- Format email kode: **\"Your HEX verification code is 81697351. It expires in 10 minutes.\"**\n  (bukan \"Enter this code ...\" \u2014 regex lama tidak match, itu sebab `code: None`).\n- `get_code` pakai `SEARCH FROM \"verify@hexapi.io\"`; `SEARCH ALL` + fetch 6 badan\n  lambat (>4 menit) di inbox 376 pesan.\n- Kode expired setelah 10 menit dan **satu kali kirim**; kirim ulang = kode baru\n  (kode lama langsung invalid).\n- API OpenAI-compatible: `https://api.hexapi.io/v1/models` + `/v1/chat/completions`,\n  header `Authorization: Bearer hex_...`. 37 model (glm/deepseek/kimi/claude/gpt/grok,\n  plus varian `-abliterated`/`-uncensored`).\n- Akun kerja: `woybangsatkauuu@gmail.com` -> `hex_T8z8XEHw...` ($0.25)."
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && cat AGENTS.md",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 63318,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "bb523755-c36f-4578-bbeb-86610c4a2113",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

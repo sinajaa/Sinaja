@@ -1,0 +1,28 @@
+{
+  "id": "5675b161-c265-4190-abb5-c9647ffcfb8d",
+  "timestamp": "2026-11-17T14:02:22.259237",
+  "source": "agent",
+  "parent_id": "20994148-00c6-46bb-858d-7b3a2dd31ba7",
+  "llm_message": {
+    "role": "assistant",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Saya sudah tarik data langsung dari API make.fun. Ini penjelasan lengkapnya.\n\n## Apa itu make.fun\n\nPlatform **kompetisi coding untuk agen AI**. Agen membangun software, sandbox menilai, hadiah dibayar **USDC on-chain di Solana** dari escrow.\n\n> *\"AI agents build software for cash rewards. Free to enter. Your AI agent builds the code, a sandbox grades every entry, and rewards go by rank on a published metric, **not chance**.\"*\n\nJadi bukan undian \u2014 murni siapa yang karyanya terbaik.\n\n## Bounty apa saja (13 yang masih buka)\n\n| Jenis | Contoh |\n|---|---|\n| **Games** | best-game, GTA6, roblox-brainrot, three.js FPS |\n| **Code** | GitHub-clone forge, make.fun frontend, chess engine 4KB |\n| **Trading** | BTC bot race 24 jam, token launch radar |\n| **Forecasting** | prediksi penonton Twitch GTA VI per jam |\n| **Growth/kreatif** | tulis teks yang bikin AI judge rileks/ kaya |\n\n## Cara dinilai \u2014 3 metode\n\n| Metode | Cara | Contoh |\n|---|---|---|\n| `automated` | dijalankan di sandbox, diukur metrik (Elo, tes) | chess, github-clone |\n| `judges` | **AI judge** bandingkan 2 entri, peringkat dari win rate | best-game, GTA6, roblox |\n| `metric` | skor live dari data pasar | BTC race |\n\n## Hadiahnya dibagi, bukan pemenang tunggal\n\nIni penting. Lihat contoh `ai-judge-relax-01` (pot $68):\n\n| Peringkat | Dapat |\n|---|---|\n| #1 | $27.23 |\n| #2 | $10.20 |\n| #3 | $6.80 |\n| #4\u201325 | $1.36 |\n\nDan `gta6-01` (pot $1.666): #1 $500, #2 $250, #3 $150, #4\u201310 $38, sampai **100 tempat**.\n\n**Artinya:** tidak perlu juara 1 untuk dapat uang.\n\n## Peluang menang \u2014 dihitung dari entri nyata\n\n| Bounty | Tempat | Entri | Peluang kasar |\n|---|---|---|---|\n| **gta6-01** | 100 | **0** | **~15\u201320%** |\n| **roblox-brainrot-01** | 50 | **0** | **~15\u201320%** |\n| **ai-judge-relax-01** | 25 | **0** | **~10\u201315%** |\n| ai-judge-rich-01 | 25 | 146 | ~17% |\n| best-game-01 | 10 | **14.204** | **0,07%** |\n| tiny-chess-01 | 20 | **15.293** | **0,13%** |\n| token-radar-01 | 10 | **13.829** | **0,07%** |\n\n**Kesimpulan:** bounty populer (10 ribu+ entri) hampir mustahil. Yang entrinya masih **0** peluangnya jauh lebih besar.\n\n## Yang kamu perlu siapkan\n\n| # | Kebutuhan | Status |\n|---|---|---|\n| 1 | **Wallet Solana** | \u274c belum ada |\n| 2 | Repo GitHub publik + commit SHA | \u2705 token ada |\n| 3 | **Transcript bundle** (bukti agen yang bikin) | \u2705 bisa dibuat |\n| 4 | Entry fee $0.50/$1 (sebagian saja) | \u26a0\ufe0f butuh USDC |\n| 5 | Node 22.18+ & Git | \u2705 node v24, git 2.47 |\n| 6 | API key `af_...` | \u2705 bisa dibuat |\n\n**Transcript bundle itu wajib** \u2014 kamu harus membuktikan kodenya dibuat oleh agen AI, bukan ditulis manual. Ada CLI-nya: `node cli/makefun.mjs bundle`.\n\n## Kuota\n\n- Maks submit **5\u201310/hari** (tergantung tier negara)\n- Maks **20 entri** per akun per kompetisi\n- GitHub checks 100/jam\n\n## \u26a0\ufe0f Realitas yang harus kamu tahu\n\n**1. Entri melonjak dekat deadline.** Bounty yang sekarang 0 bisa jadi 500 dalam 3 hari. Peluang 15% bisa turun ke 3%.\n\n**2. Hadiah kecil untuk kerja ringan.** `ai-judge-relax` cuma $27 untuk juara 1. Kerjanya 5 menit, tapi bayarannya receh.\n\n**3. Hadiah besar = kerja berat.** `gta6-01` $1.666 tapi harus bikin game open-world yang jalan di browser. Itu berhari-hari.\n\n**4. Ada taruhan sampingan.** Side market YES/NO tiap entri \u2014 **spekulatif, bisa habis**. Jangan disentuh dulu.\n\n## Rekomendasi saya\n\n**Mulai dari `ai-judge-relax-01`** \u2014 tutup 24 jam lagi, entri masih 0, kerja cuma tulis teks pendek, fee $0.50.\n\nTujuannya bukan uangnya (cuma $27), tapi **menguji alur end-to-end**: wallet, repo, transcript, submit. Kalau lancar, baru naik ke `gta6-01` yang $1.666.\n\n## Langkah konkret\n\n1. **Buat wallet Solana** (saya bisa generate, kamu simpan private key-nya)\n2. **Daftar akun** make.fun via SIWS (Sign in with Solana)\n3. **Ambil API key** `af_...`\n4. **Clone kit** bounty, baca requirements\n5. **Bikin entri** (saya yang kerjakan)\n6. **Bundle transcript**, submit\n7. Perbaiki kalau checks menolak\n\n## Pertanyaan untukmu\n\nMau saya **mulai dari yang mana**?\n\n| Pilihan | Kerja | Peluang | Hadiah |\n|---|---|---|---|\n| **A. ai-judge-relax-01** | 10 menit | ~10-15% | $1,36\u201327 |\n| **B. gta6-01** | berhari-hari | ~15-20% | $10\u2013500 |\n| **C. roblox-brainrot-01** | sedang, butuh Roblox Studio | ~15-20% | $17\u2013150 |\n\nSaran: **A dulu** untuk uji alur, lalu B.\n\nKalau setuju, saya mulai dari bikin wallet Solana + daftar akun. Semua sudah saya catat di `MAKEFUN.md` (commit `c34dc52`)."
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": "chatcmpl-dCCdoVNcdSbzoKWlrXCdd8gu8ap63",
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

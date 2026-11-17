@@ -1,0 +1,28 @@
+{
+  "id": "a2004150-cd65-4361-841c-aee7833e43aa",
+  "timestamp": "2026-11-17T12:15:30.202428",
+  "source": "user",
+  "parent_id": "157bba71-b2d4-4768-9ef3-99f9a25f52ff",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Coba uji di model lain juga apakah tetep sama apa beda jauh pemotongan "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

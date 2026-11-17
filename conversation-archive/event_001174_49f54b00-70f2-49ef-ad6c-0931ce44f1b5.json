@@ -1,0 +1,24 @@
+{
+  "id": "49f54b00-70f2-49ef-ad6c-0931ce44f1b5",
+  "timestamp": "2026-11-17T08:08:14.496715",
+  "source": "environment",
+  "parent_id": "2e314cef-5a2d-4261-a6b8-41e098972ad3",
+  "tool_name": "browser_type",
+  "tool_call_id": "chatcmpl-tool-bb3920d4df129ca4",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Typed 'Str0ng!Pass123' into element 8317"
+      }
+    ],
+    "is_error": false,
+    "screenshot_data": null,
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "BrowserObservation"
+  },
+  "action_id": "201678ea-cc97-4ae4-96f3-7cfd2ecae498",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "0886f11f-9866-4e76-9bba-2dbeadad7cc5",
+  "timestamp": "2026-11-17T10:38:29.983959",
+  "source": "environment",
+  "parent_id": "24c62ff7-d450-4ea9-9d36-3820aa8c1202",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-a3380cbe682adc0b",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "=== raw models ===\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n    <meta name=\"csrf-token\" content=\"\">\n\n\n    <script async src=\"https://www.googletagmanager.com/gtag/js?id=G-853LJRTT5S\"></script>\n    <script>\n        window.dataLayer = window.dataLayer || [];\n        function gtag(){dataLayer.push(arguments);}\n        gtag('js', new Date());\n        gtag('config', 'G-853LJRTT5S');\n    </script>\n\n\n    <title inertia>Private AI for Unrestricted Creation</title>\n\n\n\n=== chat test ===\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n    <meta name=\"csrf-token\" content=\"\">\n\n\n    <script async src=\"https://www.googletagmanager.com/gtag/js?id=G-853LJRTT5S\"></script>\n    <script>\n        window.dataLayer = window.dataLayer || [];\n        function gta"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && K=\"nmk_live_h6sUfOhMTBLD4GyNrx45jaeJDjhtMC6yCtfGegZC\"; echo \"=== raw models ===\"; curl -s --max-time 25 -H \"Authorization: Bearer $K\" \"https://nomask.ai/v1/models\" | head -c 600; echo; echo \"=== chat test ===\"; curl -s --max-time 60 -X POST \"https://nomask.ai/v1/chat/completions\" -H \"Authorization: Bearer $K\" -H \"Content-Type: application/json\" -d '{\"model\":\"deepseek_v4.1_flash_1017_uncensored\",\"messages\":[{\"role\":\"user\",\"content\":\"Balas: OK\"}],\"max_tokens\":20,\"force_string_serializer\":true}' -w \"\\n[%{http_code}]\\n\" | head -c 400",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "460d9f03-84fc-48b8-b633-6638f7313699",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

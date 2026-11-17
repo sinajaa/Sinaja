@@ -1,0 +1,28 @@
+{
+  "id": "3991e708-add7-4333-ad71-a8f576f108f2",
+  "timestamp": "2026-11-17T10:47:39.549371",
+  "source": "agent",
+  "parent_id": "6b545f9a-3acd-4c84-9b1a-ed27a2837d71",
+  "llm_message": {
+    "role": "assistant",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "**DeepSeek-nya jalan di OpenHands.** Lihat hasilnya.\n\n## Hasil uji dengan skenario OpenHands asli\n\nSaya kirim prompt gaya agen: *\"Cek isi direktori /tmp lalu laporkan. Pakai tool bash.\"*\n\n| `max_tokens` | `finish_reason` | Tool call |\n|---|---|---|\n| 512 | **`tool_calls`** \u2705 | `bash({\"command\":\"ls -la /tmp\"})` |\n| 2000 | **`tool_calls`** \u2705 | `bash({\"command\":\"ls -la /tmp\"})` |\n| 8000 | **`tool_calls`** \u2705 | `bash(...)` + ada `content` |\n\n**Ketiganya memanggil tool dengan benar.**\n\n## Jadi jawabannya\n\n**Bisa.** DeepSeek `deepseek_v4.1_flash_1017_uncensored` **bekerja di OpenHands**.\n\nYang penting: **`max_tokens` jangan kecil.** Di 512 pun sudah jalan. Yang gagal cuma di 10\u201320.\n\n## Kenapa tadi kelihatan \"gak bisa\"\n\nDua sebab, dan keduanya sudah terukur:\n\n**1. `max_tokens` kecil**\n\n| max_tokens | `content` |\n|---|---|\n| 10 | **kosong** \u274c |\n| 30+ | terisi \u2705 |\n\nKalau OpenHands-mu set `max_tokens: 100` atau kurang, `content` kosong \u2192 agen tampak diam.\n\n**2. `force_string_serializer` tidak terpasang**\n\nCatatan lama di `AGENTS.md` bilang flag ini **hanya bisa dipasang via `switch_llm`**, tidak ada di GUI. Kalau lewat GUI, flag-nya hilang setiap disimpan.\n\n## Kenapa `content` masih kosong di 512/2000\n\nKarena model memilih **tool call**, bukan teks. Itu **normal** dan **benar**.\n\nSaat agen memanggil tool, `content` memang kosong \u2014 jawabannya ada di `tool_calls`. OpenHands membaca `tool_calls`, menjalankan `bash`, lalu kirim hasilnya balik.\n\nJadi `content: \"\"` **bukan tanda gagal**, selama `finish_reason: tool_calls`.\n\n## Yang harus dipastikan di OpenHands\n\n| Setting | Nilai |\n|---|---|\n| `max_tokens` | **\u2265 2000** (jangan 100-an) |\n| `force_string_serializer` | **true**, lewat `switch_llm` |\n| Base URL | `https://api.nomask.ai/v1` |\n| Protocol | OpenAI Chat Completions |\n\n## Kalau masih susah, kemungkinan lain\n\nSaya belum tahu konfigurasi OpenHands-mu persis. Yang bisa bikin gagal:\n\n1. **`force_string_serializer` hilang** \u2192 error `content must be a string`\n2. **`max_tokens` kecil** \u2192 `content` kosong, agen diam\n3. **Saldo habis** \u2192 HTTP 402\n4. **Timeout** \u2192 deepseek agak lambat\n\nKalau kamu kirim **error yang muncul** di OpenHands, saya bisa tunjuk persis mana penyebabnya.\n\nSekarang yang perlu kamu coba: **naikkan `max_tokens` ke 8000**, lalu tes lagi. Kabari error-nya kalau masih gagal."
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": "chatcmpl-S98z902gPT6TZaNljKpVB9tKROlWo",
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

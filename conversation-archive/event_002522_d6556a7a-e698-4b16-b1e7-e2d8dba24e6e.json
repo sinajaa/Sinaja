@@ -1,0 +1,36 @@
+{
+  "id": "d6556a7a-e698-4b16-b1e7-e2d8dba24e6e",
+  "timestamp": "2026-11-17T11:55:26.976283",
+  "source": "environment",
+  "parent_id": "f2db64f5-a00a-4794-876a-50a030d3e475",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-a15a82dcf0cb8589",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "=== 3 key baru (LIVE, terverifikasi) ===\nkebumenlur.q7016093@gmail.com | nmk_live_Tv78qqiEcF3Tb6u2kC5WPRuhWT5MDti94RVaZVQT | $1.00 API\nkebumenlur.q3529860@gmail.com | nmk_live_FtVn4vczCTzAEeZYSQYF65DSwerrKBsPbuAQJx1l | $1.00 API\nkebumenlur.q9721691@gmail.com | nmk_live_pZuW9YnhsUNiNy4P14yUcK5ljBLonvvKPyX8LkL6 | $1.00 API\n\n=== tes semua model uncensored di key baru ===\n  deepseek_v4.1_flash_1017_uncensored  OK       content='OK'                         reasoning=233\n  glm-5.3_flash_uncensored             OK       content='OK'                         reasoning=126\n  qwen_3.8_uncensored                  OK       content='OK'                         reasoning=0\n  mimo-v2.6-flash-uncensored           HTTP503  content='{\"error\":{\"message\":\"This model is currently overl' reasoning=0\n  gemma-4-uncensored                   OK       content='OK'                         reasoning=0\n  venice-uncensored-1.2                OK       content='OK'                         reasoning=0"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && echo \"=== 3 key baru (LIVE, terverifikasi) ===\"; tail -3 nm2_api.txt; echo; echo \"=== tes semua model uncensored di key baru ===\"; timeout 300 python3 - <<'PY'\nimport json,urllib.request,concurrent.futures\nK=\"nmk_live_Tv78qqiEcF3Tb6u2kC5WPRuhWT5MDti94RVaZVQT\"\nms=[\"deepseek_v4.1_flash_1017_uncensored\",\"glm-5.3_flash_uncensored\",\"qwen_3.8_uncensored\",\n    \"mimo-v2.6-flash-uncensored\",\"gemma-4-uncensored\",\"venice-uncensored-1.2\"]\ndef t(m):\n    b=json.dumps({\"model\":m,\"messages\":[{\"role\":\"user\",\"content\":\"Sebutkan satu kata: OK\"}],\"max_tokens\":500,\"force_string_serializer\":True}).encode()\n    r=urllib.request.Request(\"https://api.nomask.ai/v1/chat/completions\",data=b,\n        headers={\"Authorization\":f\"Bearer {K}\",\"Content-Type\":\"application/json\"})\n    try:\n        with urllib.request.urlopen(r,timeout=90) as x: d=json.load(x)\n        mm=d['choices'][0]['message']\n        return (m,\"OK\",(mm.get('content') or '').strip()[:25],len((mm.get('reasoning_content') or '')))\n    except urllib.error.HTTPError as e: return (m,f\"HTTP{e.code}\",e.read().decode()[:50],0)\n    except Exception as e: return (m,\"ERR\",str(e)[:40],0)\nwith concurrent.futures.ThreadPoolExecutor(max_workers=6) as ex:\n    for m,s,c,rl in ex.map(t,ms): print(f\"  {m:36} {s:8} content={c!r:28} reasoning={rl}\")\nPY",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "26f1579e-b8cb-4c5c-bf93-39bba7234dcd",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

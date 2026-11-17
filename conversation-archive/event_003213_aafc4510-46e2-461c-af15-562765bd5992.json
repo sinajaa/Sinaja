@@ -1,0 +1,28 @@
+{
+  "id": "aafc4510-46e2-461c-af15-562765bd5992",
+  "timestamp": "2026-11-17T14:04:52.061704",
+  "source": "user",
+  "parent_id": "5675b161-c265-4190-abb5-c9647ffcfb8d",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Waduh harus ada fee juga ya itu jadi problem lagi"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

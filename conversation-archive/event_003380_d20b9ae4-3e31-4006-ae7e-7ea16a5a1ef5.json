@@ -1,0 +1,28 @@
+{
+  "id": "d20b9ae4-3e31-4006-ae7e-7ea16a5a1ef5",
+  "timestamp": "2026-11-17T15:00:26.012040",
+  "source": "user",
+  "parent_id": "0f7568f8-f04c-43bb-a343-2ff102ae92a1",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Menunggu jam buka maksudnya? "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

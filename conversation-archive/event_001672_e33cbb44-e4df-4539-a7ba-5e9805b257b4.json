@@ -1,0 +1,36 @@
+{
+  "id": "e33cbb44-e4df-4539-a7ba-5e9805b257b4",
+  "timestamp": "2026-11-17T09:35:57.205560",
+  "source": "environment",
+  "parent_id": "3af357f9-c93a-4db6-a602-312cbc91b2b3",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-81ea92094846392d",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "UNCENSORED di Venice: 11\n  olafangensan-glm-4.7-flash-heretic            in=0.07 out=0.4\n  venice-uncensored-1-2                         in=0.2 out=0.9\n  venice-uncensored-role-play                   in=0.5 out=2\n  gemma-4-uncensored                            in=0.1625 out=0.5\n  deepseek-v4-1-flash-uncensored                in=0.33 out=1.32\n  deepseek-v4-1-flash-1017-uncensored           in=0.33 out=1.32\n  glm-5-3-flash-uncensored                      in=0.165 out=0.55\n  abliteration-abliterated-model-large-v2       in=3 out=5\n  abliteration-abliterated-model-large-flash    in=1.25 out=2.5\n  e2ee-gemma-4-26b-a4b-uncensored-p             in=0.19 out=0.88\n  e2ee-deepseek-v4-1-flash-1017-abliterated     in=0.375 out=1.5\n=== free tier / trial Venice ===\n[200] $1 in credits per month\n$1 in credits per month\\\",\\\"Hi-res upscaling and watermark rem\n$10\\\"]\\n13:\\\"https://cdn.venice.ai/_next/static/immutable/chunk\n$13\\\",\\\"$14\\\"],\\\"default\\\"]\\n:HL[\\\"https://cdn.venice.ai/_next/\n$15\\\",[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\n$16\\\"}}]],\\\"$L17\\\"]}],\\\"$L18\\\"]}]\\n20:T28f0,{\\n  \\\"@context\\\":\n$18\n$19\\\",\\\"$1a\\\",\\\"$14\\\",\\\"$1b\\\",\\\"$1c\\\",\\\"$1d\\\",\\\"$1e\\\"],\\\"$2d\\\"]"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && python3 -c \"\nimport json;d=json.load(open('/tmp/ve.json'))['data']\nun=[m for m in d if any(k in m['id'].lower() for k in ['uncens','ablit','dolphin','hermes','heretic','unfilter','nsfw','venice'])]\nprint('UNCENSORED di Venice:',len(un))\nfor m in un:\n    p=m.get('model_spec',{}).get('pricing',{})\n    print(f\\\"  {m['id']:45} in={p.get('input',{}).get('usd')} out={p.get('output',{}).get('usd')}\\\")\n\"; echo \"=== free tier / trial Venice ===\"; curl -s --max-time 30 \"https://venice.ai/\" -o /tmp/vh.html -w \"[%{http_code}] \"; grep -oiE \"(free|trial|\\\\\\$[0-9]+|credit)[^<]{0,60}\" /tmp/vh.html 2>/dev/null | sort -u | head -8",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 71910,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "dcd15672-390e-4e00-a013-66d224de2a72",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

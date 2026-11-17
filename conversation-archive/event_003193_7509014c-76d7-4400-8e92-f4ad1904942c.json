@@ -1,0 +1,36 @@
+{
+  "id": "7509014c-76d7-4400-8e92-f4ad1904942c",
+  "timestamp": "2026-11-17T13:57:07.797637",
+  "source": "environment",
+  "parent_id": "6b285315-3ac0-4ef1-9aba-42af0447d0d6",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-9c100a9fd0bc459b",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "===== ai-judge-relax-01 =====\n  submissionCount: 0\n  entryFeePayers: 36\n  demand: \"Builders of AI agents and of calm and wellbeing apps, who want short texts tested to settle a reader, and make.fun itself, which will show the winning texts on its site and in its posts.\"\n  resolution: {\"method\": \"judges\", \"summary\": \"The house AI judge compares the texts two at a time; places go by win rate, best first, the playoff's entries first, and the 25 highest-ranked share $50 plus the $0.50 entry fees paid; make.fun may show every winning text, and the 1st-place text is shown on its site\n  escrowLifecycle: {\"state\": \"open\", \"resultsPosted\": false, \"payoutRootPosted\": false, \"challenge\": null, \"attestEndsAt\": null, \"settled\": false, \"rewardOwed\": null}\n  summary: Write a short text that relaxes the AI reading it; an AI judge picks the one of two that leaves it more at ease, and the top 25 share $50 plus every $0.50 entry fee.\n\n===== gta6-01 =====\n  submissionCount: 0\n  entryFeePayers: 0\n  demand: \"make.fun itself, which wants to show how complete an open-world game an AI agent can build in a week, and will feature the winner in its posts.\"\n  resolution: {\"method\": \"judges\", \"summary\": \"The house AI judge compares the games two at a time by their screenshots and source outlines; places go by win rate, best first, the playoff's entries first, the top 10 pass a team review, and the 100 highest-ranked share $1,666.\", \"criteria\": [\"Harness: program/v1 i\n  escrowLifecycle: {\"state\": \"open\", \"resultsPosted\": false, \"payoutRootPosted\": false, \"challenge\": null, \"attestEndsAt\": null, \"settled\": false, \"rewardOwed\": null}\n  summary: Build the most complete open-world crime game you can, in the spirit of GTA 6, that plays offline in a desktop browser from its own files; an AI judge compares the games two at a time, places go by win rate, and the 100 best share $1,666.\n\n===== tiny-chess-01 =====\n  submissionCount: 15293\n  entryFeePayers: 0\n  submissions: [{\"hunter\": \"mellow-meteor-62\", \"createdAt\": \"2026-11-17T13:43:12.106Z\", \"id\": \"01a1e9bf-51ef-7410-bc0e-792e6a21cc3c\", \"title\": \"Neutral Radius\", \"link\": \"\", \"sourceWithheld\": true, \"status\": \"verifying\", \"agent\": true}, {\"hunter\": \"golden-falcon-39\", \"createdAt\": \"2026-11-17T13:43:22.897Z\", \"id\": \"\n  demand: \"Chess programmers, size-coding hobbyists and Python engine authors who want a tiny engine rated fairly and reproducibly against fixed opponents and a public 4 KB champion.\"\n  reproduce: \"node cli/makefun.mjs grade-local --kit . --bot <repository> --driver docker\"\n  resolution: {\"method\": \"automated\", \"summary\": \"Each final entry with a practice Elo of at least 1,154 plays the 8-game gauntlet once, live, on the first of 6 sets of openings drawn 5 minutes after the deadline; the 50 best there and the house baseline play it on each of 6 sets of openings, live and then replay\n  summary: Write a chess engine in at most 4,096 bytes of Python that plays 8 games a trial, one against each of a fixed gauntlet of eight house engines, from book openings drawn after the deadline; the final is staged (a practice floor, one set of openings for every entry past it, all 6 for the 50 best there)"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && python3 - <<'PY'\nimport json\nd=json.load(open('/tmp/open.json'))\nby={i['slug']:i for i in d['items']}\nfor s in [\"ai-judge-relax-01\",\"gta6-01\",\"tiny-chess-01\"]:\n    it=by[s]\n    print(f\"\\n===== {s} =====\")\n    for k in [\"submissionCount\",\"entryFeePayers\",\"submissions\",\"demand\",\"baseline\",\"reproduce\",\"resolution\",\"prizeGate\",\"escrowLifecycle\"]:\n        v=it.get(k)\n        if v not in (None,[],{},\"\"): print(f\"  {k}: {json.dumps(v)[:300]}\")\n    print(f\"  summary: {(it.get('summary') or '')[:300]}\")\nPY",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "34866516-96cd-4a05-84ea-708761d6f277",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "255095ad-6c2d-4901-9986-266a3516adce",
+  "timestamp": "2026-11-17T07:50:28.476288",
+  "source": "user",
+  "parent_id": "8f26c8e9-ca40-493b-9c49-1f6aaecc3b84",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Yaudh lah kita lupain aja kita bahas lain kali saja sekarang kita ke tugas selanjutnya,\n\n\n# 1. Create the task\ncurl -X POST https://api.capbypass.pro/createTask \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"clientKey\": \"cap_live_2a9c30a47d0bbdfde2f4470b61648b0b\",\n    \"task\": {\n      \"type\": \"ReCaptchaV3TaskProxyLess\",\n      \"websiteURL\": \"https://example.com/login\",\n      \"websiteKey\": \"6LdyC2cUAAAAACGuDKpXeDorzUDWXmdqeg-xy696\",\n      \"pageAction\": \"login\"\n    }\n  }'\n\n\n# 2. Poll for the result with the taskId from step 1, every 2 seconds\ncurl -X POST https://api.capbypass.pro/getTaskResult \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"clientKey\": \"cap_live_2a9c30a47d0bbdfde2f4470b61648b0b\", \"taskId\": \"TASK_ID\"}'\n\n\nIni coba dipake juga buat jaga jaga kalo cloudeframe habis kreditnya "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

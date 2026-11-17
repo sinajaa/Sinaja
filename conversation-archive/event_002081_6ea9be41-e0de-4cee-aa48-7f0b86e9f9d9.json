@@ -1,0 +1,28 @@
+{
+  "id": "6ea9be41-e0de-4cee-aa48-7f0b86e9f9d9",
+  "timestamp": "2026-11-17T10:44:50.841399",
+  "source": "user",
+  "parent_id": "452977cd-ddc6-424c-902d-053113fe90bb",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Jadi versi model nomask itu reasoning kah"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

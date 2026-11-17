@@ -1,0 +1,24 @@
+{
+  "id": "23947d9a-e817-41ee-aaf0-c6da7ab95b31",
+  "timestamp": "2026-11-17T07:07:35.225939",
+  "source": "environment",
+  "parent_id": "85ae56e5-777c-4dfe-b734-55172218fb44",
+  "tool_name": "browser_navigate",
+  "tool_call_id": "chatcmpl-tool-acfcb0c4e0c3bac7",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Navigated to: https://dash.allmodels.io/login"
+      }
+    ],
+    "is_error": false,
+    "screenshot_data": null,
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "BrowserObservation"
+  },
+  "action_id": "01717f0d-b220-495c-b111-770e97520709",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

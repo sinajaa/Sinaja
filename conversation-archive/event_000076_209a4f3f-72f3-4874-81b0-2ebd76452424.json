@@ -1,0 +1,36 @@
+{
+  "id": "209a4f3f-72f3-4874-81b0-2ebd76452424",
+  "timestamp": "2026-11-17T07:00:30.752660",
+  "source": "environment",
+  "parent_id": "83ac4ae2-47cf-4063-8d8f-78dc1e4620e9",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-b2403d66d781e4e0",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "st, body, hd = call(op, \"/create_account\", {\"accept_tos\": True, \"source\": random.choice(SOURCES)}, h)\n    if st == 429:\n        return None, int(hd.get(\"Retry-After\") or 60), body\n    if st not in (200, 201) or not body.get(\"account_number\"):\n        return None, None, body or {\"status\": st}\n    number = body[\"account_number\"].replace(\" \", \"\")\n    time.sleep(random.uniform(1.5, 3.5))\n    st2, tok, _ = call(op, \"/tokens\", {}, h)\n    key = tok.get(\"token\") if st2 == 200 else None\n    bal = None\n    if key:\n        st3, b, _ = call(op, \"/get_user_balance\", None, {**h, \"Authorization\": \"Bearer \" + key})\n        bal = b.get(\"balance\") if st3 == 200 else None\n    return {\n        \"account_number\": number,\n        \"api_key\": key,\n        \"balance_usd\": bal,\n        \"starter_credit\": body.get(\"starter_credit\"),\n        \"pro_access_until\": body.get(\"pro_access_until\"),\n        \"user_agent\": ua,\n        \"country\": None if proxy is None else \"targeted\",\n        \"created_at\": time.strftime(\"%Y-%m-%dT%H:%M:%S\"),\n    }, None, body\n\n\ndef save(rec):\n    with open(OUT_JSONL, \"a\") as f:\n        f.write(json.dumps(rec) + \"\\n\")\n    with open(OUT_TXT, \"a\") as f:\n        f.write(f\"{rec['account_number']} | {rec['api_key'] or '-'} | ${rec['balance_usd']}\\n\")\n\n\ndef main():\n    target = int(sys.argv[1]) if len(sys.argv) > 1 else 10\n    got = funded = fails = 0\n    while got < target and fails < target * 4:\n        # Tiap akun: sesi sticky baru + negara acak -> IP bersih, tidak dipakai akun lain\n        if PROXY == \"rf\":\n            cc = random.choice([\"us\", \"us\", \"gb\", \"ca\", \"de\"])\n            proxy = build_rf(cc)\n        elif PROXY:\n            cc = random.choice(COUNTRIES)\n            proxy = build_proxy(cc, os.urandom(6).hex())\n        else:\n            cc, proxy = None, None\n        rec, wait, body = one_account(proxy)\n        if rec is not None:\n            rec[\"country\"] = cc\n        if rec is None:\n            fails += 1\n            if wait:\n                print(f\"  429, tunggu {wait}s\", flush=True)\n                time.sleep(min(wait, 120) + random.randint(5, 25))\n            else:\n                print(f\"  gagal: {str(body)[:120]}\", flush=True)\n                time.sleep(random.uniform(5, 15))\n            continue\n        got += 1\n        funded += 1 if (rec[\"balance_usd\"] or 0) > 0 else 0\n        save(rec)\n        print(f\"[{got}/{target}] {rec['account_number']} ${rec['balance_usd']} {(rec['api_key'] or '-')[:20]}...\", flush=True)\n        base = random.uniform(3, 8) + got * random.uniform(0.1, 0.3)\n        print(f\"  jeda {base:.0f}s\", flush=True)\n        time.sleep(base)\n    print(f\"selesai: {got} akun, {funded} ber-saldo\")\n\n\nif __name__ == \"__main__\":\n    main()"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && sed -n 80,160p ob.py",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "eb281e2d-1a51-4c73-9887-7029a36c850d",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

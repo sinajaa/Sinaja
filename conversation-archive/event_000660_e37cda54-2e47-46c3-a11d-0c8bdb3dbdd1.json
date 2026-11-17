@@ -1,0 +1,36 @@
+{
+  "id": "e37cda54-2e47-46c3-a11d-0c8bdb3dbdd1",
+  "timestamp": "2026-11-17T07:51:20.810403",
+  "source": "environment",
+  "parent_id": "eec85722-2b60-4b06-82ac-e5cc09441dcd",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-84d5f0bfbebf7f17",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "{\"success\":false,\"hostname\":\"recaptcha-demo.appspot.com\",\"challenge_ts\":\"2026-11-17T07:51:16Z\",\"apk_package_name\":\"\",\"score\":0.9,\"action\":\"homepage\",\"error-codes\":[\"action-mismatch\"]}\nHTTP 200"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && TOK=$(cat /tmp/demo_tok.txt); curl -s --max-time 30 \"https://recaptcha-demo.appspot.com/recaptcha-v3-verify.php?action=homepage&token=$TOK\" -w \"\\nHTTP %{http_code}\\n\" | head -c 500",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 65735,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "07d43bef-a6dc-4963-9ae5-91391870b0d4",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

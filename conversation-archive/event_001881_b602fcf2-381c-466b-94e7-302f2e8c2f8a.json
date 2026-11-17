@@ -1,0 +1,28 @@
+{
+  "id": "b602fcf2-381c-466b-94e7-302f2e8c2f8a",
+  "timestamp": "2026-11-17T10:16:15.232151",
+  "source": "user",
+  "parent_id": "05aaf720-ac83-4f81-a253-5136751f90ce",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Ngapin farming kaggle banyak banyak?kita ambil gpunya aja yang gratisan katanya bisa yg di x tadi"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

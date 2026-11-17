@@ -1,0 +1,36 @@
+{
+  "id": "6022fc58-bc80-4e87-8a21-39a13aca3b9d",
+  "timestamp": "2026-11-17T14:21:10.420876",
+  "source": "environment",
+  "parent_id": "633dc8e2-2a1e-4604-9476-33dc6f39c7be",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-aee321e2ba4a7eef",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "mkdir -p ~/.config/opencode && cat > ~/.config/opencode/opencode.json <<'EOF'\n{\n  \"$schema\": \"https://opencode.ai/config.json\",\n  \"model\": \"obscurify/deepseek/deepseek-v4.1-flash-1017-uncensored\",\n  \"provider\": {\n    \"obscurify\": {\n      \"npm\": \"@ai-sdk/openai-compatible\",\n      \"name\": \"obscurify\",\n      \"options\": {\n        \"baseURL\": \"https://obscurify.ai/v1\",\n        \"apiKey\": \"{env:OBSCURIFY_API_KEY}\"\n      },\n      \"models\": {\n        \"deepseek/deepseek-v4.1-flash-1017-uncensored\": {\"name\": \"DeepSeek V4.1 Flash Uncensored\"}\n      }\n    }\n  }\n}\nEOF\n\n\n\ncd /tmp && export OBSCURIFY_API_KEY=\"$(cat ~/.obscurify_key)\" && timeout 200 /workspace/project/mf/tools/node_modules/.bin/opencode run --model obscurify/deepseek/deepseek-v4.1-flash-1017-uncensored \"Reply with exactly: OK\" 2>&1 | tail -12\n\n\n> build \u00b7 deepseek/deepseek-v4.1-flash-1017-uncensored\n\nOK"
+      }
+    ],
+    "is_error": false,
+    "command": "mkdir -p ~/.config/opencode && cat > ~/.config/opencode/opencode.json <<'EOF'\n{\n  \"$schema\": \"https://opencode.ai/config.json\",\n  \"model\": \"obscurify/deepseek/deepseek-v4.1-flash-1017-uncensored\",\n  \"provider\": {\n    \"obscurify\": {\n      \"npm\": \"@ai-sdk/openai-compatible\",\n      \"name\": \"obscurify\",\n      \"options\": {\n        \"baseURL\": \"https://obscurify.ai/v1\",\n        \"apiKey\": \"{env:OBSCURIFY_API_KEY}\"\n      },\n      \"models\": {\n        \"deepseek/deepseek-v4.1-flash-1017-uncensored\": {\"name\": \"DeepSeek V4.1 Flash Uncensored\"}\n      }\n    }\n  }\n}\nEOF\ncd /tmp && export OBSCURIFY_API_KEY=\"$(cat ~/.obscurify_key)\" && timeout 200 /workspace/project/mf/tools/node_modules/.bin/opencode run --model obscurify/deepseek/deepseek-v4.1-flash-1017-uncensored \"Reply with exactly: OK\" 2>&1 | tail -12",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/tmp",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "ba3c76cc-9a24-4d8d-ab91-2f58dce6e1c2",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

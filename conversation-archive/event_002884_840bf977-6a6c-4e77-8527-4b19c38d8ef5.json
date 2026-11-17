@@ -1,0 +1,36 @@
+{
+  "id": "840bf977-6a6c-4e77-8527-4b19c38d8ef5",
+  "timestamp": "2026-11-17T12:57:30.612371",
+  "source": "environment",
+  "parent_id": "194c7418-b55d-444f-919e-2751ac95e754",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-b62349a8f5ae9a8b",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "=== env LLM ===\nOH_LLM_API_KEY_REFRESH_URL=https://app.all-hands.dev/api/keys/llm/manage\nOH_TELEMETRY_POSTHOG_API_KEY=phc_BgzfxKdgsYMLFTmJqt424ZoyVHvKFfrwttLimzdYT\nOH_LLM_API_KEY_REFRESH_HEADERS={\"X-Session-API-Key\": \"${SESSION_API_KEY}\"}\nOH_LLM_API_KEY_REFRESH_BASE_URLS=https://llm-proxy.app.all-hands.dev\n\n=== ~/.openhands files ===\n/home/openhands/.openhands/git-credentials/github.token\n/home/openhands/.openhands/profiles/.profiles.lock\n/home/openhands/.openhands/git-credential-helper\n/home/openhands/.openhands/cache/skills/public-skills.lock\n/home/openhands/.openhands/cache/skills/public-skills/.release-please-manifest.json\n/home/openhands/.openhands/cache/skills/public-skills/analysis_results.md\n/home/openhands/.openhands/cache/skills/public-skills/AGENTS.md\n/home/openhands/.openhands/cache/skills/public-skills/release-please-config.json\n/home/openhands/.openhands/cache/skills/public-skills/README.md\n/home/openhands/.openhands/cache/skills/public-skills/automations/README.md\n/home/openhands/.openhands/cache/skills/public-skills/automations/interface.json\n/home/openhands/.openhands/cache/skills/public-skills/automations/catalog.schema.json\n/home/openhands/.openhands/cache/skills/public-skills/automations/catalog/github-issue-triage/manifest.json\n/home/openhands/.openhands/cache/skills/public-skills/automations/catalog/github-delivery-watchdog/manifest.json\n/home/openhands/.openhands/cache/skills/public-skills/automations/catalog/linear-issue-to-github-pr/manifest.json\n/home/openhands/.openhands/cache/skills/public-skills/automations/catalog/github-comment-cleanup/manifest.json\n/home/openhands/.openhands/cache/skills/public-skills/automations/catalog/jira-issue-to-pr/manifest.json\n/home/openhands/.openhands/cache/skills/public-skills/automations/catalog/research-brief-writer/manifest.json\n/home/openhands/.openhands/cache/skills/public-skills/automations/catalog/custom-automation/manifest.json\n/home/openhands/.openhands/cache/skills/public-skills/automations/catalog/slack-github-linear-daily-organization.json\n\n=== conversations dir ===\n23cb874a785140de9180845fc8797a32\n37e75f0d3d3c4d5db2b1976183c910b7\n421f5611c83b466fbddaa318ad63154a\n7628944cec0e43c2a45872be9cb2ba07\n7a0f58a298fa4500b9e92a3caa285d94\n\n=== cari config llm ===\n/var/openhands/conversations/fdc16e2e6c874c3299cde9d5e58dd212/events/event-00231-c108a9ba-28af-4a0c-a770-43515e4383f7.json\n/var/openhands/conversations/fdc16e2e6c874c3299cde9d5e58dd212/events/event-00320-9b29c609-c73a-4f43-a28f-a28c6c832aae.json\n/var/openhands/conversations/fdc16e2e6c874c3299cde9d5e58dd212/events/event-00456-9a4ea2d3-7a7b-4753-ade2-615a52fc15f6.json\n/var/openhands/conversations/fdc16e2e6c874c3299cde9d5e58dd212/events/event-00167-73756b87-35e0-4823-9fb9-c9dd13aa8a21.json\n/var/openhands/conversations/fdc16e2e6c874c3299cde9d5e58dd212/events/event-00081-7716b2dd-e929-4d94-9294-bfd7007ce59b.json"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && echo \"=== env LLM ===\"; env | grep -iE \"LLM|MODEL|API_KEY|OBSCUR\" | sed -E 's/(=.{0,45}).*/\\1/' ; echo; echo \"=== ~/.openhands files ===\"; find ~/.openhands -type f 2>/dev/null | head -20; echo; echo \"=== conversations dir ===\"; ls /var/openhands/conversations 2>/dev/null | head -5; echo; echo \"=== cari config llm ===\"; grep -rl \"obscurify\\|llm_model\\|base_url\" /var/openhands/conversations 2>/dev/null | head -5",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "068a19dc-ca17-4415-88b7-084cf0a3d5bf",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

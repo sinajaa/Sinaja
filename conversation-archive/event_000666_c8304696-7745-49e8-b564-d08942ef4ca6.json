@@ -1,0 +1,28 @@
+{
+  "id": "c8304696-7745-49e8-b564-d08942ef4ca6",
+  "timestamp": "2026-11-17T07:54:30.126974",
+  "source": "user",
+  "parent_id": "ad7c101d-02a9-421d-8dad-bea45e7b2011",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "# 1. Create the task\ncurl -X POST https://api.capbypass.pro/createTask \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"clientKey\": \"cap_live_2a9c30a47d0bbdfde2f4470b61648b0b\",\n    \"task\": {\n      \"type\": \"CaptchaFoxTaskProxyLess\",\n      \"websiteURL\": \"https://signup.gmx.com/\",\n      \"websiteKey\": \"sk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n  }'\n\n\n# 2. Poll for the result with the taskId from step 1, every 2 seconds\ncurl -X POST https://api.capbypass.pro/getTaskResult \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"clientKey\": \"cap_live_2a9c30a47d0bbdfde2f4470b61648b0b\", \"taskId\": \"TASK_ID\"}'\n\n\n# 1. Create the task\ncurl -X POST https://api.capbypass.pro/createTask \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"clientKey\": \"cap_live_2a9c30a47d0bbdfde2f4470b61648b0b\",\n    \"task\": {\n      \"type\": \"TurnstileTaskProxyLess\",\n      \"websiteURL\": \"https://example.com/login\",\n      \"websiteKey\": \"0x4AAAAAAAxxxxxxxxxxxxxx\"\n    }\n  }'\n\n\n# 2. Poll for the result with the taskId from step 1, every 2 seconds\ncurl -X POST https://api.capbypass.pro/getTaskResult \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"clientKey\": \"cap_live_2a9c30a47d0bbdfde2f4470b61648b0b\", \"taskId\": \"TASK_ID\"}'\n\n\n# 1. Create the task\ncurl -X POST https://api.capbypass.pro/createTask \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"clientKey\": \"cap_live_2a9c30a47d0bbdfde2f4470b61648b0b\",\n    \"task\": {\n      \"type\": \"GeetestTaskProxyLess\",\n      \"websiteURL\": \"https://example.com/login\",\n      \"captchaId\": \"fcd636b4514bf7ac4143922550b3008b\"\n    }\n  }'\n\n\n# 2. Poll for the result with the taskId from step 1, every 2 seconds\ncurl -X POST https://api.capbypass.pro/getTaskResult \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"clientKey\": \"cap_live_2a9c30a47d0bbdfde2f4470b61648b0b\", \"taskId\": \"TASK_ID\"}'\n\n\n# 1. Create the task\ncurl -X POST https://api.capbypass.pro/createTask \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"clientKey\": \"cap_live_2a9c30a47d0bbdfde2f4470b61648b0b\",\n    \"task\": {\n      \"type\": \"AntiAwsWafTaskProxyLess\",\n      \"websiteURL\": \"https://example.com/\"\n    }\n  }'\n\n\n# 2. Poll for the result with the taskId from step 1, every 2 seconds\ncurl -X POST https://api.capbypass.pro/getTaskResult \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"clientKey\": \"cap_live_2a9c30a47d0bbdfde2f4470b61648b0b\", \"taskId\": \"TASK_ID\"}'\n\n\nKompatibel banyak juga ya"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

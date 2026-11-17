@@ -1,0 +1,36 @@
+{
+  "id": "d750a12a-e077-474e-9552-e608e00b1385",
+  "timestamp": "2026-11-17T07:50:53.059846",
+  "source": "environment",
+  "parent_id": "3dde1d38-17a1-4344-9b15-69e7f6aec33a",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-8d776894834467d9",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "=== task type lain yang tersedia? ===\nReCaptchaV2TaskProxyLess   {\"errorId\":1,\"errorCode\":\"ERROR_TASK_TYPE_INACTIVE\",\"errorDescription\":\"Task type \\\"ReCaptchaV2TaskProxyLess\\\" is curren\nHCaptchaTaskProxyLess      {\"statusCode\":400,\"code\":\"FST_ERR_VALIDATION\",\"error\":\"Bad Request\",\"message\":\"body/task/type must be equal to one of th\nTurnstileTaskProxyLess     {\"errorId\":0,\"taskId\":\"1d28960f-0949-4023-8062-b751c09e1e0c\"}\nCloudflareTask             {\"statusCode\":400,\"code\":\"FST_ERR_VALIDATION\",\"error\":\"Bad Request\",\"message\":\"body/task/type must be equal to one of th"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && K=\"cap_live_2a9c30a47d0bbdfde2f4470b61648b0b\"; echo \"=== task type lain yang tersedia? ===\"; for t in \"ReCaptchaV2TaskProxyLess\" \"HCaptchaTaskProxyLess\" \"TurnstileTaskProxyLess\" \"CloudflareTask\"; do R=$(curl -s --max-time 25 -X POST https://api.capbypass.pro/createTask -H \"Content-Type: application/json\" -d \"{\\\"clientKey\\\":\\\"$K\\\",\\\"task\\\":{\\\"type\\\":\\\"$t\\\",\\\"websiteURL\\\":\\\"https://example.com\\\",\\\"websiteKey\\\":\\\"6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI\\\"}}\"); printf \"%-26s %s\\n\" \"$t\" \"$(echo $R | head -c 120)\"; done",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 65735,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "e73f693b-3b67-42b0-9e5c-e81e50a85f71",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

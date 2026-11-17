@@ -1,0 +1,24 @@
+{
+  "id": "dbf5b458-67f1-465c-89d4-e173fb82d525",
+  "timestamp": "2026-11-17T08:00:08.457707",
+  "source": "environment",
+  "parent_id": "593ae0e6-7229-4242-af0d-fd81f4d9bc4f",
+  "tool_name": "browser_type",
+  "tool_call_id": "chatcmpl-tool-85029ba0561942a5",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Typed 'Santoso' into element 2508"
+      }
+    ],
+    "is_error": false,
+    "screenshot_data": null,
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "BrowserObservation"
+  },
+  "action_id": "594270ee-b8cb-4efa-85c4-53ca03d13c52",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

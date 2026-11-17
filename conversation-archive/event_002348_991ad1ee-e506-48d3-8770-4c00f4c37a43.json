@@ -1,0 +1,15 @@
+{
+  "id": "991ad1ee-e506-48d3-8770-4c00f4c37a43",
+  "timestamp": "2026-11-17T11:25:47.620210",
+  "source": "environment",
+  "parent_id": "cecc6743-7a04-486b-91c5-67f5c73e3bc5",
+  "code": "LLMBadRequestError",
+  "detail": "litellm.BadRequestError: OpenAIException - messages[3].content must be a string (the tool's result) on tool messages.",
+  "classification": {
+    "kind": "config",
+    "retryable": false,
+    "user_action": "settings",
+    "error_id": null
+  },
+  "kind": "ConversationErrorEvent"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "cbfcc122-0c50-4501-a14d-3a5e3a9ea5b8",
+  "timestamp": "2026-11-17T13:39:18.566822",
+  "source": "user",
+  "parent_id": "3aae1e39-5d56-4093-aae2-c38126b17da9",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Boleh dong kerja dibayar"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

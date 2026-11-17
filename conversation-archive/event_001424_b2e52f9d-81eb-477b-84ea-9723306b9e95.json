@@ -1,0 +1,36 @@
+{
+  "id": "b2e52f9d-81eb-477b-84ea-9723306b9e95",
+  "timestamp": "2026-11-17T08:41:38.773439",
+  "source": "environment",
+  "parent_id": "68caf94d-52a7-450f-929c-1dc4a2793c3c",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-9567d939dcf681e7",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "=== headers limit ===\nx-request-id: a5bd6fed7d3e7a44-ORD\nx-ratelimit-remaining-requests-minute: 3\nx-ratelimit-remaining-requests-hour: 149\nx-ratelimit-remaining-requests-day: 2398\nx-ratelimit-remaining-tokens-minute: 29984\nx-ratelimit-remaining-tokens-hour: 2999984\nx-ratelimit-remaining-tokens-day: 999921\nx-ratelimit-limit-requests-minute: 5\nx-ratelimit-limit-requests-hour: 150\nx-ratelimit-limit-requests-day: 2400\nx-ratelimit-limit-tokens-minute: 30000\nx-ratelimit-limit-tokens-hour: 1000000\nx-ratelimit-limit-tokens-day: 1000000\nx-content-type-options: nosniff\nstrict-transport-security: max-age=15552000; includeSubDomains; preload\n=== rate limit per menit (burst 25) ===\n200=3 gagal=22"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && export CEREBRAS_API_KEY=\"csk-5hwek3y8kf2cxkdcprxep2m2w5tkwhdp5ywkrr85m8hfc6yk\"; echo \"=== headers limit ===\"; curl -s -D- -o /dev/null --max-time 60 -X POST \"https://api.cerebras.ai/v1/chat/completions\" -H \"Authorization: Bearer $CEREBRAS_API_KEY\" -H \"Content-Type: application/json\" -d '{\"model\":\"gpt-oss-120b\",\"messages\":[{\"role\":\"user\",\"content\":\"hi\"}],\"max_completion_tokens\":16}' | grep -iE \"ratelimit|x-|retry\" | head -20; echo \"=== rate limit per menit (burst 25) ===\"; ok=0; rl=0; for i in $(seq 1 25); do c=$(curl -s -o /dev/null -w \"%{http_code}\" --max-time 30 -X POST \"https://api.cerebras.ai/v1/chat/completions\" -H \"Authorization: Bearer $CEREBRAS_API_KEY\" -H \"Content-Type: application/json\" -d '{\"model\":\"gpt-oss-120b\",\"messages\":[{\"role\":\"user\",\"content\":\"x\"}],\"max_completion_tokens\":8}'); [ \"$c\" = \"200\" ] && ok=$((ok+1)) || rl=$((rl+1)); done; echo \"200=$ok gagal=$rl\"",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 71910,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "d35e5987-a3f7-4b16-bcda-84c6d29739a3",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

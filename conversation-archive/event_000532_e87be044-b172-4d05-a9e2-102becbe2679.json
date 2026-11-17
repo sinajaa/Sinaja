@@ -1,0 +1,28 @@
+{
+  "id": "e87be044-b172-4d05-a9e2-102becbe2679",
+  "timestamp": "2026-11-17T07:32:24.214253",
+  "source": "user",
+  "parent_id": "1cfa5d1c-5e08-439a-8ae7-2936ae4d14a8",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Pake proxy gak bisa kah alur proxy dengan aplikasi tertentu "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

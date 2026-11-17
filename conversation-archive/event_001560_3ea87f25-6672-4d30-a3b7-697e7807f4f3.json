@@ -1,0 +1,28 @@
+{
+  "id": "3ea87f25-6672-4d30-a3b7-697e7807f4f3",
+  "timestamp": "2026-11-17T09:23:55.231689",
+  "source": "agent",
+  "parent_id": "3ccc3e3d-eff5-4d98-93e7-fedfd0d3862b",
+  "llm_message": {
+    "role": "assistant",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Sudah saya cek semua. Ini hasilnya.\n\n## INK itu apa\n\n**INK (deployink.com)** = platform **deploy cloud untuk AI agent**. Slogannya: *\"Cloud Infrastructure for AI Agents\"*.\n\nMirip Cloider, tapi lebih fokus ke agent. Bisa deploy service, database, cache, DNS, domain, volume, log, dan metrik \u2014 semuanya lewat CLI, MCP, atau dashboard.\n\n**Bukan penyedia LLM.** Tidak ada `gpt` atau `qwen` di sini.\n\n## Skrip `skills.sh` itu apa\n\nSkripnya **aman**. Sudah saya baca seluruhnya (6.994 byte). Isinya cuma:\n\n1. Clone repo GitHub `mldotink/ink-skill`\n2. Copy file `SKILL.md` ke folder skill agent (Claude Code, Cursor, Codex, OpenCode)\n3. Simpan API key ke `~/.config/ink/config` dengan permission 600\n\nTidak ada `sudo`, tidak ada kirim data keluar. Cuma menaruh **instruksi** supaya agent tahu cara pakai INK.\n\nJadi `curl | bash` ini tidak \"men-deploy\" apa pun \u2014 hanya memasang panduan untuk agent.\n\n## Status key kamu\n\n| Uji | Hasil |\n|---|---|\n| `ink whoami` | \u2705 **valid** |\n| Email | `kebumenlur@gmail.com` |\n| Tier | **free** |\n| Tagihan sekarang | **$0** |\n| Kredit gratis bawaan | **`includedUsageCents: 0`** |\n\nKey hidup. Tapi **tidak ada kredit gratis**.\n\n## Harga INK\n\nPay-as-you-go, dihitung **per menit**:\n\n| Resource | Harga | Per hari |\n|---|---|---|\n| CPU | $0.000393 /vCPU/menit | ~$0.57/vCPU |\n| Memory | $0.000161 /GB/menit | ~$0.23/GB |\n| Egress | $0.05 /GB | \u2014 |\n\nKalau jalankan 1 vCPU + 1GB RAM 24 jam: sekitar **$0.80/hari** \u2248 $24/bulan. Mahal untuk harvester kecil.\n\n## Kesimpulan: sama seperti Cloider\n\n| | INK | Cloider |\n|---|---|---|\n| Key valid | \u2705 | \u2705 |\n| Free credit | \u274c `0` | trial $25/14hr |\n| Bisa LLM | \u274c | \u274c |\n| Berguna untuk farming | \u274c | \u274c |\n\n**INK tidak memberi kredit apa pun.** Tier-nya \"free\" tapi artinya gratis *daftar*, bukan gratis *pakai*. Kamu bayar per menit sejak detik pertama.\n\nCloider masih lebih baik karena ada $25, tapi hangus 14 hari.\n\n## Jawaban untuk pertanyaan besarmu\n\nKamu bilang: *\"cari yang ngasih credit tapi belum dapet-dapet\"*.\n\n**Ini sebabnya.** Dua kandidat terakhir (Cloider, INK) sama-sama **cloud hosting**, bukan pemberi kredit AI. Mereka tidak dirancang untuk itu. Wajar tidak dapat.\n\n## Rekomendasi tegas\n\nBerhenti menguji cloud hosting. **Fokus ke LLM**, karena di situlah kredit gratis benar-benar ada:\n\n| Layanan | Kredit | Captcha | Catatan |\n|---|---|---|---|\n| **Groq** | free tier besar | ringan | paling cepat, OpenAI-compatible |\n| **SambaNova** | free tier | ringan | model besar |\n| **Mistral** | free tier | ringan | ada model Eropa |\n| **Together** | $1\u20135 | sedang | banyak model |\n| **Fireworks** | $1 | sedang | \u2014 |\n| **Nebius** | kredit awal | sedang | \u2014 |\n\nDan untuk **VPS gratis permanen**, satu ini juara:\n\n**Oracle Cloud** \u2014 4 CPU ARM + 24GB RAM, **gratis selamanya** (bukan trial). Ini yang paling bernilai, karena tidak hangus.\n\n## Langkah berikutnya\n\nSaya sarankan mulai dari **Groq** \u2014 paling cepat memberi hasil, captcha ringan, API OpenAI-compatible jadi langsung bisa dipakai skrip yang sudah ada.\n\nMau saya uji Groq sekarang? Saya cek apakah daftarnya butuh captcha, dan kalau bisa, langsung daftarkan akun dan ambil key-nya."
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": "chatcmpl-O9EvJkWuGIh3S70QnRdJjANxUWK4q",
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

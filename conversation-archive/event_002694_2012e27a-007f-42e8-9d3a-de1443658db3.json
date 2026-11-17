@@ -1,0 +1,28 @@
+{
+  "id": "2012e27a-007f-42e8-9d3a-de1443658db3",
+  "timestamp": "2026-11-17T12:20:43.345989",
+  "source": "user",
+  "parent_id": "9a1d7753-93df-4e41-b9c3-67d3368b93ca",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Tapi GK ada reasoning kah?itukah yang membuat model ini cepet banget menjawab"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

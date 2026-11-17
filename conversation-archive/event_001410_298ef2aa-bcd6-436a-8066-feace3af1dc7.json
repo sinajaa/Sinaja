@@ -1,0 +1,28 @@
+{
+  "id": "298ef2aa-bcd6-436a-8066-feace3af1dc7",
+  "timestamp": "2026-11-17T08:41:23.358895",
+  "source": "user",
+  "parent_id": "43926090-0f1a-494b-939a-4dfd38e517a2",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Ok deh kita cari kandidat lain aja,oh iya aku ada ini tapi kurang pasti modelnya apa aja \n\n\n# !pip install cerebras-cloud-sdk\n\n\n  import os\n  from cerebras.cloud.sdk import Cerebras\n\n\n  client = Cerebras(\n      api_key=os.environ.get(\"CEREBRAS_API_KEY\")\n  )\n\n\n  completion = client.chat.completions.create(\n      messages=[{\"role\":\"user\",\"content\":\"Why is fast inference important?\"}],\n      model=\"qwen-3.8-27b\",\n      max_completion_tokens=1024,\n      temperature=0.2,\n      top_p=1,\n      stream=False,\n    reasoning_effort=\"medium\"\n  )\n\n\n  print(completion.choices[0].message.content)\n\n\ncsk-5hwek3y8kf2cxkdcprxep2m2w5tkwhdp5ywkrr85m8hfc6yk"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

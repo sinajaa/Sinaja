@@ -1,0 +1,36 @@
+{
+  "id": "62ae5f12-01b0-4d41-96ba-d9ff4dc97845",
+  "timestamp": "2026-11-17T13:23:27.826180",
+  "source": "environment",
+  "parent_id": "4ecf8ccc-a30b-4c12-a0cb-e0f89548b177",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-80b3373612a67297",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "# Awesome AI Perks & Free Compute (2026)\n\nA curated, regularly updated directory of **legitimate official AI free tiers, API credits, GPU compute grants, creator tools, and student privileges**\u2014built so developers and builders don't overpay or rely on shady resellers.\n\n> **Interactive Web Version (Live Status + Community Votes)**\n> - English Directory: [AI Radar \u2014 Free AI Perks & Credits](https://radar.aitoolnet.com/perks)\n> - \u4e2d\u6587\u7248\u798f\u5229\u4e0e\u60c5\u62a5\u5e93: [AI Radar \u2014 2026 \u5168\u7403 AI \u7f8a\u6bdb\u4e0e\u798f\u5229\u60c5\u62a5\u5e93](https://radar.aitoolnet.com/zh/perks)\n\n---\n\n## Developer APIs & Free Compute\n\n| Platform | Free Tier / Grant | Card Needed | Official Link | Notes |\n| :--- | :--- | :---: | :--- | :--- |\n| **Google AI Studio** | 1,500 requests/day on Gemini models (1M-2M context) | No | [aistudio.google.com/apikey](https://aistudio.google.com/apikey) | No credit card needed on free tier |\n| **OpenRouter (`:free`)** | Unified OpenAI-compatible key for 25+ `:free` models (DeepSeek R1/V3, Llama 3.3) | No | [openrouter.ai/models?q=:free](https://openrouter.ai/models?q=:free) | ~200 req/day at $0 balance (1,000/day with $10+ top-up) |\n| **Cloudflare Workers AI** | 10,000 free Neurons/day (LLMs, Whisper, BGE-M3 embeddings) | No | [dash.cloudflare.com](https://dash.cloudflare.com/?to=/:account/ai/workers-ai) | Resets daily at 00:00 UTC |\n| **Groq & Cerebras** | High-speed LPU/WSE free RPM inference tier | No | [console.groq.com](https://console.groq.com) | Low-latency streaming inference |\n| **SiliconFlow (\u7845\u57fa\u6d41\u52a8)** | 14M-20M free tokens for DeepSeek-V3, Qwen & FLUX.1 | No | [siliconflow.cn](https://siliconflow.cn) | OpenAI-compatible endpoint |\n| **Zhipu BigModel (\u667a\u8c31)** | `glm-4-flash` official $0 API tier | No | [open.bigmodel.cn](https://open.bigmodel.cn) | Explicit `glm-4-flash` model ID stays $0 |\n| **Kaggle** | 30 hours/week free P100 / Dual-T4 GPU compute | No | [kaggle.com](https://www.kaggle.com) | Phone-verified Jupyter environment |\n| **Continue.dev / Cline** | Zero-subscription VS Code AI coding setup | No | [continue.dev](https://continue.dev) | Pair with free-tier DeepSeek / Groq / OpenRouter keys |\n\n---\n\n## Cloud & Startup Compute Credits\n\n| Program | Grant Value | Requirements | Official Link |\n| :--- | :--- | :--- | :--- |\n| **Microsoft for Startups (Founders Hub)** | $2,500 - $25,000 Azure & OpenAI credits | GitHub / project application | [foundershub.startups.microsoft.com](https://foundershub.startups.microsoft.com) |\n| **AWS Activate Founders** | $1,000 AWS credits (valid 1 year, works on Bedrock Claude) | Active AWS account + custom domain email | [aws.amazon.com/startups/credits](https://aws.amazon.com/startups/credits) |\n| **Google Cloud Free Trial** | $300 free credit (90 days, Vertex AI models) | Google Cloud billing verification | [cloud.google.com/free](https://cloud.google.com/free) |\n| **Oracle Cloud Always Free** | 4 OCPU ARM + 24GB RAM + 200GB SSD forever | Card verification (no auto-charge on Always Free) | [oracle.com/cloud/free](https://www.oracle.com/cloud/free/) |\n\n---\n\n## Student & Education Privileges\n\n| Program | Benefit | Official Link |\n| :--- | :--- | :--- |\n| **GitHub Student Developer Pack** | Free GitHub Copilot Pro, JetBrains, cloud credits ($1,000+ total) | [education.github.com/pack](https://education.github.com/pack) |\n| **Notion Plus & AI Education** | Free Notion Plus educational workspace | [notion.so/product/notion-for-education](https://www.notion.so/product/notion-for-education) |\n\n---\n\n## Creator & Official Trial Channels\n\n| Platform | Free Allowance / Channel | Official Link |\n| :--- | :--- | :--- |\n| **FLUX.1 (`schnell`)** | Free open-weight image generation on Hugging Face Spaces | [huggingface.co/spaces/black-forest-labs/FLUX.1-schnell](https://huggingface.co/spaces/black-forest-labs/FLUX.1-schnell) |\n| **Suno AI** | 50 free credits/day (~10 songs daily) | [suno.com](https://suno.com) |\n| **Hailuo AI (MiniMax)** | Free daily AI video generation credits | [hailuoai.video](https://hailuoai.video) |\n| **Google One AI Trial** | 2-3 month official Google Gemini Advanced trial & family sharing | [one.google.com](https://one.google.com/explore-plan/gemini-advanced) |\n| **Perplexity Pro Partner** | Telecom & university 1-year free partner channels | [perplexity.ai/pro](https://perplexity.ai/pro) |\n\n---\n\n## Related Trackers\n\nFor live model rankings, open-source trending picks, and bilingual AI updates:\n- [AI Radar Home](https://radar.aitoolnet.com)\n- [Model Leaderboard](https://radar.aitoolnet.com/leaderboard)\n- [Open-Source GitHub Picks](https://radar.aitoolnet.com/github)\n- [US vs China AI Tracking](https://radar.aitoolnet.com/us-vs-china-ai)\n\nContributions and status corrections are welcome via Pull Requests!"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && curl -s --max-time 25 \"https://raw.githubusercontent.com/sys2020-sys/awesome-ai-perks/main/README.md\" | sed -n '1,80p'",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "21df5831-a1ff-4e00-8b62-129a3a4d0088",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

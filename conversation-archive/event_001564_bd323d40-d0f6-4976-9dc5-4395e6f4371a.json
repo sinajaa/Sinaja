@@ -1,0 +1,28 @@
+{
+  "id": "bd323d40-d0f6-4976-9dc5-4395e6f4371a",
+  "timestamp": "2026-11-17T09:24:49.720715",
+  "source": "user",
+  "parent_id": "3ea87f25-6672-4d30-a3b7-697e7807f4f3",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Coba jalankan dulu itu test "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

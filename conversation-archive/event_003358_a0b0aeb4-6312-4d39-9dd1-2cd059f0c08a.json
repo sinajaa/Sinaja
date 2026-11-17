@@ -1,0 +1,28 @@
+{
+  "id": "a0b0aeb4-6312-4d39-9dd1-2cd059f0c08a",
+  "timestamp": "2026-11-17T14:45:15.726630",
+  "source": "user",
+  "parent_id": "8279dbd5-dfce-4d1e-b853-0f301c1789e7",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Perlu pake model yang lebih kuat gak sih? Soalnya mungkin juga nanti banyak saingan,itu pendapat saya si"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

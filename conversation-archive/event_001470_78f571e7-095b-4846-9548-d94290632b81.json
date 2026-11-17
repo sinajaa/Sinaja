@@ -1,0 +1,28 @@
+{
+  "id": "78f571e7-095b-4846-9548-d94290632b81",
+  "timestamp": "2026-11-17T09:11:47.401062",
+  "source": "user",
+  "parent_id": "3fa68b38-7057-456b-9795-2271cb900c89",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Bisa dipake gak?ada free trial 14 day $25 si"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "249e7803-920e-42e6-83ea-751783025591",
+  "timestamp": "2026-11-17T07:35:35.588998",
+  "source": "environment",
+  "parent_id": "d4a9278c-9ca1-46db-b1f5-004fdc2ce112",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-80697f4794027ea8",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "=== sticky session (3x IP harus sama) ===\n  1: 114.10.67.167 Jakarta ID\n  2: 114.8.210.181 Jakarta ID\n  3: 140.213.58.38 Surabaya ID"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && S=\"stickytest$(date +%s)\"; echo \"=== sticky session (3x IP harus sama) ===\"; for i in 1 2 3; do printf \"  %d: \" $i; curl -s --max-time 40 -x \"http://ResiFactory_1840e2833~id~$S:TPbfq2zsdVHz@premium.resifactory.net:7777\" \"https://ipinfo.io/json\" 2>/dev/null | python3 -c \"import sys,json;d=json.load(sys.stdin);print(d.get('ip'),d.get('city'),d.get('country'))\" 2>/dev/null || echo gagal; sleep 2; done",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 65735,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "324c9a62-b7e0-49f7-8bc4-783d43ed0211",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

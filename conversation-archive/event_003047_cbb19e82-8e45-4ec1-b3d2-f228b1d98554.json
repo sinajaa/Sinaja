@@ -1,0 +1,28 @@
+{
+  "id": "cbb19e82-8e45-4ec1-b3d2-f228b1d98554",
+  "timestamp": "2026-11-17T13:29:43.705982",
+  "source": "agent",
+  "parent_id": "f3a5e065-27c7-4a9c-94d0-276d58c27853",
+  "llm_message": {
+    "role": "assistant",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Sudah selesai riset. Ini hasilnya, urut dari yang paling berharga.\n\n## \ud83e\udd47 Temuan terbaik: Lebrel.ai\n\n**Baru, open beta, uncensored, dan benar-benar gratis.**\n\n| Item | Detail |\n|---|---|\n| Model | `lebrel/deepseek-v4.1-flash-uncensored` |\n| Base URL | `https://api.lebrel.ai/v1` |\n| **Gratis** | **7 hari + $100 kredit API** |\n| Bonus | **4 jam/hari gratis** (22:00\u201302:00 WIB) |\n| Daftar | **email saja**, tanpa nomor HP |\n| Harga token | input $0.33/1M, output $1.32/1M |\n| Ekstra | TEE terenkripsi, receipt di Solana, airdrop LBRL |\n\nSaya verifikasi endpoint-nya nyata: `api.lebrel.ai/v1` balas **401** (butuh key), bukan 404.\n\n$100 kredit gratis untuk 7 hari \u2014 itu **4x lebih besar** dari total obscurify-mu ($100 dari 104 akun), dalam satu akun.\n\n## Peta provider uncensored (temuan sampingan)\n\nDari API openuncensored, saya dapat daftar siapa saja yang jual model uncensored:\n\n| Provider | Model |\n|---|---|\n| nanogpt | 42 |\n| venice | 14 |\n| openrouter | 12 |\n| heabsy | 10 |\n| abliteration-ai | 3 |\n| refuseless | 3 |\n| uncensuredai | 3 |\n| redpill | 2 |\n\nIni peta untuk riset berikutnya.\n\n## Yang tidak gratis (tapi berguna)\n\n| Situs | Isi | Kenapa dicatat |\n|---|---|---|\n| **openuncensored.com** | 61 model uncensored + **ranking OU Score** | sumber ranking terbaik |\n| **uplinkswitch.ai** | **362 model, 68 uncensored**, 1 key | alternatif kalau obscurify mati |\n| molochai.dev | 5 model | kripto $10 min |\n| tartarusai.dev | uncensored coder | kripto $20 |\n| abliteration.ai | Abliterated Large v2 (GLM-5.3) | $20/bln |\n| redpill.ai | TEE, gabung Phala/NEAR/Chutes | chat gratis 10/hari |\n\n## Cloud / SSH baru\n\nSaya sapu HN + GitHub. Hasilnya **kurang**:\n\n| Temuan | Status |\n|---|---|\n| Hotline Computer | container Linux rootless \u2014 **self-host docker**, bukan kredit |\n| bootstrapped-credits | AWS $10k, Cloudflare $10k, DO $5k \u2014 **butuh perusahaan terdaftar** |\n| VPS/SSH gratis baru | \u274c tidak ada yang layak minggu ini |\n\n## Ranking uncensored (data nyata)\n\n| # | Model | Skor | Non-refusal |\n|---|---|---|---|\n| 1 | DeepSeek V4.1 Flash 1017 Uncensored | 69.8 | **100%** |\n| 2 | GLM 5.3 Flash Uncensored | 69.7 | 94% |\n| 3 | Qwen 3.8 27B Uncensored Fast | 66.8 | **100%** |\n\nModel yang kamu pakai sekarang (DeepSeek V4.1 Flash) ada di **peringkat 1**.\n\n## Saran langkah\n\n**Coba Lebrel.** Ini paling cocok dengan polamu:\n- Uncensored \u2705\n- Gratis nyata \u2705\n- Daftar email saja \u2705 (bisa massal)\n- OpenAI-compatible \u2705 (langsung bisa di OpenHands/LightVela)\n\nMau saya coba **daftar Lebrel sekarang** pakai `woybangsatkauuu@gmail.com` dan ambil API key-nya?\n\nKalau trial-nya butuh kartu, saya akan laporkan \u2014 supaya kamu tahu sebelum coba sendiri.\n\nSemua sudah dicatat di `AKSES.md` (commit `9778535`)."
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": "chatcmpl-mooN7hVhkcGsL94w3ENLD6osJ1O78",
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

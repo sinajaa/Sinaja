@@ -1,0 +1,36 @@
+{
+  "id": "e78294fb-453c-4633-a86b-f8b286820031",
+  "timestamp": "2026-11-17T13:36:48.273640",
+  "source": "environment",
+  "parent_id": "39847267-131f-4284-91b6-1ce012ecfd69",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-91b198dd6257fa21",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "=== freeAllowance ===\n{\n \"chatTurnsPerDay\": 20,\n \"apiRequestsPerDay\": 50,\n \"apiRequestMaxMicrousd\": 90000,\n \"apiRequestMaxPromptTokens\": 96200\n}\n=== points ===\n{\n \"planMultipliers\": {\n  \"max\": 20000,\n  \"pro\": 15000,\n  \"pro_plus\": 17500\n },\n \"freeTurnsEarnWithPlan\": true,\n \"freePointsPerUsd\": 5\n}"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && curl -s --max-time 20 \"https://lebrel.ai/api/models\" | python3 -c \"\nimport sys,json\nd=json.load(sys.stdin)\nprint('=== freeAllowance ==='); print(json.dumps(d.get('freeAllowance'),indent=1))\nprint('=== points ==='); print(json.dumps(d.get('points'),indent=1)[:400])\n\"",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "3be71ec6-3956-44e5-b3d5-e594f00f8f1f",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

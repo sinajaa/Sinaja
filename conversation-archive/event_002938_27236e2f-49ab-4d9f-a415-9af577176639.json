@@ -1,0 +1,28 @@
+{
+  "id": "27236e2f-49ab-4d9f-a415-9af577176639",
+  "timestamp": "2026-11-17T13:08:11.532566",
+  "source": "user",
+  "parent_id": "773d79f8-3ba4-4c00-8000-e79993f1930a",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Coba cek lagi yg sedang berkurang mungkin itu apikeynya "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

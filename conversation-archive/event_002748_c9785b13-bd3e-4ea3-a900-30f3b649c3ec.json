@@ -1,0 +1,28 @@
+{
+  "id": "c9785b13-bd3e-4ea3-a900-30f3b649c3ec",
+  "timestamp": "2026-11-17T12:33:57.686508",
+  "source": "agent",
+  "parent_id": "282210e6-eee4-4cee-97d2-212fe5195466",
+  "llm_message": {
+    "role": "assistant",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Semua sudah jelas. Ini konfigurasi untuk OpenHands.\n\n## Kabar bagus: obscurify lebih cocok untuk OpenHands daripada nomask\n\n| Uji | nomask | **obscurify** |\n|---|---|---|\n| Tool call | \u2705 | \u2705 |\n| Tool result **list** | \u274c **400** | \u2705 **200** |\n| Prefix `openai/` | \u274c 404 | \u274c 404 |\n\n**Obscurify menerima list** \u2014 jadi tidak kena masalah nomask.\n\n## Konfigurasi OpenHands\n\n### Langkah 1 \u2014 Provider connection\n\n**Settings \u2192 LLM \u2192 Advanced \u2192 Provider connection \u2192 buat baru**\n\n| Field | Nilai |\n|---|---|\n| Name | `obscurify` |\n| Provider | `openai` |\n| API Key | *(key dari `ob_ready.txt`)* |\n| Base URL | `https://obscurify.ai/v1` |\n\n### Langkah 2 \u2014 LLM profile\n\n| Field | Nilai |\n|---|---|\n| Provider connection | `obscurify` |\n| **Custom Model** | `openai/deepseek/deepseek-v4.1-flash-1017-abliterated:thinking` |\n\n**Perhatikan `openai/` di depan.** OpenHands wajib pakai prefix, dan obscurify menolak prefix \u2014 jadi harus lewat Provider connection (sama seperti nomask).\n\n## Cara kerja prefix-nya\n\n```\nOpenHands kirim:  openai/deepseek/...\nProvider connection buang prefix  \u2192\nobscurify terima: deepseek/deepseek-v4.1-flash-1017-abliterated:thinking  \u2705\n```\n\nTanpa Provider connection, prefix terkirim mentah \u2192 **404**.\n\n## \u26a0\ufe0f Peringatan penting\n\nModel ini **lambat** dan **tidak stabil**:\n\n| Uji | Waktu |\n|---|---|\n| Prompt pendek | 1,9\u201315,3 s |\n| Prompt kompleks | 17\u201336 s |\n\nOpenHands menjalankan **banyak langkah** (tool call berulang). Kalau tiap langkah 20 detik, satu tugas bisa **5\u201310 menit**.\n\n## Saran model untuk OpenHands\n\n| Model | Waktu | Cocok untuk |\n|---|---|---|\n| `deepseek/...-1017-uncensored` | **3,6 s** | \u2b50 **agen (tercepat)** |\n| `deepseek/...-1017-abliterated` | 7,3 s | agen, lebih bebas |\n| `deepseek/...-abliterated:thinking` | 8,8\u201336 s | tugas berat/analisis |\n| `qwen/qwen3.8-27b-uncensored` | 7,3 s | uncensored kuat |\n\n**Untuk OpenHands, saya sarankan `-1017-uncensored`** \u2014 3,6 detik, jauh lebih responsif.\n\nSimpan `:thinking` sebagai profil kedua, pakai kalau butuh analisis mendalam.\n\n## Urutan aman\n\n1. **Set as Active** ke profil obscurify lama dulu (biar chat tidak mati)\n2. Buat Provider connection `obscurify`\n3. Buat profile baru dengan model di atas\n4. Simpan \u2192 otomatis jadi aktif\n5. Tes: `jalankan: echo halo`\n6. Kalau error \u2192 **Set as Active** ke profil lama\n\n## Yang perlu kamu perhatikan\n\n| Gejala | Sebab | Obat |\n|---|---|---|\n| `404 model_not_found` | prefix terkirim mentah | isi Provider connection |\n| `LLM Provider NOT provided` | prefix tidak ada | tambah `openai/` |\n| Jawaban kosong | `max_tokens` kecil | OpenHands default biasanya cukup |\n| Timeout | model lambat | ganti ke `-1017-uncensored` |\n\nMau saya buatkan file konfigurasi ringkas untuk OpenHands, atau langsung kamu coba?"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": "chatcmpl-7U16y9mvQSKLjOhh1lalXqDqbce4I",
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

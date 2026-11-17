@@ -1,0 +1,36 @@
+{
+  "id": "d1337264-f7f2-42ca-95e9-b6d5ef732759",
+  "timestamp": "2026-11-17T07:57:11.956180",
+  "source": "environment",
+  "parent_id": "d575ff83-db08-4e53-8a74-a3002f6cacee",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-97b739801b8ec7a1",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n=== UA default requests vs curl ===\nTraceback (most recent call last):\n  File \"<string>\", line 1, in <module>"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && python3 -c \"import requests; print('requests', requests.__version__)\" 2>&1 | head -2; echo \"=== UA default requests vs curl ===\"; python3 -c \"import requests; print('requests UA:', requests.utils.default_headers().get('User-Agent'))\" 2>&1 | head -2",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 65735,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "21434683-a26d-4720-ade7-59b01afed430",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

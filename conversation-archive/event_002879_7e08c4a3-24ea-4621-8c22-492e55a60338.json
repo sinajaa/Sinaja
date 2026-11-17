@@ -1,0 +1,28 @@
+{
+  "id": "7e08c4a3-24ea-4621-8c22-492e55a60338",
+  "timestamp": "2026-11-17T12:57:18.363737",
+  "source": "user",
+  "parent_id": "d832dcbd-0bf1-423a-ab0e-e4b369450764",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Bisa cek konfigurasi apikey di openhands obcurify ini apa ya?aku lupa soalnya "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

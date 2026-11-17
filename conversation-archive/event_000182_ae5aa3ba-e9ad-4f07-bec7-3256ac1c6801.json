@@ -1,0 +1,24 @@
+{
+  "id": "ae5aa3ba-e9ad-4f07-bec7-3256ac1c6801",
+  "timestamp": "2026-11-17T07:07:15.306142",
+  "source": "environment",
+  "parent_id": "ee1755b7-0dfd-498f-b6b2-88396b75e208",
+  "tool_name": "browser_navigate",
+  "tool_call_id": "chatcmpl-tool-a8c82a4961b2465e",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Browser operation failed: Navigation failed: net::ERR_HTTP_RESPONSE_CODE_FAILURE"
+      }
+    ],
+    "is_error": true,
+    "screenshot_data": null,
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "BrowserObservation"
+  },
+  "action_id": "9c0c29ef-5f02-41f8-92cb-abd99d62f5c9",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

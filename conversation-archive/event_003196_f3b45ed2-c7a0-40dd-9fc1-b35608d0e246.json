@@ -1,0 +1,36 @@
+{
+  "id": "f3b45ed2-c7a0-40dd-9fc1-b35608d0e246",
+  "timestamp": "2026-11-17T13:57:31.840144",
+  "source": "environment",
+  "parent_id": "627631d5-fd35-4a95-91d2-588b0a00227b",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-a1cf223f229fcfc5",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "sisa jam slug                             pot   fee  plg     #1   entri metode\n   -19.8 bring-the-humans-01          1000.00     0  100    250    5720 automated\n   -16.3 threejs-fps-02               1000.00     0   10    400   10406 judges\n    -1.8 btc-race-24h-20261117-0603    250.00     0   10     60    5232 metric\n    -1.3 makefun-frontend-01           822.50  0.50   20    100     930 judges\n    21.7 ai-judge-rich-01              199.00  1.00   25     40     146 judges\n    24.2 ai-judge-relax-01              68.00  0.50   25     20       0 judges\n    28.2 best-game-01                 1000.00     0   10    400   14204 judges\n    35.2 gta6-twitch-ccu-forecast-01   250.00     0   20     50    6872 automated\n    72.7 roblox-brainrot-01           1000.00     0   50    150       0 judges\n    88.7 github-core-clone-01          500.00     0   20    100   10174 automated\n   169.2 gta6-01                      1666.00     0  100    500       0 judges\n   171.2 tiny-chess-01                 500.00     0   20    100   15293 automated\n   644.2 token-radar-01               1325.00     0   10   1000   13829 judges"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && python3 - <<'PY'\nimport json,datetime\nd=json.load(open('/tmp/open.json'))\nnow=datetime.datetime(2026,11,17,13,50)\nrows=[]\nfor it in d['items']:\n    rw=it.get('rewards') or {}\n    paid=len(rw); top1=rw.get('1',0)\n    dl=it.get('deadline','')[:19]\n    try: dt=datetime.datetime.fromisoformat(dl)\n    except: dt=None\n    hrs=(dt-now).total_seconds()/3600 if dt else None\n    rows.append((hrs,it['slug'],it.get('potUsd'),it.get('entryFeeUsd') or 0,paid,top1,it.get('submissionCount'),(it.get('resolution') or {}).get('method')))\nrows.sort(key=lambda r:(r[0] if r[0] is not None else 1e9))\nprint(f\"{'sisa jam':>8} {'slug':28} {'pot':>7} {'fee':>5} {'plg':>4} {'#1':>6} {'entri':>7} metode\")\nfor h,s,pot,fee,paid,t1,sc,meth in rows:\n    print(f\"{h if h is None else round(h,1):>8} {s:28} {pot:>7} {fee:>5} {paid:>4} {t1:>6} {sc:>7} {meth}\")\nPY",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "a0e49af8-77c7-40e7-9314-1579eccadad1",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ec89d0c1-e3b4-4435-a690-5c543a71b431",
+  "timestamp": "2026-11-17T11:21:48.419816",
+  "source": "user",
+  "parent_id": "3040e0a7-3c0b-454e-89a2-46f36bc7d787",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Pake openai atau tidak tetep aja sama aja error"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

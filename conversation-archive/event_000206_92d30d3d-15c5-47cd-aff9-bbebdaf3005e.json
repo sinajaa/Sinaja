@@ -1,0 +1,24 @@
+{
+  "id": "92d30d3d-15c5-47cd-aff9-bbebdaf3005e",
+  "timestamp": "2026-11-17T07:07:38.089946",
+  "source": "environment",
+  "parent_id": "09147f2e-3e40-437d-8672-ef10fad59783",
+  "tool_name": "browser_get_state",
+  "tool_call_id": "chatcmpl-tool-a85e535ecd0a954e",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "{\n  \"url\": \"https://dash.allmodels.io/login\",\n  \"title\": \"Allmodels Dashboard\",\n  \"tabs\": [\n    {\n      \"url\": \"https://dash.allmodels.io/login\",\n      \"title\": \"Allmodels Dashboard\"\n    }\n  ],\n  \"interactive_elements\": [\n    {\n      \"index\": 19,\n      \"tag\": \"div\",\n      \"text\": \"\"\n    },\n    {\n      \"index\": 97,\n      \"tag\": \"a\",\n      \"text\": \"\",\n      \"href\": \"https://allmodels.io/\"\n    },\n    {\n      \"index\": 6,\n      \"tag\": \"a\",\n      \"text\": \"\\u2190 Back to allmodels.io\",\n      \"href\": \"https://allmodels.io/\"\n    },\n    {\n      \"index\": 22,\n      \"tag\": \"button\",\n      \"text\": \"Google\\nContinue with Google\"\n    },\n    {\n      \"index\": 23,\n      \"tag\": \"button\",\n      \"text\": \"GitHub\\nContinue with GitHub\"\n    },\n    {\n      \"index\": 14,\n      \"tag\": \"input\",\n      \"text\": \"\",\n      \"placeholder\": \"you@company.com\"\n    },\n    {\n      \"index\": 16,\n      \"tag\": \"button\",\n      \"text\": \"Reset\"\n    },\n    {\n      \"index\": 15,\n      \"tag\": \"input\",\n      \"text\": \"\"\n    },\n    {\n      \"index\": 17,\n      \"tag\": \"button\",\n      \"text\": \"Sign in\"\n    },\n    {\n      \"index\": 24,\n      \"tag\": \"a\",\n      \"text\": \"Create an account\",\n      \"href\": \"/signup\"\n    },\n    {\n      \"index\": 161,\n      \"tag\": \"section\",\n      \"text\": \"\"\n    }\n  ]\n}"
+      }
+    ],
+    "is_error": false,
+    "screenshot_data": null,
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "BrowserObservation"
+  },
+  "action_id": "2a91057e-3ab2-4468-adbf-a6d9da89c2cf",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

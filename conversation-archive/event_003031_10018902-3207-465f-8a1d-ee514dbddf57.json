@@ -1,0 +1,36 @@
+{
+  "id": "10018902-3207-465f-8a1d-ee514dbddf57",
+  "timestamp": "2026-11-17T13:26:16.540880",
+  "source": "environment",
+  "parent_id": "b7498e12-c2b2-4ac5-af41-55cd59e1c2ed",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-b5150999a373e1cb",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "=== hotline.dev ===\n Hotline Computer \u2014 a Linux desktop for coding agents, over MCP Hotline Computer v0.11.0 guides install Hotline Computer A Linux desktop for your coding agent, in a rootless container on your machine. Any MCP client drives it with eight tools. You watch from your browser and take the mouse when it needs you. An illustration open in Pinta. The observer shows a completed Nix preparation job. Reading Wikipedia in Chromium. btop running in a full-height terminal on the left. Exploring San Francisco in OpenStreetMap. Claude serving a site on its own computer, every job it ran logged on the right. 1920 by 1080. Install Copy $ export TOKEN=$(openssl rand -hex 24) $ docker run -d --name computer \\ --cap-drop=ALL --security-opt no-new-privileges \\ --pids-limit 1024 --memory 4g --shm-size 1g \\ -p 127.0.0.1:8787:8787 -e HOTLINE_COMPUTER_TOKEN= \"$TOKEN\" \\ -v computer-home:/home/agent \\ ghcr.io/1bros\n\n=== bootstrapped-credits ===\n# Awesome Bootstrapped Credits\n\n**An awesome list of startup credits you can get without VC.**\n\nCloud and AI companies give startups free credit to pay for their services, hoping you stay once it runs out. You apply, they put a balance on your account, and your bills come out of it. The big numbers in most lists go to startups with venture money. This list is for a company without investors, which is what \"bootstrapped\" means.\n\nMost of these programs don't ask for a US company. The ones that do say so in their row.\n\nThe clock usually starts the day you're approved, and a year later the unused balance is gone. So apply right before you start paying for that service, not on day one.\n\nWith $0 raised we got **$30,500** in credits. AWS gave $10,000, Cloudflare\nanother $10,000, DigitalOcean $5,000, Google Cloud $3,000 and OpenAI $2,500.\n\nWe are a small self-funded data company. This is what's worth applying for when\nall you have is a registered company, a live website and an email on your own\ndomain. Every row says what a bootstrapped\ncompany gets, how long it lasts and when we last checked it.\n\nApplied and waiting: Databricks (via AWS Activate), AWS next tier ($25,000 via\nNVIDIA Inception). We update the total only when credits land.\n\n## Five things we learned\n\n1. Credits expire. Most clocks start at approval and run 6 to 24 months, so we\n   apply the week real load starts.\n2. The big number is a ladder. Microsoft's $150k starts at $200, then becomes\n   $5k, and the rest unlocks only if you use 5 Azure services, then 7, then 10,\n   for 60 days in a row, so if you want it you start early because the ladder\n   takes months.\n3. Google and Microsoft credits don't pay for Claude. On both clouds it's billed\n   through the marketplace, and credits skip marketplace purchases.\n4. NVIDIA Inception is free, took one day, and AWS used it to top our credits up\n   to $10,000.\n5. Brex, Mercury and Clerky show partner offers once you open an account. Every\n   customer sees the same list.\n\n## Credits for AI models\n\n<!-- models:start -->\n| Program | Bootstrapped gets | Expires | Claude | GPT | Open models | We got | Checked |\n|---|---|---|---|---|---|---|---|\n| [AWS Activate (Founders)](https://aws.amazon.com/startups/credits) (above $1,000 needs a provider code; without an investor, Clerky perks and NVIDIA Inception give one) | $1,000 direct; up to $10,000 total via NVIDIA Inception | about 2 years | yes (Bedrock) | some | yes | $10,000 ($5,000 via Clerky, topped up to $10,000 via NVIDIA Inception) | 2026-11-12 |\n| [OpenRouter Startup Program](https://openrouter.ai/startups) (needs a partner referral key; without an investor, the key is in the Mercury perks) | up to $3,000 + 12 months without fees; Brex and Mercury also give a separate $1,000 OpenRouter perk | 6 months after activation | yes | yes | yes | - | 2026-11-14 |\n| [OpenAI (Brex partner perk, US companies only)](https://www.brex.com/support/brex-partner-perks) | $1,000 | 1 year | no | yes | no | $2,500 (earlier, larger version of this offer) | 2026-11-14 |\n| [Microsoft for Startups (no investor code)](https://www.microsoft.com/en-us/startups) | $200, then $5,000 after business verification, then $25k / $50k / $150k | 90 days / 180 days, the $25k step lasts 2 years | no (Claude in Foundry is billed via Marketplace) | yes | DeepSeek, Grok | - | 2026-11-14 |\n| [Google for Startups Cloud (Start tier)](https://cloud.google.com/startup) | $2,000, plus $1,000 GenAI App Builder | 1 to 2 years | no (Claude on Vertex is a Marketplace purchase) | no | Gemini | $3,000 | 2026-10-19 |\n| [DigitalOcean Hatch (paused until early 2027)](https://www.digitalocean.com/hatch) | up to $5,000 | 12 months | no | no | yes (DeepSeek, Qwen, GLM, Kimi) | $5,000 | 2026-11-14 |\n| [Together AI Startup Accelerator (Build)](https://www.together.ai/startup-accelerator) | up to $15,000 + 3 hours with an engineer | not published (third parties say 12 months) | no | no | yes | - | 2026-11-14 |\n| [Anthropic Claude for Startups (cohort full)](https://claude.com/programs/startups) | $1,000 API + 1 year of Claude Team | - | yes (direct API only) | n/a | n/a | - | 2026-11-14 |\n<!-- models:end -->"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && echo \"=== hotline.dev ===\"; curl -s --max-time 25 -A \"Mozilla/5.0\" \"https://computer.hotline.dev/\" | python3 -c \"\nimport sys,re,html\ns=sys.stdin.read(); s=re.sub(r'<script.*?</script>','',s,flags=re.S); s=re.sub(r'<style.*?</style>','',s,flags=re.S)\nt=html.unescape(re.sub(r'<[^>]+>',' ',s)); t=re.sub(r'\\s+',' ',t); print(t[:900])\n\"; echo; echo \"=== bootstrapped-credits ===\"; curl -s --max-time 25 \"https://raw.githubusercontent.com/aidenixai/bootstrapped-credits/main/README.md\" | head -50",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "0e1926bf-67e8-45fc-ac38-d3f3da883b27",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

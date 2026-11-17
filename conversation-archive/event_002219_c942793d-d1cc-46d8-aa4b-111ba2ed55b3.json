@@ -1,0 +1,28 @@
+{
+  "id": "c942793d-d1cc-46d8-aa4b-111ba2ed55b3",
+  "timestamp": "2026-11-17T11:07:57.255531",
+  "source": "user",
+  "parent_id": "4fe5e74d-9f0c-4b3b-b03b-3ea16e69258f",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Sialan semua model jadi ikut error semua setelah saya tambahin llm profil nomask,saya coba utak Atik pasang api key obcurify refresh tutup browser dan akhirnya bisa kembali bisa chat pake model obcurify lagi,sial sial,saya isi profil llm nomask malah error semua "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

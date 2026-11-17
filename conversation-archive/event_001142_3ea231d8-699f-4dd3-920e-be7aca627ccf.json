@@ -1,0 +1,36 @@
+{
+  "id": "3ea231d8-699f-4dd3-920e-be7aca627ccf",
+  "timestamp": "2026-11-17T08:07:44.595075",
+  "source": "environment",
+  "parent_id": "599b8f00-70d0-4ea1-aaf8-81c58c4ffc4d",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-a828ada50b4eb868",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "#!/usr/bin/env python3\n\"\"\"Klien capbypass.pro \u2014 solver captcha cadangan.\n\n  python3 capsolve.py balance\n  python3 capsolve.py turnstile <url> <sitekey>\n  python3 capsolve.py recaptcha3 <url> <sitekey> [action]\n  python3 capsolve.py geetest <url> <captchaId>\n\nSebagai modul:\n  from capsolve import solve_turnstile, solve_recaptcha3\n\"\"\"\nimport json\nimport sys\nimport time\nimport urllib.error\nimport urllib.request\n\nKEY = \"cap_live_2a9c30a47d0bbdfde2f4470b61648b0b\"\nAPI = \"https://api.capbypass.pro\"\nUA = \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\"\n\n\ndef _post(path, payload, timeout=30):\n    req = urllib.request.Request(API + path, data=json.dumps(payload).encode(),\n                                 headers={\"Content-Type\": \"application/json\",\n                                          \"Accept\": \"application/json\",\n                                          \"User-Agent\": UA})\n    try:\n        with urllib.request.urlopen(req, timeout=timeout) as r:\n            return json.load(r)\n    except urllib.error.HTTPError as e:\n        body = e.read().decode(errors=\"ignore\")\n        try:\n            return json.loads(body)\n        except json.JSONDecodeError:\n            raise RuntimeError(f\"HTTP {e.code}: {body[:120]}\")\n\n\ndef balance():\n    return _post(\"/getBalance\", {\"clientKey\": KEY}).get(\"balance\")\n\n\ndef _run(task, timeout=180, poll=3):\n    res = _post(\"/createTask\", {\"clientKey\": KEY, \"task\": task})\n    if res.get(\"errorId\"):\n        raise RuntimeError(f\"createTask: {res.get('errorCode')} {res.get('errorDescription')}\")\n    tid = res[\"taskId\"]\n    deadline = time.time() + timeout\n    while time.time() < deadline:\n        time.sleep(poll)\n        r = _post(\"/getTaskResult\", {\"clientKey\": KEY, \"taskId\": tid})\n        if r.get(\"status\") == \"ready\":\n            return r[\"solution\"]\n        if r.get(\"errorId\"):\n            raise RuntimeError(f\"{r.get('errorCode')}: {r.get('errorDescription')}\")\n    raise TimeoutError(f\"task {tid} belum selesai dalam {timeout}s\")\n\n\ndef solve_turnstile(url, sitekey, **kw):\n    s = _run({\"type\": \"TurnstileTaskProxyLess\", \"websiteURL\": url, \"websiteKey\": sitekey}, **kw)"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && sed -n '1,60p' capsolve.py",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 65735,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "83970498-66ef-4dc0-b88e-5a2a2b78e54b",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

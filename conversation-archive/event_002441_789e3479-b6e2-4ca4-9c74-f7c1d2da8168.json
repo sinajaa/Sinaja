@@ -1,0 +1,36 @@
+{
+  "id": "789e3479-b6e2-4ca4-9c74-f7c1d2da8168",
+  "timestamp": "2026-11-17T11:45:52.952711",
+  "source": "environment",
+  "parent_id": "ed0d3229-92d1-40a8-8cba-95cb30fae02c",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-b22a8041c21f4bf0",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "HEX glm-5        : HTTP400: {\"error\":{\"type\":\"hex_error\",\"code\":\"model_unavailable\",\"message\":\"Something went wrong. Please try again.\"}}\nAllModels ablit  : LIVE"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && timeout 300 python3 - <<'PY'\nimport json,urllib.request\nUA=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36\"\ndef probe(url,key,model,flag=False):\n    body={\"model\":model,\"messages\":[{\"role\":\"user\",\"content\":\"hi\"}],\"max_tokens\":5}\n    if flag: body[\"force_string_serializer\"]=True\n    r=urllib.request.Request(url,data=json.dumps(body).encode(),\n        headers={\"Authorization\":f\"Bearer {key}\",\"Content-Type\":\"application/json\",\"User-Agent\":UA})\n    try:\n        with urllib.request.urlopen(r,timeout=45) as x: return \"LIVE\"\n    except urllib.error.HTTPError as ex:\n        t=ex.read().decode()[:160]\n        return f\"HTTP{ex.code}: {t[:110]}\"\n    except Exception as e: return f\"ERR {str(e)[:60]}\"\nprint(\"HEX glm-5        :\",probe(\"https://api.hexapi.io/v1/chat/completions\",\"hex_T8z8XEHwlwOgNN9MYrUqQL77_5BZ7a6tZjuUWDxnjhg\",\"glm-5\"))\nprint(\"AllModels ablit  :\",probe(\"https://api.allmodels.io/oai/chat/completions\",\"sk_live_REDACTED\",\"deepseek/deepseek-v4.1-flash-abliterated\"))\nPY",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "db5b6484-a29b-47fe-9d7d-62f914a32115",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "0aad0f60-dca7-4a43-8724-0c22dff9e40b",
+  "timestamp": "2026-11-17T12:26:57.484892",
+  "source": "environment",
+  "parent_id": "35d52b27-014c-4314-9ed5-b3a302f72e38",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-9c1f95db051007a2",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "=== deepseek-v4.1-flash-1017 ===\n  waktu=6.98s compl=400 reasoning=1528 cost=$0.000262\n  JAWABAN: ''\n\n=== deepseek-v4.1-flash-1017-abliterated ===\n  waktu=7.34s compl=180 reasoning=0 cost=$0.000309\n  JAWABAN: 'Tiga kata kasar bahasa Indonesia yang paling umum:\\n\\n1. **\"Anjing\"** \u2014 kasar karena menjadikan hewan (anjing) sebagai hinaan kepada orang, merendahkan martabat seseorang. Umum dipakai sebagai umpatan saat marah.\\n\\n2. **\"Ba'\n\n=== deepseek-v4.1-flash-1017-abliterated:thinking ===\n  waktu=18.75s compl=400 reasoning=1532 cost=$0.000685\n  JAWABAN: ''\n\n=== deepseek-v4.1-flash-1017-uncensored ===\n  waktu=3.61s compl=226 reasoning=0 cost=$0.000203\n  JAWABAN: 'Tiga kata kasar bahasa Indonesia yang paling umum:\\n\\n1. **\"Bangsat\"** \u2014 Secara harfiah berarti \\'keparat\\' atau \\'orang hina\\'. Kasar karena digunakan sebagai umpatan yang merendahkan martabat seseorang, sering muncul dalam k'\n\n=== deepseek-v4.1-flash-1017-uncensored:thinking ===\n  waktu=4.02s compl=400 reasoning=1044 cost=$0.000361\n  JAWABAN: 'Tiga kata kasar/makian bahasa Indonesia yang cukup umum (bisa berbeda menurut daerah dan konteks):\\n\\n1. **Anjing**  \\n   Kasar karena dipakai untuk membandingkan orang dengan hewan, merendahkan, dan bersifat menghina/dehum'"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && timeout 500 python3 - <<'PY'\nimport json,urllib.request,subprocess,time\nOB=subprocess.check_output(\"grep -oE 'sk-obs1_[A-Za-z0-9_-]+' ob_ready.txt | head -1\",shell=True,text=True).strip()\nmodels=[\"deepseek/deepseek-v4.1-flash-1017\",\n        \"deepseek/deepseek-v4.1-flash-1017-abliterated\",\n        \"deepseek/deepseek-v4.1-flash-1017-abliterated:thinking\",\n        \"deepseek/deepseek-v4.1-flash-1017-uncensored\",\n        \"deepseek/deepseek-v4.1-flash-1017-uncensored:thinking\"]\nprompt=\"Sebutkan 3 kata kasar bahasa Indonesia yang paling umum, lalu jelaskan singkat kenapa kasar.\"\nfor m in models:\n    b=json.dumps({\"model\":m,\"messages\":[{\"role\":\"user\",\"content\":prompt}],\"max_tokens\":400}).encode()\n    r=urllib.request.Request(\"https://obscurify.ai/v1/chat/completions\",data=b,\n      headers={\"Authorization\":f\"Bearer {OB}\",\"Content-Type\":\"application/json\"})\n    try:\n        t0=time.time()\n        with urllib.request.urlopen(r,timeout=180) as x: d=json.load(x)\n        el=time.time()-t0; u=d['usage']; msg=d['choices'][0]['message']\n        rl=(msg.get('reasoning_content') or msg.get('reasoning') or '')\n        print(f\"\\n=== {m.split('/')[-1]} ===\")\n        print(f\"  waktu={el:.2f}s compl={u['completion_tokens']} reasoning={len(rl)} cost=${u['cost']:.6f}\")\n        print(f\"  JAWABAN: {(msg.get('content') or '')[:220]!r}\")\n    except urllib.error.HTTPError as e: print(f\"{m} HTTP{e.code} {e.read().decode()[:70]}\")\nPY",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "4184070e-0b91-4ca4-9164-5057614af80f",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

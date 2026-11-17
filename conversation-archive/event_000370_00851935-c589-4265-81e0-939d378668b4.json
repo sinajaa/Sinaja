@@ -1,0 +1,36 @@
+{
+  "id": "00851935-c589-4265-81e0-939d378668b4",
+  "timestamp": "2026-11-17T07:19:15.356747",
+  "source": "environment",
+  "parent_id": "68cd4963-93dc-487b-9c58-d854aee6d822",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-a31ac5bb8f2eb248",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "key unik: 56 | hidup: 22\ncontoh: {\"object\": \"api_key\", \"name\": \"main\", \"key\": \"nmk_live_h6s...egZC\", \"created\": 1794873749, \"expiration_date\": null, \"has_monthly_limit\": false, \"monthly_usd_limit\": null, \"month_to_date_usd\": 1.010451, \"rate_limits\": {\"requests_per_minute\": 150, \"tokens_per_minute\": 5000000}}"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && python3 - <<'EOF'\nimport json, re, urllib.request, urllib.error, concurrent.futures\nkeys={}\nfor f in ['nm_api_keys.txt','nm2_api.txt','.key_used','.key_current']:\n    try: txt=open(f).read()\n    except: continue\n    for m in re.finditer(r'(nmk_live_[A-Za-z0-9_\\-]{20,})',txt):\n        keys.setdefault(m.group(1),f)\ndef get(k,path):\n    r=urllib.request.Request('https://nomask.ai'+path,headers={'Authorization':'Bearer '+k})\n    try:\n        with urllib.request.urlopen(r,timeout=30) as resp: return json.load(resp),None\n    except urllib.error.HTTPError as e: return None,f'http{e.code}'\n    except Exception as e: return None,type(e).__name__\ndef chk(k):\n    j,err=get(k,'/api/v1/me')\n    if err: return k,None,None,err\n    return k,j,None,None\nlive={}\nwith concurrent.futures.ThreadPoolExecutor(10) as ex:\n    for k,j,e,err in ex.map(chk,list(keys)):\n        if j: live[k]=j\nprint(\"key unik:\",len(keys),\"| hidup:\",len(live))\nif live:\n    print(\"contoh:\",json.dumps(list(live.values())[0])[:300])\njson.dump(live,open('/tmp/nm_live.json','w'))\nEOF",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 63318,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "d7a2f17c-4ae9-4304-91d2-991139e360ef",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

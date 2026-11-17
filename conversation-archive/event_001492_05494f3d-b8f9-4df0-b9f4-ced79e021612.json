@@ -1,0 +1,36 @@
+{
+  "id": "05494f3d-b8f9-4df0-b9f4-ced79e021612",
+  "timestamp": "2026-11-17T09:16:00.196538",
+  "source": "environment",
+  "parent_id": "325aeda6-8e69-4f3d-ba2e-f791bef30315",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-97056e96d86cff0f",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "[200]\n{\n \"app\": {\n  \"compute_unit\": 32,\n  \"cpu_to_mem_ratio\": 2.048\n },\n \"bucket\": {\n  \"storage_gi\": 0.25\n },\n \"cluster\": {\n  \"compute_unit\": 35,\n  \"volume_gi\": 0.5,\n  \"loadbalancer\": 10,\n  \"cpu_to_mem_ratio\": 3.072\n },\n \"database\": {\n  \"MongoDB\": {\n   \"Basic\": {\n    \"price\": 14.99,\n    \"cpu\": \"1\",\n    \"ram\": \"1 GB\",\n    \"storage\": \"6 GB\",\n    \"paused_price\": 3\n   },\n   \"Hobby\": {\n    \"price\": 6.99,\n    \"cpu\": \"0.25\",\n    \"ram\": \"0.5 GB\",\n    \"storage\": \"2 GB\",\n    \"paused_price\": 1\n   },\n   \"Plus\": {\n    \"price\": 59.99,\n    \"cpu\": \"2\",\n    \"ram\": \"4 GB\",\n    \"storage\": \"16 GB\",\n    \"paused_price\": 8\n   },\n   \"Pro\": {\n    \"price\": 89.99,\n    \"cpu\": \"3\",\n    \"ram\": \"6 GB\",\n    \"storage\": \"24 GB\",\n    \"paused_price\": 12\n   },\n   \"Standard\": {\n    \"price\": 29.99,\n    \"cpu\": \"1\",\n    \"ram\": \"2 GB\",\n    \"storage\": \"8 GB\",\n    \"paused_price\": 4\n   },\n   \"Starter\": {\n    \"price\": 12.99,\n    \"cpu\": \"0.5\",\n    \"ram\": \"1 GB\",\n    \"storage\": \"4 GB\",\n    \"paused_price\": 2\n   }\n  },\n  \"MySQL\": {\n   \"Basic\": {\n    \"price\": 12.99,\n    \"cpu\": \"0.5\",\n    \"ram\": \"1 GB\",\n    \"storage\": \"4 GB\",\n    \"paused_price\": 2\n   },\n   \"Hobby\": {\n    \"price\": 3.99,\n    \"cpu\": \"0.25\",\n    \"ram\": \"0.25 GB\",\n    \"storage\": \"1 GB\",\n    \"paused_price\": 0.5\n   },\n   \"Plus\": {\n    \"price\": 29.99,\n    \"cpu\": \"1\",\n    \"ram\": \"2 GB\",\n    \"storage\": \"8 GB\",\n    \"paused_price\": 4\n   },\n   \"Pro\": {\n    \"price\": 59.99,\n    \"cpu\": \"2\",\n    \"ram\": \"4 GB\",\n    \"storage\": \"16 GB\",\n    \"paused_price\": 8\n   },\n   \"Standard\": {\n    \"price\": 14.99,\n    \"cpu\": \"1\",\n    \"ram\": \"1 GB\",\n    \"storage\": \"6 GB\",\n    \"paused_price\": 3\n   },\n   \"Starter\": {\n    \"price\": 6.99,\n    \"cpu\": \"0.25\",\n    \"ram\": \"0.5 GB\",\n    \"storage\": \"2 GB\",\n    \"paused_price\": 1\n   }\n  },\n  \"PostgreSQL\": {\n   \"Basic\": {\n    \"price\": 12.99,\n    \"cpu\": \"0.5\""
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && curl -s --max-time 30 \"https://cloider.com/api/pricing\" -o /tmp/pr.json -w \"[%{http_code}]\\n\"; python3 -c \"\nimport json;d=json.load(open('/tmp/pr.json'))\nprint(json.dumps(d,indent=1)[:1800])\"",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 71910,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "913dd6f4-56d4-490e-a196-616357f12662",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "e5003eef-3a6c-4afc-9d30-1042f9dd56e9",
+  "timestamp": "2026-11-17T11:14:20.607209",
+  "source": "user",
+  "parent_id": "ac48abd0-2322-45f7-815e-b1db6bbbc66a",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Basic\nAdvanced\nThese organization defaults are applied first. Members can apply personal overrides where allowed.\n\n\nName (Optional)\nNomaskk\nName must be 1\u201364 characters: letters, digits, dot, dash, or underscore.\n\n\nCustom Model\ndeepseek_v4.1_flash_1017_uncensored\nProvider connection\nOptional\nNone\nBase URL\nhttps://api.nomask.ai/v1\nAPI Key\n\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\nDon't know your API key? Click here for instructions\n\n\nSave Changes"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

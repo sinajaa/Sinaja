@@ -1,0 +1,36 @@
+{
+  "id": "a56e6793-dc49-4319-a382-8628006b59e4",
+  "timestamp": "2026-11-17T11:18:22.686244",
+  "source": "environment",
+  "parent_id": "2204175e-d269-40cd-ab91-36e17c79deeb",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-b0b36ff3449d8df4",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "openai/gpt-4o                       {\"error\":{\"message\":\"The model 'openai\\/gpt-4o' does not exist or you do not have access to it. List\nopenai/gpt-3.5-turbo                {\"error\":{\"message\":\"The model 'openai\\/gpt-3.5-turbo' does not exist or you do not have access to i\ndeepseek/deepseek-chat              {\"error\":{\"message\":\"The model 'deepseek\\/deepseek-chat' does not exist or you do not have access to"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && K=\"nmk_live_g1r1I3MMlZDJaclmlAFylupkQulRriMVhSaVx3xR\"; for m in \"openai/gpt-4o\" \"openai/gpt-3.5-turbo\" \"deepseek/deepseek-chat\"; do printf \"%-35s \" \"$m\"; curl -s --max-time 50 -X POST \"https://api.nomask.ai/v1/chat/completions\" -H \"Authorization: Bearer $K\" -H \"Content-Type: application/json\" -d \"{\\\"model\\\":\\\"$m\\\",\\\"messages\\\":[{\\\"role\\\":\\\"user\\\",\\\"content\\\":\\\"hi\\\"}],\\\"max_tokens\\\":15}\" -w \"[%{http_code}]\" | head -c 100; echo; done",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "633f47bd-9b06-4ef1-8e98-5f28756c0694",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "12299213-2e02-4010-ae53-1f935d477aa7",
+  "timestamp": "2026-11-17T11:08:51.359949",
+  "source": "agent",
+  "parent_id": "bd142da5-bef4-4ac4-b993-7c88c4e8456c",
+  "thought": [
+    {
+      "cache_prompt": false,
+      "type": "text",
+      "text": ""
+    }
+  ],
+  "reasoning_content": null,
+  "thinking_blocks": [],
+  "responses_reasoning_item": null,
+  "action": {
+    "include_screenshot": false,
+    "kind": "BrowserGetStateAction"
+  },
+  "tool_name": "browser_get_state",
+  "tool_call_id": "chatcmpl-tool-9eda8f0331fcd33a",
+  "tool_call": {
+    "id": "chatcmpl-tool-9eda8f0331fcd33a",
+    "responses_item_id": null,
+    "name": "browser_get_state",
+    "arguments": "{\"summary\": \"Check if settings accessible\"}",
+    "origin": "completion"
+  },
+  "llm_response_id": "chatcmpl-968ceLR8fwVBdja4MevO5s6lyjhII",
+  "security_risk": "UNKNOWN",
+  "critic_result": null,
+  "summary": "Check if settings accessible",
+  "kind": "ActionEvent"
+}

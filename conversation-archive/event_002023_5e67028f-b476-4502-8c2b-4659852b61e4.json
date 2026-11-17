@@ -1,0 +1,76 @@
+{
+  "id": "5e67028f-b476-4502-8c2b-4659852b61e4",
+  "timestamp": "2026-11-17T10:40:32.881013",
+  "source": "environment",
+  "parent_id": "198cfd4e-41ff-49b9-9a9a-7fceb6806be7",
+  "key": "stats",
+  "value": {
+    "usage_to_metrics": {
+      "agent": {
+        "model_name": "openai/deepseek/deepseek-v4.1-flash-1017-uncensored",
+        "accumulated_cost": 0.6614405020080002,
+        "max_budget_per_task": null,
+        "accumulated_token_usage": {
+          "model": "openai/deepseek/deepseek-v4.1-flash-1017-uncensored",
+          "prompt_tokens": 30776878,
+          "completion_tokens": 120431,
+          "cache_read_tokens": 30252243,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 0,
+          "context_window": 0,
+          "per_turn_token": 69696,
+          "response_id": ""
+        }
+      },
+      "condenser": {
+        "model_name": "openai/deepseek/deepseek-v4.1-flash-1017-uncensored",
+        "accumulated_cost": 0.027208724400000002,
+        "max_budget_per_task": null,
+        "accumulated_token_usage": {
+          "model": "openai/deepseek/deepseek-v4.1-flash-1017-uncensored",
+          "prompt_tokens": 93104,
+          "completion_tokens": 7814,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 0,
+          "context_window": 0,
+          "per_turn_token": 14874,
+          "response_id": ""
+        }
+      },
+      "profile:Abi:535b381cf6e2": {
+        "model_name": "openai/abliterated-model-large-flash",
+        "accumulated_cost": 0.0,
+        "max_budget_per_task": null,
+        "accumulated_token_usage": {
+          "model": "openai/abliterated-model-large-flash",
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 0,
+          "context_window": 0,
+          "per_turn_token": 0,
+          "response_id": ""
+        }
+      },
+      "profile:Obcurify:64528bb426a0": {
+        "model_name": "openai/deepseek/deepseek-v4.1-flash-1017-uncensored",
+        "accumulated_cost": 0.2332873171200001,
+        "max_budget_per_task": null,
+        "accumulated_token_usage": {
+          "model": "openai/deepseek/deepseek-v4.1-flash-1017-uncensored",
+          "prompt_tokens": 9884108,
+          "completion_tokens": 48220,
+          "cache_read_tokens": 9654350,
+          "cache_write_tokens": 0,
+          "reasoning_tokens": 0,
+          "context_window": 0,
+          "per_turn_token": 108971,
+          "response_id": ""
+        }
+      }
+    }
+  },
+  "kind": "ConversationStateUpdateEvent"
+}

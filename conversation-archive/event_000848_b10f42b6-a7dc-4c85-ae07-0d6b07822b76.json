@@ -1,0 +1,24 @@
+{
+  "id": "b10f42b6-a7dc-4c85-ae07-0d6b07822b76",
+  "timestamp": "2026-11-17T08:00:06.463627",
+  "source": "environment",
+  "parent_id": "52aa00bf-8190-4b2a-9380-f8b3851c6426",
+  "tool_name": "browser_type",
+  "tool_call_id": "chatcmpl-tool-8d9fbc5f0d4989ed",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Typed 'Budi' into element 2507"
+      }
+    ],
+    "is_error": false,
+    "screenshot_data": null,
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "BrowserObservation"
+  },
+  "action_id": "fd3de955-9ec6-4d5d-8dcf-9717690e199e",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

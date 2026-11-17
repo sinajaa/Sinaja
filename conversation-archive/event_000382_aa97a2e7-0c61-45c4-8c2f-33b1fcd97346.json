@@ -1,0 +1,36 @@
+{
+  "id": "aa97a2e7-0c61-45c4-8c2f-33b1fcd97346",
+  "timestamp": "2026-11-17T07:19:42.388286",
+  "source": "environment",
+  "parent_id": "8640e82d-14d7-40af-a16b-7dd41ce877a1",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-80f4934e0f87a184",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "cd /workspace/project && python3 - <<'EOF'\nimport json, urllib.request, urllib.error, concurrent.futures, re, time\nlive=json.load(open('/tmp/nm_live.json'))\ndef chat(k):\n    body={\"model\":\"deepseek_v4.1_flash_1017_uncensored\",\"messages\":[{\"role\":\"user\",\"content\":\"ok\"}],\"max_tokens\":5}\n    r=urllib.request.Request('https://nomask.ai/api/v1/chat/completions',data=json.dumps(body).encode(),\n        headers={'Authorization':'Bearer '+k,'Content-Type':'application/json'})\n    try:\n        with urllib.request.urlopen(r,timeout=90) as resp: json.load(resp); return k,True\n    except Exception: return k,False\nok=[]\nwith concurrent.futures.ThreadPoolExecutor(5) as ex:\n    for k,s in ex.map(chat,list(live)):\n        if s: ok.append(k)\nemails={}\nfor f in ['nm_api_keys.txt','nm2_api.txt']:\n    for l in open(f):\n        if '|' in l and 'nmk_live_' in l:\n            p=[x.strip() for x in l.split('|')]\n            emails[p[1]]=p[0]\nwith open('nm_ready.txt','w') as f:\n    f.write(\"# nomask \u2014 key TERUJI CHAT OK\\n\")\n    f.write(f\"# total {len(ok)} key | {time.strftime('%Y-%m-%d %H:%M')}\\n\")\n    f.write(\"# format: email | api_key | model\\n\")\n    for k in ok: f.write(f\"{emails.get(k,'?')} | {k} | deepseek_v4.1_flash_1017_uncensored\\n\")\nprint(\"nomask siap pakai:\",len(ok))\nEOF\n\nnomask siap pakai: 19\n\n\necho \"=== hasil ===\"; head -4 nm_ready.txt; wc -l nm_ready.txt ob_ready.txt\n=== hasil ===\n# nomask \u2014 key TERUJI CHAT OK\n# total 19 key | 2026-11-17 07:19\n# format: email | api_key | model\nkebumenlur.q5222549@gmail.com | nmk_live_g1r1I3MMlZDJaclmlAFylupkQulRriMVhSaVx3xR | deepseek_v4.1_flash_1017_uncensored\n   22 nm_ready.txt\n  102 ob_ready.txt\n  124 total"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && python3 - <<'EOF'\nimport json, urllib.request, urllib.error, concurrent.futures, re, time\nlive=json.load(open('/tmp/nm_live.json'))\ndef chat(k):\n    body={\"model\":\"deepseek_v4.1_flash_1017_uncensored\",\"messages\":[{\"role\":\"user\",\"content\":\"ok\"}],\"max_tokens\":5}\n    r=urllib.request.Request('https://nomask.ai/api/v1/chat/completions',data=json.dumps(body).encode(),\n        headers={'Authorization':'Bearer '+k,'Content-Type':'application/json'})\n    try:\n        with urllib.request.urlopen(r,timeout=90) as resp: json.load(resp); return k,True\n    except Exception: return k,False\nok=[]\nwith concurrent.futures.ThreadPoolExecutor(5) as ex:\n    for k,s in ex.map(chat,list(live)):\n        if s: ok.append(k)\nemails={}\nfor f in ['nm_api_keys.txt','nm2_api.txt']:\n    for l in open(f):\n        if '|' in l and 'nmk_live_' in l:\n            p=[x.strip() for x in l.split('|')]\n            emails[p[1]]=p[0]\nwith open('nm_ready.txt','w') as f:\n    f.write(\"# nomask \u2014 key TERUJI CHAT OK\\n\")\n    f.write(f\"# total {len(ok)} key | {time.strftime('%Y-%m-%d %H:%M')}\\n\")\n    f.write(\"# format: email | api_key | model\\n\")\n    for k in ok: f.write(f\"{emails.get(k,'?')} | {k} | deepseek_v4.1_flash_1017_uncensored\\n\")\nprint(\"nomask siap pakai:\",len(ok))\nEOF\necho \"=== hasil ===\"; head -4 nm_ready.txt; wc -l nm_ready.txt ob_ready.txt",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 63318,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "082f5d5a-aeb4-4a54-8bad-0f6088dd72a9",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

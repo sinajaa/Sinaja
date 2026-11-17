@@ -1,0 +1,28 @@
+{
+  "id": "3558736c-cd8d-4488-9ad1-e78fd0dc14f8",
+  "timestamp": "2026-11-17T12:55:19.225626",
+  "source": "user",
+  "parent_id": "207efb36-624b-4ca9-8d6e-23550d8fc58a",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Kan pake kode kamu lupa apa gmn dah, padahal sebelumnya juga kamu yg buat akun massal "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

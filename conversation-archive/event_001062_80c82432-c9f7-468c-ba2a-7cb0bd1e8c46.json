@@ -1,0 +1,36 @@
+{
+  "id": "80c82432-c9f7-468c-ba2a-7cb0bd1e8c46",
+  "timestamp": "2026-11-17T08:05:52.124408",
+  "source": "environment",
+  "parent_id": "ce78a44c-94a2-4d27-b19d-5fb896e3786c",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-b345312203306ca4",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "import{r as n,y as C,z as x,A as h,j as e,C as c,D as g,B as j,L as E}from\"./index-SiibUZJO.js\";import{C as k,a as L,b as v,c as w,d as A}from\"./card-C4tlAeBS.js\";import{e as N}from\"./recaptcha-DcjYUlMS.js\";const S={...c.claimed,description:`${c.claimed.description} If it hasn't arrived within a minute, open your claim link again.`};function _({takeToken:t=C,check:o=N,claim:l=h}){const[a]=n.useState(t),[i,m]=n.useState(a?\"claiming\":\"invalid_link\"),[r,f]=n.useState(0),d=n.useRef(-1);y(),n.useEffect(()=>{if(!a||d.current===r)return;d.current=r,m(\"claiming\");const s=r===0?\"auto\":\"manual\";x(o,p=>l(a,p,s)).then(m)},[a,r,o,l]);const u=i===\"claimed\"?S:c[i];return e.jsx(\"main\",{className:\"flex min-h-screen items-center justify-center bg-muted/30 p-5\",children:e.jsxs(k,{className:\"w-full max-w-md\",children:[e.jsxs(L,{children:[e.jsx(v,{children:u.title}),e.jsx(w,{role:i===\"claiming\"?\"status\":void 0,children:u.description})]}),e.jsxs(A,{className:\"flex flex-wrap items-center gap-4\",children:[g.has(i)&&a&&e.jsx(j,{onClick:()=>f(s=>s+1),children:i===\"manual_required\"?\"Claim free credit\":\"Try again\"}),e.jsx(E,{to:\"/login\",className:\"text-sm font-medium underline underline-offset-4\",children:\"Sign in to AllModels\"})]})]})})}function y(){n.useEffect(()=>{const t=document.createElement(\"meta\");return t.name=\"referrer\",t.content=\"no-referrer\",document.head.appendChild(t),()=>t.remove()},[])}const B=()=>e.jsx(_,{});export{B as component};\n\n=== recaptcha.js ===\nHTTP 200\nconst A=\"6LfevBIuAAAAABj4MatLSIOOPOFa_IBz1nG6veLh\".trim(),C=\"claim_credit\",l=1e4;let i=null;function s(e){return`https://www.google.com/recaptcha/enterprise.js?render=${encodeURIComponent(e)}`}function u(e){return i??(i=new Promise((c,r)=>{const t=document.createElement(\"script\");t.src=s(e),t.async=!0;const o=n=>{window.clearTimeout(a),i=null,t.remove(),r(new Error(n))},a=window.setTimeout(()=>o(\"reCAPTCHA did not load in time\"),l);t.onload=()=>{var d;const n=(d=window.grecaptcha)==null?void 0:d.enterprise;if(!n)return o(\"reCAPTCHA did not initialize\");n.ready(()=>{window.clearTimeout(a),c(n)})},t.onerror=()=>o(\"reCAPTCHA failed to load\"),document.head.appendChild(t)})),i}async function w(e=A){if(!e)throw new Error(\"reCAPTCHA is not configured\");const r=await(await u(e)).execute(e,{action:C});if(!r)throw new Error(\"reCAPTCHA returned no token\");return r}export{w as e};"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && cat /tmp/claim.js | head -c 1500; echo; echo \"=== recaptcha.js ===\"; curl -s --max-time 60 \"https://dash.allmodels.io/assets/recaptcha-DcjYUlMS.js\" -o /tmp/rc.js -w \"HTTP %{http_code}\\n\"; cat /tmp/rc.js | head -c 1200",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 65735,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "fdf98bb1-6d18-49f7-bce2-92fb1c24e478",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

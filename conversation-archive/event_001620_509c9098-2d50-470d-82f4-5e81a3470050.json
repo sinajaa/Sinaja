@@ -1,0 +1,28 @@
+{
+  "id": "509c9098-2d50-470d-82f4-5e81a3470050",
+  "timestamp": "2026-11-17T09:31:54.746339",
+  "source": "user",
+  "parent_id": "332644b9-abd7-4e31-908f-582eaceeba35",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Fokus disini modelnya yang uncensored si,dari awal aku selalu fokus di model uncensored jadi lebih bebas aja"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

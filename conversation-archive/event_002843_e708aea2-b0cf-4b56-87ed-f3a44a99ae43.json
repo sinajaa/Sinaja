@@ -1,0 +1,28 @@
+{
+  "id": "e708aea2-b0cf-4b56-87ed-f3a44a99ae43",
+  "timestamp": "2026-11-17T12:54:01.798290",
+  "source": "user",
+  "parent_id": "bf77a3e8-ff6f-4e21-bd58-6c17d57c26d2",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Akun yg mana sk-obs1_INupivHBQfiozGBfFI3vwQAAAADxnYXc6olhcui5RWh0e7KivAqHw9E-pL4 ini apikey mau saya cek di website "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

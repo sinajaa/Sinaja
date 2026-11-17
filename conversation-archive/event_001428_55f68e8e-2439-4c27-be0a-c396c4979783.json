@@ -1,0 +1,36 @@
+{
+  "id": "55f68e8e-2439-4c27-be0a-c396c4979783",
+  "timestamp": "2026-11-17T08:41:44.315641",
+  "source": "environment",
+  "parent_id": "923d44c7-b3a1-446c-89ad-5e9f8d30c287",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-82d57be13816fd37",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "cd /workspace/project && printf 'Cerebras|qwen-3.8-27b,gpt-oss-120b|csk-5hwek3y8kf2cxkdcprxep2m2w5tkwhdp5ywkrr85m8hfc6yk|https://api.cerebras.ai/v1\\n' >> cerebras_keys.txt && cat cerebras_keys.txt && python3 - <<'PY'\np='AKSES.md'; t=open(p).read()\nadd='''## Cerebras (api.cerebras.ai) \u2014 17 Nov\nKey: `csk-5hwek...fc6yk` -> **HIDUP**, 2 model.\n**Model (hanya 2):**\n| model | reasoning | catatan |\n|---|---|---|\n| `qwen-3.8-27b` | ya (`reasoning` field) | balas + reasoning terpisah |\n| `gpt-oss-120b` | ya | idem |\n**Kuota per akun** (bukan per key \u2014 key baru di akun sama = limit sama):\n- 5 req/menit, 150 req/jam, 2400 req/hari\n- 30k token/menit, 1M token/jam, 1M token/hari\n**Burst 25 req -> cuma 3 yang 200.** Ketat di menit pertama.\n**API:** OpenAI-compatible. `https://api.cerebras.ai/v1/models`, `/v1/chat/completions`,\nheader `Authorization: Bearer csk-...`. SDK: `cerebras-cloud-sdk` (Cerebras client).\n**Catatan:** respons punya field `message.reasoning` (bukan cuma `content`).\nPakai `max_completion_tokens` (bukan `max_tokens`).\nTidak ada model uncensored/abliterated. Gratis (tier free), tanpa kartu.\n'''\nt=t.replace(\"## Catatan keamanan\", add.strip()+\"\\n\\n## Catatan keamanan\")\nopen(p,'w').write(t); print(\"AKSES.md ok\")\nPY\nCerebras|qwen-3.8-27b,gpt-oss-120b|csk-5hwek3y8kf2cxkdcprxep2m2w5tkwhdp5ywkrr85m8hfc6yk|https://api.cerebras.ai/v1\n\nAKSES.md ok\n\n\ngit add -A && git -c user.name=\"openhands\" -c user.email=\"openhands@all-hands.dev\" commit -q -m \"Add Cerebras: key alive, 2 models (qwen-3.8-27b, gpt-oss-120b), per-account limits\nCo-authored-by: openhands <openhands@all-hands.dev>\" && git --no-pager log --oneline -1\ned3d25d (HEAD -> master) Add Cerebras: key alive, 2 models (qwen-3.8-27b, gpt-oss-120b), per-account limits"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && printf 'Cerebras|qwen-3.8-27b,gpt-oss-120b|csk-5hwek3y8kf2cxkdcprxep2m2w5tkwhdp5ywkrr85m8hfc6yk|https://api.cerebras.ai/v1\\n' >> cerebras_keys.txt && cat cerebras_keys.txt && python3 - <<'PY'\np='AKSES.md'; t=open(p).read()\nadd='''## Cerebras (api.cerebras.ai) \u2014 17 Nov\nKey: `csk-5hwek...fc6yk` -> **HIDUP**, 2 model.\n\n**Model (hanya 2):**\n| model | reasoning | catatan |\n|---|---|---|\n| `qwen-3.8-27b` | ya (`reasoning` field) | balas + reasoning terpisah |\n| `gpt-oss-120b` | ya | idem |\n\n**Kuota per akun** (bukan per key \u2014 key baru di akun sama = limit sama):\n- 5 req/menit, 150 req/jam, 2400 req/hari\n- 30k token/menit, 1M token/jam, 1M token/hari\n\n**Burst 25 req -> cuma 3 yang 200.** Ketat di menit pertama.\n\n**API:** OpenAI-compatible. `https://api.cerebras.ai/v1/models`, `/v1/chat/completions`,\nheader `Authorization: Bearer csk-...`. SDK: `cerebras-cloud-sdk` (Cerebras client).\n\n**Catatan:** respons punya field `message.reasoning` (bukan cuma `content`).\nPakai `max_completion_tokens` (bukan `max_tokens`).\nTidak ada model uncensored/abliterated. Gratis (tier free), tanpa kartu.\n'''\nt=t.replace(\"## Catatan keamanan\", add.strip()+\"\\n\\n## Catatan keamanan\")\nopen(p,'w').write(t); print(\"AKSES.md ok\")\nPY\ngit add -A && git -c user.name=\"openhands\" -c user.email=\"openhands@all-hands.dev\" commit -q -m \"Add Cerebras: key alive, 2 models (qwen-3.8-27b, gpt-oss-120b), per-account limits\n\nCo-authored-by: openhands <openhands@all-hands.dev>\" && git --no-pager log --oneline -1",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 71910,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "c304a3c9-6b7a-411d-817f-8bcccb30019a",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

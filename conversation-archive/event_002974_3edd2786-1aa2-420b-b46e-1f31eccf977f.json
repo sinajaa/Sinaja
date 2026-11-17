@@ -1,0 +1,36 @@
+{
+  "id": "3edd2786-1aa2-420b-b46e-1f31eccf977f",
+  "timestamp": "2026-11-17T13:18:56.771058",
+  "source": "environment",
+  "parent_id": "e026b4ab-1031-4992-83bc-762200a5ba59",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-87e8ec4e3c3fc085",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "=== /credits ===\n\n Open Uncensored Models\n Rankings\n Providers\n Chat\n Docs\n Methodology\n Blog\n Balance Get API key\n Credits\n Pay per token. No account.\n Buy credits with a card and get an API key on the spot. No password, no subscription, no seat pricing. Top up the same key whenever you like.\n Buy credits\n Credits\n $10 $25 $50 $100\n Or a custom amount $\n Add to a key I already have Refill automatically Credits $25.00\n Total $25.00\n No fee at checkout and no markup: requests are billed at exactly the provider's per token price. Cached prompt tokens are billed at the provider's cached price.\n Sales tax or VAT is added at checkout where we are required to collect it.\n Continue to checkout By continuing you agree to the terms and refund policy .\n Payments run on Stripe Checkout. Your card never touches our servers.\n Check balance\n Check\n How it works\n 0 1 Pay with Stripe\n Card, Apple Pay or Google Pay through Stripe Checkout. Stripe emails the receipt.\n 0 2 Copy your key\n You land back here with an ou- key. It is shown once. We keep only a hash of it.\n 0 3 Call the API\n Send it as Authorization: Bearer from any OpenAI SDK. Tick \u201cAdd to a key\u201d to top up.\n Open Uncensored The open router for uncensored models. Every model scored on what it refuses, what it breaks, and how fast it runs.\n CSAM is prohibited on every route, every provider, every model. No exceptions, no settings.\n Product\n Models\n Rankings\n Leaderboard\n Best uncensored API\n Cheapest uncensored API\n Providers\n Ch\n\n=== api /v1/models ===\n{\"object\": \"list\", \"data\": [{\"id\": \"abliterated-large-flash\", \"object\": \"model\", \"created\": 1794921532, \"owned_by\": \"abliterated\", \"base_model\": \"deepseek-ai/DeepSeek-V4.1-Flash-1017\", \"abliteration_method\": \"abliteration\", \"hf_repo\": null, \"modality\": \"text\", \"context_length\": 1048576, \"pricing\": {\"prompt\": \"0.000001\", \"completion\": \"0.000002\"}, \"tags\": [\"vision\"], \"eval_scores\": {}, \"quality_score\": null, \"available\": true, \"providers\": [{\"name\": \"abliteration-ai\", \"status\": \"online\", \"configu"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && echo \"=== /credits ===\"; curl -s --max-time 25 -A \"Mozilla/5.0\" \"https://openuncensored.com/credits\" | python3 -c \"\nimport sys,re,html\ns=sys.stdin.read(); s=re.sub(r'<script.*?</script>','',s,flags=re.S); s=re.sub(r'<style.*?</style>','',s,flags=re.S)\ns=re.sub(r'<(br|/p|/div|/li|/h[1-6])>','\\n',s)\nt=html.unescape(re.sub(r'<[^>]+>',' ',s)); t=re.sub(r'[ \\t]+',' ',t); t=re.sub(r'\\n\\s*\\n+','\\n',t)\nprint(t[:1500])\n\"; echo; echo \"=== api /v1/models ===\"; curl -s --max-time 30 -A \"Mozilla/5.0\" \"https://api.openuncensored.com/v1/models\" | head -c 500",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "c7a0f9b3-2e1a-4ec5-9346-137ec4f04e9e",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

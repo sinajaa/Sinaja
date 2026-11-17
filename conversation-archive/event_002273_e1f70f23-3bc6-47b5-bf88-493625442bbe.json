@@ -1,0 +1,15 @@
+{
+  "id": "e1f70f23-3bc6-47b5-bf88-493625442bbe",
+  "timestamp": "2026-11-17T11:15:21.855160",
+  "source": "environment",
+  "parent_id": "9f45553d-3000-493a-b993-b03b0f76f998",
+  "code": "LLMAuthenticationError",
+  "detail": "Your LLM API key appears to be invalid or has expired.",
+  "classification": {
+    "kind": "auth",
+    "retryable": false,
+    "user_action": "settings",
+    "error_id": null
+  },
+  "kind": "ConversationErrorEvent"
+}

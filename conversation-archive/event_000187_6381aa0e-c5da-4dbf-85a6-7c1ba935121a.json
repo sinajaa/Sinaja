@@ -1,0 +1,34 @@
+{
+  "id": "6381aa0e-c5da-4dbf-85a6-7c1ba935121a",
+  "timestamp": "2026-11-17T07:07:21.990807",
+  "source": "agent",
+  "parent_id": "c3824ba3-daeb-42da-9401-93c7b7f1a4ef",
+  "thought": [
+    {
+      "cache_prompt": false,
+      "type": "text",
+      "text": ""
+    }
+  ],
+  "reasoning_content": null,
+  "thinking_blocks": [],
+  "responses_reasoning_item": null,
+  "action": {
+    "include_screenshot": true,
+    "kind": "BrowserGetStateAction"
+  },
+  "tool_name": "browser_get_state",
+  "tool_call_id": "chatcmpl-tool-90769ce471af730a",
+  "tool_call": {
+    "id": "chatcmpl-tool-90769ce471af730a",
+    "responses_item_id": null,
+    "name": "browser_get_state",
+    "arguments": "{\"summary\": \"Inspect login page elements\", \"include_screenshot\": true}",
+    "origin": "completion"
+  },
+  "llm_response_id": "chatcmpl-6hf8d7l6U18eitW8m81TprwsKT65W",
+  "security_risk": "UNKNOWN",
+  "critic_result": null,
+  "summary": "Inspect login page elements",
+  "kind": "ActionEvent"
+}

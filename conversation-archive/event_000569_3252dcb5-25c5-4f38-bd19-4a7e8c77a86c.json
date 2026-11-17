@@ -1,0 +1,31 @@
+{
+  "id": "3252dcb5-25c5-4f38-bd19-4a7e8c77a86c",
+  "timestamp": "2026-11-17T07:35:51.359841",
+  "source": "agent",
+  "parent_id": "aeaac252-ddf7-40f8-987b-0b0321dda09c",
+  "thought": [],
+  "reasoning_content": null,
+  "thinking_blocks": [],
+  "responses_reasoning_item": null,
+  "action": {
+    "data": {
+      "query": "resifactory proxy sticky session username format",
+      "max_results": 5
+    },
+    "kind": "MCPToolAction"
+  },
+  "tool_name": "default_tavily_tavily_search",
+  "tool_call_id": "chatcmpl-tool-94a5fa40b72d854e",
+  "tool_call": {
+    "id": "chatcmpl-tool-94a5fa40b72d854e",
+    "responses_item_id": null,
+    "name": "default_tavily_tavily_search",
+    "arguments": "{\"query\": \"resifactory proxy sticky session username format\", \"max_results\": 5, \"summary\": \"Search ResiFactory sticky session docs\"}",
+    "origin": "completion"
+  },
+  "llm_response_id": "chatcmpl-bZeV0kVfxnyKTYWr7upO6G92iDKSM",
+  "security_risk": "UNKNOWN",
+  "critic_result": null,
+  "summary": "Search ResiFactory sticky session docs",
+  "kind": "ActionEvent"
+}

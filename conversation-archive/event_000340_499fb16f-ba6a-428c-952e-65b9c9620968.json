@@ -1,0 +1,36 @@
+{
+  "id": "499fb16f-ba6a-428c-952e-65b9c9620968",
+  "timestamp": "2026-11-17T07:18:24.708122",
+  "source": "environment",
+  "parent_id": "c08e2614-765d-415e-823e-eeaba5dfa6df",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-8187a269ec8991e7",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "total baris   : 103\nkey aktif     : 102\nada saldo >0  : 99\nsaldo nol     : 3\ntotal saldo   : $96.78\ngagal: Counter({'no_key': 1})"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && python3 - <<'EOF'\nimport json, urllib.request, concurrent.futures, re\nrows=[l.strip() for l in open('ob_accounts.txt') if l.strip()]\ndef parse(r):\n    p=[x.strip() for x in r.split('|')]\n    return (p[0], p[1]) if len(p)>=2 else (r,'')\nitems=[parse(r) for r in rows]\ndef check(item):\n    num,key=item\n    if not key or not key.startswith('sk-obs1_'): return num,key,None,None,'no_key'\n    try:\n        q=urllib.request.Request('https://obscurify.ai/get_user_balance',headers={'Authorization':'Bearer '+key})\n        bal=json.load(urllib.request.urlopen(q,timeout=30)).get('balance')\n    except urllib.error.HTTPError as e:\n        return num,key,None,None,f'http{e.code}'\n    except Exception as e:\n        return num,key,None,None,type(e).__name__\n    return num,key,bal,None,'ok'\nres=[]\nwith concurrent.futures.ThreadPoolExecutor(12) as ex:\n    for r in ex.map(check,items): res.append(r)\nok=[r for r in res if r[4]=='ok']\nprint(f\"total baris   : {len(items)}\")\nprint(f\"key aktif     : {len(ok)}\")\nprint(f\"ada saldo >0  : {sum(1 for r in ok if (r[2] or 0)>0)}\")\nprint(f\"saldo nol     : {sum(1 for r in ok if (r[2] or 0)==0)}\")\nprint(f\"total saldo   : ${sum((r[2] or 0) for r in ok):.2f}\")\nfrom collections import Counter\nprint(\"gagal:\",Counter(r[4] for r in res if r[4]!='ok'))\njson.dump([{'akun':r[0],'key':r[1],'saldo':r[2]} for r in ok],open('/tmp/ob_live.json','w'))\nEOF",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 63318,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "f2fd68ea-34e8-4892-adb4-d1ac1e0380ad",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

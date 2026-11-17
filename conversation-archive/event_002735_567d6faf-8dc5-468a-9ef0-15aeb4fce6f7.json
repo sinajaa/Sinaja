@@ -1,0 +1,28 @@
+{
+  "id": "567d6faf-8dc5-468a-9ef0-15aeb4fce6f7",
+  "timestamp": "2026-11-17T12:32:35.250344",
+  "source": "agent",
+  "parent_id": "ddb54591-611e-4911-bd6e-33eca6b086cd",
+  "llm_message": {
+    "role": "assistant",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Model itu **jalan**, sudah saya uji. Ini konfigurasinya.\n\n## Isi form LightVela\n\nMenu **Management \u2192 Model \u2192 Custom model**:\n\n| Field | Nilai |\n|---|---|\n| Name | `obscurify` |\n| Base URL | `https://obscurify.ai/v1` |\n| Protocol | **OpenAI Chat Completions** |\n| API Key | *(key dari `ob_ready.txt`)* |\n| Model ID | `deepseek/deepseek-v4.1-flash-1017-abliterated:thinking` |\n\n## \u26a0\ufe0f Satu hal wajib: `max_tokens` besar\n\nIni paling penting. Model `:thinking` **menghabiskan token untuk reasoning dulu**. Kalau `max_tokens` kecil, jawabannya kosong.\n\nHasil uji saya:\n\n| max_tokens | Reasoning | `content` | Waktu |\n|---|---|---|---|\n| 400 | 431 char | \u2705 ada | 20,4 s |\n| 1000 | **1.586 char** | \u2705 ada | 17,2 s |\n| 2000 | 981 char | \u2705 ada | 34,7 s |\n| 4000 | 796 char | \u2705 ada | 35,8 s |\n\n**Set 2000 atau lebih.** Kalau di LightVela ada setting output tokens, isi 2000+.\n\n## Kecepatan: tidak stabil\n\nSaya uji 3x dengan prompt \"Halo\":\n\n```\n15,3 s  \u2192  2,6 s  \u2192  1,9 s\n```\n\n**Selisih 8x.** Itu bukan modelnya \u2014 itu **antrean server** obscurify. Kadang cepat, kadang lama.\n\nRata-rata sekitar **6,6 s** untuk model `:thinking` ini.\n\n## Perbandingan 5 varian\n\n| Varian | Waktu | Reasoning | Biaya |\n|---|---|---|---|\n| `-1017` | 4,7 s | 0 | $0.000345 |\n| `-abliterated` | 7,3 s | 0 | $0.000309 |\n| **`-abliterated:thinking`** | **8,8\u201336 s** | 1.532 | $0.000426 |\n| `-uncensored` | **3,6 s** | 0 | $0.000203 |\n| `-uncensored:thinking` | 4,0 s | 1.044 | $0.000361 |\n\nYang kamu pilih **paling lambat**, tapi juga **paling bebas** (abliterated + reasoning).\n\n## Yang kamu dapat\n\n| | |\n|---|---|\n| Sensor | \u2705 dihapus dari bobot (bukan cuma fine-tune) |\n| Penalaran | \u2705 aktif |\n| Kualitas jawaban | lebih teliti |\n| Harga | ~$0.0004/request |\n\nSaldo sekarang **$0.46** \u2192 sekitar **1.100 request** dengan model ini.\n\n## Cadangan kalau terlalu lambat\n\n```\ndeepseek/deepseek-v4.1-flash-1017-uncensored        (3,6 s, tercepat)\ndeepseek/deepseek-v4.1-flash-1017-abliterated       (tanpa thinking)\n```\n\nSimpan sebagai profil kedua di LightVela. Kalau `:thinking` terasa lambat, tinggal ganti.\n\n## Catatan\n\nKonfigurasi lengkap sudah saya tulis di `LIGHTVELA_CONFIG.md` (commit `8025496`).\n\n**Coba pasang, lalu kabari:**\n- Jawaban keluar atau kosong?\n- Berapa detik rasanya di LightVela?\n\nKalau `content` kosong, berarti `max_tokens` LightVela kekecilan \u2014 dan itu perlu kita akali."
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": "chatcmpl-9hfsBI3CImQl0exdoHVyaRF4KD1BL",
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

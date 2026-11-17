@@ -1,0 +1,36 @@
+{
+  "id": "80e0f800-47c7-42ed-aa0f-20040d45e5de",
+  "timestamp": "2026-11-17T12:03:15.614425",
+  "source": "environment",
+  "parent_id": "8e91c5a9-6c36-4fa9-adb8-e47d4912d9d7",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-974476b72f3c405a",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Pakai di curl:\n```bash\ncurl -x \"http://USER:PASS@premium.resifactory.net:7777\" https://api.ipify.org\n```\n\n## Pool\n\n| pool | host | saldo |\n|---|---|---|\n| walmart_premium | premium.resifactory.net | 1 GB |\n| retail_select | essential.resifactory.net | 0 |\n| mobile_dedicated | mobile.resifactory.net | 0 |\n\n## Catatan\n\n- Rotating: IP baru tiap request (default, sudah terbukti)\n- Sticky: parameter belum ketemu; `session_duration` diabaikan\n- Kualitas: ISP residensial asli US (Comcast, Verizon, Charter), proxy/hosting=false\n- Latensi: ~0,5-1,8s total, connect ~0,03s\n\n---\n\n# Proxy cadangan (FlashProxy)\n\n## Kredensial proxy (Basic auth, BUKAN bearer)\n```\nadam.flashproxy.io:8080:6pyu2taqjl:xwcbkieh3s\n```\n- host/port : `adam.flashproxy.io:8080` (HTTP; SOCKS5 di :666, tidak terbuka saat dites)\n- user/pass  : `6pyu2taqjl` / `xwcbkieh3s`\n\nAPI token (untuk cek kuota): `fpk_live_...` -> `GET https://www.flashproxy.com/api/v1/usage`\n\n## Plan\n- Residential Proxies, aktif s/d 2026-12-17\n- kuota 100 MB, terpakai 0\n- targeting: country -> state -> city -> ASN (paling dalam)\n\n## Format username untuk targeting\n```\nhttp://6pyu2taqjl-country-us:xwcbkieh3s@adam.flashproxy.io:8080\n```\n- `-country-us` -> keluar dari US (terbukti)\n- tanpa suffix -> IP acak global (default Brasil dsb)\n\n## Hasil tes\n- residensial asli: Comcast, Cox, Charter, Ezee Fiber (proxy/hosting = false)\n- rotasi: IP baru tiap request (terbukti)\n- latensi: total 1,9-3,6s (lebih lambat dari ResiFactory ~0,5s)\n\n---\n\n# Proxy cadangan (IPCove)\n\n## Kredensial (Basic auth)\n```"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && sed -n '25,80p' proxy.md",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "069323b7-823c-4590-83b4-961d8145706a",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

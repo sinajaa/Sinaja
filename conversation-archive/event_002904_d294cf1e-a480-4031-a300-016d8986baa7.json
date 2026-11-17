@@ -1,0 +1,28 @@
+{
+  "id": "d294cf1e-a480-4031-a300-016d8986baa7",
+  "timestamp": "2026-11-17T13:01:10.418438",
+  "source": "user",
+  "parent_id": "ec0e05ca-0e72-47d0-83f1-ae8e56c60a9f",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Lah disini di llm profil saya pake yang openai/deepseek/deepseek-v4.1-flash-1017-abliterated:thinking cuma aku lupa api key yang saya masukin yang mana "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

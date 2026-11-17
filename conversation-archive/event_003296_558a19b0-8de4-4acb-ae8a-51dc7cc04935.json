@@ -1,0 +1,28 @@
+{
+  "id": "558a19b0-8de4-4acb-ae8a-51dc7cc04935",
+  "timestamp": "2026-11-17T14:19:09.234733",
+  "source": "user",
+  "parent_id": "1c2b4e37-a9a1-4165-9dc9-fedf39d083f3",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Coba ulang tadi credit habis"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

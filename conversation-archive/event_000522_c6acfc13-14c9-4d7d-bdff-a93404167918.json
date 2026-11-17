@@ -1,0 +1,24 @@
+{
+  "id": "c6acfc13-14c9-4d7d-bdff-a93404167918",
+  "timestamp": "2026-11-17T07:31:03.452941",
+  "source": "environment",
+  "parent_id": "c539cff2-3c1d-496a-b77f-85e73b7a44b9",
+  "tool_name": "browser_navigate",
+  "tool_call_id": "chatcmpl-tool-9882aa8dd7f19805",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Navigated to: https://www.facebook.com/share/1FGZmmvDsi/"
+      }
+    ],
+    "is_error": false,
+    "screenshot_data": null,
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "BrowserObservation"
+  },
+  "action_id": "7b715a77-e806-4f34-baf0-400c3c9a0165",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

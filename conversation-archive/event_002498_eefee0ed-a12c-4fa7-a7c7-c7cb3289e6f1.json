@@ -1,0 +1,28 @@
+{
+  "id": "eefee0ed-a12c-4fa7-a7c7-c7cb3289e6f1",
+  "timestamp": "2026-11-17T11:53:33.704472",
+  "source": "user",
+  "parent_id": "b46a2483-8968-4c59-b128-9cc1fc9588c5",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Coba apakah model deepseek_v4.1_flash_1017_uncensored udh gak bisa ya di nomask ai"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

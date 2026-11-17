@@ -1,0 +1,28 @@
+{
+  "id": "cc3252a5-488b-4f79-a657-4b1d8af0452c",
+  "timestamp": "2026-11-17T11:18:28.691908",
+  "source": "agent",
+  "parent_id": "a56e6793-dc49-4319-a382-8628006b59e4",
+  "llm_message": {
+    "role": "assistant",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Nomask **menolak semua prefix**. Jadi ada konflik:\n\n- **OpenHands** butuh `provider/model`\n- **nomask** menolak `provider/model`\n\nAda satu solusi yang menyelesaikan keduanya: **Provider Connection**.\n\n## Cara memperbaikinya\n\nDi form-mu ada field **\"Provider connection: Optional \u2014 None\"**. Itu kuncinya.\n\n**Langkah:**\n\n**1. Ubah Custom Model** jadi pakai prefix `openai/`:\n\n```\nopenai/deepseek_v4.1_flash_1017_uncensored\n```\n\n**2. Isi \"Provider connection\"** \u2014 jangan biarkan `None`.\n\nPilih/tambah koneksi baru dengan:\n- Base URL: `https://api.nomask.ai/v1`\n- API Key: `nmk_live_g1r1I3MMlZDJaclmlAFylupkQulRriMVhSaVx3xR`\n\nDengan cara ini, litellm tahu providernya (`openai`), lalu **membuang prefix** sebelum mengirim ke nomask.\n\n## Kalau Provider connection tidak bisa diisi\n\nAda alternatif: pakai nama provider yang nomask kenal. Saya sudah cek \u2014 **nomask tidak punya alias berprefix**. Jadi `openai/xxx` akan tetap dikirim mentah dan ditolak.\n\nBerarti **Provider connection wajib dipakai**.\n\n## Kalau masih gagal\n\nAda satu trik lain: coba isi Custom Model dengan prefix yang **tidak** dikirim ke nomask. Tapi ini belum pasti.\n\n## Sementara ini \u2014 pulihkan dulu\n\nSupaya bisa chat lagi:\n\n**Settings \u2192 LLM \u2192 Available Profiles \u2192 titik tiga di profil obscurify \u2192 \"Set as Active\"**\n\nIni yang berhasil tadi. Lakukan dulu supaya tidak terhambat.\n\n## Ringkas masalahnya\n\n| Pihak | Butuh | Hasil |\n|---|---|---|\n| OpenHands | `provider/model` | tanpa prefix \u2192 **error** |\n| nomask | `model` saja | dengan prefix \u2192 **404** |\n\n**Konflik.** Penyelesaiannya: Provider connection, supaya prefix dipakai litellm tapi tidak dikirim ke nomask.\n\n## Yang perlu kamu coba\n\n1. **Set as Active** \u2192 obscurify (pulihkan dulu)\n2. Edit profil nomask:\n   - Custom Model: `openai/deepseek_v4.1_flash_1017_uncensored`\n   - **Provider connection: isi** dengan Base URL + API Key nomask\n   - Base URL: `https://api.nomask.ai/v1`\n3. Simpan \u2192 tes\n\n**Kalau masih error, kirim pesan error barunya.** Kalau errornya berubah dari \"LLM Provider NOT provided\" jadi \"model does not exist\", berarti prefix-nya masih terkirim \u2014 dan saya cari jalan lain.\n\nCoba dulu, lalu kabari."
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": "chatcmpl-v2FSN4z3vdoNzxnAmKogOjLOtHbIL",
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "09b529b3-91d3-4255-9935-764761e746d2",
+  "timestamp": "2026-11-17T07:27:13.117390",
+  "source": "environment",
+  "parent_id": "9442701d-7c7c-484e-9207-8a904645d551",
+  "analyzer": "LLMSecurityAnalyzer",
+  "policy": "NeverConfirm",
+  "risks": {
+    "da2c4ee8-294c-4cda-a1af-6350938590e2": "LOW",
+    "9442701d-7c7c-484e-9207-8a904645d551": "LOW"
+  },
+  "details": {},
+  "kind": "SecurityAnalysisEvent"
+}

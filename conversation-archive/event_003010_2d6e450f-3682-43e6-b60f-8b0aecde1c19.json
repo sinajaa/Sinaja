@@ -1,0 +1,36 @@
+{
+  "id": "2d6e450f-3682-43e6-b60f-8b0aecde1c19",
+  "timestamp": "2026-11-17T13:23:59.153250",
+  "source": "environment",
+  "parent_id": "5bc24209-83d3-4ef2-9e5a-4fa847953b37",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-9fde9dcb83b3126c",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "TartarusAIDev/tartarus-sdk\n   homepage: https://tartarusai.dev/?utm_source=github&utm_medium=repo-homepage&utm_campaign=tartarus-sdk&utm_content=about | desc: Typed TypeScript SDK for an OpenAI-compatible coding API: chat, streaming, tool-calling.\nMoloch-AI/uncensored-ai-python\n   homepage: https://molochai.dev/docs?utm_source=github&utm_medium=oss&utm_campaign=uncensored-ai-python | desc: Typed Python client for the MolochAI API: sync and async, streaming, tool calls, typed errors and re\nuplinkswitch/uplinkswitch-mcp\n   homepage: https://uplinkswitch.ai/guides | desc: MCP server for UplinkSwitch: 350 chat, image, video and speech models on one API key. Catalog, price\nClosedhand/Closedhand\n   homepage: https://closedhand.com | desc: Uncensored personal AI, with no company in between. Your data and conversations can be read by nobod\nrouterhubSI/deepseek-uncensored\n   homepage: https://routerhub.si/?utm_source=github&utm_medium=repo&utm_campaign=deepseek-uncensored | desc: Every uncensored and abliterated DeepSeek build \u2014 V4.1 Flash 1017 Abliterated (the pinned, reproduci"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && timeout 300 python3 - <<'PY'\nimport json,urllib.request,os\ntok=os.environ.get(\"GITHUB_TOKEN\",\"\")\nh={\"Accept\":\"application/vnd.github+json\",\"User-Agent\":\"curl\"}\nif tok: h[\"Authorization\"]=f\"Bearer {tok}\"\nfor repo in [\"TartarusAIDev/tartarus-sdk\",\"Moloch-AI/uncensored-ai-python\",\"uplinkswitch/uplinkswitch-mcp\",\"Closedhand/Closedhand\",\"routerhubSI/deepseek-uncensored\"]:\n    try:\n        r=urllib.request.Request(f\"https://api.github.com/repos/{repo}\",headers=h)\n        with urllib.request.urlopen(r,timeout=30) as x: d=json.load(x)\n        print(f\"{repo}\\n   homepage: {d.get('homepage')} | desc: {(d.get('description') or '')[:100]}\")\n    except Exception as e: print(repo,\"err\",type(e).__name__)\nPY",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "bcbbe7b9-6e12-41bb-98db-e6c09ee158de",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

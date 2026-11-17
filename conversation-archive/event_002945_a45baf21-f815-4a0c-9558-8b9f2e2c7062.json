@@ -1,0 +1,36 @@
+{
+  "id": "a45baf21-f815-4a0c-9558-8b9f2e2c7062",
+  "timestamp": "2026-11-17T13:09:09.851009",
+  "source": "environment",
+  "parent_id": "f692dee8-5779-4bf3-ac4c-b8e463022184",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-b3f0dd64936c5ac6",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "=== 10 akun dengan transaksi PALING BARU ===\nwaktu terakhir              req     spent  akun\n2026-11-17T13:09:07          53    0.2312  3752893764565179 (baris 8)\n2026-11-17T12:36:15         121    0.3540  0217538591986061 (baris 7)\n2026-11-17T12:36:02         165    0.9509  3211181114544970 (baris 44)\n2026-11-17T12:36:02         103    0.3607  8860641277084685 (baris 3)\n2026-11-17T12:36:02         182    0.6651  2293059064409890 (baris 4)\n2026-11-17T12:36:02         201    0.5410  5179772977153174 (baris 6)\n2026-11-17T12:36:02           3    0.0000  7044923793815063 (baris 107)\n2026-11-17T12:36:02           2    0.0000  1924249781420628 (baris 108)\n2026-11-17T12:36:01           3    0.0000  4500263092193527 (baris 105)\n2026-11-17T12:36:01           4    0.0000  1694851668196785 (baris 106)\n\ntotal akun punya riwayat: 104 dari 107"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && timeout 500 python3 - <<'PY'\nimport json,urllib.request,concurrent.futures,hashlib\nacc=[]\nfor n,l in enumerate(open(\"ob_accounts.txt\"),1):\n    p=[x.strip() for x in l.split(\"|\")]\n    if len(p)>=3 and p[1].startswith(\"sk-obs1\"): acc.append((n,p[0],p[1]))\ndef latest(a):\n    n,num,k=a\n    try:\n        r=urllib.request.Request(\"https://obscurify.ai/transactions\",headers={\"Authorization\":f\"Bearer {k}\"})\n        with urllib.request.urlopen(r,timeout=30) as x: items=json.load(x).get(\"transactions\",[])\n        use=[t for t in items if t.get(\"label\")==\"Usage\"]\n        if not use: return (n,num,\"-\",0,0.0)\n        last=max(t[\"created_at\"] for t in use)\n        return (n,num,last,len(use),sum(abs(float(t[\"amount\"])) for t in use))\n    except Exception: return (n,num,\"ERR\",0,0.0)\nres=[]\nwith concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:\n    for r in ex.map(latest,acc): res.append(r)\nok=[r for r in res if r[2] not in (\"-\",\"ERR\")]\nok.sort(key=lambda r:r[2],reverse=True)\nprint(\"=== 10 akun dengan transaksi PALING BARU ===\")\nprint(f\"{'waktu terakhir':26} {'req':>4} {'spent':>9}  akun\")\nfor n,num,last,cnt,sp in ok[:10]:\n    print(f\"{last[:19]:26} {cnt:4} {sp:9.4f}  {num} (baris {n})\")\nprint(f\"\\ntotal akun punya riwayat: {len(ok)} dari {len(acc)}\")\nPY",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "613d2a5a-48db-4db1-a7d8-eef668cc85b7",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

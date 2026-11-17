@@ -1,0 +1,29 @@
+{
+  "id": "c837593c-04bd-44c4-9aab-5de8b65bcba5",
+  "timestamp": "2026-11-17T07:59:55.164764",
+  "source": "agent",
+  "parent_id": "6420b103-bafb-4768-ba52-42193b861430",
+  "thought": [],
+  "reasoning_content": null,
+  "thinking_blocks": [],
+  "responses_reasoning_item": null,
+  "action": {
+    "extract_links": false,
+    "start_from_char": 0,
+    "kind": "BrowserGetContentAction"
+  },
+  "tool_name": "browser_get_content",
+  "tool_call_id": "chatcmpl-tool-a345f2db26791dbf",
+  "tool_call": {
+    "id": "chatcmpl-tool-a345f2db26791dbf",
+    "responses_item_id": null,
+    "name": "browser_get_content",
+    "arguments": "{}",
+    "origin": "completion"
+  },
+  "llm_response_id": "chatcmpl-MBGdIiviCn8AeJbfdn4IjZdhMwEGr",
+  "security_risk": "UNKNOWN",
+  "critic_result": null,
+  "summary": "browser_get_content: {}",
+  "kind": "ActionEvent"
+}

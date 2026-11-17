@@ -1,0 +1,28 @@
+{
+  "id": "3aae1e39-5d56-4093-aae2-c38126b17da9",
+  "timestamp": "2026-11-17T13:38:35.803149",
+  "source": "agent",
+  "parent_id": "13662ff8-524c-46d3-8aee-6ec91f88645a",
+  "llm_message": {
+    "role": "assistant",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Sudah saya analisis dua-duanya. Jawabannya:\n\n## 1. Lebrel \u2014 saya yang salah\n\n**Tidak ada $100 kredit gratis.** Klaim saya sebelumnya keliru.\n\n$100 itu **jatah kredit di dalam plan berbayar** $17/bulan. Bukan bonus pendaftaran.\n\n**Yang benar-benar gratis** (dari API resmi `lebrel.ai/api/models`):\n\n```json\n\"freeAllowance\": {\n  \"chatTurnsPerDay\": 20,\n  \"apiRequestsPerDay\": 50,\n  \"apiRequestMaxMicrousd\": 90000,\n  \"apiRequestMaxPromptTokens\": 96200\n}\n```\n\nArtinya:\n\n| Item | Gratis |\n|---|---|\n| Request API | **50/hari** |\n| Maks biaya per request | $0.09 |\n| Maks prompt | 96.200 token |\n| Chat | 20 turn/hari |\n| **Jam aktif** | **22:00\u201302:00 WIB** saja |\n\nDi luar jam itu, traffic ditutup.\n\n**Kenapa kamu tidak lihat apa-apa:** karena tidak ada yang diberikan saat daftar. Yang ada hanya kuota harian di atas, dan itu baru kepakai saat kamu kirim request.\n\n**API key ada di:** `lebrel.ai/dashboard#keys` \u2014 bukan di halaman signup.\n\n## 2. Claru AI \u2014 bukan kredit, ini kerja dibayar\n\nTweet @0xbigjayy isinya:\n\n> *\"Earn $8 to $10 per hour on Claru AI. Payment confirmed.\"*\n\n| | |\n|---|---|\n| Situs | `app.claru.ai` (perusahaan: claru.ai) |\n| Bisnis | jual dataset \"Physical AI\" ke lab robotik |\n| Untuk kamu | platform **pelabelan data**, dibayar per jam |\n| Bayaran | **$8\u201310/jam** |\n| Syarat | daftar Google \u2192 **qualification test** dulu |\n\nAlurnya:\n```\ndaftar pakai Google\n\u2192 menu \"Projects\"\n\u2192 pilih proyek\n\u2192 \"Start qualification\"\n\u2192 selesaikan semua tugas uji\n\u2192 kalau lolos, baru bisa kerja dan dibayar\n```\n\n**Ini BUKAN kredit API gratis.** Ini kerja sampingan \u2014 kamu dibayar uang, bukan token.\n\n## Perbandingan jujur\n\n| Platform | Dapat apa | Usaha |\n|---|---|---|\n| **Lebrel** | 50 request API/hari | nol (dapat langsung) |\n| **Claru** | $8\u201310/jam tunai | qualification test + kerja |\n| obscurify | $1/akun \u00d7 104 | daftar massal |\n| HEX | $0.25/akun | Turnstile |\n\n## Penilaian\n\n**Lebrel tetap layak** \u2014 50 request/hari gratis, uncensored, tanpa kartu. Untuk chat santai atau tes model, cukup.\n\n**Claru cocok kalau kamu mau uang tunai**, bukan kredit. Tapi butuh waktu kerja nyata.\n\n## Langkah berikut\n\nUntuk Lebrel, ambil key-nya dulu:\n\n```\nlebrel.ai/dashboard#keys  \u2192  Create key\n```\n\nKirim key-nya ke saya, lalu saya tes:\n- Apakah 50 request/hari benar jalan\n- Apakah model uncensored-nya bisa dipakai di OpenHands\n- Berapa biaya per request\n\nKalau key-nya `lb_...`, langsung saya coba.\n\nMana dulu \u2014 tes Lebrel, atau coba daftar Claru?"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": "Claru = \"Training Data for Physical AI\" \u2014 sells datasets to robotics/AI labs. The app is a contributor platform where people do labeling tasks and get paid $8\u201310/hr.\n\nSo: **not free credits**. It's paid crowdwork (like Outlier/Scale/Remotasks). Payment confirmed per tweet, but requires qualification.\n\nNow let me answer both things:\n1. Lebrel clarification: no $100 free; free = 50 API requests/day (each \u2264$0.09, \u226496k prompt) + 20 chat turns/day, only during 16:00\u201320:00 Madrid = 22:00\u201302:00 WIB. Key at dashboard#keys.\n2. Claru analysis: paid task platform, $8\u201310/hr, not credit. Signup Google, projects, qualification.\n\nThen propose: to test Lebrel free API, they need API key from dashboard. Ask them to grab it, or I can try signup myself.\n\nActually the user said \"setelah itu kita coba daftar dapet credit apa itu\" \u2014 after analysis, let's register to get credit. But they already registered Lebrel and found nothing. For Claru, registering is for work.\n\nLet me be concise: explain both, then give the practical path:\n- Lebrel: get API key from dashboard \u2192 I test free 50 req/day.\n- Claru: optional, paid work, needs qualification, sign up with Google.\n\nLet me also verify app.claru.ai is JS app (yes, \"Claru\" only). Fine.\n\nLet me write response with clear tables. Also offer: paste Lebrel API key so I test it now.\n\nKeep it reasonably concise.",
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": "chatcmpl-HUFDx7PtpsBvt6R7RTtxdcA6NS91l",
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

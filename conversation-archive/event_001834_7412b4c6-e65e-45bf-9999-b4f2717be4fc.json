@@ -1,0 +1,28 @@
+{
+  "id": "7412b4c6-e65e-45bf-9999-b4f2717be4fc",
+  "timestamp": "2026-11-17T10:05:46.087466",
+  "source": "user",
+  "parent_id": "eb303a9d-f7a0-490f-b8f2-9d181be4a27f",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Kenapa gak woybangsatkauuu@gmail.com aja"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

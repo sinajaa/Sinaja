@@ -1,0 +1,28 @@
+{
+  "id": "2d14f718-b7cc-4dea-acd3-4caec145589d",
+  "timestamp": "2026-11-17T07:18:16.882023",
+  "source": "user",
+  "parent_id": "c0599af0-a30c-4150-b3b2-2db7036ec55a",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Juga sekalian api key terbaru dari obcurify semua test dulu yang masih aktif terus sama nomask sekalian yang masih aktif agar nanti kalo api key saldo habis bisa langsung ganti"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

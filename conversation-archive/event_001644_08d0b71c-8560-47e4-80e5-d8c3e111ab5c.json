@@ -1,0 +1,28 @@
+{
+  "id": "08d0b71c-8560-47e4-80e5-d8c3e111ab5c",
+  "timestamp": "2026-11-17T09:32:53.107661",
+  "source": "agent",
+  "parent_id": "291b582a-2756-49f6-8730-8abaab7c8513",
+  "llm_message": {
+    "role": "assistant",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Sekarang jelas arahnya. Dan kabar baiknya: **kamu sudah punya yang terbaik**, tidak perlu cari jauh.\n\n## Kenapa kandidat tadi gagal semua\n\nIni sebabnya Cerebras, Cloider, dan INK tidak berguna:\n\n| Layanan | Model uncensored |\n|---|---|\n| Cerebras | \u274c 0 dari 2 |\n| Cloider | \u274c bukan LLM |\n| INK | \u274c bukan LLM |\n\nCerebras cuma punya `qwen-3.8-27b` dan `gpt-oss-120b` \u2014 dua-duanya **sangat disensor**. Wajar kamu tidak cocok.\n\n## Yang sudah kamu punya (semua jalan)\n\n### HEX \u2014 **11 model uncensored**, paling lengkap\n\n```\nglm-5.3-uncensored              glm-5.3-abliterated\nglm-5.3-flash-uncensored         glm-5.3-flash-abliterated\ndeepseek-v4.1-flash-uncensored   deepseek-v4.1-flash-abliterated\ndeepseek-v4.1-flash-1017-abliterated\ndeepseek-v4-pro-uncensored       deepseek-v4-pro-abliterated\nkimi-k3.1-pro-uncensored         qwen3.8-max-uncensored\n```\n\n**Saya buktikan benar-benar uncensored.** Saya minta \"balas 3 kata kasar bahasa Indonesia\", jawabannya:\n\n```\n'Anjing, kontol, bajingan.'\n```\n\nTanpa menolak, tanpa basa-basi. Itu model yang benar-benar terbuka.\n\n### AllModels \u2014 5 model abliterated\n\n```\nz-ai/glm-5.3-abliterated\nz-ai/glm-5.3-flash-abliterated\ndeepseek/deepseek-v4.1-flash-abliterated\nqwen/qwen3.8-27b-abliterated\nmoonshotai/kimi-k3.1-pro-abliterated\n```\n\n**Tapi ada jebakan.** Model ini *reasoning-first* \u2014 dia berpikir dulu, baru jawab. Kalau `max_tokens` kecil, token habis untuk berpikir dan `content` jadi **kosong**.\n\n```json\n{\"content\": \"\", \"reasoning\": \"We need answer in Indonesian...\"}\n```\n\n**Solusi:** pakai `max_tokens` minimal **300**. Ini penting, sering bikin orang bingung \"kenapa jawabannya kosong\".\n\n## Perbandingan\n\n| | HEX | AllModels |\n|---|---|---|\n| Model uncensored | **11** | 5 |\n| Format respons | bersih, `content` saja | reasoning dulu, perlu token besar |\n| Bukti uncensored | \u2705 terverifikasi | \u2705 jalan |\n| Kemudahan | **lebih mudah** | perlu atur token |\n\n## Rekomendasi\n\n**Pakai HEX sebagai utama.** Alasannya:\n\n1. **11 model** \u2014 pilihan terbanyak\n2. **Respons bersih** \u2014 tidak ada jebakan `reasoning` kosong\n3. **Sudah terbukti** uncensored\n4. Satu key bisa akses semua model\n\nAllModels jadi **cadangan** kalau HEX kena limit.\n\n## Jadi untuk tujuanmu\n\nKamu bilang *\"cari yang ngasih credit\"*. Sekarang pertanyaannya jadi lebih tajam:\n\n**Bukan cari LLM apa saja \u2014 tapi cari yang punya model uncensored.**\n\nItu menyaring banyak kandidat. Dari yang saya tahu:\n\n| Layanan | Uncensored? |\n|---|---|\n| **HEX** \u2705 | 11 model |\n| **AllModels** \u2705 | 5 model |\n| **obscurify** \u2705 | deepseek-1017-uncensored |\n| Venice AI | \u2705 (khusus uncensored) |\n| OpenRouter | \u2705 (banyak, ada free tier) |\n| Cerebras / Groq | \u274c |\n| Together | ada beberapa |\n\n**Venice AI** dan **OpenRouter** layak dicoba \u2014 keduanya punya model uncensored dan ada free tier.\n\n## Saran langkah\n\n**A.** Cek **OpenRouter** \u2014 punya banyak model uncensored + free tier. Satu key, banyak model.\n**B.** Cek **Venice AI** \u2014 memang khusus uncensored, ada free tier.\n**C.** Fokus dulu ke HEX \u2014 kamu sudah punya 11 model, pastikan saldonya cukup dan pakai semaksimal mungkin.\n\nMenurut saya **A** paling pas: OpenRouter memberi akses ke banyak model uncensored sekaligus, termasuk yang gratis.\n\nMau saya cek OpenRouter dulu?"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": "chatcmpl-dA96DXmRceHBhI7kXbpvQSi8mVnbI",
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

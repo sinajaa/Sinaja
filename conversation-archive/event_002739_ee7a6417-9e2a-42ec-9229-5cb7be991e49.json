@@ -1,0 +1,28 @@
+{
+  "id": "ee7a6417-9e2a-42ec-9229-5cb7be991e49",
+  "timestamp": "2026-11-17T12:33:02.347569",
+  "source": "user",
+  "parent_id": "567d6faf-8dc5-468a-9ef0-15aeb4fce6f7",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Bukan di Lightvela tapi di openhands "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

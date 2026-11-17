@@ -1,0 +1,28 @@
+{
+  "id": "0282eceb-aac3-4de6-9692-36499a66ee0c",
+  "timestamp": "2026-11-17T12:04:44.315097",
+  "source": "user",
+  "parent_id": "1381b393-1a87-4454-be7d-666a11fb04dc",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Terus captcha solve udh juga semua?"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

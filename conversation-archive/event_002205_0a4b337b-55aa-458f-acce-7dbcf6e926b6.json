@@ -1,0 +1,28 @@
+{
+  "id": "0a4b337b-55aa-458f-acce-7dbcf6e926b6",
+  "timestamp": "2026-11-17T10:58:24.919780",
+  "source": "user",
+  "parent_id": "e76b46ea-692f-4b7a-8fe2-72d2e2229d9d",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Saya tambahkan llm profil nomask dan chat disini error dan model obcurify juga ikut error jadi saya hapus configurasi nomask di setelan "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

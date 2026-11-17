@@ -1,0 +1,36 @@
+{
+  "id": "3920aa5f-5fe1-433c-95e4-cd0152774d4a",
+  "timestamp": "2026-11-17T10:51:06.636255",
+  "source": "environment",
+  "parent_id": "adf3f7bc-801d-4626-9ef9-db5abb29a90d",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-b054540ce9ee97cd",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "k Start\n Tutorial Library\n Essential Guidelines\n When to Use OpenHands\n Prompting Best Practices\n Good vs. Bad Instructions\n OpenHands in Your SDLC\n Use Cases\n Use Cases Overview\n Vulnerability Remediation\n Automated Code Review\n Automated QA Testing\n Incident Triage\n COBOL Modernization\n Dependency Upgrades\n Agent-Driven Daily Workflow\n Software Factory\n Spark Migrations\n Product Guides\n Key Features\n Hooks\n Model Context Protocol (MCP)\n Skills\n Plugins\n Agent Plugins Packages\n Automations\n Repository Customization\n Settings\n Application Settings\n Language Model (LLM) Settings\n Secrets Management\n Model Context Protocol (MCP)\n Additional Documentation\n Sandbox Server\n LLM Configuration\n OpenHands Community\n Community\n Contributing\n Issue Triage and the ready-for-dev Gate\n FAQs\n Feedback\n On this page\n Back to top Overview\n Basic LLM Settings\n Advanced LLM Settings Memory Condensation\n LLM Profiles Creating an LLM Profile\n Managing LLM Profiles\n Switching Profiles During a Conversation\n Switching Profiles with the /model Slash Command\n Letting the Agent Select Models Dynamically\n How Profile Switching Works\n Best Practices for Using LLM Profiles\n Settings\n Language Model (LLM) Settings\n Copy page Copy page\n This page goes over how to set the LLM to use in OpenHands, including LLM profiles for switching models during conversations.\n Copy page Copy page\n Overview\n The LLM settings allows you to bring your own LLM and API key to use with OpenHands. This can be any model that is\nsupported by litellm, but it requires a powerful model to work properly.\n See our recommended models here . You can also configure some\nadditional LLM settings on this page.\n Basic LLM Settings\n The most popular providers and models are available in the basic settings. Some of the providers have been verified to\nwork with OpenHands such as the OpenHands provider , Anthropic, OpenAI and\nMistral AI.\n Choose your preferred provider using the LLM Provider dropdown.\n Choose your favorite model using the LLM Model dropdown.\n Set the API Key for your chosen provider and model and click Save Changes .\n This will set the LLM for all new conversations. If you want to use this new LLM for older conversations, you must first\nrestart older conversations.\n Advanced LLM Settings\n Toggling the Advanced settings, allows you to set custom models as well as some additional LLM settings. You can use\nthis when your preferred provider or model does not exist in the basic settings dropdowns.\n Custom Model : Set your custom model with the provider as the prefix. For information on how to specify the\ncustom model, follow the specific provider docs on litellm . We also have\n some guides for popular providers .\n Base URL : If your provider has a specific base URL, specify it here.\n API Key : Set the API key for your custom model.\n Click Save Changes\n Memory Condensation\n The memory condenser manages the language model\u2019s context by ensuring only the most important and relevant information\nis presented. Keeping the context focused improves"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && curl -s --max-time 30 -A \"Mozilla/5.0\" \"https://docs.openhands.dev/openhands/usage/settings/llm-settings\" | python3 -c \"\nimport sys,re,html\ns=sys.stdin.read()\ns=re.sub(r'<script.*?</script>','',s,flags=re.S); s=re.sub(r'<style.*?</style>','',s,flags=re.S)\ns=re.sub(r'<(br|/p|/div|/li|/h[1-6]|/tr|/td)>','\\n',s)\nt=html.unescape(re.sub(r'<[^>]+>',' ',s))\nt=re.sub(r'[ \\t]+',' ',t); t=re.sub(r'\\n\\s*\\n+','\\n',t)\ni=t.lower().find('advanced')\nprint(t[:1200] if i<0 else t[max(0,i-900):i+2200])\n\"",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "8c54f0ad-03f6-4a30-899d-47e93d6fc8a5",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "13468c15-5bab-4724-8dfe-ef16c9a1716f",
+  "timestamp": "2026-11-17T07:30:57.116507",
+  "source": "environment",
+  "parent_id": "488dd71a-e846-4f40-90a8-36c8af596ba1",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-a13da24844a1281b",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "HTTP 400 size=1542\n<title>Error</title>"
+      }
+    ],
+    "is_error": false,
+    "command": "curl -sL --max-time 30 -A \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36\" \"https://www.facebook.com/share/1FGZmmvDsi/\" -o /tmp/fb.html -w \"HTTP %{http_code} size=%{size_download}\\n\"; grep -oiE '<title>[^<]*</title>|og:description\" content=\"[^\"]{0,300}' /tmp/fb.html | head -5",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 65735,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "a78ed936-186e-41b2-8efe-f7b80292a70d",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

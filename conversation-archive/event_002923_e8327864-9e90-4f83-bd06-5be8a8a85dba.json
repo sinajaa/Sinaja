@@ -1,0 +1,28 @@
+{
+  "id": "e8327864-9e90-4f83-bd06-5be8a8a85dba",
+  "timestamp": "2026-11-17T13:05:48.208071",
+  "source": "user",
+  "parent_id": "56a3ffc4-7c56-4708-8444-a1a5106ee3cc",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "5179772977153174 yg ini coba cek model apa yg dipake sampe habis segitu "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

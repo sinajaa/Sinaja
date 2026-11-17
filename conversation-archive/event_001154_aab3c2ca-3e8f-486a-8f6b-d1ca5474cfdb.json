@@ -1,0 +1,24 @@
+{
+  "id": "aab3c2ca-3e8f-486a-8f6b-d1ca5474cfdb",
+  "timestamp": "2026-11-17T08:08:03.146772",
+  "source": "environment",
+  "parent_id": "31e2bab0-2f77-40ef-bae6-16785f2e44b5",
+  "tool_name": "browser_navigate",
+  "tool_call_id": "chatcmpl-tool-8e79866fabfe1c11",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Navigated to: https://dash.allmodels.io/signup"
+      }
+    ],
+    "is_error": false,
+    "screenshot_data": null,
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "BrowserObservation"
+  },
+  "action_id": "a2d1089c-2084-4293-b9b6-ad63d013b4fc",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "843a48d7-b9ab-4160-9572-db85fe339918",
+  "timestamp": "2026-11-17T10:40:14.057959",
+  "source": "environment",
+  "parent_id": "75745a4e-9899-4206-9fc1-7d4a17d48713",
+  "tool_name": "default_tavily_tavily_search",
+  "tool_call_id": "chatcmpl-tool-ac78e185eafc42f5",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "[Tool 'default_tavily_tavily_search' executed.]"
+      },
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "{\"error\":\"Search failed\",\"status\":432,\"detail\":{\"error\":\"This request exceeds your plan's set usage limit. Please upgrade your plan or contact support@tavily.com\"},\"documentation\":\"https://docs.tavily.com/documentation/api-reference/endpoint/search\"}"
+      }
+    ],
+    "is_error": false,
+    "tool_name": "default_tavily_tavily_search",
+    "kind": "MCPToolObservation"
+  },
+  "action_id": "7a98a7b8-8f94-4086-bc5b-8cbd044696af",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

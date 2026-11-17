@@ -1,0 +1,36 @@
+{
+  "id": "9c8f2b17-8e60-4be5-81c9-8ef1c6335f03",
+  "timestamp": "2026-11-17T13:24:24.773853",
+  "source": "environment",
+  "parent_id": "67458a3e-e1ab-483c-bd29-213a5c70ed29",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-8cda0cca72e9e05b",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "### https://tartarusai.dev [200] kata: free,$\n    Uncensored AI Coder: CLI Agent and API | TartarusAI Skip to content Agent Models Pricing Compare FAQ Blog Sign in Start for $20 // uncensored ai coder \u00b7 cli agent + openai-compatible api The uncensored AI coder that does the work. TartarusAI is an uncensored A\n\n### https://molochai.dev [200] kata: free,credit,trial,sign up,api key,$\n    MolochAI: Five AI Models, One Developer API Skip to content Models Pricing Documentation Use Cases Sign In Get API Key Developer-first AI inference Five Models. One API. More Control. Access five curated AI models through one unified API. Build, experiment, an\n\n### https://uplinkswitch.ai [200] kata: free,credit,api key,$\n    Claude Fable 5.2 API at 50% Off List Price | UplinkSwitch \u203a uplink switch Try it Models Build Why Contact api.uplinkswitch.com/v1 Console \u203a uplink switch Try it Contact Models All models Image and video Uncensored Red teaming Compare models Pricing Price index\n\n### https://closedhand.com [200] kata:\n    Closedhand Closedhand GitHub Sign in Privacy Terms Control your world and your private data. Uncensored personal AI, with no company in between What really happened in Tiananmen Square? Open dashboard Closedhand will do what other assistants refuse to, and ans\n\n### https://routerhub.si [200] kata: credit,api key\n    Uncensored & Abliterated AI Models | RouterHub Skip to content Opening RouterHub ... RouterHub couldn't finish loading. Check your connection and try again. Try again RouterHub Models Setup guides Connect agent Agent quickstart Affiliates One API key for prepa"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && timeout 400 python3 - <<'PY'\nimport urllib.request,re,html\nsites=[\"https://tartarusai.dev\",\"https://molochai.dev\",\"https://uplinkswitch.ai\",\"https://closedhand.com\",\"https://routerhub.si\"]\nfor u in sites:\n    try:\n        r=urllib.request.Request(u,headers={\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/131.0\"})\n        with urllib.request.urlopen(r,timeout=25) as x: s=x.read().decode(errors=\"ignore\"); code=x.status\n    except urllib.error.HTTPError as e: s=e.read().decode(errors=\"ignore\"); code=e.code\n    except Exception as e: print(f\"{u:28} ERR {type(e).__name__}\"); continue\n    t=re.sub(r'<script.*?</script>','',s,flags=re.S); t=re.sub(r'<style.*?</style>','',t,flags=re.S)\n    t=html.unescape(re.sub(r'<[^>]+>',' ',t)); t=re.sub(r'\\s+',' ',t).strip()\n    kw=[k for k in [\"free\",\"credit\",\"trial\",\"no credit card\",\"sign up\",\"api key\",\"$\"] if k in t.lower()]\n    print(f\"\\n### {u} [{code}] kata: {','.join(kw)}\")\n    print(\"   \",t[:260])\nPY",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "a7edd26b-fd07-48c7-a5a0-b2251dee556a",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

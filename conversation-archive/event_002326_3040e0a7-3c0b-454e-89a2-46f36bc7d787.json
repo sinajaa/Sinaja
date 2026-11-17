@@ -1,0 +1,28 @@
+{
+  "id": "3040e0a7-3c0b-454e-89a2-46f36bc7d787",
+  "timestamp": "2026-11-17T11:21:26.379435",
+  "source": "agent",
+  "parent_id": "3e98b2ad-6341-4d4f-bfb4-06bd99c8a8cd",
+  "llm_message": {
+    "role": "assistant",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Docs tidak menjelaskan \"Provider connection\" (fitur baru v1.62). Jadi saya jelaskan dari logika UI-nya.\n\n## Kenapa API key tidak ada kolomnya\n\n**\"Provider connection\" itu pilihan koneksi yang sudah tersimpan.** Kalau kamu pilih salah satu, API key diambil dari situ \u2014 makanya kolomnya hilang.\n\nUrutannya:\n\n```\nProvider connection: [ None / Anthropic / OpenAI / ... ]\n                      \u2193\nkalau None      \u2192 muncul kolom API Key manual\nkalau dipilih   \u2192 API Key diambil dari koneksi itu\n```\n\nKarena daftarnya isinya provider besar (OpenAI, Anthropic, dll), **tidak ada \"nomask\"**. Jadi kalau kamu pilih salah satu, key-nya milik provider itu \u2014 bukan milikmu.\n\n**Kesimpulan: biarkan `None`.**\n\n## Balik ke `None`\n\nPilih **None** \u2192 kolom API Key muncul lagi \u2192 isi key nomask.\n\nTapi masalah prefix tadi masih ada.\n\n## Solusi prefix yang benar\n\nOpenHands bilang:\n\n```\nLLM Provider NOT provided.\nYou passed model=deepseek_v4.1_flash_1017_uncensored\nPass model as E.g. completion(model='huggingface/starcoder')\n```\n\nDan nomask **menolak** `openai/xxx`.\n\nCoba ini \u2014 **tanpa** prefix, tapi isi Base URL dengan `/v1`:\n\n| Field | Nilai |\n|---|---|\n| Provider connection | **None** |\n| Custom Model | `deepseek_v4.1_flash_1017_uncensored` |\n| Base URL | `https://api.nomask.ai/v1` |\n| API Key | `nmk_live_...` |\n\nItu **yang tadi kamu isi**, dan hasilnya `LLM Provider NOT provided`.\n\n## Berarti litellm butuh prefix\n\nCoba prefix lain yang **tidak** diteruskan ke nomask. Beberapa litellm membuang prefix untuk provider `openai`:\n\n```\nopenai/deepseek_v4.1_flash_1017_uncensored\n```\n\nKalau ini dikirim mentah \u2192 404 (sudah saya buktikan).\n\n## Jadi kemungkinan besar: \"Provider connection\" memang jalannya\n\nFitur ini ada **untuk masalah persis ini** \u2014 menyimpan Base URL + key sebagai koneksi, supaya litellm tahu providernya.\n\nCoba:\n\n**1.** Pilih **Provider connection** \u2192 cari opsi **\"Create new\"**, **\"Add\"**, atau **\"Custom\"**\n\n**2.** Kalau ada, isi:\n- Name: `nomask`\n- Base URL: `https://api.nomask.ai/v1`\n- API Key: `nmk_live_g1r1I3MMlZDJaclmlAFylupkQulRriMVhSaVx3xR`\n\n**3.** Custom Model: `openai/deepseek_v4.1_flash_1017_uncensored`\n\n## Yang saya butuhkan darimu\n\nSaya tidak bisa lihat layarmu, jadi tolong beri tahu:\n\n**1. Saat klik \"Provider connection\", apa saja pilihannya?**\nSebutkan semua yang muncul.\n\n**2. Ada tombol \"Add\" / \"Create new\" / \"+\" di situ?**\n\nDengan itu saya bisa tunjuk pilihan mana yang benar.\n\n## Sementara \u2014 pulihkan dulu\n\n```\nSettings \u2192 LLM \u2192 Available Profiles \u2192 titik tiga di obscurify \u2192 Set as Active\n```\n\nSupaya bisa chat lagi selagi kita cari jalan.\n\n## Ringkas\n\n| Hal | Jawaban |\n|---|---|\n| Kenapa API key hilang | Karena pilih \"Provider connection\" |\n| Yang benar | **None** \u2192 kolom key muncul |\n| Masalah asli | OpenHands butuh prefix, nomask tolak prefix |\n| Jalan keluar | Provider connection custom (kalau ada) |\n\n**Kirim daftar pilihan \"Provider connection\"-nya**, lalu saya tunjuk yang mana."
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": "chatcmpl-cimyWWEt0xX2YhNoKcaQCaLOpqpwF",
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

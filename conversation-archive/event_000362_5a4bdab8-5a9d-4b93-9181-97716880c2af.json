@@ -1,0 +1,36 @@
+{
+  "id": "5a4bdab8-5a9d-4b93-9181-97716880c2af",
+  "timestamp": "2026-11-17T07:19:02.853923",
+  "source": "environment",
+  "parent_id": "24aca456-4b1c-4865-baeb-185aa8278134",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-ae7d72a53ce0a0e9",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "key unik: 56\nkey hidup: 0"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && python3 - <<'EOF'\nimport json, re, urllib.request, urllib.error, concurrent.futures\nkeys={}\nfor f in ['nm_api_keys.txt','nm2_api.txt','.key_used','.key_current']:\n    try: txt=open(f).read()\n    except: continue\n    for m in re.finditer(r'(nmk_live_[A-Za-z0-9_\\-]{20,})',txt):\n        keys.setdefault(m.group(1),f)\nprint(\"key unik:\",len(keys))\ndef bal(k):\n    r=urllib.request.Request('https://nomask.ai/api/credit-balance',headers={'Authorization':'Bearer '+k})\n    try:\n        with urllib.request.urlopen(r,timeout=30) as resp:\n            j=json.load(resp); return k,j,None\n    except urllib.error.HTTPError as e: return k,None,f'http{e.code}'\n    except Exception as e: return k,None,type(e).__name__\nlive={}\nwith concurrent.futures.ThreadPoolExecutor(10) as ex:\n    for k,j,err in ex.map(bal,list(keys)):\n        if j is not None: live[k]=j\nprint(\"key hidup:\",len(live))\nfor k,j in list(live.items())[:4]: print(\"  contoh:\",json.dumps(j)[:200])\njson.dump({k:v for k,v in live.items()},open('/tmp/nm_live.json','w'))\nEOF",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 63318,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "0974aeda-9eeb-4abe-b792-68725c24ec6a",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

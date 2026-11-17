@@ -1,0 +1,28 @@
+{
+  "id": "d5a8698e-c451-4fb6-b1d3-cae0268afac6",
+  "timestamp": "2026-11-17T13:46:54.847505",
+  "source": "user",
+  "parent_id": "da5fda0f-477e-4df1-9087-33b4f85b3c67",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Udh stop aja"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

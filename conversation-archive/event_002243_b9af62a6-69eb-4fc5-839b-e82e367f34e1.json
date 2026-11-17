@@ -1,0 +1,28 @@
+{
+  "id": "b9af62a6-69eb-4fc5-839b-e82e367f34e1",
+  "timestamp": "2026-11-17T11:08:59.966818",
+  "source": "agent",
+  "parent_id": "8fd44ea1-363f-47b9-bb89-76cd76082a13",
+  "llm_message": {
+    "role": "assistant",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Halaman butuh login (browser-ku tidak punya sesi-mu). Jadi saya simpulkan dari pengujian API.\n\n## Kabar baik dulu\n\n**API nomask-mu sehat.** Baru saja saya tes 4 format:\n\n| Format | Hasil |\n|---|---|\n| Normal | \u2705 200 |\n| Dengan prefix `openai/` | \u274c **404 model not exist** |\n| `content` bentuk list | \u2705 200 |\n| Dengan temperature + stream | \u2705 200 |\n\n## Satu penyebab pasti: prefix `openai/`\n\nKalau di **Custom Model** kamu tulis:\n\n```\nopenai/deepseek_v4.1_flash_1017_uncensored\n```\n\nnomask **menolak** dengan:\n\n```\nThe model 'openai/deepseek_v4.1_flash_1017_uncensored' does not exist\n```\n\n**Solusinya:** tulis **tanpa** prefix.\n\n```\ndeepseek_v4.1_flash_1017_uncensored\n```\n\nCatatan: saya sendiri yang menyarankan prefix `openai/` di jawaban sebelumnya. Itu **salah**. Maaf.\n\n## Kenapa semua model ikut error\n\nIni bukan kebetulan. Begini mekanismenya:\n\n1. Kamu simpan profil nomask\n2. OpenHands menjadikannya **profil aktif** untuk semua chat baru\n3. Profil itu rusak (misal karena prefix, atau validasi gagal)\n4. **Semua chat** mencoba pakai profil rusak \u2192 error\n5. Kamu ganti balik ke obscurify \u2192 pulih\n\n**Obscurify tidak rusak.** Dia cuma jadi korban karena profil aktif berubah. Yang kamu lakukan (set ulang obscurify) memang **obat yang benar**.\n\n## Yang perlu kamu tahu: ada \"Set as Active\"\n\nDokumentasi OpenHands menyebut:\n\n> *\"The most recently saved profile becomes the active profile for new conversations.\"*\n\nJadi **setiap kali simpan, profil itu langsung aktif global**. Itu sebabnya satu profil jelek bisa mematikan semua.\n\nDan ada menu **Set as Active** di tiap profil \u2014 jadi kamu bisa balik kapan saja tanpa edit ulang.\n\n## Saran langkah berikut\n\nSebelum coba lagi, pastikan urutan ini:\n\n**1.** Buka Settings \u2192 LLM \u2192 **Available Profiles**\n**2.** Klik titik tiga di profil **obscurify** \u2192 **Set as Active** (biar aman dulu)\n**3.** Baru edit profil nomask dengan isi:\n\n| Field | Nilai |\n|---|---|\n| Custom Model | `deepseek_v4.1_flash_1017_uncensored` |\n| Base URL | `https://api.nomask.ai/v1` |\n| API Key | `nmk_live_g1r1I3MMlZDJaclmlAFylupkQulRriMVhSaVx3xR` |\n\n**4.** Simpan \u2192 otomatis jadi aktif\n**5.** Tes chat\n\n**6.** Kalau error lagi \u2192 klik tiga titik di **obscurify** \u2192 **Set as Active**. Cepat pulih.\n\n## Kalau masih error, saya butuh ini\n\nAgar bisa tunjuk penyebab pastinya, tolong beri **satu** dari:\n\n1. **Teks error lengkap** (klik \"Error\" di chat, copy isinya)\n2. **Screenshot** halaman Settings \u2192 LLM\n\nDari pesan errornya saya bisa tahu apakah:\n- salah prefix model\n- API key ditolak\n- timeout\n- format request ditolak\n\n## Ringkas\n\n| Hal | Status |\n|---|---|\n| API nomask | \u2705 sehat |\n| Prefix `openai/` | \u274c penyebab error \u2014 hapus |\n| Obscurify | \u2705 aman, tidak rusak |\n| Cara pulih | Set as Active ke profil lama |\n| Saran saya sebelumnya | \u274c salah soal prefix |\n\nCoba lagi dengan model **tanpa** `openai/`, lalu kabari. Kalau error, kirim teks error-nya \u2014 itu kunci untuk memastikan sebabnya."
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": "chatcmpl-lDFFqYLcWPYspXrC9W6fdV0PmFCZu",
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

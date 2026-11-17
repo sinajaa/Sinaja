@@ -1,0 +1,28 @@
+{
+  "id": "7b5a1956-4468-4a33-8c7d-bc298230345d",
+  "timestamp": "2026-11-17T12:00:09.309888",
+  "source": "user",
+  "parent_id": "a4b9942e-9809-4339-83ce-4bc123e3fe55",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Sejak kapan aku suruh kamu buat Lightvela massal"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "289d4e88-ca04-4be3-aa80-1ab6dc6cf34f",
+  "timestamp": "2026-11-17T07:18:56.798097",
+  "source": "environment",
+  "parent_id": "46610e70-0428-47f6-a66d-24b2fdfecb39",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-a8a984a06a827dd7",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "/api/credit-balance\n=== coba models endpoint nomask ===\n/v1/models         404 <!DOCTYPE html><html lang=\"en\"><head>    <meta charset=\"UTF-8\">    <meta nam\n/api/v1/models     200 {\"object\":\"list\",\"data\":[{\"id\":\"glm-5.3_flash_uncensored\",\"object\":\"model\",\"crea\n/api/models        302 <!DOCTYPE html><html>    <head>        <meta charset=\"UTF-8\" />        <meta"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && grep -oE '/api/[a-zA-Z0-9/_\\-]{2,40}' /tmp/nmapp.js 2>/dev/null | sort -u | head -25; echo \"=== coba models endpoint nomask ===\"; for p in /v1/models /api/v1/models /api/models; do printf \"%-18s \" \"$p\"; curl -s --max-time 20 \"https://nomask.ai$p\" -H \"Authorization: Bearer $(head -4 nm_api_keys.txt | tail -1 | awk -F'|' '{gsub(/ /,\"\",$2);print $2}')\" -o /tmp/n.json -w \"%{http_code} \"; head -c 80 /tmp/n.json | tr -d '\\n'; echo; done",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 63318,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "fa8fcaa1-1bd9-4924-b9ed-8c671ac8e969",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

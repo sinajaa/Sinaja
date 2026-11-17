@@ -1,0 +1,28 @@
+{
+  "id": "96592e2a-6621-4862-85b9-407f3e6057ca",
+  "timestamp": "2026-11-17T08:05:02.363205",
+  "source": "user",
+  "parent_id": "8ad9e9b3-0ae9-43af-935c-a0e32034274b",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Ok lah coba dulu yang allmodels "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

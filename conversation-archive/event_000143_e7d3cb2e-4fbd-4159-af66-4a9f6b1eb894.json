@@ -1,0 +1,28 @@
+{
+  "id": "e7d3cb2e-4fbd-4159-af66-4a9f6b1eb894",
+  "timestamp": "2026-11-17T07:06:31.952357",
+  "source": "user",
+  "parent_id": "39e39e4e-932e-4c55-bdda-84d85791b268",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Yang chat terakhir kan kita mau farming allmodels io"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

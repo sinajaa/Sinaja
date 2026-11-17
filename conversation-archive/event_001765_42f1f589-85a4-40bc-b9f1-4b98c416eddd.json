@@ -1,0 +1,28 @@
+{
+  "id": "42f1f589-85a4-40bc-b9f1-4b98c416eddd",
+  "timestamp": "2026-11-17T09:59:01.190204",
+  "source": "user",
+  "parent_id": "a5fe7494-b6bc-440f-9595-16019e56e96a",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "https://x.com/HoneyBiu/status/2122537886675243434?a=_ARrG2WIu2pNt1fECqg&s=19\n\n\nhttps://x.com/HoneyBiu/status/2122538365748732284?a=dEb262fpcqdnpDVbgjU&s=19\n\n\nhttps://x.com/HoneyBiu/status/2122538548297433218?a=XyTdsF0nDBVY7bXPjPA&s=19\n\n\nCoba tweet ini di analis apakah free "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

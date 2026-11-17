@@ -1,0 +1,24 @@
+{
+  "id": "a81aee9f-b7d8-4fef-b7c5-2f143ddd7a3c",
+  "timestamp": "2026-11-17T08:08:18.929683",
+  "source": "environment",
+  "parent_id": "2fd8703f-ff86-414f-aa67-cc55d96baa7d",
+  "tool_name": "browser_scroll",
+  "tool_call_id": "chatcmpl-tool-afd4ccb1d462242f",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Scrolled down"
+      }
+    ],
+    "is_error": false,
+    "screenshot_data": null,
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "BrowserObservation"
+  },
+  "action_id": "f9dcf2a5-dc15-43f4-a545-d303ce744ad9",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

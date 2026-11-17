@@ -1,0 +1,28 @@
+{
+  "id": "c1fb69d5-1b00-456f-ae96-a7c8b94d0a2c",
+  "timestamp": "2026-11-17T11:18:10.988554",
+  "source": "user",
+  "parent_id": "7d4e7457-dbe0-4735-a9e1-006282ca209c",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Anjir gak bisa chat woy"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

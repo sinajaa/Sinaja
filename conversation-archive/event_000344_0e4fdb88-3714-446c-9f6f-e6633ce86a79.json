@@ -1,0 +1,36 @@
+{
+  "id": "0e4fdb88-3714-446c-9f6f-e6633ce86a79",
+  "timestamp": "2026-11-17T07:18:45.859985",
+  "source": "environment",
+  "parent_id": "879109bd-af7d-4438-97df-fdb994cd484a",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-9ef92f5bb2c71075",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "cd /workspace/project && python3 - <<'EOF'\nimport json, urllib.request, urllib.error, concurrent.futures\nd=json.load(open('/tmp/ob_live.json'))\nfunded=[x for x in d if (x['saldo'] or 0)>0]\ndef chat(x):\n    body={\"model\":\"deepseek/deepseek-v4.1-flash-1017-uncensored\",\"messages\":[{\"role\":\"user\",\"content\":\"balas satu kata: ok\"}],\"max_tokens\":10}\n    r=urllib.request.Request('https://obscurify.ai/v1/chat/completions',data=json.dumps(body).encode(),\n        headers={'Authorization':'Bearer '+x['key'],'Content-Type':'application/json'})\n    try:\n        with urllib.request.urlopen(r,timeout=90) as resp:\n            j=json.load(resp)\n            return x, True, j['choices'][0]['message']['content'][:20]\n    except urllib.error.HTTPError as e:\n        return x, False, f'http{e.code}'\n    except Exception as e:\n        return x, False, type(e).__name__\nok=0; bad=[]\n\nwith concurrent.futures.ThreadPoolExecutor(6) as ex:\n    for x,s,msg in ex.map(chat,funded):\n        if s: ok+=1\n        else: bad.append((x['akun'],msg))\nprint(f\"chat OK : {ok}/{len(funded)}\")\nprint(f\"gagal   : {len(bad)}\")\nfor b in bad[:6]: print(\"  \",b)\nEOF\nchat OK : 99/99\ngagal   : 0"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && python3 - <<'EOF'\nimport json, urllib.request, urllib.error, concurrent.futures\nd=json.load(open('/tmp/ob_live.json'))\nfunded=[x for x in d if (x['saldo'] or 0)>0]\ndef chat(x):\n    body={\"model\":\"deepseek/deepseek-v4.1-flash-1017-uncensored\",\"messages\":[{\"role\":\"user\",\"content\":\"balas satu kata: ok\"}],\"max_tokens\":10}\n    r=urllib.request.Request('https://obscurify.ai/v1/chat/completions',data=json.dumps(body).encode(),\n        headers={'Authorization':'Bearer '+x['key'],'Content-Type':'application/json'})\n    try:\n        with urllib.request.urlopen(r,timeout=90) as resp:\n            j=json.load(resp)\n            return x, True, j['choices'][0]['message']['content'][:20]\n    except urllib.error.HTTPError as e:\n        return x, False, f'http{e.code}'\n    except Exception as e:\n        return x, False, type(e).__name__\nok=0; bad=[]\nwith concurrent.futures.ThreadPoolExecutor(6) as ex:\n    for x,s,msg in ex.map(chat,funded):\n        if s: ok+=1\n        else: bad.append((x['akun'],msg))\nprint(f\"chat OK : {ok}/{len(funded)}\")\nprint(f\"gagal   : {len(bad)}\")\nfor b in bad[:6]: print(\"  \",b)\nEOF",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 63318,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "4d5908a3-8f46-4c98-a948-108b2473179a",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

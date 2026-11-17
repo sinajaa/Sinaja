@@ -1,0 +1,37 @@
+{
+  "id": "d4a950cd-adc6-4bf2-a001-36eb89812816",
+  "timestamp": "2026-11-17T12:15:40.122355",
+  "source": "agent",
+  "parent_id": "7d76f23e-6eac-4627-b33b-a4c3506c23ff",
+  "thought": [
+    {
+      "cache_prompt": false,
+      "type": "text",
+      "text": "**425 model.** Ada GPT-6, Claude Opus 5.5, Grok 4.7 \u2014 model mahal. Saya uji beberapa kelas dan ukur pemotongan saldo nyata.\n\n"
+    }
+  ],
+  "reasoning_content": null,
+  "thinking_blocks": [],
+  "responses_reasoning_item": null,
+  "action": {
+    "command": "cd /workspace/project && timeout 900 python3 - <<'PY'\nimport json,urllib.request,subprocess,time\nOB=subprocess.check_output(\"grep -oE 'sk-obs1_[A-Za-z0-9_-]+' ob_ready.txt | head -1\",shell=True,text=True).strip()\ndef bal():\n    r=urllib.request.Request(\"https://obscurify.ai/get_user_balance\",headers={\"Authorization\":f\"Bearer {OB}\"})\n    with urllib.request.urlopen(r,timeout=30) as x: return json.load(x)['balance']\ndef send(model,prompt=\"hi\",mt=100):\n    b=json.dumps({\"model\":model,\"messages\":[{\"role\":\"user\",\"content\":prompt}],\"max_tokens\":mt}).encode()\n    r=urllib.request.Request(\"https://obscurify.ai/v1/chat/completions\",data=b,\n      headers={\"Authorization\":f\"Bearer {OB}\",\"Content-Type\":\"application/json\"})\n    with urllib.request.urlopen(r,timeout=180) as x: return json.load(x)\n\ntests=[\"openai/gpt-6-astra\",\"anthropic/claude-opus-5.5\",\"x-ai/grok-4.7\",\n       \"google/gemini-4-argon\",\"deepseek/deepseek-v4.1-flash-1017-uncensored\",\n       \"qwen/qwen3.8-27b-uncensored\",\"z-ai/glm-5.3-uncensored\",\"meta-llama/llama-4-scout\"]\nprint(f\"{'MODEL':44} {'cost dilaporkan':>16} {'delta saldo':>12}\")\nfor m in tests:\n    try:\n        b0=bal(); d=send(m); time.sleep(1.2); b1=bal()\n        c=d['usage']['cost']\n        print(f\"{m:44} ${c:>14.6f} ${b0-b1:>10.4f}\")\n    except urllib.error.HTTPError as e: print(f\"{m:44} HTTP{e.code} {e.read().decode()[:60]}\")\n    except Exception as e: print(f\"{m:44} ERR {str(e)[:50]}\")\nPY",
+    "is_input": false,
+    "timeout": 960.0,
+    "reset": false,
+    "kind": "TerminalAction"
+  },
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-a0da7186dd457736",
+  "tool_call": {
+    "id": "chatcmpl-tool-a0da7186dd457736",
+    "responses_item_id": null,
+    "name": "terminal",
+    "arguments": "{\"command\": \"cd /workspace/project && timeout 900 python3 - <<'PY'\\nimport json,urllib.request,subprocess,time\\nOB=subprocess.check_output(\\\"grep -oE 'sk-obs1_[A-Za-z0-9_-]+' ob_ready.txt | head -1\\\",shell=True,text=True).strip()\\ndef bal():\\n    r=urllib.request.Request(\\\"https://obscurify.ai/get_user_balance\\\",headers={\\\"Authorization\\\":f\\\"Bearer {OB}\\\"})\\n    with urllib.request.urlopen(r,timeout=30) as x: return json.load(x)['balance']\\ndef send(model,prompt=\\\"hi\\\",mt=100):\\n    b=json.dumps({\\\"model\\\":model,\\\"messages\\\":[{\\\"role\\\":\\\"user\\\",\\\"content\\\":prompt}],\\\"max_tokens\\\":mt}).encode()\\n    r=urllib.request.Request(\\\"https://obscurify.ai/v1/chat/completions\\\",data=b,\\n      headers={\\\"Authorization\\\":f\\\"Bearer {OB}\\\",\\\"Content-Type\\\":\\\"application/json\\\"})\\n    with urllib.request.urlopen(r,timeout=180) as x: return json.load(x)\\n\\ntests=[\\\"openai/gpt-6-astra\\\",\\\"anthropic/claude-opus-5.5\\\",\\\"x-ai/grok-4.7\\\",\\n       \\\"google/gemini-4-argon\\\",\\\"deepseek/deepseek-v4.1-flash-1017-uncensored\\\",\\n       \\\"qwen/qwen3.8-27b-uncensored\\\",\\\"z-ai/glm-5.3-uncensored\\\",\\\"meta-llama/llama-4-scout\\\"]\\nprint(f\\\"{'MODEL':44} {'cost dilaporkan':>16} {'delta saldo':>12}\\\")\\nfor m in tests:\\n    try:\\n        b0=bal(); d=send(m); time.sleep(1.2); b1=bal()\\n        c=d['usage']['cost']\\n        print(f\\\"{m:44} ${c:>14.6f} ${b0-b1:>10.4f}\\\")\\n    except urllib.error.HTTPError as e: print(f\\\"{m:44} HTTP{e.code} {e.read().decode()[:60]}\\\")\\n    except Exception as e: print(f\\\"{m:44} ERR {str(e)[:50]}\\\")\\nPY\", \"summary\": \"Test balance deduction across model tiers\", \"security_risk\": \"MEDIUM\", \"timeout\": 960}",
+    "origin": "completion"
+  },
+  "llm_response_id": "chatcmpl-e33y1h51jIy4l1oBzbqYvnJBa1m1w",
+  "security_risk": "MEDIUM",
+  "critic_result": null,
+  "summary": "Test balance deduction across model tiers",
+  "kind": "ActionEvent"
+}

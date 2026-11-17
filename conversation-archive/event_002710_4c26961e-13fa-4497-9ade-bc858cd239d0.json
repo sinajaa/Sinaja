@@ -1,0 +1,28 @@
+{
+  "id": "4c26961e-13fa-4497-9ade-bc858cd239d0",
+  "timestamp": "2026-11-17T12:26:11.457245",
+  "source": "user",
+  "parent_id": "40f8d76e-b24a-4dec-8630-2eab4a61a324",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "deepseek/deepseek-v4.1-flash-1017-abliterated:thinking bedanya yg ini si?"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "06e8912f-1e26-4e1a-883e-e1ff768f834c",
+  "timestamp": "2026-11-17T12:57:43.806550",
+  "source": "environment",
+  "parent_id": "91ff36a1-9dcc-4839-b6ee-e36cab8141d4",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-aa625a679266acb1",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "=== cari 'obscurify' di conversations ===\n/var/openhands/conversations/fdc16e2e6c874c3299cde9d5e58dd212/events/event-00320-9b29c609-c73a-4f43-a28f-a28c6c832aae.json\n/var/openhands/conversations/fdc16e2e6c874c3299cde9d5e58dd212/events/event-00456-9a4ea2d3-7a7b-4753-ade2-615a52fc15f6.json\n/var/openhands/conversations/fdc16e2e6c874c3299cde9d5e58dd212/events/event-00462-43bb752d-1479-4ba0-8d02-20518f1a2174.json\n/var/openhands/conversations/fdc16e2e6c874c3299cde9d5e58dd212/events/event-00459-25e0f89e-5a30-4b79-9eb5-d8b32a55c055.json\n/var/openhands/conversations/fdc16e2e6c874c3299cde9d5e58dd212/events/event-00463-0d7055fa-f591-45d3-90d4-651c18689ae2.json\n\n=== cari nama model di event ===\n  1031  deepseek/deepseek-v4.1-flash-1017-uncensored\n   466  openai/deepseek/deepseek-v4.1-flash-1017-uncensored\n   251  openai/deepseek_v4.1_flash_1017_uncensored\n    24  deepseek/deepseek-v4.1-flash-abliterated\n     7  deepseek/deepseek-v4.1-flash-1017-abliterated\n     5  openai/abliterated-model-large-flash\n     4  deepseek/kimi\n     4  openai/deepseek/deepseek-v4.1-flash-abliterated\n     3  deepseek/deepseek-v4.1-flash-0910-uncensored\n     3  deepseek/deepseek-v4.1-flash-uncensored\n     2  deepseek/deepseek-chat\n     2  deepseek/deepseek-chat-v3-0324\n     2  deepseek/deepseek-chat-v3.1\n     2  deepseek/deepseek-v3.1-terminus\n     2  deepseek/deepseek-v3.2"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && echo \"=== cari 'obscurify' di conversations ===\"; grep -rl \"obscurify\" /var/openhands/conversations 2>/dev/null | head -5; echo; echo \"=== cari nama model di event ===\"; python3 - <<'PY'\nimport json,glob,os,re\nhits={}\nfor f in glob.glob(\"/var/openhands/conversations/*/events/*.json\")[:4000]:\n    try: d=json.load(open(f))\n    except: continue\n    s=json.dumps(d)\n    for m in re.findall(r'\"model\"\\s*:\\s*\"([^\"]{3,80})\"',s):\n        hits[m]=hits.get(m,0)+1\n    for m in re.findall(r'(deepseek/[a-z0-9.\\-]+(?::thinking)?)',s):\n        hits[m]=hits.get(m,0)+1\nfor k,v in sorted(hits.items(),key=lambda x:-x[1])[:15]: print(f\"  {v:4}  {k}\")\nPY",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "bc5f61df-7102-4761-9653-91597a524406",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "3e98b2ad-6341-4d4f-bfb4-06bd99c8a8cd",
+  "timestamp": "2026-11-17T11:21:18.836699",
+  "source": "environment",
+  "parent_id": "d727261b-6bb9-41d7-9d37-fabcc71c3175",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-a350dd98d2a2f4a5",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "--- Advanced LLM Settings ---\nLLM) Settings\n Secrets Management\n Model Context Protocol (MCP)\n Additional Documentation\n Sandbox Server\n LLM Configuration\n OpenHands Community\n Community\n Contributing\n Issue Triage and the ready-for-dev Gate\n FAQs\n Feedback\n On this page\n Back to top Overview\n Basic LLM Settings\n Advanced LLM Settings Memory Condensation\n LLM Profiles Creating an LLM Profile\n Managing LLM Profiles\n Switching Profiles During a Conversation\n Switching Profiles with the /model Slash Command\n Letting the Agent Select Models Dynamically\n How Profile Switching Works\n Best Practices for Using LLM Profiles\n Settings\n Language Model (LLM) Settings\n Copy page Copy page\n This page goes over how to set the LLM to use in OpenHands, including LLM profiles for switching models during conversations.\n Copy page Copy page\n Overview\n The LLM settings allows you to bring your own LLM and API key to use with OpenHands. This can be any model that is\nsupported by litellm, but it requires a powerful model to work properly.\n See our recommended models here . You can also configure some\nadditiona"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && curl -s --max-time 30 -A \"Mozilla/5.0\" \"https://docs.openhands.dev/openhands/usage/settings/llm-settings\" | python3 -c \"\nimport sys,re,html\ns=sys.stdin.read()\ns=re.sub(r'<script.*?</script>','',s,flags=re.S); s=re.sub(r'<style.*?</style>','',s,flags=re.S)\ns=re.sub(r'<(br|/p|/div|/li|/h[1-6]|/tr|/td)>','\\n',s)\nt=html.unescape(re.sub(r'<[^>]+>',' ',s))\nt=re.sub(r'[ \\t]+',' ',t); t=re.sub(r'\\n\\s*\\n+','\\n',t)\nfor kw in ['Provider connection','connection','Advanced LLM Settings']:\n    for m in re.finditer(kw,t):\n        print(f'--- {kw} ---'); print(t[max(0,m.start()-300):m.start()+800]); print(); break\n\"",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "551a63a7-a403-4b40-bd0b-0629bdd4dc5e",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

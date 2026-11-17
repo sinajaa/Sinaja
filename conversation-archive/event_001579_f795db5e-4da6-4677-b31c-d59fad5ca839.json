@@ -1,0 +1,9 @@
+{
+  "id": "f795db5e-4da6-4677-b31c-d59fad5ca839",
+  "timestamp": "2026-11-17T09:26:46.039592",
+  "source": "environment",
+  "parent_id": "93a29020-02c9-491d-a896-33daa66aefd9",
+  "key": "last_user_message_id",
+  "value": "93a29020-02c9-491d-a896-33daa66aefd9",
+  "kind": "ConversationStateUpdateEvent"
+}

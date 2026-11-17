@@ -1,0 +1,28 @@
+{
+  "id": "a23464b6-e9c9-4246-bc3a-4ab5a7b5bfa0",
+  "timestamp": "2026-11-17T13:34:02.595282",
+  "source": "user",
+  "parent_id": "cbb19e82-8e45-4ec1-b3d2-f228b1d98554",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Saya daftar Lebrel.ai gk ada kok"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

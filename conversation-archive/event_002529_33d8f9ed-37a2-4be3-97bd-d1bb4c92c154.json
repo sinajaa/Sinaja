@@ -1,0 +1,28 @@
+{
+  "id": "33d8f9ed-37a2-4be3-97bd-d1bb4c92c154",
+  "timestamp": "2026-11-17T11:55:48.238687",
+  "source": "agent",
+  "parent_id": "dd612d8c-3415-4d6f-a08a-ff6b4b718bbc",
+  "llm_message": {
+    "role": "assistant",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Ini konfigurasi LightVela dengan key baru. Semua sudah saya tes.\n\n## Key baru \u2014 ambil salah satu\n\n```\nnmk_live_Tv78qqiEcF3Tb6u2kC5WPRuhWT5MDti94RVaZVQT\n```\n```\nnmk_live_FtVn4vczCTzAEeZYSQYF65DSwerrKBsPbuAQJx1l\n```\n```\nnmk_live_pZuW9YnhsUNiNy4P14yUcK5ljBLonvvKPyX8LkL6\n```\n\nKetiganya **$1, terverifikasi LIVE**.\n\n## Isi form LightVela\n\nMenu **Management \u2192 Model \u2192 Custom model**:\n\n| Field | Nilai |\n|---|---|\n| Name | `nomask` |\n| Base URL | `https://api.nomask.ai/v1` |\n| Protocol | **OpenAI Chat Completions** |\n| API Key | *(salah satu di atas)* |\n| Model ID | `deepseek_v4.1_flash_1017_uncensored` |\n\n## Hasil tes 6 model uncensored di key baru\n\n| Model | Hasil | Reasoning |\n|---|---|---|\n| `deepseek_v4.1_flash_1017_uncensored` | \u2705 OK | 233 char |\n| `glm-5.3_flash_uncensored` | \u2705 OK | 126 char |\n| `qwen_3.8_uncensored` | \u2705 OK | **0** |\n| `gemma-4-uncensored` | \u2705 OK | **0** |\n| `venice-uncensored-1.2` | \u2705 OK | **0** |\n| `mimo-v2.6-flash-uncensored` | \u26a0\ufe0f **503** | model overloaded |\n\n**5 dari 6 jalan.** Yang gagal cuma `mimo` karena modelnya sedang ramai.\n\n## Rekomendasi untuk LightVela\n\n| Mau | Pakai |\n|---|---|\n| Cepat & stabil | **`glm-5.3_flash_uncensored`** |\n| Hemat token | **`qwen_3.8_uncensored`** |\n| Deepseek (seperti dulu) | `deepseek_v4.1_flash_1017_uncensored` |\n\nKalau pakai deepseek, dia tetap isi `reasoning_content` (233 char) \u2014 boros token tapi jawabannya benar.\n\n## Kalau error\n\n| Pesan | Obat |\n|---|---|\n| `402 insufficient_balance` | ganti ke key 21, lalu 22 |\n| `503 model overloaded` | ganti model |\n| `404 unknown_endpoint` | protocol salah, pilih **OpenAI Chat Completions** |\n| `content` kosong | naikkan `max_tokens` |\n\n## Status saldo\n\n| | |\n|---|---|\n| Key LIVE | **22** |\n| Nilai total | **~$22** |\n| Key habis | 4 |\n\nFile `nomask_live_keys.txt` sudah bernomor 1\u201322, dengan key baru di nomor **20\u201322** (ditandai `BARU`).\n\n## File baru\n\n`LIGHTVELA_CONFIG.md` \u2014 berisi semua di atas, bisa dibuka kapan saja.\n\nSudah di-commit (`1f1d11c`).\n\n**Coba pasang dengan key nomor 20**, lalu kabari hasilnya. Kalau muncul error, kirim pesannya \u2014 saya tunjuk penyebabnya."
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": "chatcmpl-oSkKcZuj6rzTmjtPsDxeX8quZOOdh",
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

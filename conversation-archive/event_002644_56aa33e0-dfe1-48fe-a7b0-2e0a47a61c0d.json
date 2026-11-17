@@ -1,0 +1,28 @@
+{
+  "id": "56aa33e0-dfe1-48fe-a7b0-2e0a47a61c0d",
+  "timestamp": "2026-11-17T12:11:33.296638",
+  "source": "user",
+  "parent_id": "563eb04e-1deb-49b0-af32-49152703a9a4",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Bukan membandingkan totalnya tapi di itung per api key,dua apikey dari nomask dan obcurify sama sama credit $1,tapi credit yang obcurify $1 masih awet banget coba kamu analis apinkey yang sedang saya pakai ini di obcurify kenapa bisa awet banget bahkan belum ganti ganti apikey, sedang nomask langsung cepet habis begitu saja dan udh beberapa kali ganti apikey baru"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

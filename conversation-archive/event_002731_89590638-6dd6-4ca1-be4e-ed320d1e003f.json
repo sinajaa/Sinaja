@@ -1,0 +1,36 @@
+{
+  "id": "89590638-6dd6-4ca1-be4e-ed320d1e003f",
+  "timestamp": "2026-11-17T12:32:19.871270",
+  "source": "environment",
+  "parent_id": "5d008e21-b94e-431f-b864-2e4c81fdf805",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-a19d8621d6b01b17",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "deepseek-v4.1-flash-1017-abliterated:thinking        rata2=6.6s  (15.3, 2.6, 1.9)\ndeepseek-v4.1-flash-1017-abliterated                 rata2=8.2s  (7.4, 9.8, 7.4)"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && timeout 400 python3 - <<'PY'\nimport json,urllib.request,subprocess,time\nOB=subprocess.check_output(\"grep -oE 'sk-obs1_[A-Za-z0-9_-]+' ob_ready.txt | head -1\",shell=True,text=True).strip()\nfor M in [\"deepseek/deepseek-v4.1-flash-1017-abliterated:thinking\",\n          \"deepseek/deepseek-v4.1-flash-1017-abliterated\"]:\n    ts=[]\n    for i in range(3):\n        b=json.dumps({\"model\":M,\"messages\":[{\"role\":\"user\",\"content\":\"Halo\"}],\"max_tokens\":1000}).encode()\n        r=urllib.request.Request(\"https://obscurify.ai/v1/chat/completions\",data=b,\n          headers={\"Authorization\":f\"Bearer {OB}\",\"Content-Type\":\"application/json\"})\n        t0=time.time()\n        with urllib.request.urlopen(r,timeout=240) as x: d=json.load(x)\n        ts.append(time.time()-t0)\n    print(f\"{M.split('/')[-1]:52} rata2={sum(ts)/3:.1f}s  ({', '.join(f'{t:.1f}' for t in ts)})\")\nPY",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "d61c81f7-9f8c-4f34-8141-7719170f24da",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

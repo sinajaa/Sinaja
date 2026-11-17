@@ -1,0 +1,28 @@
+{
+  "id": "7b66f064-8d83-43f8-b4a9-c5386cd7fde2",
+  "timestamp": "2026-11-17T10:14:18.364481",
+  "source": "user",
+  "parent_id": "4d7451ac-9797-4d0d-8fa7-d8f6290ab6e7",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Itu kenapa error "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

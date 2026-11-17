@@ -1,0 +1,36 @@
+{
+  "id": "efbcecca-ed79-49f1-8177-c1e71ff8fd6b",
+  "timestamp": "2026-11-17T07:00:28.248519",
+  "source": "environment",
+  "parent_id": "a6302e88-1e75-4026-9cc5-da820a044458",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-8d8f55b7ad304aa8",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "=== obscurify chat test (key terakhir) ===\n\n=== nomask chat test (key current) ===\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n    <meta name=\"csrf-token\" content=\"\">\n\n\n    <script async src=\"https://www.googletagmanager.com/gtag/js?id=G-853LJRTT5S\"></script>\n    <script>\n        window.dataLayer = window.dataLayer || [];\n        function gtag(){dataLayer.push(arguments);}\n        gtag('js', new Date());\n        gtag('config', 'G-853LJRTT5S"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && echo \"=== obscurify chat test (key terakhir) ===\"; K=$(tail -1 ob_accounts.txt | awk -F'|' '{gsub(/ /,\"\",$2); print $2}'); curl -s --max-time 60 https://obscurify.ai/api/v1/chat/completions -H \"Authorization: Bearer $K\" -H \"Content-Type: application/json\" -d '{\"model\":\"deepseek/deepseek-v4.1-flash-1017-uncensored\",\"messages\":[{\"role\":\"user\",\"content\":\"say ok\"}],\"max_tokens\":10}' | head -c 500; echo; echo \"=== nomask chat test (key current) ===\"; curl -s --max-time 60 https://nomask.ai/api/chat -H \"Authorization: Bearer $(cat .key_current)\" -H \"Content-Type: application/json\" -d '{\"model\":\"deepseek/deepseek-v4.1-flash-1017-uncensored\",\"messages\":[{\"role\":\"user\",\"content\":\"say ok\"}]}' -w \"\\nHTTP %{http_code}\\n\" | head -c 500",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "004b3cbf-fb4f-443d-8027-dac960c695c0",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

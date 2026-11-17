@@ -1,0 +1,36 @@
+{
+  "id": "ff95528a-d337-4b56-8954-d2e1e5f85273",
+  "timestamp": "2026-11-17T07:06:57.723081",
+  "source": "environment",
+  "parent_id": "329ed2d4-0b25-4431-8e98-a21b86c2e13b",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-bd922c71a32a0e38",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": ""
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && grep -oE '.{150}(sign-in/social|social|google).{200}' /tmp/amjs.js | head -6",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 63318,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": null,
+    "kind": "TerminalObservation"
+  },
+  "action_id": "65de2642-2762-4879-b7b1-f1c41ba5c21a",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

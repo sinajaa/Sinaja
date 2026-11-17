@@ -1,0 +1,28 @@
+{
+  "id": "faf25e18-ebfa-4edb-a3bf-57f05ab38b0a",
+  "timestamp": "2026-11-17T10:41:11.599480",
+  "source": "agent",
+  "parent_id": "4c66169c-3736-4246-9221-08ebc14d3c15",
+  "llm_message": {
+    "role": "assistant",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Saya baca docs resmi LightVela dan sudah uji API nomask-nya. Ini konfigurasinya.\n\n## Intinya\n\nLightVela itu **agen AI cloud** (mirip Manus), bukan penyedia LLM. Tapi bot-nya bisa pakai **API key provider sendiri**. Dari docs:\n\n> *\"A Bot can use plan model credits **or your own provider credential**.\"*\n\nJadi key nomask-mu bisa dipasang.\n\n## Langkah konfigurasi\n\n**1.** Login \u2192 pilih **Bot** \u2192 menu **Management \u2192 Model**\n\n**2.** Pilih **Custom model** (bukan \"Coding Plan model\")\n\n**3.** Isi form:\n\n| Kolom | Nilai |\n|---|---|\n| **Name** | `nomask` |\n| **Base URL** | `https://api.nomask.ai/v1` |\n| **Protocol** | **OpenAI Chat Completions** |\n| **API Key** | `nmk_live_g1r1I3MMlZDJaclmlAFylupkQulRriMVhSaVx3xR` |\n\n**4.** Klik **Fetch available models**\n\n**5.** Pilih model, persis seperti ini:\n\n```\ndeepseek_v4.1_flash_1017_uncensored\n```\n\n**6.** Pilih **use**: Primary / Fallback / Add only\n\n**7.** **Check model status** \u2192 lalu kirim pesan pendek di Web Chat\n\n## Protocol \u2014 ini yang paling gampang salah\n\nLightVela cuma punya **3 pilihan protocol**:\n\n| Protocol | Cocok untuk nomask? |\n|---|---|\n| OpenAI Chat Completions | \u2705 **ya, ini yang benar** |\n| Anthropic Messages | \u274c |\n| OpenAI Responses | \u274c |\n\nSaya sudah tes: nomask **tidak punya** `/v1/responses`, balasannya 404 `unknown_endpoint`.\n\n**Kalau kamu pilih \"OpenAI Responses\", pasti gagal.** Pilih **OpenAI Chat Completions**.\n\n## Bukti key-mu jalan\n\n```\nPOST https://api.nomask.ai/v1/chat/completions  \u2192  200\n{\n  \"model\": \"deepseek_v4.1_flash_1017_uncensored\",\n  \"usage\": {\"total_tokens\": 49},\n  \"nomask\": {\"cost_usd\": 3.9e-05}\n}\n```\n\n**$0.000039 per request kecil.** Dengan $1, bisa ribuan pesan.\n\n## \u26a0\ufe0f Satu risiko yang perlu kamu tahu\n\nnomask **menolak** `content` berbentuk list. Wajib ada:\n\n```json\n{\"force_string_serializer\": true}\n```\n\nMasalahnya: **GUI LightVela kemungkinan tidak punya kolom untuk field ini** \u2014 persis seperti GUI nomask sendiri.\n\nKalau nanti chat gagal dengan pesan:\n\n```\ncontent must be a string\n```\n\nberarti LightVela mengirim format list, dan flag itu tidak terkirim.\n\n**Solusinya:**\n- Coba dulu \u2014 mungkin LightVela kirim format string biasa, jadi aman\n- Kalau gagal, ganti ke model yang tidak butuh flag (misal `grok-4.5`, `kimi-k3.1-pro`)\n- Atau set lewat API LightVela kalau tersedia\n\n## Catatan dari docs yang berguna\n\n- **\"Check model status\" memakan saldo** \u2014 dia kirim request kecil\n- Muncul di daftar model **bukan** jaminan bisa dipakai; harus uji chat\n- Primary tidak boleh sekaligus jadi fallback\n- Base URL harus **sudah termasuk `/v1`**\n\n## Ringkas untuk disalin\n\n```\nName:      nomask\nBase URL:  https://api.nomask.ai/v1\nProtocol:  OpenAI Chat Completions\nAPI Key:   nmk_live_g1r1I3MMlZDJaclmlAFylupkQulRriMVhSaVx3xR\nModel ID:  deepseek_v4.1_flash_1017_uncensored\n```\n\nSemua sudah saya catat di `AKSES.md` (commit `7b77457`).\n\nCoba pasang, lalu kabari hasilnya \u2014 terutama apakah muncul error `content must be a string`. Kalau iya, saya carikan jalan keluarnya."
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": "chatcmpl-Cr5DK9dCKbriqCza70UpSdb8OQ8aM",
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

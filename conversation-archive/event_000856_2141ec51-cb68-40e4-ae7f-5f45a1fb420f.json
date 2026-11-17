@@ -1,0 +1,24 @@
+{
+  "id": "2141ec51-cb68-40e4-ae7f-5f45a1fb420f",
+  "timestamp": "2026-11-17T08:00:10.645985",
+  "source": "environment",
+  "parent_id": "e645cb1b-7dea-47b9-b3e7-efb3610f9e8a",
+  "tool_name": "browser_type",
+  "tool_call_id": "chatcmpl-tool-bbbb51f869c98e8e",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Typed '03/16/1997' into element 2509"
+      }
+    ],
+    "is_error": false,
+    "screenshot_data": null,
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "BrowserObservation"
+  },
+  "action_id": "fef61f87-013d-43ba-98fa-e88b73e140c6",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

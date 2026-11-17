@@ -1,0 +1,28 @@
+{
+  "id": "e23c78c5-7643-4386-9961-aa2f1dac5b4c",
+  "timestamp": "2026-11-17T12:48:57.904378",
+  "source": "user",
+  "parent_id": "a7ff650d-0353-4b28-a6b7-261ccf7f07a8",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Apakah ini sudah openai/deepseek/deepseek-v4.1-flash-1017-abliterated:thinking"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

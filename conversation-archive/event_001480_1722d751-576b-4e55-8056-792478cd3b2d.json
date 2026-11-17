@@ -1,0 +1,36 @@
+{
+  "id": "1722d751-576b-4e55-8056-792478cd3b2d",
+  "timestamp": "2026-11-17T09:12:03.569563",
+  "source": "environment",
+  "parent_id": "2fc5ff18-15fe-4fc0-ac8e-c9f87d9a0fad",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-b11bafef1d6c22ae",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Pricing for Apps, Kubernetes, Databases & Storage | Cloider Cloider Home About us Services Features Pricing FAQ Docs Login / Register Home Pricing Pricing Pay-as-you-go pricing for every Cloider product Cloider is pay as you go from prepaid funds: no plans to commit to, no upfront fees and no charge for idle machines. Every price below is live, a monthly rate for a 30-day month prorated to the second, and the same prices are served as JSON at cloider.com/api/pricing. Start free trial Read the docs $25 welcome credit, 14-day trial Free egress and requests Billed by the second No commitments Price list Every price in one place Product What you pay for Price App Engine Compute $32 per compute unit per month Kubernetes Compute $35 per compute unit per month Kubernetes Persistent volumes $0.50 per GiB per month Kubernetes Load balancers $10 per month each Databases Plan, by engine and size from $3.99 per month Object Storage Data stored $0.25 per GB per month Container Registry Image data stored $0.50 per GB per month Always free Egress and bandwidth API and S3 requests Registry pushes and pulls Domains, DNS records and DNS hosting cloider.app subdomains with HTTPS App builds Databases Database plans Every engine has six plans. A plan's price is charged per second while the database is Ready, and a paused database pays only for its storage. PostgreSQL Plan vCPU Memory Storage Per month Paused Hobby 0.25 0.25 GB 1 GB $3.99 $0.50 Starter 0.25 0.5 GB 2 GB $6.99 $1.00 Basic 0.5 1 GB 4 GB $12.99 $2.00 Standard 1 1 GB 6 GB $14.99 $3.00 Plus 1 2 GB 8 GB $29.99 $4.00 Pro 2 4 GB 16 GB $59.99 $8.00 MySQL Plan vCPU Memory Storage Per month Paused Hobby 0.25 0.25 GB 1 GB $3.99 $0.50 Starter 0.25 0.5 GB 2 GB $6.99 $1.00 Basic 0.5 1 GB 4 GB $12.99 $2.00 Standard 1 1 GB 6 GB $14.99 $3.00 Plus 1 2 GB 8 GB $29.99 $4.00 Pro 2 4 GB 16 GB $59.99 $8.00 Redis Plan vCPU Memory Storage Per month Paused Hobby 0.25 0.25 GB 1 GB $3.99 $0.50 Starter 0.25 0.5 GB 2 GB $6.99 $1.00 Basic 0.5 1 GB 4 GB $11.99 $2.00 Standard 1 2 GB 8 GB $29.99 $4.00 Plus 1 4 GB 16 GB $59.99 $8.00 Pro 2 8 GB 32 GB $99.99 $16.00 MongoDB Plan vCPU Memory Storage Per month Paused Hobby 0.25 0.5 GB 2 GB $6.99 $1.00 Starter 0.5 1 GB 4 GB $12.99 $2.00 Basic 1 1 GB 6 GB $14.99 $3.00 Standard 1 2 GB 8 GB $29.99 $4.00 Plus 2 4 GB 16 GB $59.99 $8.00 Pro 3 6 GB 24 GB $89.99 $12.00 Examples What common setups cost per month A small web app with a database An app averaging 0.25 vCPU and 512 MB: $8.00 The smallest PostgreSQL plan: $3.99 $11.99 per month A Kubernetes staging cluster Pods requesting 1 vCPU and 2 GB in total:"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && curl -s --max-time 30 \"https://cloider.com/pricing\" -o /tmp/p.html; python3 - <<'PY'\nimport re,html\ns=open('/tmp/p.html',errors='ignore').read()\ns=re.sub(r'<script.*?</script>','',s,flags=re.S)\ns=re.sub(r'<style.*?</style>','',s,flags=re.S)\nt=html.unescape(re.sub(r'<[^>]+>',' ',s))\nt=re.sub(r'\\s+',' ',t)\ni=t.lower().find('pricing')\nprint(t[:2600])\nPY",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 71910,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "b63cbfcf-ab08-454d-a89e-da526b97be49",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

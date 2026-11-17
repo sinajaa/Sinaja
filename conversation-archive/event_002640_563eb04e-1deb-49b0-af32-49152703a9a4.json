@@ -1,0 +1,28 @@
+{
+  "id": "563eb04e-1deb-49b0-af32-49152703a9a4",
+  "timestamp": "2026-11-17T12:08:03.866211",
+  "source": "agent",
+  "parent_id": "94179f66-5d87-4172-80f5-ef6534e01347",
+  "llm_message": {
+    "role": "assistant",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Sekarang saya bisa jelaskan semuanya dengan angka.\n\n## Pertama: key 20 memang habis\n\nSaya cek langsung:\n\n| Key | Status |\n|---|---|\n| **20** (`Tv78qq...`) | \u274c **402 \u2014 habis** |\n| 21 (`FtVn4v...`) | \u2705 hidup |\n| 22 (`pZuW9Y...`) | \u2705 hidup |\n\nJadi bukan salahmu. Key-nya benar-benar terkuras.\n\n## Kenapa nomask cepat habis\n\nSaya ukur biaya sebenarnya:\n\n| Skenario | Prompt token | Biaya |\n|---|---|---|\n| Chat pendek (\"hi\") | 13 | $0.000195 |\n| **+ system prompt besar** | **3.214** | **$0.001301** |\n| Riwayat 10 pesan | 2.533 | $0.001093 |\n\n**Prompt besar = 7x lebih mahal.**\n\nLightVela mengirim **system prompt panjang** setiap pesan (instruksi agen, memory, personality). Jadi tiap chat bukan \"hi\", tapi **3.000+ token**.\n\nHitungan: **$1 \u00f7 $0.0013 \u2248 768 pesan**. Kedengarannya banyak, tapi:\n\n- Kalau kamu chatting intens, 100\u2013200 pesan sehari\n- **Habis dalam 3\u20135 hari**\n- Dan setiap \"Check model status\" juga memakan saldo\n\n## Kenapa obscurify \"awet\"\n\nSaya tes juga. Ternyata **bukan gratis** \u2014 biayanya tercatat:\n\n| Skenario | Prompt | Biaya |\n|---|---|---|\n| Pendek | 5 | $0.0000088 |\n| Prompt besar | 3.607 | **$0.000798** |\n\n**Obscurify juga bayar.** Bahkan mirip: $0.0008 vs nomask $0.0013.\n\nJadi kenapa tidak habis? Karena **skalanya beda**:\n\n| | nomask | obscurify |\n|---|---|---|\n| Saldo per key | $1 | $1 |\n| Jumlah key | 22 | **104** |\n| **Total saldo** | **$22** | **$101.75** |\n\n**Obscurify punya 5x lebih banyak saldo.** Itu sebabnya \"awet\".\n\n## Ada bonus lain di obscurify\n\nLihat hasil tesnya:\n\n```\n\"cached_tokens\": 5\n\"cost\": 8.82453e-06\n```\n\nObscurify punya **prompt caching**. Kalau system prompt sama (seperti di OpenHands), token itu **tidak dihitung penuh**.\n\nJadi:\n- Pesan pertama: bayar penuh\n- Pesan berikutnya: system prompt dari cache \u2192 **jauh lebih murah**\n\nIni yang bikin terasa \"unlimited\".\n\n## Apakah obscurify model palsu?\n\n**Bukan.** Buktinya:\n\n1. **Ada biaya tercatat** \u2014 `cost: 0.00079792713` (presisi tinggi, bukan angka karangan)\n2. **Prompt token dihitung benar** \u2014 3.607 untuk prompt besar\n3. **Cached tokens bekerja** \u2014 perilaku nyata provider\n4. **Model benar** \u2014 `deepseek/deepseek-v4.1-flash-1017-uncensored`\n\nKalau palsu, biayanya akan nol atau asal-asalan.\n\n## Kenapa terasa unlimited\n\nTiga hal:\n\n| Sebab | Penjelasan |\n|---|---|\n| 104 key | $101.75, bukan $22 |\n| Caching | system prompt tidak dibayar ulang |\n| Model lebih murah | $0.0008 vs $0.0013 per pesan |\n\n**Kombinasi ini** yang bikin terasa tanpa batas.\n\n## Perbandingan jujur\n\n| | nomask | obscurify |\n|---|---|---|\n| Biaya/pesan (prompt besar) | $0.0013 | $0.0008 |\n| Total saldo | $22 | **$101.75** |\n| Caching | \u2753 tidak terlihat | \u2705 ya |\n| **Perkiraan pesan** | **~17.000** | **~127.000** |\n\nSelisihnya **7x** \u2014 dan itu karena jumlah key, bukan karena model.\n\n## Saran\n\n| Kebutuhan | Pakai |\n|---|---|\n| Chat harian intens | **obscurify** (saldo besar + caching) |\n| Agen di OpenHands | **obscurify** |\n| Model uncensored spesifik | nomask (tapi hemat) |\n| Cadangan | nomask 21, 22 |\n\n## Catatan penting\n\nKalau pakai nomask di LightVela, **setiap pesan bayar 3.000 token**. Kalau mau hemat:\n\n1. Jangan pakai \"Check model status\" berulang\n2. Pilih model non-reasoning (`qwen_3.8_uncensored`)\n3. Jangan biarkan riwayat chat menumpuk\n\nMau saya cek berapa **sisa saldo** key 21 dan 22 sekarang, supaya kamu tahu kapan harus ganti?"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": "chatcmpl-PbL46U7p6RYvMKwUEBHLv5zAbppe7",
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "d7892b89-cc57-41c5-9e72-c034ff098c10",
+  "timestamp": "2026-11-17T06:59:47.770419",
+  "source": "environment",
+  "parent_id": "a002217a-54aa-4a9d-a2a4-b414fe900a72",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-a0b61b8a778392df",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "---"
+      }
+    ],
+    "is_error": false,
+    "command": "ls -d /workspace/project/workspace/conversations/* 2>/dev/null | head -50; echo \"---\"; ls -d /workspace/conversations/* 2>/dev/null | head -50",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "3fea160f-8e0b-4150-a9f5-7f32b24dbc00",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

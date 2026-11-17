@@ -1,0 +1,36 @@
+{
+  "id": "52cfa6d3-cb0f-4c72-9757-2c3c8e7aeb96",
+  "timestamp": "2026-11-17T13:17:57.328357",
+  "source": "environment",
+  "parent_id": "f0cafa67-d7f9-4259-99b8-fff884b30e76",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-9a3d5cd00fa8be36",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "########## https://openuncensored.com/rankings\n Uncensored model rankings \u00b7 OpenUncensored\n Open Uncensored Models\n Rankings\n Providers\n Chat\n Docs\n Methodology\n Blog\n Balance Get API key\n Rankings\n The OpenUncensored Score.\n 42 uncensored models: how smart the model it came from is, whether it answers, whether it finishes agent tasks without looping, and how far it drifted from that original.\n # Model OU Score Intelligence Agentic Non-refusal Speed, tok/s Low drift GPQA HLE Loops Hard-line refusals\n 01 DeepSeek V4.1 Flash 1017 Uncensored on DeepSeek V4.1 Flash 1017 \u00b7 scored via venice \u00b7 served by Venice, heabsy, NanoGPT, Lebrel\n 69.8 68 55 100 234 55 92%~ 43% 0% 0%\n 02 GLM 5.3 Flash Uncensored on GLM 5.3 Flash \u00b7 scored via nanogpt \u00b7 served by heabsy, Refuseless, NanoGPT, UncensuredAI\n 69.7 66 66 94 179 57 91% 40% 40% 14%\n 03 Qwen 3.8 27B Uncensored Fast by Heabsy on Qwen 3.8 27B \u00b7 scored via nanogpt \u00b7 served by heabsy, NanoGPT\n 66.8 62 49 100 245 60 91% 34% 60% 0%\n 04 DeepSeek V4.1 Flash 0910 Uncensored on DeepSeek V4.1 Flash \u00b7 scored via nanogpt \u00b7 served by NanoGPT\n 66.1 65 53 97 211 65 91% 39% 20% 0%\n 05 DeepSeek V4.1 Flash Uncensored on DeepSeek V4.1 Flash \u00b7 scored via venice \u00b7 served by Venice, Refuseless, N\n########## https://openuncensored.com\n OpenUncensored \u00b7 OpenRouter for uncensored models\n Open Uncensored Models\n Rankings\n Providers\n Chat\n Docs\n Methodology\n Blog\n Balance Get API key\n OpenRouter for Uncensored Models.\n One OpenAI compatible API for every abliterated and uncensored model. Routed by what it refuses, what it breaks, and how fast it runs.\n Get an API key, no sign up Download for Mac Download for Windows\n If Windows says \u201cWindows protected your PC\u201d, click More info, then Run anyway. Or install with one PowerShell command .\n Chat Now Mac app: chat and a coding agent on every model. Open source\n No account\n No password\n No subscription\n Or skip the website. Give your agent this:\n openuncensored.com/agents.md\n 82\n Uncensored text and image models on one API\n 60%\n Agentic loop rate, Venice Uncensored, measured\n 7,970\n Abliterated models on Hugging Face, Sep 2026\n 82\n Uncensored text and image models on one API\n 60%\n Agentic loop rate, Venice Uncensored, measured\n 7,970\n Abliterated models on Hugging Face, Sep 2026\n Try now\n \u2190 0 1 / 0 3 DeepSeek V4.1 Flash 1017 Uncensored # 1 ranked \u2192\n Score breakdown\n DeepSeek V4.1 Flash 1017 Uncensored score 69.8\n Intelligence\n 68\n Agentic\n 55\n Non-refusal\n\n########## https://openuncensored.com/blog/use-uncensored-models-in-cursor-cline-codex\n Use Uncensored Models in Cursor, Cline, Codex, OpenCode\n Open Uncensored Models\n Rankings\n Providers\n Chat\n Docs\n Methodology\n Blog\n Balance Get API key\n \u2190 Blog November 6, 2026 \u00b7 updated November 14, 2026 \u00b7 guides \u00b7 coding agents \u00b7 setup\n How to use uncensored models in Cursor, Cline, Codex, OpenCode and Claude Code\n Point any coding tool at uncensored models: base URL, key and model id for Cline, Kilo, Roo, Cursor, Codex CLI, OpenCode, Claude Code (native, no proxy), and the OpenAI SDK.\n OpenUncensored is an OpenAI compatible API, so any tool that lets you set a custom OpenAI base URL can use its\n82 uncensored models (61 text and 21 image). You need two things:\n Base URL: https://api.openuncensored.com/v1\n API key: an ou- key from openuncensored.com/credits . No account, no sign up.\n Pick a model id from the rankings or GET https://api.openuncensored.com/v1/models . For agent and coding work,\nstart with deepseek-v4.1-flash-1017-uncensored : it is at the top of the rankings, fast, and cheap on long agent sessions because most of\neach request is served from the prompt cache.\n Let your agent set it up\n The fastest way: paste this into Claude Code, Cursor, Codex, OpenCode"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && for u in \"https://openuncensored.com/rankings\" \"https://openuncensored.com\" \"https://openuncensored.com/blog/use-uncensored-models-in-cursor-cline-codex\"; do echo \"########## $u\"; curl -s --max-time 25 -A \"Mozilla/5.0\" \"$u\" | python3 -c \"\nimport sys,re,html\ns=sys.stdin.read()\ns=re.sub(r'<script.*?</script>','',s,flags=re.S); s=re.sub(r'<style.*?</style>','',s,flags=re.S)\ns=re.sub(r'<(br|/p|/div|/li|/h[1-6]|/tr)>','\\n',s)\nt=html.unescape(re.sub(r'<[^>]+>',' ',s)); t=re.sub(r'[ \\t]+',' ',t); t=re.sub(r'\\n\\s*\\n+','\\n',t)\nprint(t[:1200])\n\"; done",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "abdb2f43-fc0c-4645-8744-a3a734353b26",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

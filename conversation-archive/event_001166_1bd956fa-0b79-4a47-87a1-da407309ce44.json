@@ -1,0 +1,24 @@
+{
+  "id": "1bd956fa-0b79-4a47-87a1-da407309ce44",
+  "timestamp": "2026-11-17T08:08:10.315212",
+  "source": "environment",
+  "parent_id": "9f27138d-03a4-4ac9-b052-923fa134b14c",
+  "tool_name": "browser_type",
+  "tool_call_id": "chatcmpl-tool-a7ef82a0b661b4ea",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Typed <email> into element 8315"
+      }
+    ],
+    "is_error": false,
+    "screenshot_data": null,
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "BrowserObservation"
+  },
+  "action_id": "f36f6fa7-8596-467a-bbc8-1494ab54b5ea",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

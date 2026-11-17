@@ -1,0 +1,28 @@
+{
+  "id": "d4b02900-d056-40ed-b45a-d942d7834d59",
+  "timestamp": "2026-11-17T11:54:21.852309",
+  "source": "agent",
+  "parent_id": "2186bc8c-4353-44de-988b-74b6fa093056",
+  "llm_message": {
+    "role": "assistant",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "404 artinya **alamatnya salah** \u2014 bukan model, bukan saldo. Saya tunjukkan contoh nyata dari uji kita.\n\n## 404 yang pernah muncul\n\n### 1. Endpoint salah\n\n```\nPOST https://api.nomask.ai/v1/responses\n\u2192 404 {\"code\":\"unknown_endpoint\"}\n```\n\nnomask **tidak punya** `/v1/responses`. Dia cuma punya `/v1/chat/completions`.\n\n### 2. Prefix model ditolak\n\n```\nmodel: \"openai/deepseek_v4.1_flash_1017_uncensored\"\n\u2192 404 \"The model ... does not exist\"\n```\n\nBukan endpoint-nya salah, tapi **nama model** yang dikirim tidak dikenal.\n\n### 3. Path tanpa `/v1`\n\n```\nhttps://api.nomask.ai/chat/completions   \u2190 salah\nhttps://api.nomask.ai/v1/chat/completions  \u2190 benar\n```\n\n## Kenapa 404 bikin bingung\n\nKarena nomask pakai **404 untuk dua hal berbeda**:\n\n| Kasus | Pesan |\n|---|---|\n| Endpoint tidak ada | `unknown_endpoint` |\n| Model tidak ada | `model does not exist` |\n\n**Baca pesannya**, bukan cuma kodenya.\n\n## Beda semua kode error\n\n| Kode | Arti | Obat |\n|---|---|---|\n| **404** `unknown_endpoint` | path salah | pakai `/v1/chat/completions` |\n| **404** `model does not exist` | nama model salah | buang prefix, huruf persis |\n| **402** `insufficient_balance` | saldo habis | ganti key |\n| **400** `content must be a string` | format salah | `force_string_serializer` (kecuali tool) |\n| **429** | terlalu cepat | tunggu |\n| **502** | model down | ganti model |\n| **200** `content: \"\"` | `max_tokens` kecil | naikkan |\n\n## Contoh dari uji kita\n\n**Ini 404 karena prefix:**\n\n```\nmodel: openai/deepseek_v4.1_flash_1017_uncensored\n\u2192 404: The model 'openai/deepseek_v4.1_flash_1017_uncensored' does not exist\n```\n\n**Ini 404 karena endpoint:**\n\n```\nPOST /v1/responses\n\u2192 404: Unknown API endpoint '/v1/responses'\n```\n\nDua-duanya 404, penyebabnya beda.\n\n## Kalau kamu kena 404 sekarang\n\nKirim **pesan lengkapnya**. Yang saya cari:\n\n```\n\"code\": \"unknown_endpoint\"   \u2192 path salah\n\"code\": \"model_not_found\"    \u2192 nama model salah\n```\n\nDari `code`-nya langsung ketahuan.\n\n## Kasus khusus: base URL\n\nKalau di LightVela/OpenHands kamu tulis:\n\n```\nhttps://api.nomask.ai        \u2190 tanpa /v1\n```\n\nSebagian client menambah `/v1` sendiri, sebagian tidak. Kalau tidak, hasilnya 404.\n\n**Yang aman:**\n\n```\nhttps://api.nomask.ai/v1\n```\n\n## Ringkas\n\n| | |\n|---|---|\n| 404 = | alamat/nama tidak ketemu |\n| Bukan berarti | saldo habis, model mati |\n| Cek dulu | pesan `code`-nya |\n| Paling sering | salah path, atau prefix `openai/` |\n\nKalau kamu tempel 404 yang kamu dapat, saya bilang persis penyebabnya."
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": "chatcmpl-iIzq1PNherybGCAd26CfgIrPgwSez",
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

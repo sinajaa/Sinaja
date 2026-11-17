@@ -1,0 +1,15 @@
+{
+  "id": "6bdafae7-a93b-4323-a896-fe121938d9cb",
+  "timestamp": "2026-11-17T12:37:51.350815",
+  "source": "environment",
+  "parent_id": "c0f74a21-6c97-4d24-bd97-848fa109978d",
+  "code": "NotFoundError",
+  "detail": "litellm.NotFoundError: OpenAIException - The model 'deepseek/deepseek-v4.1-flash-1017-abliterated:thinking' does not exist or you do not have access to it. List available models at GET /api/v1/models.",
+  "classification": {
+    "kind": "config",
+    "retryable": false,
+    "user_action": "settings",
+    "error_id": null
+  },
+  "kind": "ConversationErrorEvent"
+}

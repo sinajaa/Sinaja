@@ -1,0 +1,24 @@
+{
+  "id": "9d1509b3-10af-450e-8f72-0176a240f1bb",
+  "timestamp": "2026-11-17T08:08:05.060829",
+  "source": "environment",
+  "parent_id": "c0e54f0c-3d1f-4f56-b184-55b3199d3043",
+  "tool_name": "browser_get_state",
+  "tool_call_id": "chatcmpl-tool-83f595dcd43953f0",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "{\n  \"url\": \"https://dash.allmodels.io/signup\",\n  \"title\": \"Allmodels Dashboard\",\n  \"tabs\": [\n    {\n      \"url\": \"https://dash.allmodels.io/signup\",\n      \"title\": \"Allmodels Dashboard\"\n    }\n  ],\n  \"interactive_elements\": [\n    {\n      \"index\": 8327,\n      \"tag\": \"div\",\n      \"text\": \"\"\n    },\n    {\n      \"index\": 8405,\n      \"tag\": \"a\",\n      \"text\": \"\",\n      \"href\": \"https://allmodels.io/\"\n    },\n    {\n      \"index\": 8304,\n      \"tag\": \"a\",\n      \"text\": \"\\u2190 Back to allmodels.io\",\n      \"href\": \"https://allmodels.io/\"\n    },\n    {\n      \"index\": 8330,\n      \"tag\": \"button\",\n      \"text\": \"Google\\nContinue with Google\"\n    },\n    {\n      \"index\": 8331,\n      \"tag\": \"button\",\n      \"text\": \"GitHub\\nContinue with GitHub\"\n    },\n    {\n      \"index\": 8314,\n      \"tag\": \"input\",\n      \"text\": \"\",\n      \"placeholder\": \"Ada Lovelace\"\n    },\n    {\n      \"index\": 8315,\n      \"tag\": \"input\",\n      \"text\": \"\",\n      \"placeholder\": \"ada@company.com\"\n    },\n    {\n      \"index\": 8316,\n      \"tag\": \"input\",\n      \"text\": \"\",\n      \"placeholder\": \"At least 8 characters\"\n    },\n    {\n      \"index\": 8317,\n      \"tag\": \"input\",\n      \"text\": \"\",\n      \"placeholder\": \"Re-enter your password\"\n    },\n    {\n      \"index\": 8499,\n      \"tag\": \"div\",\n      \"text\": \"\"\n    },\n    {\n      \"index\": 8500,\n      \"tag\": \"label\",\n      \"text\": \"Verify you are human\"\n    },\n    {\n      \"index\": 8502,\n      \"tag\": \"span\",\n      \"text\": \"\"\n    },\n    {\n      \"index\": 8579,\n      \"tag\": \"a\",\n      \"text\": \"\",\n      \"href\": \"https://www.cloudflare.com/products/turnstile/?utm_source=turnstile&utm_campaign=widget\"\n    },\n    {\n      \"index\": 8580,\n      \"tag\": \"svg\",\n      \"text\": \"\"\n    },\n    {\n      \"index\": 8594,\n      \"tag\": \"a\",\n      \"text\": \"Privacy\",\n      \"href\": \"https://www.cloudflare.com/privacypolicy/\"\n    },\n    {\n      \"index\": 8598,\n      \"tag\": \"a\",\n      \"text\": \"Help\",\n      \"href\": \"/cdn-cgi/challenge-platform/help\"\n    },\n    {\n      \"index\": 8332,\n      \"tag\": \"a\",\n      \"text\": \"Sign in\",\n      \"href\": \"/login\"\n    },\n    {\n      \"index\": 8473,\n      \"tag\": \"section\",\n      \"text\": \"\"\n    }\n  ]\n}"
+      }
+    ],
+    "is_error": false,
+    "screenshot_data": null,
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "BrowserObservation"
+  },
+  "action_id": "7d984686-2931-472d-8564-1c861784c224",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "bd142da5-bef4-4ac4-b993-7c88c4e8456c",
+  "timestamp": "2026-11-17T11:08:48.705309",
+  "source": "environment",
+  "parent_id": "bbf609d4-020d-4ed5-8dd3-5b7599228d6a",
+  "tool_name": "browser_navigate",
+  "tool_call_id": "chatcmpl-tool-aec037dc7a10cff3",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Navigated to: https://app.all-hands.dev/settings/llm"
+      }
+    ],
+    "is_error": false,
+    "screenshot_data": null,
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "BrowserObservation"
+  },
+  "action_id": "e2a79ae7-3fc9-4885-b7ad-a886f5cfd936",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

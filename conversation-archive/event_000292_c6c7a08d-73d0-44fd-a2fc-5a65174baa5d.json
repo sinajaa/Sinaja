@@ -1,0 +1,36 @@
+{
+  "id": "c6c7a08d-73d0-44fd-a2fc-5a65174baa5d",
+  "timestamp": "2026-11-17T07:15:37.277021",
+  "source": "environment",
+  "parent_id": "73ebb850-a78e-4eee-b93e-8f512b127024",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-bdc17201ca589797",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "--- resifactory (2)\n    resifactory.net\n    rf_live_XR90IwDCMz7Ou5cS7S8PkKD40MYoX8yBJs9lFEKSZq8\n--- proxidize (3)\n    jPDZYa2fSH3jMmQN\n    pg.proxi.es\n    proxidize\n--- flashproxy (4)\n    6pyu2taqjl\n    flashproxy.io\n    fpk_live_REDACTED-eTcBve8fmoFZr9rK1u0\n    fpk_live_YOUR_KEY\n--- ipcove (3)\n    gateway.ipcove.com\n    ipcc3tdr8d69yvbzv\n    ipck_b52qQnNKQtCsbgm6YgO2Ysy0eFaiHUY2rgcap0N_Wk0\n--- captchaai (2)\n    captchaai.com\n    ixvwhhocndcyyon2f1vbixds6ltuujnb\n--- ddosguard (2)\n    JB1BY4C17D99TN-H1KL0DG8S3EM08SHW5K0XTPKR\n    ddos-guard\n--- gmail (3)\n    ftnhrjnivohmtvju\n    mszz vqfk nzjq feqw\n    woybangsatkauuu\n--- allmodels (1)\n    sk_live_REDACTED\n--- hex (1)\n    hex_JXIdQEtRXvKClUStol_7JW9UPH-97uFFxkRDZ8a8aSs\n--- obscurify (1)\n    sk-obs1_tmJ-RFijSLOIC_l5mMnRRAAAAADZTZGrJw7hnwC_J-_tk0tRi1UYGcXeI0Q\n--- nomask (1)\n    nmk_live_XlqFJR2Pyg9YxVFGUqdIaywQFOoZ7n8vG7CRErWI\n--- cloudeflare_domain (1)\n    sinaja.cyou"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /var/openhands/conversations/7a0f58a298fa4500b9e92a3caa285d94/events && python3 - <<'EOF'\nimport json, glob, re\nfiles = sorted(glob.glob('event-*.json'))\npats = {\n 'resifactory': r'rf_live_[A-Za-z0-9_\\-]+|ResiFactory_[a-z0-9]+|resifactory\\.net|premium\\.resifactory\\.net',\n 'proxidize': r'pg\\.proxi\\.es|jPDZYa2fSH3jMmQN|proxidize',\n 'flashproxy': r'fpk_live_[A-Za-z0-9_\\-]+|flashproxy\\.io|6pyu2taqjl',\n 'ipcove': r'ipcc[a-z0-9]+|ipck_[A-Za-z0-9_\\-]+|gateway\\.ipcove\\.com',\n 'captchaai': r'ixvwhhocndcyyon2f1vbixds6ltuujnb|captchaai\\.com|ocr\\.captchaai\\.com',\n 'ddosguard': r'JB1BY4C17D99TN[A-Za-z0-9\\-]*|ddos-guard',\n 'gmail': r'ftnhrjnivohmtvju|mszz vqfk nzjq feqw|woybangsatkauuu',\n 'allmodels': r'sk_live_[A-Za-z0-9]+',\n 'hex': r'hex_[A-Za-z0-9_\\-]{20,}',\n 'obscurify': r'sk-obs1_[A-Za-z0-9_\\-]{20,}',\n 'nomask': r'nmk_live_[A-Za-z0-9_\\-]{20,}',\n 'cloudeflare_domain': r'sinaja\\.cyou',\n}\nfound={k:set() for k in pats}\nfor f in files:\n    j=json.load(open(f))\n    if j.get('kind')!='MessageEvent': continue\n    if j.get('llm_message',{}).get('role')!='user': continue\n    c=j['llm_message'].get('content')\n    t=c[0].get('text') if isinstance(c,list) and c and isinstance(c[0],dict) else str(c)\n    for k,p in pats.items():\n        for m in re.findall(p,t): found[k].add(m)\nfor k,v in found.items():\n    print(f\"--- {k} ({len(v)})\")\n    for x in sorted(v)[:8]: print(\"   \",x)\nEOF",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 63318,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/var/openhands/conversations/7a0f58a298fa4500b9e92a3caa285d94/events",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "cfae13f1-4c41-4f27-a20f-bd0dac308ae1",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

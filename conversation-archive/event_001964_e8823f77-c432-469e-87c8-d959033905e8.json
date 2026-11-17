@@ -1,0 +1,28 @@
+{
+  "id": "e8823f77-c432-469e-87c8-d959033905e8",
+  "timestamp": "2026-11-17T10:38:11.924866",
+  "source": "user",
+  "parent_id": "361bba0c-3ffd-4b05-9855-9261436c7b1a",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Oh iya sambil nunggu coba kirim custom apikey openai yang di nomask mau saya pasang di apk saya sendiri "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

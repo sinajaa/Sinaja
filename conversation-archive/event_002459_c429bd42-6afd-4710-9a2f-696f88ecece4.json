@@ -1,0 +1,28 @@
+{
+  "id": "c429bd42-6afd-4710-9a2f-696f88ecece4",
+  "timestamp": "2026-11-17T11:46:29.989672",
+  "source": "user",
+  "parent_id": "46f03559-dcd8-4fa2-b1aa-090057d3352d",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Langsung kirim aja yg siap"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

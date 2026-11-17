@@ -1,0 +1,36 @@
+{
+  "id": "acd4098f-4673-49fe-9d57-4c2da7b0845c",
+  "timestamp": "2026-11-17T10:48:20.413139",
+  "source": "environment",
+  "parent_id": "5ff1b6f4-cbda-4015-b926-9efcc40a34b4",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-bafb96a0d05f3866",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "http://127.0.0.1:60000/api/settings           401\nhttp://127.0.0.1:60000/api/llm/profiles       404\nhttp://127.0.0.1:60000/api/v1/settings        404\nSESSION_API_KEY set?"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && for u in \"http://127.0.0.1:60000/api/settings\" \"http://127.0.0.1:60000/api/llm/profiles\" \"http://127.0.0.1:60000/api/v1/settings\"; do printf \"%-45s \" \"$u\"; curl -s -o /dev/null --max-time 15 -w \"%{http_code}\\n\" -H \"X-Session-API-Key: $SESSION_API_KEY\" \"$u\"; done; echo \"SESSION_API_KEY set? ${SESSION_API_KEY:+ya}\"",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "c4062d3b-5852-4996-bb7b-4e4f1ea9d1df",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "26ef02fe-6243-4cce-a2bd-b20e9f0a4298",
+  "timestamp": "2026-11-17T13:22:51.769154",
+  "source": "environment",
+  "parent_id": "c69484e2-268a-48a8-9479-cc0b18287db9",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-8ddf22dc6be43a36",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "token ada: True\ntotal: 62\n  routerhubSI/deepseek-uncensored | Every uncensored and abliterated DeepSeek build \u2014 V4.1 Flash 1017 Abliterated (t\n  routerhubSI/kimi-uncensored | Every uncensored and abliterated Kimi build \u2014 Kimi K3.1 Pro Uncensored via API a\n  Moloch-AI/uncensored-ai | A developer's guide to uncensored, less-restricted language models: concepts, de\n  TartarusAIDev/awesome-uncensored-ai | Curated list of uncensored and locally-runnable AI: agents, SDKs, runners, bench\n  vaskaalexalex/uncensored | Find uncensored versions of tracks"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && timeout 200 python3 - <<'PY'\nimport json,urllib.request,urllib.parse,os\ntok=os.environ.get(\"GITHUB_TOKEN\",\"\")\nprint(\"token ada:\",bool(tok))\nu=\"https://api.github.com/search/repositories?q=uncensored+created:%3E2026-11-10&per_page=5\"\nh={\"Accept\":\"application/vnd.github+json\",\"User-Agent\":\"curl\"}\nif tok: h[\"Authorization\"]=f\"Bearer {tok}\"\ntry:\n    r=urllib.request.Request(u,headers=h)\n    with urllib.request.urlopen(r,timeout=40) as x:\n        d=json.load(x); print(\"total:\",d.get(\"total_count\"))\n        for it in d.get(\"items\",[])[:5]: print(\" \",it[\"full_name\"],\"|\",(it.get(\"description\") or \"\")[:80])\nexcept urllib.error.HTTPError as e: print(\"HTTP\",e.code,e.read().decode()[:200])\nPY",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "e3da64f1-0351-45c8-9860-918c5b55cfda",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

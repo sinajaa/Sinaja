@@ -1,0 +1,27 @@
+{
+  "id": "e842c41d-26d5-45c5-a5d5-cc36ac08ae56",
+  "timestamp": "2026-11-17T08:08:44.503974",
+  "source": "environment",
+  "parent_id": "5dcb1324-e5d7-4d04-aede-cdac6210b58c",
+  "tool_name": "file_editor",
+  "tool_call_id": "chatcmpl-tool-b3026bcf3672ba09",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "File created successfully at: /workspace/project/amsniff.py"
+      }
+    ],
+    "is_error": false,
+    "command": "create",
+    "path": "/workspace/project/amsniff.py",
+    "prev_exist": false,
+    "old_content": null,
+    "new_content": "#!/usr/bin/env python3\n\"\"\"Sadap request signup AllModels asli via Playwright (headless).\n\nTujuan: lihat header & body persis yang dikirim browser, terutama\nheader token Turnstile. Jalankan: python3 amsniff.py\n\"\"\"\nimport json\nimport time\n\nfrom playwright.sync_api import sync_playwright\n\nEMAIL = f\"amsniff{int(time.time())}@sinaja.cyou\"\nPASSWORD = \"Str0ng!Pass123\"\n\n\ndef main():\n    with sync_playwright() as p:\n        b = p.chromium.launch(headless=True)\n        ctx = b.new_context(viewport={\"width\": 1280, \"height\": 900})\n        page = ctx.new_page()\n        page.goto(\"https://dash.allmodels.io/signup\", wait_until=\"networkidle\")\n\n        page.fill('input[placeholder=\"Ada Lovelace\"]', \"Budi Santoso\")\n        page.fill('input[placeholder=\"ada@company.com\"]', EMAIL)\n        page.fill('input[placeholder=\"At least 8 characters\"]', PASSWORD)\n        page.fill('input[placeholder=\"Re-enter your password\"]', PASSWORD)\n\n        page.wait_for_timeout(3000)\n        print(\"tombol:\", [t.inner_text() for t in page.query_selector_all(\"button\")][:8])\n\n        with page.expect_request(\"**/api/auth/sign-up/email\", timeout=25000) as info:\n            page.click('button[type=\"submit\"], button:has-text(\"Create account\"), button:has-text(\"Sign up\")')\n        req = info.value\n        print(\"\\n=== URL:\", req.url)\n        print(\"=== METHOD:\", req.method)\n        print(\"=== HEADERS:\")\n        for k, v in req.headers.items():\n            if k.lower() in (\"cookie\", \"authorization\"):\n                print(f\"  {k}: <{len(v)} chars>\")\n            else:\n                print(f\"  {k}: {v[:110]}\")\n        print(\"=== BODY:\", (req.post_data or \"\")[:400])\n\n        resp = req.response()\n        if resp:\n            print(\"=== RESP:\", resp.status, resp.text()[:300])\n        print(\"EMAIL:\", EMAIL)\n        b.close()\n\n\nif __name__ == \"__main__\":\n    main()\n",
+    "kind": "FileEditorObservation"
+  },
+  "action_id": "4adddf4d-a8eb-4526-8ce1-3dc498969faf",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "72085d4d-4563-4535-b98d-581838cf502c",
+  "timestamp": "2026-11-17T11:30:13.588838",
+  "source": "user",
+  "parent_id": "ca6ffeda-4a02-4aed-b5a2-e4f62445a1a2",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Di menu provider connection disini ada konfigurasi saya buat dengan nama nomaskk\nBawahnya provider saya pilih pilihan deepseek banyak disini ada openai claude dll\nBawahnya apikey\nBawahnya lagi url basenya terus saya save\n\n\n\n\nDibagian llm profile di advance yg tadi none saya ganti ke nomaskk\nTerus bagian model saya isi openai/deepseek_v4.1_flash_1017_uncensored\nDan tetep aja error\n\n\n\n\nlitellm.BadRequestError: OpenAIException - messages[3].content must be a string (the tool's result) on tool messages."
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "4ab8109c-e8b2-4d91-9b5c-882671542b08",
+  "timestamp": "2026-11-17T10:48:32.035727",
+  "source": "agent",
+  "parent_id": "fbdde9ee-555e-44f4-9bab-f221a7fd999e",
+  "llm_message": {
+    "role": "assistant",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "OpenHands-mu ternyata **Cloud** (v1.62.0), jadi setelnya lewat GUI `app.all-hands.dev`. Ini caranya.\n\n## Langkah 1 \u2014 Buka Settings\n\n```\napp.all-hands.dev  \u2192  Settings  \u2192  LLM\n```\n\nKlik **Add** (atau **Advanced** kalau sudah ada).\n\n## Langkah 2 \u2014 Isi field\n\n| Field | Isi |\n|---|---|\n| Provider | **Custom** / OpenAI-compatible |\n| Model | `deepseek_v4.1_flash_1017_uncensored` |\n| Base URL | `https://api.nomask.ai/v1` |\n| API Key | `nmk_live_g1r1I3MMlZDJaclmlAFylupkQulRriMVhSaVx3xR` |\n| **Max Output Tokens** | **8000** |\n| Temperature | 0.7 |\n\n**`max_tokens` = 8000 itu penting.** Kalau 100 atau 512, balasan bisa kosong.\n\n## Langkah 3 \u2014 Ini yang paling sering terlewat\n\nCari kotak bernama **\"extra body\"**, **\"custom model kwargs\"**, atau **\"litellm extra body\"**. Isi:\n\n```json\n{\"force_string_serializer\": true}\n```\n\n**Kalau kotak itu tidak ada**, flag-nya akan hilang setiap kali disimpan. Itu sebab error `content must be a string`.\n\n## Langkah 4 \u2014 Tes\n\nSetelah simpan, kirim pesan:\n\n```\njalankan: echo halo\n```\n\nKalau muncul tool call `bash`, berarti **berhasil**.\n\n## Kalau masih gagal \u2014 tabel diagnosis\n\n| Gejala | Sebab | Obat |\n|---|---|---|\n| `content must be a string` | flag hilang | pakai model non-reasoning |\n| Agen diam / balasan kosong | `max_tokens` kecil | naikkan ke 8000 |\n| `HTTP 402 insufficient_balance` | saldo habis | ganti key |\n| Timeout | model lambat | ganti ke `glm-5.3_flash_uncensored` |\n\n## Kalau deepseek tetap rewel\n\nGanti model ke yang **non-reasoning**. Ini lebih aman untuk OpenHands:\n\n```\nglm-5.3_flash_uncensored\nqwen_3.8_uncensored\nmimo-v2.6-flash-uncensored\n```\n\nModel ini **tidak mengisi `reasoning_content`**, jadi token tidak terbuang.\n\n## Kenapa harus begitu\n\nSaya sudah uji langsung ke nomask dengan skenario agen:\n\n| max_tokens | Hasil |\n|---|---|\n| 512 | \u2705 tool call `bash({\"command\":\"ls -la /tmp\"})` |\n| 2000 | \u2705 tool call |\n| 8000 | \u2705 tool call |\n\n**Semua berhasil.** Jadi deepseek **bisa** dipakai di OpenHands \u2014 asal `max_tokens` cukup dan flag terpasang.\n\n## Satu hal yang perlu kamu tahu\n\nGUI OpenHands Cloud kadang membuang field custom saat disimpan \u2014 sama seperti GUI nomask yang kamu alami dulu (catatan di `AGENTS.md`).\n\nKalau setelah simpan flag-nya hilang, **jangan pakai deepseek**. Pakai `glm-5.3_flash_uncensored` yang tidak butuh flag itu.\n\n## File bantu\n\nSaya buat `OPENHANDS_NOMASK.md` di proyek, isinya panduan ini plus tabel diagnosis. Bisa dibuka kapan saja.\n\n**Coba dulu langkah 1\u20134, lalu kabari:**\n- Apakah muncul error?\n- Kalau error, tulis pesannya\n\nDari pesan errornya saya bisa tunjuk persis penyebabnya."
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": "chatcmpl-cp9Pop1yBKZgVyHGDEGqrsCaTLDjo",
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

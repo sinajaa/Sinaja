@@ -1,0 +1,28 @@
+{
+  "id": "6b00c787-910a-44b2-913b-50f87e28c204",
+  "timestamp": "2026-11-17T10:50:52.926597",
+  "source": "user",
+  "parent_id": "4ab8109c-e8b2-4d91-9b5c-882671542b08",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Filed max output token dan temperatur di llm profil apa ada di pengaturan lain dan atau GK ada"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

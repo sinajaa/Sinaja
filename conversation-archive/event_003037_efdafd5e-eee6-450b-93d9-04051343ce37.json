@@ -1,0 +1,36 @@
+{
+  "id": "efdafd5e-eee6-450b-93d9-04051343ce37",
+  "timestamp": "2026-11-17T13:26:52.705074",
+  "source": "environment",
+  "parent_id": "84806dff-2f4c-4d7a-870f-31c18294da79",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-a7fae3c97fecba3a",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "total model: 362\nuncensored/abliterated: 68\n   abliterated-model\n   abliterated-model-large\n   abliterated-model-large-flash\n   abliterated-model-large-v2\n   aion-3.5-mini-uncensored\n   apex-flash-1-abliterated\n   deepseek-r1-distill-llama-70b-abliterated\n   deepseek-r1-distill-qwen-32b-abliterated\n   deepseek-v4-pro-abliterated\n   deepseek-v4-pro-qwen3.5-9b-uncensored-heretic\n   deepseek-v4-pro-uncensored\n   deepseek-v4.1-flash-0910-uncensored\ncontoh: ['abliterated-model', 'abliterated-model-large', 'abliterated-model-large-flash', 'abliterated-model-large-v2', 'agnes-2.5-pro-alpha']"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && timeout 200 python3 - <<'PY'\nimport json,urllib.request\nr=urllib.request.Request(\"https://api.uplinkswitch.com/v1/models\",headers={\"User-Agent\":\"Mozilla/5.0\"})\nwith urllib.request.urlopen(r,timeout=30) as x: d=json.load(x)\nms=d.get(\"data\",d if isinstance(d,list) else [])\nprint(\"total model:\",len(ms))\nids=[m.get(\"id\") for m in ms if isinstance(m,dict)]\nunc=[i for i in ids if i and any(k in i.lower() for k in (\"uncensored\",\"abliterated\"))]\nprint(\"uncensored/abliterated:\",len(unc))\nfor i in unc[:12]: print(\"  \",i)\nprint(\"contoh:\",ids[:5])\nPY",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "7313c299-c08a-4c96-b216-26202679e89b",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

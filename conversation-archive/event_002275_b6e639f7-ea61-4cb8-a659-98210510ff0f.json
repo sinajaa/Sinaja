@@ -1,0 +1,28 @@
+{
+  "id": "b6e639f7-ea61-4cb8-a659-98210510ff0f",
+  "timestamp": "2026-11-17T11:15:52.089825",
+  "source": "user",
+  "parent_id": "e1f70f23-3bc6-47b5-bf88-493625442bbe",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Woy"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "48a64fb3-06da-49c6-89f9-43b89cc86c4e",
+  "timestamp": "2026-11-17T12:42:31.338015",
+  "source": "environment",
+  "parent_id": "39dda5b1-1c09-4130-9647-2c64a44b6a92",
+  "code": "LLMServiceUnavailableError",
+  "detail": "litellm.InternalServerError: InternalServerError: OpenAIException - Connection error.",
+  "classification": {
+    "kind": "transient",
+    "retryable": true,
+    "user_action": "retry",
+    "error_id": null
+  },
+  "kind": "ConversationErrorEvent"
+}

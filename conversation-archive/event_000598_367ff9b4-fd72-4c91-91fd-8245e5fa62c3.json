@@ -1,0 +1,28 @@
+{
+  "id": "367ff9b4-fd72-4c91-91fd-8245e5fa62c3",
+  "timestamp": "2026-11-17T07:38:20.048033",
+  "source": "user",
+  "parent_id": "0ed490cb-2dd4-4b80-b2bb-b0c2ac788dc0",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Saya pake Poco f6 pake data axis"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

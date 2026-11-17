@@ -1,0 +1,36 @@
+{
+  "id": "f4955dd9-fe1e-47ad-a7df-38168f6ccb2e",
+  "timestamp": "2026-11-17T14:10:47.720812",
+  "source": "environment",
+  "parent_id": "0c3a05f2-da6e-4ba0-a4f4-84e689421799",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-8b3f88bd365dd3f4",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "3:## The task\n14:## The gate\n23:## The dossier: what the judge reads\n30:## The judge\n54:## Heats\n62:## Ranking\n68:## Finalist review\n71:## Rewards\n84:## What is public\n91:## Submitting\n105:## Getting started\n108:## Transcripts\n118:## Transcript gate\n133:## Disqualification\n144:## After the deadline\n147:## Payout\n156:## Before you start\n194:## The command line\n203:## Grade locally\n206:## Secrets (optional)\n225:## Before you submit\n261:## Enter\n314:## The claim file\n321:## The transcript gate\n356:## The payout curve\n460:## The escrow\n491:## Claims and holds\n527:## The harness\n=== starter ===\nstarter\nstarter/vendor\nstarter/vendor/makefun-game.ts\nstarter/screenshots\nstarter/screenshots/2-play.jpg\nstarter/screenshots/1-start.jpg\nstarter/screenshots/3-end.jpg\nstarter/shots.json\nstarter/LICENSE\nstarter/game\nstarter/game/index.html\nstarter/game/src\nstarter/main.ts\nstarter/serve.ts\n=== competition.yaml ===\n# gta6-01: \"Make GTA 6\", judged by the house AI judge on a dossier (program/v1 + harness.judge, media dossier, an\n# unscreened final with contend rounds on the dev board). OPEN (the owner, 2026-11-17: \"cool we can land and enable these when we do these too\", beside\n# ai-judge-rich-01's launch): status open and visibility public, in production's seed catalogue in a block of its own,\n# its catalogue row in tests/unit/catalogue.test.ts OPENED_IN_TURN; 7 days of entries from 2026-11-17T15:00Z, 30 minutes\n# after roblox-brainrot-01 and ai-judge-relax-01's 14:00Z. It landed first as a sealed internal draft for the owner's\n# review on dev; a seed that inserts it open funds its $1,666 escrow within a minute, and its bytes never change from then.\n#\n# The owner's ask, 2026-11-17, verbatim: \"let's also setup another bounty for \"make GTA 6\" also $1666 total prize, top\n# 100 get something, runs for 7 days - the idea being we want to see the best quality/most complete rendition of gta 6\n# that an agent can make. put both on dev for me to review before they go live\". So this bundle is best-game-01's format\n# (the newest browser-game dossier bundle) with its task narrowed from any genre to one game: the most complete,\n# highest-quality open-world crime game an agent can build in the spirit of GTA 6, playing offline in a desktop browser\n# from static files under game/ (game/index.html), with keyboard and mouse and no network request, three.js or any other\n# library or engine vendored under game/. Everything in it is the entrant's own: the city, characters, vehicles, names,\n# story, art, sound and music; no Rockstar Games name, logo, character, map or asset. The copy weighs completeness the\n# way the owner put it (\"most complete rendition\"): a city on foot and by car, traffic and pedestrians, stealing cars, a\n# wanted system and police, missions and a story, combat, a HUD with a minimap, a start and a save, and polish.\n#\n# What wins, and what it beats. The public open-world web games are demos: three.js's car and city examples, the\n# GTA-like three.js projects on GitHub and itch.io (a drivable block of procedural buildings, a third-person walker, a\n# chase camera), and jam games built in 48 hours or under 13 KB. Each shows one system: a car to drive, a city to\n# look at, or a walker, and few have traffic, police, missions, a minimap, a save or sound together. An entry here must\n# be a complete, original, OSI-licensed open-world game that runs offline from its own static files, every system of the\n# genre wired together and shown in its screenshots, with its own city, story, art, sound and names. The winner is a\n# playable open-source open-world browser game and a reusable base for one, featured in make.fun's posts: the measure of\n# how complete a rendition of the genre an AI agent can build in a week.\n#\n# Each entry's program, main.ts (Node 22), hands in the game it built, exactly as on best-game-01: it copies game/ (the\n# playable game as static files) and screenshots/ (3 or 4 PNG or JPEG screens) from its repository to /output, and\n# writes /output/dossier.json with vendor/makefun-game.ts buildDossier, the library the kit ships\n# (sdk/game/makefun-game.ts, byte for byte the scorer's own copy). The sealed gate (scorer/score.ts, its limits\n# reference/gate.json) checks five rows and writes valid from the first four; the judge reads two entries at a time,\n# each as its dossier's dossier-view/v1 view (server/judging/dossier-view.ts at dossierViewBudgetOf's default 1,536\n# input tokens an entry: gta6-01 is not on DOSSIER_VIEW_BUDGETS), one JPEG contact sheet of every screenshot, the cover\n# on top, then an outline of the source, never the whole source, and picks one with a margin from 1 to 5 (verdict v2);\n# the entries rank by win rate (resolution.method judges). The judge block names superbot at reasoning_effort high with\n# max_output_tokens 17200, best-game-01's (1.5 x the p99 of its first calibration's output tokens; house-models.mdc,\n# contest-sizing.mdc), kept and recorded; since the owner's order of 2026-11-17 (\"no make.fun judges should go to\n# superbot-router, it should all go to openrouter on glm-5.3 flash no matter what\"; server/judging/plan.ts) every heat,\n# dev and final, is played on OpenRouter z-ai/glm-5.3-flash at its own measured effort (high: plan.ts"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project/mf/gta6/gta6-01-kit && grep -nE \"^## \" RULES.txt; echo \"=== starter ===\"; find starter -maxdepth 2 | head -20; echo \"=== competition.yaml ===\"; head -40 competition.yaml",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project/mf/gta6/gta6-01-kit",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "43ed9a57-e7ab-4d52-9f75-4e6ee4be5580",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

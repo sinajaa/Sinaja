@@ -1,0 +1,28 @@
+{
+  "id": "9a1d7753-93df-4e41-b9c3-67d3368b93ca",
+  "timestamp": "2026-11-17T12:18:36.874745",
+  "source": "agent",
+  "parent_id": "1d21ce98-c7bd-4141-a5ad-ba67beb08cf7",
+  "llm_message": {
+    "role": "assistant",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Sudah diuji. **Jawabannya: sama sekali berbeda, tergantung model.** Dan billing obscurify **bukan palsu**.\n\n## Bukti kunci: model mahal memotong saldo dengan benar\n\nUji `openai/gpt-6-astra` \u2014 3 request (prompt 769 + jawaban 1200 token):\n\n```\ncost dilaporkan  : $0.074797 \u00d7 3 = $0.224392\ndelta saldo nyata : $0.69 \u2192 $0.47 = $0.220000   \u2190 COCOK\n```\n\nDan transaksinya tercatat rapi:\n\n```\n-0.07479745  withdrawal  \"Usage\"  12:18:16\n-0.07479745  withdrawal  \"Usage\"  12:17:42\n-0.07479745  withdrawal  \"Usage\"  12:17:xx\n```\n\n**Billing obscurify bekerja benar.** Ada endpoint transaksi yang mencatat setiap potongan.\n\n## Tapi pada model murah, saldo terlihat \"tidak bergerak\"\n\nUji 8 model, prompt \"hi\":\n\n| Model | Biaya dilaporkan | Delta saldo |\n|---|---|---|\n| `openai/gpt-6-astra` | $0.000685 | **$0.0000** |\n| `anthropic/claude-opus-5.5` | $0.000354 | $0.0000 |\n| `x-ai/grok-4.7` | $0.000430 | $0.0000 |\n| `google/gemini-4-argon` | $0.000214 | $0.0000 |\n| `deepseek-v4.1-flash-1017-uncensored` | $0.000009 | $0.0000 |\n| `qwen3.8-27b-uncensored` | $0.000051 | $0.0000 |\n| `glm-5.3-uncensored` | $0.000267 | $0.0000 |\n| `llama-4-scout` | $0.000016 | $0.0000 |\n\n## Penyebabnya: pembulatan tampilan\n\n`get_user_balance` mengembalikan **2 desimal**:\n\n```json\n{\"balance\": 0.69}\n```\n\nBiaya $0.0006 **tidak terlihat** karena di bawah $0.005. Saldo sebenarnya berkurang, tapi angkanya tidak berubah di tampilan.\n\n**Bukan gratis. Cuma tidak kelihatan.**\n\n## Jawaban lengkap: kenapa nomask cepat habis, obscurify tidak\n\n| | nomask | obscurify |\n|---|---|---|\n| Saldo terlihat berkurang? | \u2705 langsung | \u274c dibulatkan |\n| Endpoint saldo | error 402 saat habis | 2 desimal |\n| Model default | `glm-5.3_flash` ($0.0013/pesan) | `deepseek-flash` ($0.0003) |\n| Cek biaya nyata | tidak ada | \u2705 `/transactions` |\n\n**Bedanya di cara melihat**, bukan di kecepatan habis.\n\nNomask langsung bilang \"402 habis\". Obscurify diam-diam mengurangi, dan tampilan saldo tidak berubah sampai $0.005 terkumpul.\n\n## Bukti kuat\n\nHari ini di key itu:\n\n```json\n{\"spent\": \"0.53454440\", \"usage\": \"0.53454440\", \"requests\": 170}\n```\n\n**$0.53 terpakai, 170 request.** Kalau benar-benar gratis, ini akan nol.\n\n## Satu temuan penting: model mahal itu jebakan\n\n| Model | Biaya/request |\n|---|---|\n| `gpt-6-astra` | **$0.0748** |\n| `claude-opus-5.5` | $0.0004 (prompt pendek) |\n| `deepseek-flash` | $0.000009 |\n\nDengan $1, `gpt-6-astra` **habis dalam 13 request**. Model murah bisa **100.000+ request**.\n\n## Saran\n\n| Mau | Pakai |\n|---|---|\n| Awet lama | `deepseek/deepseek-v4.1-flash-1017-uncensored` |\n| Uncensored + murah | `qwen/qwen3.8-27b-uncensored` |\n| Kualitas tinggi, hemat | `claude-opus-5.5` (prompt pendek) |\n| **Hindari** | `gpt-6-astra`, `gpt-6-*-pro` |\n\n## Cara cek biaya sebenarnya\n\nJangan lihat `balance`. Lihat:\n\n```\nGET https://obscurify.ai/transactions/summary\n```\n\nItu memberi `spent` dan `requests` per hari, presisi penuh.\n\nSemua sudah dicatat di `AKSES.md` (commit `e08f5c0`).\n\nMau saya cek **model mana paling murah per token** dari 425 model itu? Bisa jadi acuan memilih."
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": "chatcmpl-gKs0WWuHDrLlomkKg66cbQLMZGurZ",
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "5d3ce539-e040-43b4-9a60-7d9633ee9ba6",
+  "timestamp": "2026-11-17T12:29:35.376440",
+  "source": "user",
+  "parent_id": "3873af7b-ef34-4c56-92e1-ac847ccb7e63",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Coba saya mau pake konfigurasi deepseek/deepseek-v4.1-flash-1017-abliterated:thinking mau saya ganti "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

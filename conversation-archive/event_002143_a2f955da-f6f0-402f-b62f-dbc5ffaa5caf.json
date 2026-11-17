@@ -1,0 +1,24 @@
+{
+  "id": "a2f955da-f6f0-402f-b62f-dbc5ffaa5caf",
+  "timestamp": "2026-11-17T10:50:56.449105",
+  "source": "environment",
+  "parent_id": "d93dda5e-1a10-4266-b474-5f05c11588fb",
+  "tool_name": "browser_navigate",
+  "tool_call_id": "chatcmpl-tool-8e792142c72c589a",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Navigated to: https://app.all-hands.dev/settings"
+      }
+    ],
+    "is_error": false,
+    "screenshot_data": null,
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "BrowserObservation"
+  },
+  "action_id": "678b1dd9-618c-4c9f-8475-22afe1d0097b",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

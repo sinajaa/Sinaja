@@ -1,0 +1,36 @@
+{
+  "id": "0b0d17bc-4eb0-48d6-a888-ec5001026247",
+  "timestamp": "2026-11-17T12:11:49.899806",
+  "source": "environment",
+  "parent_id": "bb5db303-2520-4e4e-a54f-d4987dd855ce",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-8104f18bbe7621e4",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "credits endpoint: HTTP404 {\"error\":{\"code\":\"unknown_url\",\"message\":\"Unknown request URL: GET /v1/credits. See https://obscurify.ai/api-docs\",\"param\":null,\"type\":\"invalid_reques\n/v1/me -> 404\n/v1/usage -> 404\n/v1/account -> 404\n/v1/key -> 404\n/v1/auth/key -> 404"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && timeout 200 python3 - <<'PY'\nimport json,urllib.request,subprocess\nOB=subprocess.check_output(\"grep -oE 'sk-obs1_[A-Za-z0-9_-]+' ob_ready.txt | head -1\",shell=True,text=True).strip()\ndef credits():\n    r=urllib.request.Request(\"https://obscurify.ai/v1/credits\",headers={\"Authorization\":f\"Bearer {OB}\"})\n    try:\n        with urllib.request.urlopen(r,timeout=40) as x: return x.read().decode()[:300]\n    except urllib.error.HTTPError as e: return f\"HTTP{e.code} {e.read().decode()[:150]}\"\nprint(\"credits endpoint:\",credits())\nfor path in [\"/v1/me\",\"/v1/usage\",\"/v1/account\",\"/v1/key\",\"/v1/auth/key\"]:\n    r=urllib.request.Request(\"https://obscurify.ai\"+path,headers={\"Authorization\":f\"Bearer {OB}\"})\n    try:\n        with urllib.request.urlopen(r,timeout=25) as x: print(path,\"->\",x.read().decode()[:200])\n    except urllib.error.HTTPError as e: print(path,\"->\",e.code)\n    except Exception as e: print(path,\"-> err\")\nPY",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "30407b91-58a5-4b65-a447-9b0f52e1059e",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

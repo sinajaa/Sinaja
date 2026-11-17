@@ -1,0 +1,37 @@
+{
+  "id": "c2eb4c19-be9d-4e0f-87fa-d3c48721c7ce",
+  "timestamp": "2026-11-17T10:38:39.149999",
+  "source": "agent",
+  "parent_id": "fb50bbab-6c34-47bf-ac51-a594f45d4979",
+  "thought": [
+    {
+      "cache_prompt": false,
+      "type": "text",
+      "text": "Base URL yang benar: **`https://api.nomask.ai/v1`**. Tapi key ini saldonya kosong (402).\n\nSaya cari key yang masih ada saldo \u2014 tes semua 22 key sekaligus.\n\n"
+    }
+  ],
+  "reasoning_content": null,
+  "thinking_blocks": [],
+  "responses_reasoning_item": null,
+  "action": {
+    "command": "cd /workspace/project && timeout 400 python3 - <<'PY'\nimport re,json,urllib.request,concurrent.futures\nkeys=[]\nfor f in [\"nm2_api.txt\",\"nm_api_keys.txt\",\"nm_ready.txt\"]:\n    for l in open(f):\n        m=re.search(r\"(nmk_live_[A-Za-z0-9]+)\",l)\n        if m and (m.group(1),l.split(\"|\")[0].strip()) not in keys:\n            keys.append((m.group(1),l.split(\"|\")[0].strip()))\nseen=set(); uniq=[]\nfor k,e in keys:\n    if k not in seen: seen.add(k); uniq.append((k,e))\nprint(\"total key unik:\",len(uniq))\ndef test(item):\n    k,e=item\n    body=json.dumps({\"model\":\"deepseek_v4.1_flash_1017_uncensored\",\"messages\":[{\"role\":\"user\",\"content\":\"OK\"}],\"max_tokens\":10,\"force_string_serializer\":True}).encode()\n    r=urllib.request.Request(\"https://api.nomask.ai/v1/chat/completions\",data=body,\n        headers={\"Authorization\":f\"Bearer {k}\",\"Content-Type\":\"application/json\"})\n    try:\n        with urllib.request.urlopen(r,timeout=60) as resp:\n            return (k,e,resp.status,\"LIVE\")\n    except urllib.error.HTTPError as ex:\n        t=ex.read().decode()[:100]\n        return (k,e,ex.code,\"EMPTY\" if \"balance\" in t else t)\n    except Exception as ex: return (k,e,0,str(ex)[:50])\nlive=[];empty=[]\nwith concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:\n    for k,e,c,s in ex.map(test,uniq):\n        if c==200: live.append((k,e)); print(\"LIVE \",e,k)\n        else: empty.append((e,c))\nprint(f\"\\nLIVE={len(live)} | lainnya={len(empty)}\")\njson.dump(live,open(\"nm_live.json\",\"w\"))\nPY",
+    "is_input": false,
+    "timeout": 460.0,
+    "reset": false,
+    "kind": "TerminalAction"
+  },
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-8b36e8c2ee69cdf8",
+  "tool_call": {
+    "id": "chatcmpl-tool-8b36e8c2ee69cdf8",
+    "responses_item_id": null,
+    "name": "terminal",
+    "arguments": "{\"command\": \"cd /workspace/project && timeout 400 python3 - <<'PY'\\nimport re,json,urllib.request,concurrent.futures\\nkeys=[]\\nfor f in [\\\"nm2_api.txt\\\",\\\"nm_api_keys.txt\\\",\\\"nm_ready.txt\\\"]:\\n    for l in open(f):\\n        m=re.search(r\\\"(nmk_live_[A-Za-z0-9]+)\\\",l)\\n        if m and (m.group(1),l.split(\\\"|\\\")[0].strip()) not in keys:\\n            keys.append((m.group(1),l.split(\\\"|\\\")[0].strip()))\\nseen=set(); uniq=[]\\nfor k,e in keys:\\n    if k not in seen: seen.add(k); uniq.append((k,e))\\nprint(\\\"total key unik:\\\",len(uniq))\\ndef test(item):\\n    k,e=item\\n    body=json.dumps({\\\"model\\\":\\\"deepseek_v4.1_flash_1017_uncensored\\\",\\\"messages\\\":[{\\\"role\\\":\\\"user\\\",\\\"content\\\":\\\"OK\\\"}],\\\"max_tokens\\\":10,\\\"force_string_serializer\\\":True}).encode()\\n    r=urllib.request.Request(\\\"https://api.nomask.ai/v1/chat/completions\\\",data=body,\\n        headers={\\\"Authorization\\\":f\\\"Bearer {k}\\\",\\\"Content-Type\\\":\\\"application/json\\\"})\\n    try:\\n        with urllib.request.urlopen(r,timeout=60) as resp:\\n            return (k,e,resp.status,\\\"LIVE\\\")\\n    except urllib.error.HTTPError as ex:\\n        t=ex.read().decode()[:100]\\n        return (k,e,ex.code,\\\"EMPTY\\\" if \\\"balance\\\" in t else t)\\n    except Exception as ex: return (k,e,0,str(ex)[:50])\\nlive=[];empty=[]\\nwith concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:\\n    for k,e,c,s in ex.map(test,uniq):\\n        if c==200: live.append((k,e)); print(\\\"LIVE \\\",e,k)\\n        else: empty.append((e,c))\\nprint(f\\\"\\\\nLIVE={len(live)} | lainnya={len(empty)}\\\")\\njson.dump(live,open(\\\"nm_live.json\\\",\\\"w\\\"))\\nPY\", \"summary\": \"Test all nomask keys for live balance\", \"security_risk\": \"MEDIUM\", \"timeout\": 460}",
+    "origin": "completion"
+  },
+  "llm_response_id": "chatcmpl-VOL5mXgUP7R7qnvGzaNGWtEVXWmMq",
+  "security_risk": "MEDIUM",
+  "critic_result": null,
+  "summary": "Test all nomask keys for live balance",
+  "kind": "ActionEvent"
+}

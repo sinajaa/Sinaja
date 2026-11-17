@@ -1,0 +1,36 @@
+{
+  "id": "1d06fc7a-d8ff-4663-8b6e-6f28f63ed73f",
+  "timestamp": "2026-11-17T13:34:52.259217",
+  "source": "environment",
+  "parent_id": "09567b7e-76ba-47e9-a836-aad4107b6989",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-ba6758229e651525",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "{\n    \"currency\": \"usd\",\n    \"billing\": \"monthly\",\n    \"pricesExcludeTax\": true,\n    \"available\": true,\n    \"card\": true,\n    \"solana\": true,\n    \"editionCredit\": true,\n    \"plans\": [\n        {\n            \"id\": \"pro\",\n            \"level\": 1,\n            \"name\": \"Uncensored\",\n            \"family\": \"uncensored\",\n            \"priceMicrousd\": 17000000,\n            \"creditMicrousd\": 0,\n            \"editionCreditMicrousd\": 100000000,\n            \"apiAtOnce\": 4,\n            \"searchesPerMonth\": 1000,\n            \"windowMicrousd\": 2000000,\n            \"weekMicrousd\": 7000000,\n            \"concurrentChats\": 12,\n            \"priorityIncluded\": false\n        },\n        {\n            \"id\": \"pro\",\n            \"level\": 5,\n            \"name\": \"Uncensored 5x\",\n            \"family\": \"uncensored\",\n            \"priceMicrousd\": 69000000,\n            \"creditMicrousd\": 0,\n            \"editionCreditMicrousd\": 500000000,\n            \"apiAtOnce\": 16,\n            \"searchesPerMonth\": 1000,\n            \"windowMicrousd\": 6000000,\n            \"weekMicrousd\": 25000000,\n            \"concurrentChats\": 16,\n            \"priorityIncluded\": false\n        },\n        {\n            \"id\": \"pro\",\n            \"level\": 20,\n            \"name\": \"Uncensored 20x\",\n            \"family\": \"uncensored\",\n            \"priceMicrousd\": 199000000,\n            \"creditMicrousd\": 0,\n            \"editionCreditMicrousd\": 2000000000,\n            \"apiAtOnce\": 64,\n            \"searchesPerMonth\": 1000,\n            \"windowMicrousd\": 15000000,\n            \"weekMicrousd\": 60000000,\n            \"concurrentChats\": 24,\n            \"priorityIncluded\": true\n        },\n        {\n            \"id\": \"pro_plus\",\n            \"level\": 0,\n            \"name\": \"Pro+\",\n            \"family\": \"all-models\",\n            \"priceMicrousd\": 64000000,\n            \"creditMicrousd\": 65000000,\n            \"editionCreditMicrousd\": 50000000,\n            \"searchesPerMonth\": 2000,\n            \"windowMicrousd\": 6000000,\n            \"weekMicrousd\": 25000000,\n            \"concurrentChats\": 16,\n            \"priorityIncluded\": false\n        },\n        {\n            \"id\": \"max\",\n            \"level\": 0,\n            \"name\": \"Max\",\n            \"family\": \"all-models\",\n            \"priceMicrousd\": 190000000,\n            \"creditMicrousd\": 200000000,\n            \"editionCreditMicrousd\": 150000000,\n            \"searchesPerMonth\": 5000,\n            \"windowMicrousd\": 15000000,\n            \"weekMicrousd\": 60000000,\n            \"concurrentChats\": 24,"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && curl -s --max-time 25 \"https://lebrel.ai/api/plans\" | python3 -m json.tool | head -80",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "9243f21c-946d-4755-a59d-e40f7ae59bf3",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "80ede921-c28e-4b5b-b3a5-d901fa54f6a8",
+  "timestamp": "2026-11-17T10:43:29.655508",
+  "source": "environment",
+  "parent_id": "11d02144-06c3-4939-9304-887d0b22eb31",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-ba6617aea65c1f9b",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "total 28\ndrwxr-xr-x 6 openhands openhands 4096 Nov 17 10:13 .\ndrwx------ 1 openhands openhands 4096 Nov 17 10:19 ..\ndrwxr-xr-x 4 openhands openhands 4096 Nov 17 10:40 cache\n-rwx------ 1 openhands openhands 1060 Nov 17 10:11 git-credential-helper\ndrwx------ 2 openhands openhands 4096 Nov 17 10:11 git-credentials\ndrwxr-xr-x 2 openhands openhands 4096 Nov 17 10:14 profiles\ndrwxr-xr-x 2 openhands openhands 4096 Nov 17 10:11 provider-connections\n=== config ===\n=== env ===\nOH_LLM_API_KEY_REFRESH_URL=<hidden>\nTMUX=<hidden>\nAI_AGENT=<hidden>\nOH_CONVERSATIONS_PATH=<hidden>\nHOME=<hidden>\nTMUX_TMPDIR=<hidden>\n_PYI_ARCHIVE_FILE=<hidden>\n_PYI_LINUX_PROCESS_NAME=<hidden>\nOH_TELEMETRY_POSTHOG_HOST=<hidden>\nOH_LLM_API_KEY_REFRESH_HEADERS=<hidden>"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && ls -la ~/.openhands 2>/dev/null | head; echo \"=== config ===\"; find / -name \"settings.json\" -path \"*openhands*\" 2>/dev/null | head -5; echo \"=== env ===\"; env | grep -iE \"llm|openhands|model\" | sed 's/=.*/=<hidden>/' | head",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "7e5e6667-8894-4638-9d15-754a9d6d90ac",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

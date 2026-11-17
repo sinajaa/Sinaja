@@ -1,0 +1,36 @@
+{
+  "id": "5f252468-7861-4062-bea6-fce390317763",
+  "timestamp": "2026-11-17T10:38:53.451008",
+  "source": "environment",
+  "parent_id": "484221b7-1ec6-4aff-b162-a42f78a7b7f7",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-91070da6d3d16730",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "cd /workspace/project && cat > NOMASK_PAKET.md <<'EOF'\n# Paket API nomask untuk apk sendiri\n## Ringkas\n| Item | Nilai |\n|---|---|\n| Base URL | `https://api.nomask.ai/v1` |\n| Auth | `Authorization: Bearer nmk_live_...` |\n| Protokol | OpenAI-compatible (`/chat/completions`) |\n| Saldo | $1.00 per key |\n| Key hidup | **20** (lihat `nomask_live_keys.txt`) |\n> PENTING: pakai `api.nomask.ai`, **bukan** `nomask.ai/v1` (yang itu balas HTML).\n## Wajib: force_string_serializer\nnomask menolak `content` berbentuk list. Set field ini di **setiap** request:\n```json\n{\"force_string_serializer\": true}\n```\nKalau lupa -> `content must be a string`.\n## Model (37 tersedia)\nUncensored:\n```\ndeepseek_v4.1_flash_1017_uncensored\nglm-5.3_flash_uncensored\nqwen_3.8_uncensored\nmimo-v2.6-flash-uncensored\ngemma-4-uncensored\nvenice-uncensored-1.2\nqwen-3.6-uncensored\nglm-4.7-flash-heretic\n```\nLain: `grok-4.5`, `gemini-3.1-pro-preview`, `kimi-k3.1-pro`, `minimax-m3`, dll.\n## Contoh curl\n```bash\ncurl https://api.nomask.ai/v1/chat/completions \\\n  -H \"Authorization: Bearer nmk_live_XXX\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"deepseek_v4.1_flash_1017_uncensored\",\n    \"messages\": [{\"role\":\"user\",\"content\":\"halo\"}],\n    \"force_string_serializer\": true\n  }'\n```\n## Python (OpenAI SDK)\n```python\nfrom openai import OpenAI\nc = OpenAI(base_url=\"https://api.nomask.ai/v1\", api_key=\"nmk_live_XXX\")\nr = c.chat.completions.create(\n    model=\"deepseek_v4.1_flash_1017_uncensored\",\n    messages=[{\"role\":\"user\",\"content\":\"halo\"}],\n    extra_body={\"force_string_serializer\": True},\n)\nprint(r.choices[0].message.content)\n```\n## Kotlin/Android (OkHttp)\n```kotlin\nval body = \"\"\"\n{\"model\":\"deepseek_v4.1_flash_1017_uncensored\",\n \"messages\":[{\"role\":\"user\",\"content\":\"halo\"}],\n \"force_string_serializer\":true}\n\"\"\".trimIndent()\nval req = Request.Builder()\n    .url(\"https://api.nomask.ai/v1/chat/completions\")\n    .addHeader(\"Authorization\", \"Bearer nmk_live_XXX\")\n    .addHeader(\"Content-Type\", \"application/json\")\n    .post(body.toRequestBody(\"application/json\".toMediaType()))\n    .build()\n```\n## Kalau saldo habis (HTTP 402)\n```json\n{\"error\":{\"message\":\"Your API balance is empty...\",\"code\":\"insufficient_balance\"}}\n```\nGanti ke key berikutnya di `nomask_live_keys.txt`. Ada 20 key, total ~$20.\n## Catatan\n- Error `content must be a string` = lupa `force_string_serializer`.\n- `/v1/models` tidak butuh saldo, `/chat/completions` butuh.\n- Key `nmk_live_h6sUfOh...` sudah HABIS (dipakai uji).\nEOF\n\n\necho \"dibuat\"; git add -A && git -c user.name=\"openhands\" -c user.email=\"openhands@all-hands.dev\" commit -q -m \"nomask: 20 live keys + ready-to-use API package doc for user's app\nCo-authored-by: openhands <openhands@all-hands.dev>\" && git --no-pager log --oneline -1\ndibuat\nfdf811b (HEAD -> master) nomask: 20 live keys + ready-to-use API package doc for user's app"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && cat > NOMASK_PAKET.md <<'EOF'\n# Paket API nomask untuk apk sendiri\n\n## Ringkas\n| Item | Nilai |\n|---|---|\n| Base URL | `https://api.nomask.ai/v1` |\n| Auth | `Authorization: Bearer nmk_live_...` |\n| Protokol | OpenAI-compatible (`/chat/completions`) |\n| Saldo | $1.00 per key |\n| Key hidup | **20** (lihat `nomask_live_keys.txt`) |\n\n> PENTING: pakai `api.nomask.ai`, **bukan** `nomask.ai/v1` (yang itu balas HTML).\n\n## Wajib: force_string_serializer\nnomask menolak `content` berbentuk list. Set field ini di **setiap** request:\n\n```json\n{\"force_string_serializer\": true}\n```\n\nKalau lupa -> `content must be a string`.\n\n## Model (37 tersedia)\nUncensored:\n```\ndeepseek_v4.1_flash_1017_uncensored\nglm-5.3_flash_uncensored\nqwen_3.8_uncensored\nmimo-v2.6-flash-uncensored\ngemma-4-uncensored\nvenice-uncensored-1.2\nqwen-3.6-uncensored\nglm-4.7-flash-heretic\n```\nLain: `grok-4.5`, `gemini-3.1-pro-preview`, `kimi-k3.1-pro`, `minimax-m3`, dll.\n\n## Contoh curl\n```bash\ncurl https://api.nomask.ai/v1/chat/completions \\\n  -H \"Authorization: Bearer nmk_live_XXX\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"model\": \"deepseek_v4.1_flash_1017_uncensored\",\n    \"messages\": [{\"role\":\"user\",\"content\":\"halo\"}],\n    \"force_string_serializer\": true\n  }'\n```\n\n## Python (OpenAI SDK)\n```python\nfrom openai import OpenAI\nc = OpenAI(base_url=\"https://api.nomask.ai/v1\", api_key=\"nmk_live_XXX\")\nr = c.chat.completions.create(\n    model=\"deepseek_v4.1_flash_1017_uncensored\",\n    messages=[{\"role\":\"user\",\"content\":\"halo\"}],\n    extra_body={\"force_string_serializer\": True},\n)\nprint(r.choices[0].message.content)\n```\n\n## Kotlin/Android (OkHttp)\n```kotlin\nval body = \"\"\"\n{\"model\":\"deepseek_v4.1_flash_1017_uncensored\",\n \"messages\":[{\"role\":\"user\",\"content\":\"halo\"}],\n \"force_string_serializer\":true}\n\"\"\".trimIndent()\n\nval req = Request.Builder()\n    .url(\"https://api.nomask.ai/v1/chat/completions\")\n    .addHeader(\"Authorization\", \"Bearer nmk_live_XXX\")\n    .addHeader(\"Content-Type\", \"application/json\")\n    .post(body.toRequestBody(\"application/json\".toMediaType()))\n    .build()\n```\n\n## Kalau saldo habis (HTTP 402)\n```json\n{\"error\":{\"message\":\"Your API balance is empty...\",\"code\":\"insufficient_balance\"}}\n```\nGanti ke key berikutnya di `nomask_live_keys.txt`. Ada 20 key, total ~$20.\n\n## Catatan\n- Error `content must be a string` = lupa `force_string_serializer`.\n- `/v1/models` tidak butuh saldo, `/chat/completions` butuh.\n- Key `nmk_live_h6sUfOh...` sudah HABIS (dipakai uji).\nEOF\necho \"dibuat\"; git add -A && git -c user.name=\"openhands\" -c user.email=\"openhands@all-hands.dev\" commit -q -m \"nomask: 20 live keys + ready-to-use API package doc for user's app\n\nCo-authored-by: openhands <openhands@all-hands.dev>\" && git --no-pager log --oneline -1",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "fcbc55d5-63a6-4ae7-b8f5-69248cc5026e",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

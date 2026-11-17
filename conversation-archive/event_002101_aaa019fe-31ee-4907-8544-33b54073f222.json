@@ -1,0 +1,28 @@
+{
+  "id": "aaa019fe-31ee-4907-8544-33b54073f222",
+  "timestamp": "2026-11-17T10:47:24.260417",
+  "source": "user",
+  "parent_id": "3729677c-6f65-4937-88e8-26c3bf500dc1",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Jadi tetep gak bisa ya make deepseek yg itu"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

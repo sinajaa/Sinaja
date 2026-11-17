@@ -1,0 +1,28 @@
+{
+  "id": "d349c4fb-517f-43b9-964b-46a2d4c90b5d",
+  "timestamp": "2026-11-17T09:34:36.240771",
+  "source": "user",
+  "parent_id": "08d0b71c-8560-47e4-80e5-d8c3e111ab5c",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Jadi tadi itu gak penting kah ini atau cloider\n\n"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

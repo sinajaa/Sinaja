@@ -1,0 +1,28 @@
+{
+  "id": "9f45553d-3000-493a-b993-b03b0f76f998",
+  "timestamp": "2026-11-17T11:15:21.561081",
+  "source": "user",
+  "parent_id": "e48f05e2-9ba4-4896-9320-2fc9e58bfe6e",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek_v4.1_flash_1017_uncensored\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers\n\n\n\n\nBasic\nAdvanced\nThese organization defaults are applied first. Members can apply personal overrides where allowed.\n\n\nName (Optional)\nNomaskk\nName must be 1\u201364 characters: letters, digits, dot, dash, or underscore.\n\n\nCustom Model\ndeepseek_v4.1_flash_1017_uncensored\nProvider connection\nOptional\nNone\nBase URL\nhttps://api.nomask.ai/v1\nAPI Key\n\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\nDon't know your API key? Click here for instructions\n\n\nSave Changes\n\n\n\n\nGini dan error lagi semua modelnya "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

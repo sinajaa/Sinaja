@@ -1,0 +1,36 @@
+{
+  "id": "403b6541-cb01-45d8-9d88-06682610b406",
+  "timestamp": "2026-11-17T10:51:10.578540",
+  "source": "environment",
+  "parent_id": "29458274-1926-47ba-b415-2c091fb4ae92",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-bb129c519a7e060c",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Creating an LLM Profile\n Profiles are automatically created when you save a configuration on the LLM settings page. To create a new profile:\n Navigate to Settings > LLM .\n Configure your desired LLM provider, model, and API key.\n Click Save Changes .\n A new profile will be created with your configuration. The most recently saved profile becomes the active profile\nfor new conversations.\n Alternatively, you can click the Add LLM Profile button in the Available Profiles section to create a new profile\ndirectly.\n When saving a local LLM profile, the configuration is validated against the backend before it is persisted. If validation\nfails (for example, an invalid API key or unavailable model), the save is blocked and the error is shown. Older backends\nthat do not support validation skip this check and save normally.\n Managing LLM Profiles\n You can manage your saved profiles in the Available Profiles section of the LLM settings page. Each profile shows:\n Profile name : A unique identifier for the configuration\n Model : The LLM model associated with the profile\n Active badge : Indicates which profile is currently active\n Click the menu icon (three dots) on any profile to access these actions:\n Edit : Modify the profile\u2019s LLM configuration\n Rename : Change the profile name\n Set as Active : Make this profile the default for new conversations\n Delete : Remove the profile\n If a saved profile references a managed model that is no longer available in the installation, OpenHands shows a Model not listed warning next to the profile on the LLM settings page and in the conversation picker. The profile and your current selection remain unchanged; select a listed model to clear the warning.\n You can save up to 10 LLM profiles per account. Delete unused profiles if you need to create new ones.\n Switching Profiles During a Conversation\n One of the most powerful features of LLM profiles is the ability to switch models mid-conversation without losing context.\nThis allows you to:\n Start with a fast, cost-effective model for initial exploration\n Switch to a more powerful model when the task requires deeper reasoning\n Use specialized models for specific types of tasks\n For example, you might create profiles like these:\n Example Profile Example Use Example Cost Pattern\n claude-opus-4-7\n Frontend design and visual polish\n Higher cost\n gpt-5.5\n Planning, instruction following, or review\n Balanced for complex reasoning\n minimax-m2.7\n Day-to-day implementation\n Lower c"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && curl -s --max-time 30 -A \"Mozilla/5.0\" \"https://docs.openhands.dev/openhands/usage/settings/llm-settings\" | python3 -c \"\nimport sys,re,html\ns=sys.stdin.read()\ns=re.sub(r'<script.*?</script>','',s,flags=re.S); s=re.sub(r'<style.*?</style>','',s,flags=re.S)\ns=re.sub(r'<(br|/p|/div|/li|/h[1-6]|/tr|/td)>','\\n',s)\nt=html.unescape(re.sub(r'<[^>]+>',' ',s))\nt=re.sub(r'[ \\t]+',' ',t); t=re.sub(r'\\n\\s*\\n+','\\n',t)\ni=t.find('Creating an LLM Profile')\nj=t.find('Creating an LLM Profile', i+10)\nprint(t[j if j>0 else i: (j if j>0 else i)+2500])\n\"",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "4d5260f1-948a-41d4-98f6-afc3e9560475",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "9a256554-865b-4dbf-926e-0abd57430e63",
+  "timestamp": "2026-11-17T11:16:23.871038",
+  "source": "environment",
+  "parent_id": "4958e61c-d8b5-4ac0-a65b-4f09b188e0c2",
+  "key": "execution_status",
+  "value": "running",
+  "kind": "ConversationStateUpdateEvent"
+}

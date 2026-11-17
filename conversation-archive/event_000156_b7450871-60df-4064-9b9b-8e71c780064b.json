@@ -1,0 +1,36 @@
+{
+  "id": "b7450871-60df-4064-9b9b-8e71c780064b",
+  "timestamp": "2026-11-17T07:06:41.995964",
+  "source": "environment",
+  "parent_id": "ffbb77ad-7e4b-4677-ab94-84d445bea01a",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-90384087b9651fd3",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "/api/me/balance          401 {\"error\":\"unauthenticated\"}\n/api/me/free-credits     401 {\"error\":\"unauthenticated\"}"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && T=\"sk_live_REDACTED\"; for p in \"/api/me/balance\" \"/api/me/free-credits\"; do printf \"%-24s \" \"$p\"; curl -s -o /tmp/f.json -w \"%{http_code} \" --max-time 25 \"https://dash.allmodels.io$p\" -H \"Authorization: Bearer $T\"; head -c 250 /tmp/f.json | tr -d '\\n'; echo; done",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 63318,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "4807d545-fccb-4ee3-b085-1b1db72d4a54",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

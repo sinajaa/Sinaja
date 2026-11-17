@@ -1,0 +1,28 @@
+{
+  "id": "0ba2dbae-a037-46d6-9f55-efeba019fefa",
+  "timestamp": "2026-11-17T12:03:09.167567",
+  "source": "user",
+  "parent_id": "3174dd7f-867e-4680-a15c-0f467465ae94",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Di salinan udh ada Proxy juga kan"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

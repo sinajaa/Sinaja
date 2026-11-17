@@ -1,0 +1,36 @@
+{
+  "id": "1f2b4bf7-fdc2-42c0-a6f8-31c5fd7d9543",
+  "timestamp": "2026-11-17T13:20:41.827318",
+  "source": "environment",
+  "parent_id": "263e4ba2-ef39-4a30-94dc-e86a1200d8b3",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-bdbc750f89a6bc94",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "NanoGPT          nano-gpt.com           200 | kata: free,no account\n     \u2026models. Watch the 3-minute tour Chat Ask anything. Your first chat is free, with no account. Roleplay Silly Nano, our app for characters and stories.\nRedPill          redpill.ai             200 | kata: api key\nRefuseless       refuseless.ai          ERR URLError\nUncensuredAI     uncensured.ai          ERR URLError\nAbliteration     abliteration.ai        200 | kata: free,credit,$5,api key\n     \u2026rk Build what other LLMs refuse governed by your rules. Try the model free Talk to us Product A model that stays useful. A hosted model that actually\nHeabsy           heabsy.ai              ERR URLError\nLebrel           lebrel.ai              200 | kata: free,credit,sign up,api key\n     \u2026Lebrel: Uncensored AI, encrypted and verifiable Open beta \u00b7 4 free hours a day on the uncensored edition (16:00\u201320:00 Madrid) \u00b7 paid usage earns point\nOpenUncensored   openuncensored.com     200 | kata: credit,$5,no sign,no account,sign up,api key\n     \u2026del with its OpenUncensored Score, best agent marked No account : buy credits inside the app and the key arrives by itself Private : conversations and"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && timeout 400 python3 - <<'PY'\nimport urllib.request,re,html,ssl\ncands={\n \"nano-gpt.com\":\"NanoGPT\",\n \"redpill.ai\":\"RedPill\",\n \"refuseless.ai\":\"Refuseless\",\n \"uncensured.ai\":\"UncensuredAI\",\n \"abliteration.ai\":\"Abliteration\",\n \"heabsy.ai\":\"Heabsy\",\n \"lebrel.ai\":\"Lebrel\",\n \"openuncensored.com\":\"OpenUncensored\",\n}\nfor dom,name in cands.items():\n    for scheme in [\"https\"]:\n        u=f\"{scheme}://{dom}\"\n        try:\n            r=urllib.request.Request(u,headers={\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/131.0\"})\n            with urllib.request.urlopen(r,timeout=25) as x:\n                s=x.read().decode(errors=\"ignore\"); code=x.status\n        except urllib.error.HTTPError as e: s=e.read().decode(errors=\"ignore\")[:3000]; code=e.code\n        except Exception as e: print(f\"{name:16} {dom:22} ERR {type(e).__name__}\"); break\n        txt=re.sub(r'<script.*?</script>','',s,flags=re.S); txt=re.sub(r'<style.*?</style>','',txt,flags=re.S)\n        txt=html.unescape(re.sub(r'<[^>]+>',' ',txt)); txt=re.sub(r'\\s+',' ',txt)\n        hits=[k for k in [\"free\",\"credit\",\"trial\",\"$5\",\"$1 \",\"no sign\",\"no account\",\"sign up\",\"signup\",\"api key\"] if k.lower() in txt.lower()]\n        snip=\"\"\n        for m in re.finditer(r'(free|credit|trial)',txt,re.I):\n            snip=txt[max(0,m.start()-70):m.start()+110]; break\n        print(f\"{name:16} {dom:22} {code} | kata: {','.join(hits)}\")\n        if snip: print(f\"     \u2026{snip.strip()[:150]}\")\n        break\nPY",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "a218766d-ff82-4dd1-811e-285d9b620c86",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

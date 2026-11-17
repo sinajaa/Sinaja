@@ -1,0 +1,28 @@
+{
+  "id": "284d6ad9-3b4d-4304-881a-83973e1b6b2d",
+  "timestamp": "2026-11-17T09:22:43.576988",
+  "source": "user",
+  "parent_id": "5c6acbe9-2675-45ad-bd2c-0c1e353b381f",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "export INK_API_KEY='dk_live_b6fa078ef6101c5c0cb43debb5152a8e619d72e45c907dcfa977bf2f7e001677'\ncurl -fsSL 'https://deployink.com/skills.sh' | bash\n\n\nhttps://deployink.com/skills.sh kalo ini apa"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

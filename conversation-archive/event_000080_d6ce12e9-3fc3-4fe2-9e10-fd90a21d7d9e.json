@@ -1,0 +1,36 @@
+{
+  "id": "d6ce12e9-3fc3-4fe2-9e10-fd90a21d7d9e",
+  "timestamp": "2026-11-17T07:00:33.515372",
+  "source": "environment",
+  "parent_id": "b31fd3f7-690a-4228-9d29-57bc391e5ba9",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-956a9525f3ad99e4",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "key: sk-obs1_EHfIZr2pTF6V...\n=== get_user_balance ===\n{\"balance\":0.05}\nHTTP 200\n=== /v1/models ===\n{\"object\":\"list\",\"data\":[{\"id\":\"abliteration-ai/abliterated-model\",\"object\":\"model\",\"owned_by\":\"abliteration-ai\",\"name\":\"Abliteration Ai: Abliterated Model\",\"pricing\":{\"prompt\":1.105e-6,\"completion\":3.315e-6,\"image\":0.0,\"request\":0.0,\"input_cache_read\":1.1050000000000002e-7},\"context_length\":262144,"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && K=$(tail -1 ob_accounts.txt | awk -F'|' '{gsub(/ /,\"\",$2); print $2}'); echo \"key: ${K:0:20}...\"; echo \"=== get_user_balance ===\"; curl -s --max-time 30 https://obscurify.ai/get_user_balance -H \"Authorization: Bearer $K\" -w \"\\nHTTP %{http_code}\\n\" | head -c 300; echo \"=== /v1/models ===\"; curl -s --max-time 30 https://obscurify.ai/v1/models -H \"Authorization: Bearer $K\" -w \"\\nHTTP %{http_code}\\n\" | head -c 300",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "0997578a-9256-463a-9671-8cf8082f6b6c",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

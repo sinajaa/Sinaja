@@ -1,0 +1,28 @@
+{
+  "id": "a2181ca8-3ded-4e1b-82e2-096d70e59fa1",
+  "timestamp": "2026-11-17T07:15:31.877816",
+  "source": "user",
+  "parent_id": "53754c9b-f106-452f-8118-8b9d4e9e8c45",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Jangan lupa juga dari proxy,akun cloudeframe solve api key dan lain lain,aku lupa soalnya tadi aku di chat lama udh ngasih akses apa aja"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

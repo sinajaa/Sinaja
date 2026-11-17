@@ -1,0 +1,24 @@
+{
+  "id": "f4a0c9cd-f734-4ec4-a5a4-5ef35bb59c74",
+  "timestamp": "2026-11-17T10:50:59.055778",
+  "source": "environment",
+  "parent_id": "1e8dc590-b1cf-46c5-a30a-b2185e1af9e1",
+  "tool_name": "browser_get_state",
+  "tool_call_id": "chatcmpl-tool-aa653d57a9dcb108",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "{\n  \"url\": \"https://app.all-hands.dev/login?returnTo=%2Fsettings%2Fuser\",\n  \"title\": \"OpenHands\",\n  \"tabs\": [\n    {\n      \"url\": \"https://app.all-hands.dev/login?returnTo=%2Fsettings%2Fuser\",\n      \"title\": \"OpenHands\"\n    }\n  ],\n  \"interactive_elements\": [\n    {\n      \"index\": 55,\n      \"tag\": \"a\",\n      \"text\": \"Log in with GitHub\",\n      \"href\": \"/oauth/5/login?redirect_url=%2Fsettings%2Fuser\"\n    },\n    {\n      \"index\": 58,\n      \"tag\": \"a\",\n      \"text\": \"Log in with GitLab\",\n      \"href\": \"/oauth/6/login?redirect_url=%2Fsettings%2Fuser\"\n    },\n    {\n      \"index\": 61,\n      \"tag\": \"a\",\n      \"text\": \"Log in with Bitbucket\",\n      \"href\": \"/oauth/7/login?redirect_url=%2Fsettings%2Fuser\"\n    },\n    {\n      \"index\": 67,\n      \"tag\": \"a\",\n      \"text\": \"Terms of Service\",\n      \"href\": \"https://www.openhands.dev/tos\"\n    },\n    {\n      \"index\": 72,\n      \"tag\": \"a\",\n      \"text\": \"Privacy Policy\",\n      \"href\": \"https://www.openhands.dev/privacy\"\n    },\n    {\n      \"index\": 77,\n      \"tag\": \"div\",\n      \"text\": \"\"\n    },\n    {\n      \"index\": 21,\n      \"tag\": \"a\",\n      \"text\": \"Learn more\",\n      \"href\": \"/information-request\"\n    },\n    {\n      \"index\": 108,\n      \"tag\": \"svg\",\n      \"text\": \"\"\n    },\n    {\n      \"index\": 118,\n      \"tag\": \"svg\",\n      \"text\": \"\"\n    }\n  ]\n}"
+      }
+    ],
+    "is_error": false,
+    "screenshot_data": null,
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "BrowserObservation"
+  },
+  "action_id": "e7834167-db91-4261-ba6e-cc906b972504",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

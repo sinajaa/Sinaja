@@ -1,0 +1,28 @@
+{
+  "id": "c9db3071-cbd0-4822-b5cb-87900784cc87",
+  "timestamp": "2026-11-17T08:42:39.638311",
+  "source": "user",
+  "parent_id": "82329d2c-a052-4a58-a0e1-e9037d284d0e",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Lupain aja itu saya cari lain"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

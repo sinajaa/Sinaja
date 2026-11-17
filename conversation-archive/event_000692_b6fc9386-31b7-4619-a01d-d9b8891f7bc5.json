@@ -1,0 +1,27 @@
+{
+  "id": "b6fc9386-31b7-4619-a01d-d9b8891f7bc5",
+  "timestamp": "2026-11-17T07:55:15.293179",
+  "source": "environment",
+  "parent_id": "8f8585e3-2593-4deb-8ebe-2f75288cc8a1",
+  "tool_name": "file_editor",
+  "tool_call_id": "chatcmpl-tool-bb183648eca91bcc",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "File created successfully at: /workspace/project/capsolve.py"
+      }
+    ],
+    "is_error": false,
+    "command": "create",
+    "path": "/workspace/project/capsolve.py",
+    "prev_exist": false,
+    "old_content": null,
+    "new_content": "#!/usr/bin/env python3\n\"\"\"Klien capbypass.pro \u2014 solver captcha cadangan.\n\n  python3 capsolve.py balance\n  python3 capsolve.py turnstile <url> <sitekey>\n  python3 capsolve.py recaptcha3 <url> <sitekey> [action]\n  python3 capsolve.py geetest <url> <captchaId>\n\nSebagai modul:\n  from capsolve import solve_turnstile, solve_recaptcha3\n\"\"\"\nimport json\nimport sys\nimport time\nimport urllib.error\nimport urllib.request\n\nKEY = \"cap_live_2a9c30a47d0bbdfde2f4470b61648b0b\"\nAPI = \"https://api.capbypass.pro\"\n\n\ndef _post(path, payload, timeout=30):\n    req = urllib.request.Request(API + path, data=json.dumps(payload).encode(),\n                                 headers={\"Content-Type\": \"application/json\"})\n    try:\n        with urllib.request.urlopen(req, timeout=timeout) as r:\n            return json.load(r)\n    except urllib.error.HTTPError as e:\n        return json.loads(e.read().decode() or \"{}\")\n\n\ndef balance():\n    return _post(\"/getBalance\", {\"clientKey\": KEY}).get(\"balance\")\n\n\ndef _run(task, timeout=180, poll=3):\n    res = _post(\"/createTask\", {\"clientKey\": KEY, \"task\": task})\n    if res.get(\"errorId\"):\n        raise RuntimeError(f\"createTask: {res.get('errorCode')} {res.get('errorDescription')}\")\n    tid = res[\"taskId\"]\n    deadline = time.time() + timeout\n    while time.time() < deadline:\n        time.sleep(poll)\n        r = _post(\"/getTaskResult\", {\"clientKey\": KEY, \"taskId\": tid})\n        if r.get(\"status\") == \"ready\":\n            return r[\"solution\"]\n        if r.get(\"errorId\"):\n            raise RuntimeError(f\"{r.get('errorCode')}: {r.get('errorDescription')}\")\n    raise TimeoutError(f\"task {tid} belum selesai dalam {timeout}s\")\n\n\ndef solve_turnstile(url, sitekey, **kw):\n    s = _run({\"type\": \"TurnstileTaskProxyLess\", \"websiteURL\": url, \"websiteKey\": sitekey}, **kw)\n    return s[\"token\"]\n\n\ndef solve_recaptcha3(url, sitekey, action=\"login\", enterprise=False, **kw):\n    t = \"ReCaptchaV3EnterpriseTaskProxyLess\" if enterprise else \"ReCaptchaV3TaskProxyLess\"\n    s = _run({\"type\": t, \"websiteURL\": url, \"websiteKey\": sitekey, \"pageAction\": action}, **kw)\n    return s[\"gRecaptchaResponse\"]\n\n\ndef solve_geetest(url, captcha_id, **kw):\n    return _run({\"type\": \"GeetestTaskProxyLess\", \"websiteURL\": url, \"captchaId\": captcha_id}, **kw)\n\n\nif __name__ == \"__main__\":\n    a = sys.argv[1:]\n    if not a or a[0] == \"balance\":\n        print(\"saldo: $%s\" % balance())\n    elif a[0] == \"turnstile\":\n        print(solve_turnstile(a[1], a[2]))\n    elif a[0] == \"recaptcha3\":\n        print(solve_recaptcha3(a[1], a[2], a[3] if len(a) > 3 else \"login\"))\n    elif a[0] == \"geetest\":\n        print(json.dumps(solve_geetest(a[1], a[2])))\n    else:\n        print(__doc__)\n",
+    "kind": "FileEditorObservation"
+  },
+  "action_id": "f4defb3b-beaf-4f29-800f-f603a4910a1e",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

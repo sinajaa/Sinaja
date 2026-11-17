@@ -1,0 +1,36 @@
+{
+  "id": "4c852b78-e9f1-4e65-82d7-d5635f81f478",
+  "timestamp": "2026-11-17T12:57:58.993607",
+  "source": "environment",
+  "parent_id": "4a2efccf-a42f-471c-aa80-d2817da14df8",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-986353b9ed4d5946",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "model: openai/deepseek_v4.1_flash_1017_uncensored\n  api_key: **********...\n  base_url: https://nomask.ai/api/v1\n  model: openai/deepseek/deepseek-v4.1-flash-1017-uncensored\n  base_url: https://obscurify.ai\n  model: openai/deepseek/deepseek-v4.1-flash-abliterated\n  base_url: https://api.fastrouter.ai/api/v1\n  model: deepseek/deepseek-v4.1-flash-1017-uncensored\n  model: openai/abliterated-model-large-flash\n  base_url: https://api.abliteration.ai/v1\n  model: openai/deepseek/deepseek-v4.1-flash-1017-abliterated:thinking\n  base_url: https://obscurify.ai/v1\n  model: deepseek_v4.1_flash_1017_uncensored\n  base_url: https://api.nomask.ai/v1\n  base_url: openai/deepseek/deepseek-v4.1-flash-1017-abliterated:thinking\n  model: openhands/deepseek-v4.1-flash\n  base_url: https://llm-proxy.app.all-hands.dev\nselesai, unik: 17"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && python3 - <<'PY'\nimport json,glob,re\nseen=set()\nfor f in glob.glob(\"/var/openhands/conversations/*/events/*.json\"):\n    try: s=open(f).read()\n    except: continue\n    if \"base_url\" in s and (\"sk-obs1\" in s or \"obscurify\" in s):\n        try: d=json.loads(s)\n        except: continue\n        def walk(o,path=\"\"):\n            if isinstance(o,dict):\n                for k,v in o.items():\n                    if k in (\"base_url\",\"model\",\"api_key\",\"max_output_tokens\",\"max_tokens\",\"temperature\",\"custom_llm_provider\"):\n                        val=v\n                        if k==\"api_key\" and isinstance(val,str): val=val[:12]+\"...\"\n                        t=(k,str(val))\n                        if t not in seen: seen.add(t); print(f\"  {k}: {val}\")\n                    walk(v,path+\"/\"+k)\n            elif isinstance(o,list):\n                for x in o: walk(x,path)\n        walk(d)\nprint(\"selesai, unik:\",len(seen))\nPY",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "03967281-c169-419d-92da-112d91fb3e8f",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

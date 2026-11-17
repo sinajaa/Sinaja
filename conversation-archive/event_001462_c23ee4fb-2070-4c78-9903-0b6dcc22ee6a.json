@@ -1,0 +1,28 @@
+{
+  "id": "c23ee4fb-2070-4c78-9903-0b6dcc22ee6a",
+  "timestamp": "2026-11-17T09:09:56.381096",
+  "source": "user",
+  "parent_id": "609dc229-152a-424e-ab8e-b74c00893387",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Coba jelasin detail itu untuk apa"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

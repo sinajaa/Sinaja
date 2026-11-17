@@ -1,0 +1,28 @@
+{
+  "id": "4b1035dd-6c65-4e91-a76c-88aaa0a392a6",
+  "timestamp": "2026-11-17T10:48:09.235407",
+  "source": "user",
+  "parent_id": "3991e708-add7-4333-ad71-a8f576f108f2",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Caranya gmn"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

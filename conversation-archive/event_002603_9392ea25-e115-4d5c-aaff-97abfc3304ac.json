@@ -1,0 +1,36 @@
+{
+  "id": "9392ea25-e115-4d5c-aaff-97abfc3304ac",
+  "timestamp": "2026-11-17T12:03:43.082208",
+  "source": "environment",
+  "parent_id": "0966d8a9-77c1-4dbc-bab4-f3f92f622073",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-afb920e76df6c53f",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "# AKSES \u2014 semua kredensial (dites hidup 2026-11-17 07:2x)\n\nJANGAN pasang proxy global di OpenHands (bisa memutus app.all-hands.dev).\nSemua proxy di bawah hanya untuk tugas keluar (daftar akun, scraping).\n\n## Proxy residensial (4 penyedia, semua TERBUKTI tembus Cloudflare)\n\n### 1. ResiFactory \u2014 PALING DIPAKAI (kuota hampir penuh)\n```\nAPI token : rf_live_XR90IwDCMz7Ou5cS7S8PkKD40MYoX8yBJs9lFEKSZq8\nuser      : pecelele767   id 2833\nhost      : premium.resifactory.net:7777 (HTTP) / :1080 (SOCKS5)\nauth      : ResiFactory_1840e2833~<country>~<session>  /  TPbfq2zsdVHz\nsaldo     : walmart_premium 0,9978 GB ($3/GB) | retail_select 0 | mobile_dedicated 0\n```\n```bash\n# ROTATING (IP ganti tiap request):\n#   user = ResiFactory_1840e2833~<negara>~<sesi>\n# STICKY (IP sama terus, WAJIB untuk login): tambahkan ~<menit> di akhir\n#   user = ResiFactory_1840e2833~<negara>~<sesi>~<menit>   (1..1440)\n\n# sticky 60 menit, IP Indonesia:\ncurl -x \"http://ResiFactory_1840e2833~id~mysesi1~60:TPbfq2zsdVHz@premium.resifactory.net:7777\" https://ipinfo.io/json\n```\n**Terbukti (17 Nov):** `~id~<sesi>~60` -> Telkomsel Jambi `110.139.125.180`,\nIP sama pada 3 request berturut. Tanpa `~<menit>` -> IP ganti tiap request.\nPool `id` aktif; keluar Telkomsel/Indihome/Linknet asli. Port 7777 (HTTP) / 1080 (SOCKS5).\nDipakai `ob.py <n> rf`. Cek saldo: `GET https://resifactory.net/api/v1/me` + Bearer token.\n\n### 2. Proxidize \u2014 trial 7 hari\n```\nhost : pg.proxi.es:20000\nuser : jPDZYa2fSH3jMmQN[-co-CC][-s-SESSION]-type-residential\npass : bHaUJVMb4cPlQZOL\n```\nTerbukti keluar Comcast Seattle. Dipakai `ob.py <n>` tanpa argumen proxy (default).\n\n### 3. FlashProxy \u2014 100 MB, sisa 99,2 MB\n```\nhost : adam.flashproxy.io:8080\nuser : 6pyu2taqjl[-country-us]   pass: xwcbkieh3s\nAPI  : fpk_live_REDACTED-eTcBve8fmoFZr9rK1u0  (GET /api/v1/usage)\naktif s/d 2026-12-17, terpakai 0,76%\n```\nTerbukti keluar Spectrum Hawaii.\n\n### 4. IPCove \u2014 cadangan\n```\nsocks5 : gateway.ipcove.com:7777\nhttp   : gateway.ipcove.com:7979\nuser   : ipcc3tdr8d69yvbzv   pass: YLjjXHwHo2gdQiJZKSsg\nAPI key: ipck_b52qQnNKQtCsbgm6YgO2Ysy0eFaiHUY2rgcap0N_Wk0\n```\nTerbukti keluar residensial BR (Formiga). Kurang stabil (kadang gagal).\n**Tidak punya pool Indonesia** -> untuk akun Google Indo pakai ResiFactory `~id~`.\n\n## Solver captcha\n\n### captchaai \u2014 saldo $5, TERBUKTI tembus Turnstile\n```\n...\n## Email / identitas\n\n### Gmail\n```\nakun    : woybangsatkauuu@gmail.com\napp pw  : ftnhrjnivohmtvju        (IMAP baca kode verifikasi, terbukti)\napp pw 2: mszz vqfk nzjq feqw\n```\nDipakai `hexflow.py` / `hexget.py` untuk ambil kode OTP.\n\n### Domain + DNS\n```\ndomain  : sinaja.cyou  (Cloudflare nameserver, MX -> Google Workspace)\nalias   : bebas, mis. hex1@sinaja.cyou (catch-all)\n```\n\n## API key LLM yang masih hidup\n\n| Situs | Key | Base URL | Model |\n|---|---|---|---|\n| obscurify | lihat `ob_accounts.txt` | `https://obscurify.ai/v1` | `deepseek/deepseek-v4.1-flash-1017-uncensored` |\n| HEX | `hex_JXIdQEtRXvKClUStol_7JW9UPH-97uFFxkRDZ8a8aSs` | `https://api.hexapi.io/v1` | 37 model (claude/glm/kimi/grok, +abliterated) |\n| AllModels | `sk_live_REDACTED` | `https://api.allmodels.io/oai` | `deepseek/deepseek-v4.1-flash-abliterated` (ada `reasoning_content`) |\n| nomask | `nmk_live_XlqFJR2Pyg9YxVFGUqdIaywQFOoZ7n8vG7CRErWI` + `nm_api_keys.txt` | `https://nomask.ai/v1` | wajib `force_string_serializer: true` |"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && sed -n '1,60p' AKSES.md; echo \"...\"; sed -n '156,180p' AKSES.md",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "bba3aa58-fad7-4e83-b748-a6a92652d6d5",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "285b57fe-500b-4942-8406-a9283e7ebd55",
+  "timestamp": "2026-11-17T08:41:26.740230",
+  "source": "environment",
+  "parent_id": "55ba2082-4a48-428a-b2f3-33d49fad7509",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-a78bd000ea540e3a",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "{\"object\":\"list\",\"data\":[{\"id\":\"qwen-3.8-27b\",\"object\":\"model\",\"created\":0,\"owned_by\":\"Cerebras\"},{\"id\":\"gpt-oss-120b\",\"object\":\"model\",\"created\":0,\"owned_by\":\"Cerebras\"}]}\n[200]"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && export CEREBRAS_API_KEY=\"csk-5hwek3y8kf2cxkdcprxep2m2w5tkwhdp5ywkrr85m8hfc6yk\"; curl -s --max-time 40 -H \"Authorization: Bearer $CEREBRAS_API_KEY\" \"https://api.cerebras.ai/v1/models\" -w \"\\n[%{http_code}]\\n\" | head -c 2500",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 71910,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "acb34706-c2da-4918-922d-478bc01fdd3a",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

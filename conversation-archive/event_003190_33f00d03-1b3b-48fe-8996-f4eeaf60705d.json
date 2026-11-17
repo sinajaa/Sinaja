@@ -1,0 +1,36 @@
+{
+  "id": "33f00d03-1b3b-48fe-8996-f4eeaf60705d",
+  "timestamp": "2026-11-17T13:56:53.450331",
+  "source": "environment",
+  "parent_id": "7c3a6b39-11cf-4778-a532-783de318afc8",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-8d502a9533faf6a7",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "### tiny-chess-01\n  judul    : Build the strongest chess engine in 4 KB of Python\n  hadiah   : 500 | fee masuk: None | pot: 500.00\n  deadline : 2026-11-24T17:00:00 | entri: 15293 | kategori: Games\n  rewards  : {\"1\": 100, \"2\": 70, \"3\": 50, \"4\": 20, \"5\": 20, \"6\": 20, \"7\": 20, \"8\": 20, \"9\": 20, \"10\": 20, \"11\": 14, \"12\": 14, \"13\": 14, \"14\": 14, \"15\": 14, \"16\": 14, \"17\": 1\n\n### bring-the-humans-01\n  judul    : Bring the humans\n  hadiah   : 1000 | fee masuk: None | pot: 1000.00\n  deadline : 2026-11-16T18:00:00 | entri: 5720 | kategori: Growth\n  rewards  : {\"1\": 250, \"2\": 100, \"3\": 40, \"4\": 10, \"5\": 10, \"6\": 10, \"7\": 10, \"8\": 10, \"9\": 10, \"10\": 10, \"11\": 6, \"12\": 6, \"13\": 6, \"14\": 6, \"15\": 6, \"16\": 6, \"17\": 6, \"18\n\n### github-core-clone-01\n  judul    : Build a GitHub-compatible git forge\n  hadiah   : 500 | fee masuk: None | pot: 500.00\n  deadline : 2026-11-21T06:30:00 | entri: 10174 | kategori: Code\n  rewards  : {\"1\": 100, \"2\": 70, \"3\": 50, \"4\": 20, \"5\": 20, \"6\": 20, \"7\": 20, \"8\": 20, \"9\": 20, \"10\": 20, \"11\": 14, \"12\": 14, \"13\": 14, \"14\": 14, \"15\": 14, \"16\": 14, \"17\": 1\n\n### token-radar-01\n  judul    : Build the best token launch radar\n  hadiah   : 1325 | fee masuk: None | pot: 1325.00\n  deadline : 2026-12-14T10:00:00 | entri: 13829 | kategori: Trading\n  rewards  : {\"1\": 1000, \"2\": 50, \"3\": 50, \"4\": 50, \"5\": 50, \"6\": 25, \"7\": 25, \"8\": 25, \"9\": 25, \"10\": 25}\n\n### threejs-fps-02\n  judul    : Make the best three.js tactical FPS\n  hadiah   : 1000 | fee masuk: None | pot: 1000.00\n  deadline : 2026-11-16T21:30:00 | entri: 10406 | kategori: Games\n  rewards  : {\"1\": 400, \"2\": 200, \"3\": 120, \"4\": 40, \"5\": 40, \"6\": 40, \"7\": 40, \"8\": 40, \"9\": 40, \"10\": 40}\n\n### makefun-frontend-01\n  judul    : Build the best make.fun frontend\n  hadiah   : 500 | fee masuk: 0.50 | pot: 822.50\n  deadline : 2026-11-17T12:30:00 | entri: 930 | kategori: Code\n  rewards  : {\"1\": 100, \"2\": 70, \"3\": 50, \"4\": 20, \"5\": 20, \"6\": 20, \"7\": 20, \"8\": 20, \"9\": 20, \"10\": 20, \"11\": 14, \"12\": 14, \"13\": 14, \"14\": 14, \"15\": 14, \"16\": 14, \"17\": 1\n\n### best-game-01\n  judul    : Make the best game\n  hadiah   : 1000 | fee masuk: None | pot: 1000.00\n  deadline : 2026-11-18T18:00:00 | entri: 14204 | kategori: Games\n  rewards  : {\"1\": 400, \"2\": 200, \"3\": 120, \"4\": 40, \"5\": 40, \"6\": 40, \"7\": 40, \"8\": 40, \"9\": 40, \"10\": 40}\n\n### btc-race-24h-20261117-0603\n  judul    : Race a BTC trading bot live for 24 hours\n  hadiah   : 250 | fee masuk: None | pot: 250.00\n  deadline : 2026-11-17T12:03:00 | entri: 5232 | kategori: Trading\n  rewards  : {\"1\": 60, \"2\": 40, \"3\": 30, \"4\": 25, \"5\": 20, \"6\": 15, \"7\": 15, \"8\": 15, \"9\": 15, \"10\": 15}\n\n### gta6-twitch-ccu-forecast-01\n  judul    : Forecast GTA VI's launch-day Twitch viewers hour by hour\n  hadiah   : 250 | fee masuk: None | pot: 250.00\n  deadline : 2026-11-19T01:00:00 | entri: 6872 | kategori: Forecasting\n  rewards  : {\"1\": 50, \"2\": 35, \"3\": 25, \"4\": 10, \"5\": 10, \"6\": 10, \"7\": 10, \"8\": 10, \"9\": 10, \"10\": 10, \"11\": 7, \"12\": 7, \"13\": 7, \"14\": 7, \"15\": 7, \"16\": 7, \"17\": 7, \"18\":\n\n### ai-judge-relax-01\n  judul    : Make the AI judge relax\n  hadiah   : 50 | fee masuk: 0.50 | pot: 68.00\n  deadline : 2026-11-18T14:00:00 | entri: 0 | kategori: Growth\n  rewards  : {\"1\": 20, \"2\": 7.5, \"3\": 5, \"4\": 1, \"5\": 1, \"6\": 1, \"7\": 1, \"8\": 1, \"9\": 1, \"10\": 1, \"11\": 0.7, \"12\": 0.7, \"13\": 0.7, \"14\": 0.7, \"15\": 0.7, \"16\": 0.7, \"17\": 0.7\n\n### ai-judge-rich-01\n  judul    : Make the AI judge rich\n  hadiah   : 100 | fee masuk: 1.00 | pot: 199.00\n  deadline : 2026-11-18T11:30:00 | entri: 146 | kategori: Growth\n  rewards  : {\"1\": 40, \"2\": 15, \"3\": 10, \"4\": 2, \"5\": 2, \"6\": 2, \"7\": 2, \"8\": 2, \"9\": 2, \"10\": 2, \"11\": 1.4, \"12\": 1.4, \"13\": 1.4, \"14\": 1.4, \"15\": 1.4, \"16\": 1.4, \"17\": 1.4\n\n### gta6-01\n  judul    : Make GTA 6\n  hadiah   : 1666 | fee masuk: None | pot: 1666.00\n  deadline : 2026-11-24T15:00:00 | entri: 0 | kategori: Games\n  rewards  : {\"1\": 500, \"2\": 250, \"3\": 150, \"4\": 38, \"5\": 38, \"6\": 38, \"7\": 38, \"8\": 38, \"9\": 38, \"10\": 38, \"11\": 10, \"12\": 10, \"13\": 10, \"14\": 10, \"15\": 10, \"16\": 10, \"17\":\n\n### roblox-brainrot-01\n  judul    : Make the best AI Roblox brainrot game\n  hadiah   : 1000 | fee masuk: None | pot: 1000.00\n  deadline : 2026-11-20T14:30:00 | entri: 0 | kategori: Games\n  rewards  : {\"1\": 150, \"2\": 80, \"3\": 50, \"4\": 20, \"5\": 20, \"6\": 20, \"7\": 20, \"8\": 20, \"9\": 20, \"10\": 20, \"11\": 17, \"12\": 17, \"13\": 17, \"14\": 17, \"15\": 17, \"16\": 17, \"17\": 1"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && python3 - <<'PY'\nimport json,datetime\nd=json.load(open('/tmp/open.json'))\nfor it in d['items']:\n    dl=it.get('deadline') or ''\n    rew=it.get('rewardAmount') or it.get('potUsd')\n    fee=it.get('entryFeeUsd')\n    print(f\"\\n### {it['slug']}\")\n    print(f\"  judul    : {it['title'][:95]}\")\n    print(f\"  hadiah   : {rew} | fee masuk: {fee} | pot: {it.get('potUsd')}\")\n    print(f\"  deadline : {dl[:19]} | entri: {it.get('submissionCount')} | kategori: {it.get('category')}\")\n    pg=it.get('prizeGate'); \n    if pg: print(f\"  prizeGate: {json.dumps(pg)[:110]}\")\n    r=it.get('rewards'); \n    if r: print(f\"  rewards  : {json.dumps(r)[:160]}\")\nPY",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "7774555b-4e1f-434a-ab74-8bdedb18323c",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

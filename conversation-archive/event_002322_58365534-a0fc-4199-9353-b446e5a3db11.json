@@ -1,0 +1,36 @@
+{
+  "id": "58365534-a0fc-4199-9353-b446e5a3db11",
+  "timestamp": "2026-11-17T11:21:14.556587",
+  "source": "environment",
+  "parent_id": "e94b4361-e2a1-43fd-8fe3-de921f06d3eb",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-a33cbafba3e7ae12",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "https://docs.openhands.dev/openhands/usage/settings/provider-connections 404\nhttps://docs.openhands.dev/openhands/usage/providers                     404\nhttps://docs.openhands.dev/openhands/usage/settings/llm-settings         200"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && for u in \"https://docs.openhands.dev/openhands/usage/settings/provider-connections\" \"https://docs.openhands.dev/openhands/usage/providers\" \"https://docs.openhands.dev/openhands/usage/settings/llm-settings\"; do printf \"%-72s \" \"$u\"; curl -s -o /dev/null --max-time 20 -L -w \"%{http_code}\\n\" \"$u\"; done",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "5aa3118f-5ad2-485a-98e3-342eb501c8de",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

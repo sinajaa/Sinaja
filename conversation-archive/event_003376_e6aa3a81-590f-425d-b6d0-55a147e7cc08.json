@@ -1,0 +1,36 @@
+{
+  "id": "e6aa3a81-590f-425d-b6d0-55a147e7cc08",
+  "timestamp": "2026-11-17T14:49:22.099807",
+  "source": "environment",
+  "parent_id": "50c99224-9fcd-48c9-a614-bb01368312e5",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-ad0c154e99b3cd99",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "cat > /workspace/project/mf/obnext.py <<'PY'\n#!/usr/bin/env python3\n\"\"\"Ganti ~/.obscurify_key ke key berikutnya yang masih bersaldo.\"\"\"\nimport json, os, urllib.request\nKEYF = os.path.expanduser(\"~/.obscurify_key\")\nACC = \"/workspace/project/ob_accounts.txt\"\ncur = open(KEYF).read().strip() if os.path.exists(KEYF) else \"\"\ndef bal(k):\n    try:\n        r = urllib.request.Request(\"https://obscurify.ai/get_user_balance\",\n                                   headers={\"Authorization\": f\"Bearer {k}\"})\n        with urllib.request.urlopen(r, timeout=20) as x:\n            return float(json.load(x)[\"balance\"])\n    except Exception:\n        return -1.0\nprint(\"saldo key sekarang:\", bal(cur))\nfor line in open(ACC):\n    p = [x.strip() for x in line.split(\"|\")]\n    if len(p) >= 3 and p[1].startswith(\"sk-obs1\") and p[1] != cur:\n        b = bal(p[1])\n        if b >= 0.9:\n            open(KEYF, \"w\").write(p[1]); os.chmod(KEYF, 0o600)\n            print(f\"ganti ke akun {p[0]} saldo {b}\"); break\nelse:\n    print(\"tidak ada key bersaldo\")\nPY\n\n\npython3 /workspace/project/mf/obnext.py; python3 - <<'PY'\nimport json,os\np=os.path.expanduser(\"~/.config/opencode/opencode.json\")\nc=json.load(open(p)); c[\"model\"]=\"obscurify/deepseek/deepseek-v4.1-flash-1017-uncensored\"\njson.dump(c,open(p,\"w\"),indent=2); print(\"model build:\",c[\"model\"])\nPY\n\nsaldo key sekarang: 0.97\nganti ke akun 7647219727714873 saldo 1.0\nmodel build: obscurify/deepseek/deepseek-v4.1-flash-1017-uncensored\n\n\ndate -u\nTue Nov 17 14:49:21 UTC 2026"
+      }
+    ],
+    "is_error": false,
+    "command": "cat > /workspace/project/mf/obnext.py <<'PY'\n#!/usr/bin/env python3\n\"\"\"Ganti ~/.obscurify_key ke key berikutnya yang masih bersaldo.\"\"\"\nimport json, os, urllib.request\nKEYF = os.path.expanduser(\"~/.obscurify_key\")\nACC = \"/workspace/project/ob_accounts.txt\"\ncur = open(KEYF).read().strip() if os.path.exists(KEYF) else \"\"\ndef bal(k):\n    try:\n        r = urllib.request.Request(\"https://obscurify.ai/get_user_balance\",\n                                   headers={\"Authorization\": f\"Bearer {k}\"})\n        with urllib.request.urlopen(r, timeout=20) as x:\n            return float(json.load(x)[\"balance\"])\n    except Exception:\n        return -1.0\nprint(\"saldo key sekarang:\", bal(cur))\nfor line in open(ACC):\n    p = [x.strip() for x in line.split(\"|\")]\n    if len(p) >= 3 and p[1].startswith(\"sk-obs1\") and p[1] != cur:\n        b = bal(p[1])\n        if b >= 0.9:\n            open(KEYF, \"w\").write(p[1]); os.chmod(KEYF, 0o600)\n            print(f\"ganti ke akun {p[0]} saldo {b}\"); break\nelse:\n    print(\"tidak ada key bersaldo\")\nPY\npython3 /workspace/project/mf/obnext.py; python3 - <<'PY'\nimport json,os\np=os.path.expanduser(\"~/.config/opencode/opencode.json\")\nc=json.load(open(p)); c[\"model\"]=\"obscurify/deepseek/deepseek-v4.1-flash-1017-uncensored\"\njson.dump(c,open(p,\"w\"),indent=2); print(\"model build:\",c[\"model\"])\nPY\ndate -u",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "e8cf89e4-9178-4a17-9830-1eb881987c26",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

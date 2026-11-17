@@ -1,0 +1,28 @@
+{
+  "id": "98be7eb2-e66c-4bbd-83ef-2bf98e872599",
+  "timestamp": "2026-11-17T09:38:00.075737",
+  "source": "user",
+  "parent_id": "da8f1b83-6a91-459a-866c-175e3dbd412f",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Coba Venice?itu bener ada free trial dan bisa custom api key kah?ada model uncensored bagus gak?semisal deepseek 4.1 flash uncensored atau abliterated "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

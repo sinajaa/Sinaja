@@ -1,0 +1,28 @@
+{
+  "id": "78c62c50-436b-44bc-a27a-cd07d882529a",
+  "timestamp": "2026-11-17T12:51:09.652355",
+  "source": "user",
+  "parent_id": "72b2ee58-f5a2-4dc9-9d19-7688d3051daf",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "sk-obs1_INupivHBQfiozGBfFI3vwQAAAADxnYXc6olhcui5RWh0e7KivAqHw9E-pL4 ini api key akun yg mana ya"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

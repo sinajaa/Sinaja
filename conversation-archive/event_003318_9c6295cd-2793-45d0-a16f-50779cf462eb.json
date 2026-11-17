@@ -1,0 +1,36 @@
+{
+  "id": "9c6295cd-2793-45d0-a16f-50779cf462eb",
+  "timestamp": "2026-11-17T14:23:13.714428",
+  "source": "environment",
+  "parent_id": "18048ffe-b215-44ac-952b-35c19fcde636",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-9433a96a56c94bdf",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "login: sinajaa | id: 194417212 | name: None\n--- git config ---\nopenhands\nopenhands@all-hands.dev\n(kosong = belum diset)"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && curl -s -H \"Authorization: Bearer $GITHUB_TOKEN\" https://api.github.com/user | python3 -c \"\nimport sys,json;d=json.load(sys.stdin);print('login:',d.get('login'),'| id:',d.get('id'),'| name:',d.get('name'))\"; echo \"--- git config ---\"; git config --global user.name; git config --global user.email; echo \"(kosong = belum diset)\"",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "7034ed2e-7c5f-43b6-ae89-fc73555d0a14",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

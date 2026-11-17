@@ -1,0 +1,36 @@
+{
+  "id": "bc05b6d4-b97c-4a18-bf84-16f7ae6fe850",
+  "timestamp": "2026-11-17T07:15:41.748787",
+  "source": "environment",
+  "parent_id": "8385919c-e31a-4be7-a3e8-210880bdd6a9",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-8b2883ea8c28d248",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "=== FlashProxy usage ===\n{\"success\":true,\"data\":{\"plans\":[{\"plan_id\":\"acct_8j6g2brkjmkq2m4f050nw58crm\",\"product\":\"residential\",\"name\":\"Residential Proxies\",\"status\":\"active\",\"expires_at\":\"2026-12-17T02:29:34.885+00:00\",\"usage\":{\"bytes_used\":757097,\"max_bytes\":100000000,\"remaining_bytes\":99242903,\"percentage_used\":0.76},\"thr=== captchaai saldo ===\n{\"status\":1,\"request\":\"5\"}\nHTTP 200"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && echo \"=== FlashProxy usage ===\"; curl -s --max-time 25 https://www.flashproxy.com/api/v1/usage -H \"Authorization: Bearer fpk_live_REDACTED-eTcBve8fmoFZr9rK1u0\" -w \"\\nHTTP %{http_code}\\n\" | head -c 300; echo \"=== captchaai saldo ===\"; curl -s --max-time 25 \"https://ocr.captchaai.com/res.php?key=ixvwhhocndcyyon2f1vbixds6ltuujnb&action=getbalance&json=1\" -w \"\\nHTTP %{http_code}\\n\" | head -c 200",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 63318,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "dd226c6a-e557-42b8-9d28-85c7bdb74906",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

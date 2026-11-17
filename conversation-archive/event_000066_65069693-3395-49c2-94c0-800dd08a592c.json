@@ -1,0 +1,36 @@
+{
+  "id": "65069693-3395-49c2-94c0-800dd08a592c",
+  "timestamp": "2026-11-17T07:00:24.283834",
+  "source": "environment",
+  "parent_id": "3908b034-9460-4d30-b34a-eafa10ee9730",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-b1fc7ae820975f48",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "=== obscurify key test ===\n\n=== nomask key test ===\n<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"UTF-8\" />\n        <meta http-equiv=\"refresh\" content=\"0;url='https://nomask.ai/login'\" />\n\n        <title>Redirecting to https://nomask.ai/login</title>\n    </head>\n    <body>\n        Redirecting to <a href=\"https://nomask.ai/login\">https://no\n=== hex key test ===\n200"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && echo \"=== obscurify key test ===\"; K=$(tail -1 ob_accounts.txt | awk -F'|' '{gsub(/ /,\"\",$2); print $2}'); curl -s --max-time 30 https://obscurify.ai/api/me -H \"Authorization: Bearer $K\" | head -c 400; echo; echo \"=== nomask key test ===\"; curl -s --max-time 30 https://nomask.ai/api/keys -H \"Authorization: Bearer $(cat .key_current)\" | head -c 300; echo; echo \"=== hex key test ===\"; curl -s --max-time 30 https://api.hexapi.io/v1/models -H \"Authorization: Bearer hex_T8z8XEHwlwOgNN9MYrUqQL77_5BZ7a6tZjuUWDxnjhg\" -o /dev/null -w \"%{http_code}\\n\"",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "b3106773-6292-4652-b69b-046500e8d178",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

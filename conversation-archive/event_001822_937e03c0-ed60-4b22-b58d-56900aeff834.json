@@ -1,0 +1,28 @@
+{
+  "id": "937e03c0-ed60-4b22-b58d-56900aeff834",
+  "timestamp": "2026-11-17T10:03:54.743356",
+  "source": "user",
+  "parent_id": "4a8de4fb-03e2-420d-96ab-98ffdac488b2",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Kenapa email-nya itu?itu mana bisa dapet otp kalo minta "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

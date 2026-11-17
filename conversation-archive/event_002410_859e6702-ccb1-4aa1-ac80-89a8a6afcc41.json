@@ -1,0 +1,36 @@
+{
+  "id": "859e6702-ccb1-4aa1-ac80-89a8a6afcc41",
+  "timestamp": "2026-11-17T11:40:05.954886",
+  "source": "environment",
+  "parent_id": "eeabe348-3b03-492b-8361-41ca5c3082bd",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-92e362d6222c8981",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "=== AKSES.md: allmodels ===\n70-curl \"https://ocr.captchaai.com/res.php?key=KEY&action=getbalance&json=1\"\n71-```\n72:Catatan: token reCAPTCHA **v3 Enterprise** (AllModels) DITOLAK walau token valid (skor rendah).\n73-\n74-### DDoS-Guard \u2014 cadangan\n75-```\n76-key : JB1BY4C17D99TN-H1KL0DG8S3EM08SHW5K0XTPKR\n--\n91-|---|---|\n92-| `ReCaptchaV3TaskProxyLess` | **OK, skor 0.9**, ~2 detik |\n93:| `ReCaptchaV3EnterpriseTaskProxyLess` | **OK** (untuk AllModels) |\n94-| `TurnstileTaskProxyLess` | **OK** \u2014 sitekey HEX `0x4AAAAAAF3EU-q7sNrfjP5Q`, token 773 char |\n95-| `GeetestTaskProxyLess` | **OK** \u2014 pakai `captchaId`, bukan `websiteKey` |\n96-| `CaptchaFoxTaskProxyLess` | **OK** \u2014 GMX `sk_vKdD8WGlPF5FKpRDs1U4qTuu6Jv0w`, ~1,6 s |\n97-| `AntiAwsWafTaskProxyLess` | **OK** \u2014 amazon.com; aws.amazon.com gagal |\n--\n104-\n105-### Bandingkan dengan captchaai\n106:- captchaai: Turnstile OK, tapi token reCAPTCHA v3 **skor rendah** -> AllModels tolak.\n107-- capbypass: skor **0.9** -> jauh lebih mungkin diterima. **Pakai capbypass untuk reCAPTCHA.**\n108-\n109-### Catatan\n110-- **WAJIB kirim `User-Agent`.** Tanpa UA -> `403 error code: 1010` (Cloudflare).\n--\n176-| obscurify | lihat `ob_accounts.txt` | `https://obscurify.ai/v1` | `deepseek/deepseek-v4.1-flash-1017-uncensored` |\n177-| HEX | `hex_JXIdQEtRXvKClUStol_7JW9UPH-97uFFxkRDZ8a8aSs` | `https://api.hexapi.io/v1` | 37 model (claude/glm/kimi/grok, +abliterated) |\n178:| AllModels | `sk_live_REDACTED` | `https://api.allmodels.io/oai` | `deepseek/deepseek-v4.1-flash-abliterated` (ada `reasoning_content`) |\n179-| nomask | `nmk_live_XlqFJR2Pyg9YxVFGUqdIaywQFOoZ7n8vG7CRErWI` + `nm_api_keys.txt` | `https://nomask.ai/v1` | wajib `force_string_serializer: true` |\n180-\n181:## AllModels \u2014 hasil uji 17 Nov (signup)\n182-**Captcha:** Cloudflare **Turnstile** (bukan reCAPTCHA). Sitekey `0x4AAAAAAFoFe99_cOH0RnFT`,\n183-action `signup`, header `x-turnstile-token`.\n184-**Status:** token capbypass (773 char) **DITOLAK** -> `403 captcha_failed`.\n185-\n--\n194-\n195-### Endpoint\n196:- Signup: `POST https://dash.allmodels.io/api/auth/sign-up/email`\n197-- Claim (login): `POST /api/me/free-credits/claim` `{recaptchaToken, trigger}`\n198-- Claim (anonim, link email): `POST /api/free-credits/claim` `{claimToken, recaptchaToken, trigger}`\n\n=== file terkait ===\nambrowser.py\namreg.py\namsniff.py\namsniff.py\namtest.py\n=== akun allmodels ===\n1000\nsk_live_REDACTED\nsk_live_7zhTPg4r\nsk_live_keys"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && echo \"=== AKSES.md: allmodels ===\"; grep -in -A4 -B2 \"allmodels\\|AllModels\" AKSES.md | head -40; echo; echo \"=== file terkait ===\"; ls -1 am*.py amsniff.py 2>/dev/null; echo \"=== akun allmodels ===\"; grep -c \"\" akun_semua.txt 2>/dev/null; grep -oE \"sk_live_[A-Za-z0-9]+\" AKSES.md | head -3",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "5662304b-6cab-4d0b-aee9-b8daefee3699",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

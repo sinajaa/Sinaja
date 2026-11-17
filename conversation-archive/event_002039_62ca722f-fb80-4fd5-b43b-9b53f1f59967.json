@@ -1,0 +1,36 @@
+{
+  "id": "62ca722f-fb80-4fd5-b43b-9b53f1f59967",
+  "timestamp": "2026-11-17T10:40:55.120907",
+  "source": "environment",
+  "parent_id": "3cbf6190-9d41-45fb-9262-0a93671b6e3f",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-a225c7ee5b2c7ecc",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Summary\n A Bot can use plan model credits or your own provider credentials. Configure one primary model, multiple fallback models, or save a model without activating it. API keys are created by the provider, not by LightVela.\n Check whether your plan already includes models\n Some LightVela plans include ready-to-use models and model credits. If your entitlement is valid, credits remain, and the model is covered by your plan, you can start in Web Chat without entering your own API key. Check the current plan and Models pages for supported models, quotas, expiry, and usage rules; not every plan includes every model.\n Configure your own provider below if you need a model outside your plan or want to use your own provider quota. Models included in a LightVela plan are separate from third-party subscriptions under the Coding Plan model tab, which require that provider\u2019s API key.\n Before you start\n Sign in, select the intended Bot and open Management \u2192 Model. The Bot must be ready. Web Chat does not require a messaging channel. Prepare a valid provider API key and available quota when using your own model.\n Configure a model\n Choose Coding Plan model , Model API or Custom model , then select the provider.\n If shown, use the API-key link to open the provider console and create a key. Return to LightVela and enter it.\n Select a model from the catalog or fetch available models when the provider supports discovery.\n Check model status, choose a use, and confirm the configuration. Wait for the saved model and its use marker to appear.\n For a custom provider, enter its name and Base URL and select its actual protocol: OpenAI Chat Completions, Anthropic Messages or OpenAI Responses. A model list is not proof that a model can complete a request.\n Uses\n Meaning\n Set as primary model\n The model used as the primary choice.\n Set as fallback model\n One of the configured fallback models. The primary model cannot also be a fallback.\n Add only\n Save the model without making it primary or fallback.\n Fetch available models \u00b7 Check model status \u00b7 Confirm\n Enter a model ID and check usage\n For a custom model, enter the exact model ID supplied by the provider or select it from the fetched list. Preserve its case. If the provider has no model-list endpoint or a new model is missing from the list, you can enter its ID without waiting for a catalog update. Entering an ID does not prove that the model can be called.\n Checking model status makes a small model request and may consume provider quota. You can save without checking, but a successful save only confirms that the configuration was written. Use a status check and an actual chat message to verify availability.\n Check and manage models\n Check model status to view the outcome, model, endpoint, response time and error details. After saving, send a short message in Web Chat . A successful check only confirms that attempt.\n Expand a configured provider to add another model and save it. Use the model-row actions to ch"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && curl -s --max-time 30 -A \"Mozilla/5.0\" \"https://lightvela.ai/docs/configuration/model/\" | python3 -c \"\nimport sys,re,html\ns=sys.stdin.read()\ns=re.sub(r'<script.*?</script>','',s,flags=re.S); s=re.sub(r'<style.*?</style>','',s,flags=re.S)\ns=re.sub(r'<(br|/p|/div|/li|/h[1-6]|/tr|/td|/th)>','\\n',s)\nt=html.unescape(re.sub(r'<[^>]+>',' ',s))\nt=re.sub(r'[ \\t]+',' ',t); t=re.sub(r'\\n\\s*\\n+','\\n',t)\ni=t.find('Summary')\nprint(t[i:i+3000] if i>0 else t[:3000])\n\"",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "6ddc6ee1-cdfc-4be1-920c-7f57c1f90550",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

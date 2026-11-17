@@ -1,0 +1,28 @@
+{
+  "id": "d0d43648-d3cd-4f16-8762-36025055204d",
+  "timestamp": "2026-11-17T11:21:09.340452",
+  "source": "user",
+  "parent_id": "cc3252a5-488b-4f79-a657-4b1d8af0452c",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Provider connection saya pilih tulisan apa tapi apikey malah gak ada kolomnya "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

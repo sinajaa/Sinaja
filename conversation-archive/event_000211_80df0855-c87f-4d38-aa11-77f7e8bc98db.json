@@ -1,0 +1,34 @@
+{
+  "id": "80df0855-c87f-4d38-aa11-77f7e8bc98db",
+  "timestamp": "2026-11-17T07:07:42.900136",
+  "source": "agent",
+  "parent_id": "337dadcb-e55a-4a80-be1f-34071665fba4",
+  "thought": [
+    {
+      "cache_prompt": false,
+      "type": "text",
+      "text": ""
+    }
+  ],
+  "reasoning_content": null,
+  "thinking_blocks": [],
+  "responses_reasoning_item": null,
+  "action": {
+    "include_screenshot": true,
+    "kind": "BrowserGetStateAction"
+  },
+  "tool_name": "browser_get_state",
+  "tool_call_id": "chatcmpl-tool-b7c84d00c00fa51d",
+  "tool_call": {
+    "id": "chatcmpl-tool-b7c84d00c00fa51d",
+    "responses_item_id": null,
+    "name": "browser_get_state",
+    "arguments": "{\"include_screenshot\": true, \"summary\": \"Check GitHub OAuth page\"}",
+    "origin": "completion"
+  },
+  "llm_response_id": "chatcmpl-UfEO0hc5WdxjWw3vOChEOgJxHy04Y",
+  "security_risk": "UNKNOWN",
+  "critic_result": null,
+  "summary": "Check GitHub OAuth page",
+  "kind": "ActionEvent"
+}

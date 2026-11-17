@@ -1,0 +1,28 @@
+{
+  "id": "c50dea0e-20bf-4b7b-b9c9-932a5707c4c1",
+  "timestamp": "2026-11-17T07:35:09.422727",
+  "source": "user",
+  "parent_id": "382604eb-721f-4fd6-a4d5-b403c8ae8e10",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Coba test dulu,oh iya hp masih tetep sama terakhir hp kereset sampe sekarang cuma login saja yang tidak dikenal langsung bgitu saja"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

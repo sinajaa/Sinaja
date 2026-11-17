@@ -1,0 +1,28 @@
+{
+  "id": "53dd909c-80e3-4cf1-bcb9-9dee29caf00d",
+  "timestamp": "2026-11-17T11:13:44.700476",
+  "source": "user",
+  "parent_id": "51f8f8f8-4db6-44a6-ac35-df02ca7bbfff",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Hi"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "75ded8d5-e080-4bc9-9369-6dcf85d9c9f4",
+  "timestamp": "2026-11-17T08:05:05.417362",
+  "source": "environment",
+  "parent_id": "e402f732-0001-4b91-a270-675d21eb04b8",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-ba59324e31f2af79",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "./STATUS.md\n./AGENTS.md\n./AKSES.md\n=== isi catatan allmodels ===\nAKSES.md-curl \"https://ocr.captchaai.com/res.php?key=KEY&action=getbalance&json=1\"\nAKSES.md-```\nAKSES.md:Catatan: token reCAPTCHA **v3 Enterprise** (AllModels) DITOLAK walau token valid (skor rendah).\nAKSES.md-\nAKSES.md-### DDoS-Guard \u2014 cadangan\nAKSES.md-```\nAKSES.md-key : JB1BY4C17D99TN-H1KL0DG8S3EM08SHW5K0XTPKR\n--\nAKSES.md-|---|---|\nAKSES.md-| `ReCaptchaV3TaskProxyLess` | **OK, skor 0.9**, ~2 detik |\nAKSES.md:| `ReCaptchaV3EnterpriseTaskProxyLess` | **OK** (untuk AllModels) |\nAKSES.md-| `TurnstileTaskProxyLess` | **OK** \u2014 sitekey HEX `0x4AAAAAAF3EU-q7sNrfjP5Q`, token 773 char |\nAKSES.md-| `GeetestTaskProxyLess` | **OK** \u2014 pakai `captchaId`, bukan `websiteKey` |\nAKSES.md-| `CaptchaFoxTaskProxyLess` | **OK** \u2014 GMX `sk_vKdD8WGlPF5FKpRDs1U4qTuu6Jv0w`, ~1,6 s |\nAKSES.md-| `AntiAwsWafTaskProxyLess` | **OK** \u2014 amazon.com; aws.amazon.com gagal |\n--\nAKSES.md-\nAKSES.md-### Bandingkan dengan captchaai\nAKSES.md:- captchaai: Turnstile OK, tapi token reCAPTCHA v3 **skor rendah** -> AllModels tolak.\nAKSES.md-- capbypass: skor **0.9** -> jauh lebih mungkin diterima. **Pakai capbypass untuk reCAPTCHA.**\nAKSES.md-\nAKSES.md-### Catatan\nAKSES.md-- **WAJIB kirim `User-Agent`.** Tanpa UA -> `403 error code: 1010` (Cloudflare).\n--\nAKSES.md-| obscurify | lihat `ob_accounts.txt` | `https://obscurify.ai/v1` | `deepseek/deepseek-v4.1-flash-1017-uncensored` |\nAKSES.md-| HEX | `hex_JXIdQEtRXvKClUStol_7JW9UPH-97uFFxkRDZ8a8aSs` | `https://api.hexapi.io/v1` | 37 model (claude/glm/kimi/grok, +abliterated) |\nAKSES.md:| AllModels | `sk_live_REDACTED` | `https://api.allmodels.io/oai` | `deepseek/deepseek-v4.1-flash-abliterated` (ada `reasoning_content`) |\nAKSES.md-| nomask | `nmk_live_XlqFJR2Pyg9YxVFGUqdIaywQFOoZ7n8vG7CRErWI` + `nm_api_keys.txt` | `https://nomask.ai/v1` | wajib `force_string_serializer: true` |\nAKSES.md-\nAKSES.md-## Catatan keamanan\nAKSES.md-- File ini berisi kredensial. Jangan di-upload ke tempat publik.\n--\nAGENTS.md-  -> `GET /get_user_balance`.\nAGENTS.md-\nAGENTS.md:## AllModels (dash.allmodels.io) \u2014 status: PARKIR\nAGENTS.md-Jangan dipakai untuk farming. Biaya usaha tinggi, hasil $0.25.\nAGENTS.md-- `POST /api/auth/sign-up/email` dengan email `gmail.com` -> `422 signup_use_google`\nAGENTS.md-  (wajib OAuth). Email non-Gmail -> `403 captcha_failed` (reCAPTCHA v3 skor).\nAGENTS.md-- Jalur yang melepas credit: **Google OAuth** (`POST /api/auth/sign-in/social`,\n--\nAGENTS.md-  Token captchaai diterima server? **tidak** (skor rendah). Butuh solver v3 berskor tinggi.\nAGENTS.md-- Endpoint lain: `POST /api/me/free-credits/claim` (param `source`=`auto`|`manual`),\nAGENTS.md:  `GET /api/me/balance`. API model: `https://api.allmodels.io/oai` (bukan `/v1`).\nAGENTS.md-- Key kerja: `sk_live_7zhTPg4r...` (akun `donk@sinaja.cyou`).\nAGENTS.md-\nAGENTS.md-## Pelajaran memilih kandidat web\nAGENTS.md-Filter wajib sebelum investasi waktu: **tanpa email, tanpa OAuth, tanpa captcha,\n--\nSTATUS.md-| nomask | `nm_ready.txt` (siap pakai) | **20 key teruji** | \u2014 (3 dari 22 sudah 402) |\nSTATUS.md-| HEX | `hex_accounts.txt` | 1 akun | $0.25 |\nSTATUS.md:| AllModels | \u2014 | 1 key | $0.25 (tidak farming) |\nSTATUS.md-\nSTATUS.md-Cek saldo semua key obscurify:\nSTATUS.md-```bash\nSTATUS.md-python3 - <<'EOF'\n--\nSTATUS.md-1. **Obscurify = sumber utama.** $1 penuh, tanpa email/captcha, 100% berhasil lewat proxy.\nSTATUS.md-   Wajib pakai proxy (`ob.py <n> rf`); tanpa proxy saldo $0 karena IP rumah jenuh.\nSTATUS.md:2. **AllModels diparkir.** Butuh OAuth Google/GitHub, credit cuma $0.25.\nSTATUS.md-3. **GitHub farming tidak dipilih** \u2014 butuh email unik + verifikasi, dan belum terbukti"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && grep -ril \"allmodels\" --include=*.py --include=*.md --include=*.txt . 2>/dev/null | head; echo \"=== isi catatan allmodels ===\"; grep -i -A4 -B2 \"allmodels\" AKSES.md AGENTS.md STATUS.md 2>/dev/null | head -60",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 65735,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "f880d4b7-1b31-4728-ba96-b9523bb19aa9",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

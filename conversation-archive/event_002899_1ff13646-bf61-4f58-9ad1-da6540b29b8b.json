@@ -1,0 +1,36 @@
+{
+  "id": "1ff13646-bf61-4f58-9ad1-da6540b29b8b",
+  "timestamp": "2026-11-17T12:59:34.015897",
+  "source": "environment",
+  "parent_id": "0a8d14fe-ae68-4d82-86e6-a5de1d31cd26",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-9106eae6cb7e59e0",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "cd /workspace/project && cat > OPENHANDS_OB_CONFIG.md <<'EOF'\n# Konfigurasi OpenHands \u2014 profil obscurify (dipulihkan dari riwayat)\nSumber: event percakapan di `/var/openhands/conversations/*/events/`\n(konfigurasi tersimpan di Cloud, tapi tercatat di log saat percakapan mulai).\n## Profil yang dipakai: `Obcurify`\n| Field | Nilai |\n|---|---|\n| model | `openai/deepseek/deepseek-v4.1-flash-1017-uncensored` |\n| base_url | `https://obscurify.ai` |\n| auth_type | `api_key` |\n| provider_connection_id | `2d402186488f4b1abc3fcbfaa44a255b` |\n| stream | `True` |\n| caching_prompt | `True` |\n| native_tool_calling | `True` |\n| api_mode | `auto` |\n| drop_params | `True` |\n| timeout | `300` |\n| num_retries | `5` (multiplier 8.0, min 8, max 64) |\n| reasoning_effort | `high` |\n| extended_thinking_budget | `200000` |\n| prompt_cache_retention | `24h` |\n| max_message_chars | `30000` |\n## Catatan penting\n**base_url tanpa `/v1` tetap jalan.** Terbukti diuji:\n```\nbase=https://obscurify.ai      -> \u2705 200\nbase=https://obscurify.ai/v1   -> \u2705 200\n```\nObscurify menerima `/chat/completions` maupun `/v1/chat/completions`.\n## Percobaan model abliterated:thinking\nPernah dicoba dengan:\n```\nmodel    : openai/deepseek/deepseek-v4.1-flash-1017-abliterated:thinking\nbase_url : https://obscurify.ai/v1\n```\n(profil berbeda, tercatat di percakapan 8b55afd6)\n## Cara memulihkan / membuat ulang\n1. `app.all-hands.dev` -> Settings -> LLM -> **Available Profiles**\n2. Klik tiga titik pada profil **Obcurify** -> **Set as Active**\n3. Kalau perlu buat baru: Advanced -> Custom Model + Provider connection\n   (connection `2d402186488f4b1abc3fcbfaa44a255b`, base `https://obscurify.ai`)\n## Kalau semua model error\nPenyebab: profil yang baru disimpan otomatis jadi aktif GLOBAL.\nObat: **Set as Active** ke profil `Obcurify` lagi.\nEOF\n\n\n\ngit add -A && git -c user.name=\"openhands\" -c user.email=\"openhands@all-hands.dev\" commit -q -m \"Recover OpenHands obscurify profile config from conversation logs\" && git --no-pager log --oneline -1\n5392fa1 (HEAD -> master) Recover OpenHands obscurify profile config from conversation logs"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && cat > OPENHANDS_OB_CONFIG.md <<'EOF'\n# Konfigurasi OpenHands \u2014 profil obscurify (dipulihkan dari riwayat)\n\nSumber: event percakapan di `/var/openhands/conversations/*/events/`\n(konfigurasi tersimpan di Cloud, tapi tercatat di log saat percakapan mulai).\n\n## Profil yang dipakai: `Obcurify`\n\n| Field | Nilai |\n|---|---|\n| model | `openai/deepseek/deepseek-v4.1-flash-1017-uncensored` |\n| base_url | `https://obscurify.ai` |\n| auth_type | `api_key` |\n| provider_connection_id | `2d402186488f4b1abc3fcbfaa44a255b` |\n| stream | `True` |\n| caching_prompt | `True` |\n| native_tool_calling | `True` |\n| api_mode | `auto` |\n| drop_params | `True` |\n| timeout | `300` |\n| num_retries | `5` (multiplier 8.0, min 8, max 64) |\n| reasoning_effort | `high` |\n| extended_thinking_budget | `200000` |\n| prompt_cache_retention | `24h` |\n| max_message_chars | `30000` |\n\n## Catatan penting\n\n**base_url tanpa `/v1` tetap jalan.** Terbukti diuji:\n```\nbase=https://obscurify.ai      -> \u2705 200\nbase=https://obscurify.ai/v1   -> \u2705 200\n```\nObscurify menerima `/chat/completions` maupun `/v1/chat/completions`.\n\n## Percobaan model abliterated:thinking\n\nPernah dicoba dengan:\n```\nmodel    : openai/deepseek/deepseek-v4.1-flash-1017-abliterated:thinking\nbase_url : https://obscurify.ai/v1\n```\n(profil berbeda, tercatat di percakapan 8b55afd6)\n\n## Cara memulihkan / membuat ulang\n\n1. `app.all-hands.dev` -> Settings -> LLM -> **Available Profiles**\n2. Klik tiga titik pada profil **Obcurify** -> **Set as Active**\n3. Kalau perlu buat baru: Advanced -> Custom Model + Provider connection\n   (connection `2d402186488f4b1abc3fcbfaa44a255b`, base `https://obscurify.ai`)\n\n## Kalau semua model error\n\nPenyebab: profil yang baru disimpan otomatis jadi aktif GLOBAL.\nObat: **Set as Active** ke profil `Obcurify` lagi.\nEOF\ngit add -A && git -c user.name=\"openhands\" -c user.email=\"openhands@all-hands.dev\" commit -q -m \"Recover OpenHands obscurify profile config from conversation logs\" && git --no-pager log --oneline -1",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "4c66eedb-52c1-4c6e-933a-0d10121d8acc",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

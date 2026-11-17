@@ -1,0 +1,28 @@
+{
+  "id": "56374133-24ed-4d2a-ac25-3885162b67fd",
+  "timestamp": "2026-11-17T07:27:09.031362",
+  "source": "user",
+  "parent_id": "ba623ea2-67a3-4e04-8556-f7079e06c0d3",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Oh iya ini udh clear semua?dan kalo semisal sesi ini kena limit apa yang harus saya lakukan?"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

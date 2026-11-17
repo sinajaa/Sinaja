@@ -1,0 +1,36 @@
+{
+  "id": "5b2c91a5-f0d8-4b32-a569-657fe1345b7d",
+  "timestamp": "2026-11-17T07:07:00.897971",
+  "source": "environment",
+  "parent_id": "ff95528a-d337-4b56-8954-d2e1e5f85273",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-a438b40b83b53f4a",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "/api/auth/sign-in/social     404\n/api/auth/callback/google    302\n/api/auth/providers          404\n=== POST social google ===\n{\"url\":\"https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=140557326144-pqr5pajhu2san6nr9i151sl4a9el5317.apps.googleusercontent.com&state=bJ5J7V158bTtbYZ72-i20PHwNGg-gSea&scope=email+profile+openid&redirect_uri=https%3A%2F%2Fdash.allmodels.io%2Fapi%2Fauth%2Fcallback%2Fgoogle&prompt=select_account&code_challenge_method=S256&code_challenge=LVkNIhkVda9Pv5VpJGzigZFLXfWSZ4A7KNOc3"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && for p in \"/api/auth/sign-in/social\" \"/api/auth/callback/google\" \"/api/auth/providers\"; do printf \"%-28s \" \"$p\"; curl -s -o /tmp/o.json -w \"%{http_code} \" --max-time 25 \"https://dash.allmodels.io$p\"; head -c 250 /tmp/o.json | tr -d '\\n'; echo; done; echo \"=== POST social google ===\"; curl -s --max-time 30 -X POST \"https://dash.allmodels.io/api/auth/sign-in/social\" -H \"Content-Type: application/json\" -H \"Origin: https://dash.allmodels.io\" -d '{\"provider\":\"google\",\"callbackURL\":\"https://dash.allmodels.io/\"}' -w \"\\nHTTP %{http_code}\\n\" | head -c 400",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 63318,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "fdfad52e-e99a-4ffa-b445-5b0ec848bfa8",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

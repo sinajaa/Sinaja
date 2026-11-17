@@ -1,0 +1,36 @@
+{
+  "id": "c88ca1ef-faef-458d-bc45-60e0262a80f2",
+  "timestamp": "2026-11-17T08:05:19.351799",
+  "source": "environment",
+  "parent_id": "d1a0a31e-2308-4312-9445-00cafa45e5fa",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-a7b7f4fe83efbbfd",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "=== balance ===\n{\"error\":\"unauthenticated\"}\nHTTP 401\n=== api models ===\n{\"object\":\"list\",\"data\":[{\"id\":\"deepseek/deepseek-v4.1-flash-ultrafast\",\"object\":\"model\",\"type\":\"chat\",\"created\":1792713600,\"owned_by\":\"deepseek\",\"context_length\":1048576,\"max_completion_tokens\":1048576,\"input_modalities\":[\"text\",\"image\"],\"reasoning\":true,\"abliterated\":false},{\"id\":\"z-ai/glm-5.3-abl"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && K=\"sk_live_REDACTED\"; UA=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36\"; echo \"=== balance ===\"; curl -s --max-time 30 -A \"$UA\" -H \"Authorization: Bearer $K\" \"https://dash.allmodels.io/api/me/balance\" -w \"\\nHTTP %{http_code}\\n\"; echo \"=== api models ===\"; curl -s --max-time 30 -A \"$UA\" -H \"Authorization: Bearer $K\" \"https://api.allmodels.io/oai/models\" -w \"\\nHTTP %{http_code}\\n\" | head -c 300",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 65735,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "92679035-803c-4a3d-8589-7baf5c9a5631",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

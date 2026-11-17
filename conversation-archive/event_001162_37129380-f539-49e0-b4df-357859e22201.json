@@ -1,0 +1,24 @@
+{
+  "id": "37129380-f539-49e0-b4df-357859e22201",
+  "timestamp": "2026-11-17T08:08:07.320630",
+  "source": "environment",
+  "parent_id": "354a3ca2-d110-49b8-87bb-4cb16087b16e",
+  "tool_name": "browser_type",
+  "tool_call_id": "chatcmpl-tool-a2a327e132dc018e",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Typed 'Budi Santoso' into element 8314"
+      }
+    ],
+    "is_error": false,
+    "screenshot_data": null,
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "BrowserObservation"
+  },
+  "action_id": "78e26b91-7ce2-4fb9-8bfd-aa877780e01d",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

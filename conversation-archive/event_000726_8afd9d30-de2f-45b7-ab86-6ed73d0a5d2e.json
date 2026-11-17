@@ -1,0 +1,28 @@
+{
+  "id": "8afd9d30-de2f-45b7-ab86-6ed73d0a5d2e",
+  "timestamp": "2026-11-17T07:57:07.757994",
+  "source": "user",
+  "parent_id": "3263b791-ccce-4c0b-900b-319bdcc383c4",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "import time\nimport requests\n\n\nAPI_KEY = \"cap_live_2a9c30a47d0bbdfde2f4470b61648b0b\"\nBASE_URL = \"https://api.capbypass.pro\"\n\n\ntask = {\n  \"type\": \"ReCaptchaV3TaskProxyLess\",\n  \"websiteURL\": \"https://example.com/login\",\n  \"websiteKey\": \"6LdyC2cUAAAAACGuDKpXeDorzUDWXmdqeg-xy696\",\n  \"pageAction\": \"login\"\n}\n\n\ncreated = requests.post(f\"{BASE_URL}/createTask\", json={\"clientKey\": API_KEY, \"task\": task}).json()\nif created.get(\"errorId\"):\n    raise Exception(f\"{created['errorCode']}: {created.get('errorDescription')}\")\n\n\ntime.sleep(1)\nfor _ in range(35):\n    result = requests.post(\n        f\"{BASE_URL}/getTaskResult\",\n        json={\"clientKey\": API_KEY, \"taskId\": created[\"taskId\"]},\n    ).json()\n    if result.get(\"status\") == \"ready\":\n        print(result[\"solution\"])\n        break\n    if result.get(\"errorId\"):\n        raise Exception(f\"{result['errorCode']}: {result.get('errorDescription')}\")\n    time.sleep(2)\n\n\nimport time\nimport requests\n\n\nAPI_KEY = \"cap_live_2a9c30a47d0bbdfde2f4470b61648b0b\"\nBASE_URL = \"https://api.capbypass.pro\"\n\n\ntask = {\n  \"type\": \"GeetestTaskProxyLess\",\n  \"websiteURL\": \"https://example.com/login\",\n  \"captchaId\": \"fcd636b4514bf7ac4143922550b3008b\"\n}\n\n\ncreated = requests.post(f\"{BASE_URL}/createTask\", json={\"clientKey\": API_KEY, \"task\": task}).json()\nif created.get(\"errorId\"):\n    raise Exception(f\"{created['errorCode']}: {created.get('errorDescription')}\")\n\n\ntime.sleep(1)\nfor _ in range(35):\n    result = requests.post(\n        f\"{BASE_URL}/getTaskResult\",\n        json={\"clientKey\": API_KEY, \"taskId\": created[\"taskId\"]},\n    ).json()\n    if result.get(\"status\") == \"ready\":\n        print(result[\"solution\"])\n        break\n    if result.get(\"errorId\"):\n        raise Exception(f\"{result['errorCode']}: {result.get('errorDescription')}\")\n    time.sleep(2)\n\n\nimport time\nimport requests\n\n\nAPI_KEY = \"cap_live_2a9c30a47d0bbdfde2f4470b61648b0b\"\nBASE_URL = \"https://api.capbypass.pro\"\n\n\ntask = {\n  \"type\": \"TurnstileTaskProxyLess\",\n  \"websiteURL\": \"https://example.com/login\",\n  \"websiteKey\": \"0x4AAAAAAAxxxxxxxxxxxxxx\"\n}\n\n\ncreated = requests.post(f\"{BASE_URL}/createTask\", json={\"clientKey\": API_KEY, \"task\": task}).json()\nif created.get(\"errorId\"):\n    raise Exception(f\"{created['errorCode']}: {created.get('errorDescription')}\")\n\n\ntime.sleep(1)\nfor _ in range(35):\n    result = requests.post(\n        f\"{BASE_URL}/getTaskResult\",\n        json={\"clientKey\": API_KEY, \"taskId\": created[\"taskId\"]},\n    ).json()\n    if result.get(\"status\") == \"ready\":\n        print(result[\"solution\"])\n        break\n    if result.get(\"errorId\"):\n        raise Exception(f\"{result['errorCode']}: {result.get('errorDescription')}\")\n    time.sleep(2)\n\n\n\n\nimport time\nimport requests\n\n\nAPI_KEY = \"cap_live_2a9c30a47d0bbdfde2f4470b61648b0b\"\nBASE_URL = \"https://api.capbypass.pro\"\n\n\ntask = {\n  \"type\": \"CaptchaFoxTaskProxyLess\",\n  \"websiteURL\": \"https://signup.gmx.com/\",\n  \"websiteKey\": \"sk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n}\n\n\ncreated = requests.post(f\"{BASE_URL}/createTask\", json={\"clientKey\": API_KEY, \"task\": task}).json()\nif created.get(\"errorId\"):\n    raise Exception(f\"{created['errorCode']}: {created.get('errorDescription')}\")\n\n\ntime.sleep(1)\nfor _ in range(35):\n    result = requests.post(\n        f\"{BASE_URL}/getTaskResult\",\n        json={\"clientKey\": API_KEY, \"taskId\": created[\"taskId\"]},\n    ).json()\n    if result.get(\"status\") == \"ready\":\n        print(result[\"solution\"])\n        break\n    if result.get(\"errorId\"):\n        raise Exception(f\"{result['errorCode']}: {result.get('errorDescription')}\")\n    time.sleep(2)\n\n\n\n\nimport time\nimport requests\n\n\nAPI_KEY = \"cap_live_2a9c30a47d0bbdfde2f4470b61648b0b\"\nBASE_URL = \"https://api.capbypass.pro\"\n\n\ntask = {\n  \"type\": \"AntiAwsWafTaskProxyLess\",\n  \"websiteURL\": \"https://example.com/\"\n}\n\n\ncreated = requests.post(f\"{BASE_URL}/createTask\", json={\"clientKey\": API_KEY, \"task\": task}).json()\nif created.get(\"errorId\"):\n    raise Exception(f\"{created['errorCode']}: {created.get('errorDescription')}\")\n\n\ntime.sleep(1)\nfor _ in range(35):\n    result = requests.post(\n        f\"{BASE_URL}/getTaskResult\",\n        json={\"clientKey\": API_KEY, \"taskId\": created[\"taskId\"]},\n    ).json()\n    if result.get(\"status\") == \"ready\":\n        print(result[\"solution\"])\n        break\n    if result.get(\"errorId\"):\n        raise Exception(f\"{result['errorCode']}: {result.get('errorDescription')}\")\n    time.sleep(2)"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

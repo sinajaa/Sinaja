@@ -1,0 +1,24 @@
+{
+  "id": "337dadcb-e55a-4a80-be1f-34071665fba4",
+  "timestamp": "2026-11-17T07:07:40.796249",
+  "source": "environment",
+  "parent_id": "a9436689-6437-4354-a23b-d944b5283529",
+  "tool_name": "browser_click",
+  "tool_call_id": "chatcmpl-tool-805bc94baec74870",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Clicked element 23"
+      }
+    ],
+    "is_error": false,
+    "screenshot_data": null,
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "BrowserObservation"
+  },
+  "action_id": "38136af0-727a-46d9-8789-a6513a4236dc",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

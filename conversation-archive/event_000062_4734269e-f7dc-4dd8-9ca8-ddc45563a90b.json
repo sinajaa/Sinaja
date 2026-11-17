@@ -1,0 +1,36 @@
+{
+  "id": "4734269e-f7dc-4dd8-9ca8-ddc45563a90b",
+  "timestamp": "2026-11-17T07:00:20.040396",
+  "source": "environment",
+  "parent_id": "1356cfdd-79fd-4843-b422-98962ee4819f",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-b07bbde8f43bc78b",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "#!/usr/bin/env python3\n\"\"\"Harvest obscurify.ai accounts (account number + API key + $1 starter credit).\n\nObscurify limits new accounts and the $1 starter credit per network address.\nRouting through a rotating residential proxy gives each account a fresh IP.\n\n  python3 ob.py <jumlah> [proxy_url]\n\"\"\"\nimport http.cookiejar, json, os, random, sys, time, urllib.error, urllib.request\n\nBASE = \"https://obscurify.ai\"\nPROXY = sys.argv[2] if len(sys.argv) > 2 else \"\"\n\n# Proxy residensial Proxidize: username format user[-s-SESSION][-co-CC]-type-residential\nPROXY_USER = \"jPDZYa2fSH3jMmQN\"\nPROXY_PASS = \"bHaUJVMb4cPlQZOL\"\nPROXY_HOST = \"pg.proxi.es:20000\"\nCOUNTRIES = [\"US\", \"GB\", \"DE\", \"CA\", \"FR\", \"NL\"]\n\nRF_USER = \"ResiFactory_1840e2833\"\nRF_PASS = \"TPbfq2zsdVHz\"\nRF_HOST = \"premium.resifactory.net:7777\"\n\n\ndef build_rf(country=\"us\"):\n    return f\"http://{RF_USER}~{country}~{os.urandom(4).hex()}:{RF_PASS}@{RF_HOST}\"\n\n\ndef build_proxy(country=None, session=None):\n    u = PROXY_USER\n    if session:\n        u += f\"-s-{session}\"\n    if country:\n        u += f\"-co-{country}\"\n    u += \"-type-residential\"\n    return f\"http://{u}:{PROXY_PASS}@{PROXY_HOST}\"\nOUT_TXT, OUT_JSONL = \"ob_accounts.txt\", \"ob_results.jsonl\"\nUAS = [\n    \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36\",\n    \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36\",\n    \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36\",\n    \"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0\",\n    \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.1 Safari/605.1.15\",\n]\nSOURCES = [\"direct\", \"site:www.google.com\", \"site:duckduckgo.com\", \"tag:reddit\"]\n\n\ndef opener(proxy=None):\n    handlers = [urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar())]\n    url = proxy if proxy is not None else PROXY\n    if url:\n        handlers.append(urllib.request.ProxyHandler({\"http\": url, \"https\": url}))\n    return urllib.request.build_opener(*handlers)\n\n\ndef call(op, path, payload=None, hdr=None):\n    data = json.dumps(payload).encode() if payload is not None else None\n    req = urllib.request.Request(BASE + path, data=data, method=\"POST\" if data else \"GET\")\n    req.add_header(\"Content-Type\", \"application/json\")\n    req.add_header(\"Origin\", BASE)\n    req.add_header(\"Referer\", BASE + \"/signup\")\n    for k, v in (hdr or {}).items():\n        req.add_header(k, v)\n    try:\n        with op.open(req, timeout=60) as r:\n            return r.status, json.loads(r.read() or b\"{}\"), dict(r.headers)\n    except urllib.error.HTTPError as e:\n        try:\n            body = json.loads(e.read() or b\"{}\")\n        except Exception:\n            body = {}\n        return e.code, body, dict(e.headers)\n    except Exception as e:\n        return 0, {\"error\": type(e).__name__}, {}\n\n\ndef one_account(proxy=None):\n    op, ua = opener(proxy), random.choice(UAS)\n    h = {\"User-Agent\": ua, \"Accept\": \"application/json\"}\n    st, body, hd = call(op, \"/create_account\", {\"accept_tos\": True, \"source\": random.choice(SOURCES)}, h)\n=== nmbatch ===\nimport json, os, random, sys, time\nimport nm\n\nn=int(sys.argv[1]) if len(sys.argv)>1 else 50\nOUT_TXT, OUT_JSONL = \"nm2_api.txt\", \"nm2_results.jsonl\"\nused=set()\nif os.path.exists(OUT_JSONL):\n    for l in open(OUT_JSONL):\n        try: used.add(json.loads(l)[\"email\"])\n        except Exception: pass\n\ndef new_email():\n    while True:\n        e=f\"kebumenlur.q{random.randint(1000000,9999999)}@gmail.com\"\n        if e not in used: used.add(e); return e\n\nstats={}\napi_keys=[]\nt0=time.time()\nfor i in range(n):\n    e=new_email()\n    try:\n        r=nm.full(e)\n    except Exception as ex:\n        r={\"email\":e,\"status\":\"error\",\"err\":type(ex).__name__}\n    st=r.get(\"status\") or \"error\"\n    stats[st]=stats.get(st,0)+1\n    rec={\"email\":e,\"status\":st,\"key\":r.get(\"api_key\"),\"key_http\":r.get(\"key_http\"),\n         \"reward\":(r.get(\"spins\") or [{}])[-1].get(\"label\") if r.get(\"spins\") else None,\n         \"at\":time.strftime(\"%Y-%m-%dT%H:%M:%S\")}\n    with open(OUT_JSONL,\"a\") as f: f.write(json.dumps(rec)+\"\\n\")\n    if st==\"api_win\" and rec[\"key\"]:\n        with open(OUT_TXT,\"a\") as f: f.write(f\"{e} | {rec['key']} | {rec['reward']}\\n\")\n        api_keys.append(rec)\n    print(f\"[{i+1}/{n}] {st:8} {rec['reward'] or '-':12} key={'ya' if rec['key'] else '-'} ({int(time.time()-t0)}s)\", flush=True)\n    time.sleep(random.uniform(1.0,2.5))\nprint(\"\\nringkasan:\", stats)\nprint(\"api_win dengan key:\", len(api_keys))\nprint(\"total waktu:\", int(time.time()-t0), \"detik\")"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && cat ob.py | head -80; echo \"=== nmbatch ===\"; cat nmbatch.py",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "3118b95a-fdca-4e65-9e1b-7e63ab75d046",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

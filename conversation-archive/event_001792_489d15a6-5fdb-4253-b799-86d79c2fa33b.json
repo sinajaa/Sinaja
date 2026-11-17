@@ -1,0 +1,28 @@
+{
+  "id": "489d15a6-5fdb-4253-b799-86d79c2fa33b",
+  "timestamp": "2026-11-17T10:00:33.149430",
+  "source": "user",
+  "parent_id": "37f3e51e-27eb-4f19-bf90-b64953e910d7",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Gas kita coba dapatkan free nya alurnya coba kamu analis ikuti"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

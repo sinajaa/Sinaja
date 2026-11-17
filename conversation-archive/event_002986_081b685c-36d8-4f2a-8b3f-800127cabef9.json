@@ -1,0 +1,36 @@
+{
+  "id": "081b685c-36d8-4f2a-8b3f-800127cabef9",
+  "timestamp": "2026-11-17T13:21:17.305448",
+  "source": "environment",
+  "parent_id": "e1335346-d741-47a9-b9ff-04c3455d73b1",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-b7827c4d0376f143",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "########## https://lebrel.ai/docs\n Documentation \u2014 Lebrel\n Open beta \u00b7 4 free hours a day on the uncensored edition (16:00\u201320:00 Madrid) \u00b7 paid usage earns points for the LBRL airdrop. Free 16:00\u201320:00 Madrid daily \u00b7 paid usage earns LBRL airdrop points. Open beta \u00b7 Free 16:00\u201320:00 Madrid Try it \u2192\n lebrel Chat Use cases Verify Docs Pricing Status Airdrop Lebrel Models Install Lebrel Search \u2318K Checking\u2026\n Open chat\n Get started\n Your API key Connect your tool Quickstart\n Models\n Models Lebrel Models\n API reference\n Chat completions Streaming Errors & retries Usage & billing x402 payments\n How it works\n Encryption Proof of Edition Attested hardware Registered on Solana Routed models Watch\n Get an API key \u2192 DEVELOPER DOCUMENTATION\n Uncensored AI. Encrypted. Verifiable.\n Connect any tool that speaks the OpenAI request format to DeepSeek V4.1 Flash \u00b7 Lebrel Uncensored : one base URL, your key, a model ID, nothing to i\n\n########## https://lebrel.ai/pricing\n Pricing \u2014 Lebrel\n Open beta \u00b7 4 free hours a day on the uncensored edition (16:00\u201320:00 Madrid) \u00b7 paid usage earns points for the LBRL airdrop. Free 16:00\u201320:00 Madrid daily \u00b7 paid usage earns LBRL airdrop points. Open beta \u00b7 Free 16:00\u201320:00 Madrid Try it \u2192\n lebrel Chat Use cases Verify Docs Pricing Status Airdrop Lebrel Models Install Lebrel Search \u2318K Checking\u2026\n Open chat\n Pricing\n Pay per token. Or a monthly plan for chat and agents.\n Pay by card or from a Solana wallet\n Payments from $10\n One key and one balance for every model\n A signed receipt on every answer\n Uncensored\n 1x 5x 20x\n Free for 7 days then $17 a month\n For everyday chat and your first agents.\n Start 7 days free\n Unlimited chat with Lebrel's uncensored models\n $100 a month of uncensored API, for your agents 4 requests at once\n 1M-token context\n 12 chats at once, priority in line\n \u00d71.5 LBRL airdrop points o\n\n########## https://redpill.ai\n RedPill - Confidential AI You Can Verify\n Search Ctrl K\n Private Models\n Start building\n Playground\n How it works\n Resources\n Contact Sales\n AI Privacy, End to End\n Real private AI means the model runs inside GPU TEE, model hosting emits verifiable privacy proofs, and the gateway is verifiable too.\n Start building\n Onboard your agent Onboard your agent\n GPU TEE Models\n Inference runs inside NVIDIA Confidential Compute.\n Hosting Proofs\n Users can verify model-hosting privacy integrity.\n Gateway Proof\n RedPill gateway routing and receipts are verifiable.\n One gateway to every private model\n RedPill puts verified TEE providers behind one OpenAI-compatible API, with one price list and one way to verify every response.\n Private models\n GPU models from Phala, Tinfoil, NEAR AI, Chutes, and new verified providers, without rebuilding your app for each network.\n TEE-secured gateway\n Re\n\n########## https://redpill.ai/pricing\n Private AI Pricing: API Tokens & Chat Plans | RedPill\n Search Ctrl K\n Private Models\n Start building\n Playground\n How it works\n Resources\n Contact Sales\n Pricing\n Pay as you go for the API. Plans for Private Chat. Privacy included in everything.\n API\n Build with private models through one endpoint.\n Pay as you go\n Per-token prices on every model. Your data is never used for training.\n Get API Key Documentation\n Access to private models via one API\n Drop-in OpenAI-compatible endpoints\n Transparent per-token pricing, no extra cost for TEE\n Smart routing for price, speed, and uptime\n No minimum spend\n Full end-to-end encryption\n Loading pricing...\n Private Chat plans\n The consumer app: ChatGPT-style chat backed by the same private models.\n Free\n Try RedPill risk-free\n $0\n No credit card required\n Get Started Access to basic AI models\n 10 messages per day\n E2E encryption in"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && for u in \"https://lebrel.ai/docs\" \"https://lebrel.ai/pricing\" \"https://redpill.ai\" \"https://redpill.ai/pricing\"; do echo \"########## $u\"; curl -s --max-time 25 -A \"Mozilla/5.0\" \"$u\" | python3 -c \"\nimport sys,re,html\ns=sys.stdin.read(); s=re.sub(r'<script.*?</script>','',s,flags=re.S); s=re.sub(r'<style.*?</style>','',s,flags=re.S)\ns=re.sub(r'<(br|/p|/div|/li|/h[1-6])>','\\n',s)\nt=html.unescape(re.sub(r'<[^>]+>',' ',s)); t=re.sub(r'[ \\t]+',' ',t); t=re.sub(r'\\n\\s*\\n+','\\n',t)\ni=max(t.lower().find('api'),0)\nprint(t[:900])\n\"; echo; done",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "4a8bfa27-f72d-451f-a1b7-e862ca6494dc",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "fdbf2f80-19c0-4f04-a129-183eeb6c98c6",
+  "timestamp": "2026-11-17T14:19:09.970535",
+  "source": "environment",
+  "parent_id": "558a19b0-8de4-4acb-ae8a-51dc7cc04935",
+  "code": "APIError",
+  "detail": "litellm.APIError: APIError: OpenAIException - Insufficient funds",
+  "classification": {
+    "kind": "transient",
+    "retryable": true,
+    "user_action": "retry",
+    "error_id": null
+  },
+  "kind": "ConversationErrorEvent"
+}

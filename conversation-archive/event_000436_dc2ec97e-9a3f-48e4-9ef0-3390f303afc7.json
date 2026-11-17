@@ -1,0 +1,28 @@
+{
+  "id": "dc2ec97e-9a3f-48e4-9ef0-3390f303afc7",
+  "timestamp": "2026-11-17T07:23:29.981121",
+  "source": "user",
+  "parent_id": "3beca517-59cb-4d26-8e26-5e6c700d15e2",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Oh iya test juga lagi pembuatan akun massal untuk nomask apakah masih bisa dapet credit dari spin, jalankan 10 aja dulu "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

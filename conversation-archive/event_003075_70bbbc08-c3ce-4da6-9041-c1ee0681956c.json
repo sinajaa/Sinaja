@@ -1,0 +1,28 @@
+{
+  "id": "70bbbc08-c3ce-4da6-9041-c1ee0681956c",
+  "timestamp": "2026-11-17T13:37:07.530479",
+  "source": "user",
+  "parent_id": "e78294fb-453c-4633-a86b-f8b286820031",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "https://x.com/0xbigjayy/status/2122635841155530927?a=ddSqRgEDYdGL5gIgz_s&s=19 ini juga kamu analis setelah itu kita coba daftar dapet credit apa itu saya masih belum paham"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

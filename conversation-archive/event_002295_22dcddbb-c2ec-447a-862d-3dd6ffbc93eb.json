@@ -1,0 +1,28 @@
+{
+  "id": "22dcddbb-c2ec-447a-862d-3dd6ffbc93eb",
+  "timestamp": "2026-11-17T11:17:46.255467",
+  "source": "user",
+  "parent_id": "1e13caed-a35f-4b78-9cb5-5cc15ae7725e",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Anjir semua jadi error lagi"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

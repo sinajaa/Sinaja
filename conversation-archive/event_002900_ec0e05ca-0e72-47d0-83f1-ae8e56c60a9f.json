@@ -1,0 +1,28 @@
+{
+  "id": "ec0e05ca-0e72-47d0-83f1-ae8e56c60a9f",
+  "timestamp": "2026-11-17T12:59:56.687307",
+  "source": "agent",
+  "parent_id": "1ff13646-bf61-4f58-9ad1-da6540b29b8b",
+  "llm_message": {
+    "role": "assistant",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Ketemu. Konfigurasinya tercatat di log percakapan OpenHands (`/var/openhands/conversations/`).\n\n## Profil yang kamu pakai: `Obcurify`\n\n| Field | Nilai |\n|---|---|\n| **model** | `openai/deepseek/deepseek-v4.1-flash-1017-uncensored` |\n| **base_url** | `https://obscurify.ai` |\n| auth_type | `api_key` |\n| provider_connection_id | `2d402186488f4b1abc3fcbfaa44a255b` |\n| stream | `True` |\n| caching_prompt | `True` |\n| native_tool_calling | `True` |\n| timeout | `300` |\n| num_retries | `5` |\n| reasoning_effort | `high` |\n| prompt_cache_retention | `24h` |\n\n## Yang penting: base URL-mu tanpa `/v1`\n\nTadinya saya kira harus pakai `/v1`. Ternyata **dua-duanya jalan**:\n\n```\nhttps://obscurify.ai      \u2192 \u2705 200\nhttps://obscurify.ai/v1   \u2192 \u2705 200\n```\n\nObscurify menerima `/chat/completions` **dan** `/v1/chat/completions`. Jadi konfigurasimu **sudah benar**.\n\n## Percobaan `abliterated:thinking` kemarin\n\nTercatat dengan base berbeda:\n\n```\nmodel    : openai/deepseek/deepseek-v4.1-flash-1017-abliterated:thinking\nbase_url : https://obscurify.ai/v1\n```\n\nKalau mau balik ke model itu, tinggal ganti kolom model \u2014 base URL-nya tetap valid.\n\n## Cara pulihkan kalau error lagi\n\n1. `app.all-hands.dev` \u2192 Settings \u2192 LLM \u2192 **Available Profiles**\n2. Titik tiga di profil **Obcurify** \u2192 **Set as Active**\n\nItu obat untuk kasus \"semua model error\" yang kamu alami.\n\n## Catatan\n\nNamanya **`Obcurify`** (bukan `Obscurify`) \u2014 itu yang tercatat. Kalau mau dirapikan, tinggal **Rename**, isinya tidak berubah.\n\nSemua sudah saya simpan di `OPENHANDS_OB_CONFIG.md` (commit `5392fa1`), supaya kalau lupa lagi tinggal buka file itu.\n\nMau saya cek juga **nomor akun obscurify** yang dipakai profil ini? API key-nya tidak tercatat asli di log (tersamar `**********`), tapi bisa saya lacak dari provider connection."
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": "chatcmpl-OmlcHWtsElCHqvsqbDggwbUO2ehsj",
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

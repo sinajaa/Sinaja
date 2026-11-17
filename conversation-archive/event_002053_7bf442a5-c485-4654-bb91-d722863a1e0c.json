@@ -1,0 +1,28 @@
+{
+  "id": "7bf442a5-c485-4654-bb91-d722863a1e0c",
+  "timestamp": "2026-11-17T10:43:23.020582",
+  "source": "user",
+  "parent_id": "faf25e18-ebfa-4edb-a3bf-57f05ab38b0a",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Udh bisa dan bisa chat,tapi kenapa di openhands susah ya"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "98bf3025-e378-4027-8722-ceda9b8344eb",
+  "timestamp": "2026-11-17T12:49:41.320185",
+  "source": "environment",
+  "parent_id": "c702d4f3-e3a3-4392-bda2-060a83c2b82b",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-a05184cfe235d51b",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "[notice] A new release of pip is available: 26.2.2 -> 26.3\n[notice] To update, run: pip install --upgrade pip\n    raise AttributeError(f\"module {__name__!r} has no attribute {name!r}\")\nAttributeError: module 'litellm' has no attribute '__version__'"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && python3 -c \"import litellm;print('litellm',litellm.__version__)\" 2>/dev/null || pip install -q litellm 2>&1 | tail -2; python3 -c \"import litellm;print('ok',litellm.__version__)\" 2>&1 | tail -2",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "131ddfdb-e28f-4df9-98a7-755be598fcc9",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

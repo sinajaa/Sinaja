@@ -1,0 +1,36 @@
+{
+  "id": "4b54d429-d1c8-40c4-8c19-7ee01675eff1",
+  "timestamp": "2026-11-17T10:38:43.901386",
+  "source": "environment",
+  "parent_id": "d6539eb6-50f5-443e-8d0e-58347e32904f",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-8b36e8c2ee69cdf8",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "total key unik: 23\nLIVE  kebumenlur.q5222549@gmail.com nmk_live_g1r1I3MMlZDJaclmlAFylupkQulRriMVhSaVx3xR\nLIVE  kebumenlur.q7766493@gmail.com nmk_live_Fn5cXyyHcEOtEC0jU8uJor0QObRlcyAtU55LYls7\nLIVE  kebumenlur.q1072550@gmail.com nmk_live_MSIL37HaE7Hlq7tE7L97ODEE4zadAjkn8z7BOs0T\nLIVE  kebumenlur.q3238233@gmail.com nmk_live_HazAgnsiXtJaXzK2UFMcw5oXbfWDpso4NGjCNaxF\nLIVE  kebumenlur.q6583476@gmail.com nmk_live_a8jO798BfWWcM5n4NOji9NwxE4RK6V05ZI4nAdJU\nLIVE  kebumenlur.q3115260@gmail.com nmk_live_IOjdpFe7xjmEtcHxLQen29OPElCutW6bDqgPSgNf\nLIVE  kebumenlur.q4751215@gmail.com nmk_live_1owXLVPFQvKpEDKKxmaNO9oDI91cEpqJnkCd8zka\nLIVE  kebumenlur.q6269239@gmail.com nmk_live_pShA4RaBKdXvqjBFBjabHGqaDoPLJh0OVofbCerb\nLIVE  kebumenlur.q8000079@gmail.com nmk_live_E05SaRpnoCc3OfYy9HgfotYZyJGYbHOGHMWaoCHZ\nLIVE  kebumenlur.q5646632@gmail.com nmk_live_mmJJ4g6PIreekzSdd53hB1bUXs26x2U4dnFMOuIS\nLIVE  kebumenlur.q1937018@gmail.com nmk_live_rxG8batnn0exINsLwPtuvMHKCoqnRzWSHO7wkCy5\nLIVE  kebumenlur.q3221868@gmail.com nmk_live_GyqVf2aps7gGTMAV3bv0TC2og6wNzAimzl1BAmGF\nLIVE  kebumenlur.q5057830@gmail.com nmk_live_sdhTR88TxreDkmnVOkwLHGdjjadcrFvh02TgF8tO\nLIVE  kebumenlur.q8990128@gmail.com nmk_live_Z83QUZVKoTbwxvlAHDURT45tqlnwPAcQKXivA7O6\nLIVE  kebumenlur.q5676322@gmail.com nmk_live_2RsCNM9EkwbNAIUwcGcia6JSMCSziIIOXs6qdK0E\nLIVE  kebumenlur.q4758739@gmail.com nmk_live_SJZ1nsSFTEWD2aUIoNQPUiKBHuAGDZqQ6Rq3kNdf\nLIVE  kebumenlur.q1108286@gmail.com nmk_live_ppQ4mMiPmnSY9OH7UTFmWVpDwjhqHzWMhEpksPwx\nLIVE  kebumenlur.q9848872@gmail.com nmk_live_LflHLiiqy3y4ColEgqPGocH8VTz6UAxGcdppqDLh\nLIVE  kebumenlur.q5930050@gmail.com nmk_live_jutEXshBVMJ5OS4A5xeuK7BlsEs4PKo81BIrYtoZ\nLIVE  kebumenlur.q1696627@gmail.com nmk_live_cFmf5B6wnwnsxW9JtF7HjaQhSjQMwmqZN1DJ60jO\n\nLIVE=20 | lainnya=3"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && timeout 400 python3 - <<'PY'\nimport re,json,urllib.request,concurrent.futures\nkeys=[]\nfor f in [\"nm2_api.txt\",\"nm_api_keys.txt\",\"nm_ready.txt\"]:\n    for l in open(f):\n        m=re.search(r\"(nmk_live_[A-Za-z0-9]+)\",l)\n        if m and (m.group(1),l.split(\"|\")[0].strip()) not in keys:\n            keys.append((m.group(1),l.split(\"|\")[0].strip()))\nseen=set(); uniq=[]\nfor k,e in keys:\n    if k not in seen: seen.add(k); uniq.append((k,e))\nprint(\"total key unik:\",len(uniq))\ndef test(item):\n    k,e=item\n    body=json.dumps({\"model\":\"deepseek_v4.1_flash_1017_uncensored\",\"messages\":[{\"role\":\"user\",\"content\":\"OK\"}],\"max_tokens\":10,\"force_string_serializer\":True}).encode()\n    r=urllib.request.Request(\"https://api.nomask.ai/v1/chat/completions\",data=body,\n        headers={\"Authorization\":f\"Bearer {k}\",\"Content-Type\":\"application/json\"})\n    try:\n        with urllib.request.urlopen(r,timeout=60) as resp:\n            return (k,e,resp.status,\"LIVE\")\n    except urllib.error.HTTPError as ex:\n        t=ex.read().decode()[:100]\n        return (k,e,ex.code,\"EMPTY\" if \"balance\" in t else t)\n    except Exception as ex: return (k,e,0,str(ex)[:50])\nlive=[];empty=[]\nwith concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:\n    for k,e,c,s in ex.map(test,uniq):\n        if c==200: live.append((k,e)); print(\"LIVE \",e,k)\n        else: empty.append((e,c))\nprint(f\"\\nLIVE={len(live)} | lainnya={len(empty)}\")\njson.dump(live,open(\"nm_live.json\",\"w\"))\nPY",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "c2eb4c19-be9d-4e0f-87fa-d3c48721c7ce",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

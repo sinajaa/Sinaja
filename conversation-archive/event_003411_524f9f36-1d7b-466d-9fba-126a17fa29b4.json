@@ -1,0 +1,36 @@
+{
+  "id": "524f9f36-1d7b-466d-9fba-126a17fa29b4",
+  "timestamp": "2026-11-17T15:07:27.697677",
+  "source": "environment",
+  "parent_id": "139e06e8-842f-4e6d-a358-454e59e454e1",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-97e0f664f8bcd14b",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "opencode run [message..]\n\nrun opencode with a message\n\nPositionals:\n  message  message to send                                                     [array] [default: []]\n\nOptions:\n  -h, --help         show help                                                             [boolean]\n  -v, --version      show version number                                                   [boolean]\n      --print-logs   print logs to stderr                                                  [boolean]\n      --log-level    log level                  [string] [choices: \"DEBUG\", \"INFO\", \"WARN\", \"ERROR\"]\n      --pure         run without external plugins                                          [boolean]\n      --command      the command to run, use message for args                               [string]\n  -c, --continue     continue the last session                                             [boolean]\n  -s, --session      session id to continue                                                 [string]\n      --fork         fork the session before continuing (requires --continue or --session) [boolean]\n  -m, --model        model to use in the format of provider/model                           [string]\n      --agent        agent to use                                                           [string]\n      --format       format: default (formatted) or json (raw JSON events)\n                                          [string] [choices: \"default\", \"json\"] [default: \"default\"]\n  -f, --file         file(s) to attach to message                                            [array]\n      --title        title for the session (uses truncated prompt if no value provided)     [string]\n      --attach       attach to a running opencode server (e.g., http://localhost:4096)      [string]\n  -p, --password     basic auth password (defaults to OPENCODE_SERVER_PASSWORD)             [string]\n  -u, --username     basic auth username (defaults to OPENCODE_SERVER_USERNAME or 'opencode')\n                                                                                            [string]\n      --dir          directory to run in, path on remote server if attaching                [string]\n      --port         port for the local server (defaults to random port if no value provided)\n                                                                                            [number]\n      --variant      model variant (provider-specific reasoning effort, e.g., high, max, minimal)\n                                                                                            [string]\n      --thinking     show thinking blocks                                                  [boolean]\n  -i, --interactive  run in direct interactive split-footer mode          [boolean] [default: false]\n      --auto         auto-approve permissions that are not explicitly denied (dangerous!)\n                                                                          [boolean] [default: false]"
+      }
+    ],
+    "is_error": false,
+    "command": "/workspace/project/mf/tools/node_modules/.bin/opencode run --help 2>&1 | head -40",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 21311,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project/mf",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "1306e911-5647-43ee-bf0e-0c2c94166fb9",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

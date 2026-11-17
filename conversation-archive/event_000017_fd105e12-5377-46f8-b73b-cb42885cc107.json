@@ -1,0 +1,37 @@
+{
+  "id": "fd105e12-5377-46f8-b73b-cb42885cc107",
+  "timestamp": "2026-11-17T06:59:52.458125",
+  "source": "agent",
+  "parent_id": "815de7a0-5c4c-444c-a867-73cf037d147c",
+  "thought": [
+    {
+      "cache_prompt": false,
+      "type": "text",
+      "text": ""
+    }
+  ],
+  "reasoning_content": null,
+  "thinking_blocks": [],
+  "responses_reasoning_item": null,
+  "action": {
+    "command": "ls -la /var/openhands/conversations | head -30; echo \"---\"; ls /var/openhands/conversations | wc -l",
+    "is_input": false,
+    "timeout": null,
+    "reset": false,
+    "kind": "TerminalAction"
+  },
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-a2b9e40d57f5cd99",
+  "tool_call": {
+    "id": "chatcmpl-tool-a2b9e40d57f5cd99",
+    "responses_item_id": null,
+    "name": "terminal",
+    "arguments": "{\"command\": \"ls -la /var/openhands/conversations | head -30; echo \\\"---\\\"; ls /var/openhands/conversations | wc -l\", \"summary\": \"List stored conversations\", \"security_risk\": \"LOW\"}",
+    "origin": "completion"
+  },
+  "llm_response_id": "chatcmpl-2mNC7oP8CNITw8gecywy4LLDmJOHS",
+  "security_risk": "LOW",
+  "critic_result": null,
+  "summary": "List stored conversations",
+  "kind": "ActionEvent"
+}

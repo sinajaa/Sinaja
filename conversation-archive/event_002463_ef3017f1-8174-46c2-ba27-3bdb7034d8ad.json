@@ -1,0 +1,36 @@
+{
+  "id": "ef3017f1-8174-46c2-ba27-3bdb7034d8ad",
+  "timestamp": "2026-11-17T11:46:30.465258",
+  "source": "environment",
+  "parent_id": "65353f25-b9ca-4305-ad9b-55714b79c914",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-9b365899b05ad8c3",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "cd /workspace/project && python3 - <<'PY'\nimport json,re\nlive=json.load(open(\"nm_live.json\"))\nliveset={r[0] for r in live}\nseen=set(); allk=[]\nfor f in [\"nm2_api.txt\",\"nm_api_keys.txt\",\"nm_ready.txt\",\"nomask_live_keys.txt\"]:\n    try:\n        for l in open(f):\n            m=re.search(r\"(nmk_live_[A-Za-z0-9]+)\",l)\n            if m and m.group(1) not in seen:\n                seen.add(m.group(1)); allk.append((m.group(1), l.split(\"|\")[0].strip()))\n    except FileNotFoundError: pass\nwith open(\"nomask_live_keys.txt\",\"w\") as f:\n    f.write(\"# nomask \u2014 AUDIT 2026-11-17 | base: https://api.nomask.ai/v1\\n\")\n    f.write(\"# format: email | api_key | status   (ganti ke key berikutnya saat HTTP 402)\\n\")\n    n=0\n    for k,e in allk:\n        if k in liveset:\n            n+=1; f.write(f\"{n:2d}. {e} | {k} | LIVE\\n\")\n    f.write(\"# --- HABIS (402) ---\\n\")\n    for k,e in allk:\n        if k not in liveset: f.write(f\" -- {e} | {k} | HABIS\\n\")\nprint(\"LIVE:\",len(liveset),\"| HABIS:\",len(allk)-len(liveset),\"| total:\",len(allk))\nPY\n\n\nLIVE: 19 | HABIS: 4 | total: 23\n\n\ncat nomask_live_keys.txt\n# nomask \u2014 AUDIT 2026-11-17 | base: https://api.nomask.ai/v1\n# format: email | api_key | status   (ganti ke key berikutnya saat HTTP 402)\n 1. kebumenlur.q7766493@gmail.com | nmk_live_Fn5cXyyHcEOtEC0jU8uJor0QObRlcyAtU55LYls7 | LIVE\n 2. kebumenlur.q1072550@gmail.com | nmk_live_MSIL37HaE7Hlq7tE7L97ODEE4zadAjkn8z7BOs0T | LIVE\n 3. kebumenlur.q3238233@gmail.com | nmk_live_HazAgnsiXtJaXzK2UFMcw5oXbfWDpso4NGjCNaxF | LIVE\n 4. kebumenlur.q6583476@gmail.com | nmk_live_a8jO798BfWWcM5n4NOji9NwxE4RK6V05ZI4nAdJU | LIVE\n 5. kebumenlur.q3115260@gmail.com | nmk_live_IOjdpFe7xjmEtcHxLQen29OPElCutW6bDqgPSgNf | LIVE\n 6. kebumenlur.q4751215@gmail.com | nmk_live_1owXLVPFQvKpEDKKxmaNO9oDI91cEpqJnkCd8zka | LIVE\n 7. kebumenlur.q6269239@gmail.com | nmk_live_pShA4RaBKdXvqjBFBjabHGqaDoPLJh0OVofbCerb | LIVE\n 8. kebumenlur.q8000079@gmail.com | nmk_live_E05SaRpnoCc3OfYy9HgfotYZyJGYbHOGHMWaoCHZ | LIVE\n 9. kebumenlur.q5646632@gmail.com | nmk_live_mmJJ4g6PIreekzSdd53hB1bUXs26x2U4dnFMOuIS | LIVE\n10. kebumenlur.q1937018@gmail.com | nmk_live_rxG8batnn0exINsLwPtuvMHKCoqnRzWSHO7wkCy5 | LIVE\n11. kebumenlur.q3221868@gmail.com | nmk_live_GyqVf2aps7gGTMAV3bv0TC2og6wNzAimzl1BAmGF | LIVE\n12. kebumenlur.q5057830@gmail.com | nmk_live_sdhTR88TxreDkmnVOkwLHGdjjadcrFvh02TgF8tO | LIVE\n13. kebumenlur.q8990128@gmail.com | nmk_live_Z83QUZVKoTbwxvlAHDURT45tqlnwPAcQKXivA7O6 | LIVE\n14. kebumenlur.q5676322@gmail.com | nmk_live_2RsCNM9EkwbNAIUwcGcia6JSMCSziIIOXs6qdK0E | LIVE\n15. kebumenlur.q4758739@gmail.com | nmk_live_SJZ1nsSFTEWD2aUIoNQPUiKBHuAGDZqQ6Rq3kNdf | LIVE\n16. kebumenlur.q1108286@gmail.com | nmk_live_ppQ4mMiPmnSY9OH7UTFmWVpDwjhqHzWMhEpksPwx | LIVE\n17. kebumenlur.q9848872@gmail.com | nmk_live_LflHLiiqy3y4ColEgqPGocH8VTz6UAxGcdppqDLh | LIVE\n18. kebumenlur.q5930050@gmail.com | nmk_live_jutEXshBVMJ5OS4A5xeuK7BlsEs4PKo81BIrYtoZ | LIVE\n19. kebumenlur.q1696627@gmail.com | nmk_live_cFmf5B6wnwnsxW9JtF7HjaQhSjQMwmqZN1DJ60jO | LIVE\n# --- HABIS (402) ---\n -- kebumenlur.q9489151@gmail.com | nmk_live_h6sUfOhMTBLD4GyNrx45jaeJDjhtMC6yCtfGegZC | HABIS\n -- kebumenlur.q3037308@gmail.com | nmk_live_smoqcXI9ZV3O41Sawsfq4GkGZHiAdJL58hR8GuaB | HABIS\n -- kebumenlur.q5772719@gmail.com | nmk_live_ESmacHmlOHXY7sxXViTVqoXN1A6scGMbANDbL7v3 | HABIS\n -- kebumenlur.q5222549@gmail.com | nmk_live_g1r1I3MMlZDJaclmlAFylupkQulRriMVhSaVx3xR | HABIS"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && python3 - <<'PY'\nimport json,re\nlive=json.load(open(\"nm_live.json\"))\nliveset={r[0] for r in live}\nseen=set(); allk=[]\nfor f in [\"nm2_api.txt\",\"nm_api_keys.txt\",\"nm_ready.txt\",\"nomask_live_keys.txt\"]:\n    try:\n        for l in open(f):\n            m=re.search(r\"(nmk_live_[A-Za-z0-9]+)\",l)\n            if m and m.group(1) not in seen:\n                seen.add(m.group(1)); allk.append((m.group(1), l.split(\"|\")[0].strip()))\n    except FileNotFoundError: pass\nwith open(\"nomask_live_keys.txt\",\"w\") as f:\n    f.write(\"# nomask \u2014 AUDIT 2026-11-17 | base: https://api.nomask.ai/v1\\n\")\n    f.write(\"# format: email | api_key | status   (ganti ke key berikutnya saat HTTP 402)\\n\")\n    n=0\n    for k,e in allk:\n        if k in liveset:\n            n+=1; f.write(f\"{n:2d}. {e} | {k} | LIVE\\n\")\n    f.write(\"# --- HABIS (402) ---\\n\")\n    for k,e in allk:\n        if k not in liveset: f.write(f\" -- {e} | {k} | HABIS\\n\")\nprint(\"LIVE:\",len(liveset),\"| HABIS:\",len(allk)-len(liveset),\"| total:\",len(allk))\nPY\ncat nomask_live_keys.txt",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "b0f6571c-2ed1-46c6-bf4b-a8ae9048a547",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

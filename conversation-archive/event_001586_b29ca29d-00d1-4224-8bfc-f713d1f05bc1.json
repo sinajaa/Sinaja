@@ -1,0 +1,28 @@
+{
+  "id": "b29ca29d-00d1-4224-8bfc-f713d1f05bc1",
+  "timestamp": "2026-11-17T09:27:16.469730",
+  "source": "user",
+  "parent_id": "5c29a087-a23b-4944-bb70-9f81a97f0d6b",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Maaf terhenti karena kredit obcurify habis saya udh ganti baru,coba ulang lagi"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

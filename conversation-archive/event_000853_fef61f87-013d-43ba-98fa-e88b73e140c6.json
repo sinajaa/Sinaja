@@ -1,0 +1,35 @@
+{
+  "id": "fef61f87-013d-43ba-98fa-e88b73e140c6",
+  "timestamp": "2026-11-17T08:00:10.424127",
+  "source": "agent",
+  "parent_id": "dbf5b458-67f1-465c-89d4-e173fb82d525",
+  "thought": [
+    {
+      "cache_prompt": false,
+      "type": "text",
+      "text": ""
+    }
+  ],
+  "reasoning_content": null,
+  "thinking_blocks": [],
+  "responses_reasoning_item": null,
+  "action": {
+    "index": 2509,
+    "text": "03/16/1997",
+    "kind": "BrowserTypeAction"
+  },
+  "tool_name": "browser_type",
+  "tool_call_id": "chatcmpl-tool-bbbb51f869c98e8e",
+  "tool_call": {
+    "id": "chatcmpl-tool-bbbb51f869c98e8e",
+    "responses_item_id": null,
+    "name": "browser_type",
+    "arguments": "{\"index\": 2509, \"text\": \"03/16/1997\"}",
+    "origin": "completion"
+  },
+  "llm_response_id": "chatcmpl-qXsbXOerdH2JroyP9ip59VAnW79UE",
+  "security_risk": "UNKNOWN",
+  "critic_result": null,
+  "summary": "browser_type: {\"index\": 2509, \"text\": \"03/16/1997\"}",
+  "kind": "ActionEvent"
+}

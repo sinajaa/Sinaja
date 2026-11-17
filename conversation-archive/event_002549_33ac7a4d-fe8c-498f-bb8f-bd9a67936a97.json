@@ -1,0 +1,28 @@
+{
+  "id": "33ac7a4d-fe8c-498f-bb8f-bd9a67936a97",
+  "timestamp": "2026-11-17T11:59:34.130426",
+  "source": "user",
+  "parent_id": "b2badbeb-7f70-4571-89f8-9cc95e4b97fd",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Lightvela massal maksudnya?"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

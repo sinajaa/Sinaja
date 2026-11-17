@@ -1,0 +1,28 @@
+{
+  "id": "77a746b0-2623-44cd-a89e-c8267497d817",
+  "timestamp": "2026-11-17T07:01:08.642390",
+  "source": "user",
+  "parent_id": "74639cf0-85c8-43a2-a787-225bb7369796",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Pake bahasa Indonesia "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

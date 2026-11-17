@@ -1,0 +1,36 @@
+{
+  "id": "8582268a-59c1-4c6d-8171-ced1b72b3d0d",
+  "timestamp": "2026-11-17T07:36:29.403482",
+  "source": "environment",
+  "parent_id": "e0a6e48a-14ab-4556-b712-bf838ab06cb3",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-9e0555a4aeae5afa",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "cd /workspace/project && git add -A && git -c user.name=\"openhands\" -c user.email=\"openhands@all-hands.dev\" commit -q -m \"Document ResiFactory sticky session syntax; verify Indonesia pool works\nCo-authored-by: openhands <openhands@all-hands.dev>\" && git --no-pager log --oneline -1\naf6a76b (HEAD -> master) Document ResiFactory sticky session syntax; verify Indonesia pool works"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && git add -A && git -c user.name=\"openhands\" -c user.email=\"openhands@all-hands.dev\" commit -q -m \"Document ResiFactory sticky session syntax; verify Indonesia pool works\n\nCo-authored-by: openhands <openhands@all-hands.dev>\" && git --no-pager log --oneline -1",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 65735,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-7c55dc5b69-2864j",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "7a536297-2b8f-48f3-a554-918b18278232",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "8b55afd6edc2411eb5a9e28e0dd097c1",
+  "created_by_user_id": "327ab26b-07b4-4fed-9f1e-6450d48b2e0b",
+  "sandbox_id": "4TqiMxiq00y01uKGNGdFsq",
+  "selected_repository": null,
+  "selected_branch": null,
+  "git_provider": null,
+  "git_provider_id": null,
+  "title": "Lanjutkan Pembuatan Akun Massal",
+  "title_generation": null,
+  "trigger": "gui",
+  "pr_number": [],
+  "pull_requests": [],
+  "additional_repositories": [],
+  "llm_model": "openai/deepseek/deepseek-v4.1-flash-1017-abliterated:thinking",
+  "agent_kind": "openhands",
+  "metrics": {
+    "model_name": "default",
+    "accumulated_cost": 2.356814688618001,
+    "max_budget_per_task": null,
+    "accumulated_token_usage": {
+      "model": "",
+      "prompt_tokens": 111348513,
+      "completion_tokens": 372090,
+      "cache_read_tokens": 109232910,
+      "cache_write_tokens": 0,
+      "reasoning_tokens": 0,
+      "context_window": 0,
+      "per_turn_token": 69696,
+      "response_id": ""
+    }
+  },
+  "parent_conversation_id": null,
+  "sub_conversation_ids": [],
+  "public": null,
+  "tags": {
+    "archiveworkspacepath": "/workspace/project",
+    "clientsource": "agentcanvas"
+  },
+  "created_at": "2026-11-17T06:58:06.923025Z",
+  "updated_at": "2026-11-17T14:49:21.492604Z",
+  "acp_server": null,
+  "repositories": [],
+  "launched_agent_profile": null
+}

@@ -1,0 +1,36 @@
+{
+  "id": "fc6abb06-1ad0-4c8e-a822-d3288003363f",
+  "timestamp": "2026-11-17T11:47:20.759014",
+  "source": "environment",
+  "parent_id": "0d7d9ca8-013a-4fd6-bb48-9aeaa8919ea0",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-a324ead846a228ad",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "nm.py\nnm_batch.py\nnmbatch.py\nnmdry.py\nnmfix.sh\nnmrotate.sh\nnmtest.py\nnmwatch.sh\n=== nmbatch.py head ===\nimport json, os, random, sys, time\nimport nm\n\nn=int(sys.argv[1]) if len(sys.argv)>1 else 50\nOUT_TXT, OUT_JSONL = \"nm2_api.txt\", \"nm2_results.jsonl\"\nused=set()\nif os.path.exists(OUT_JSONL):\n    for l in open(OUT_JSONL):\n        try: used.add(json.loads(l)[\"email\"])\n        except Exception: pass\n\ndef new_email():\n    while True:\n        e=f\"kebumenlur.q{random.randint(1000000,9999999)}@gmail.com\"\n        if e not in used: used.add(e); return e\n\nstats={}\napi_keys=[]\nt0=time.time()\nfor i in range(n):\n    e=new_email()\n    try:\n        r=nm.full(e)\n    except Exception as ex:\n        r={\"email\":e,\"status\":\"error\",\"err\":type(ex).__name__}\n    st=r.get(\"status\") or \"error\"\n    stats[st]=stats.get(st,0)+1\n    rec={\"email\":e,\"status\":st,\"key\":r.get(\"api_key\"),\"key_http\":r.get(\"key_http\"),\n         \"reward\":(r.get(\"spins\") or [{}])[-1].get(\"label\") if r.get(\"spins\") else None,\n         \"at\":time.strftime(\"%Y-%m-%dT%H:%M:%S\")}\n    with open(OUT_JSONL,\"a\") as f: f.write(json.dumps(rec)+\"\\n\")\n    if st==\"api_win\" and rec[\"key\"]:\n        with open(OUT_TXT,\"a\") as f: f.write(f\"{e} | {rec['key']} | {rec['reward']}\\n\")\n        api_keys.append(rec)\n    print(f\"[{i+1}/{n}] {st:8} {rec['reward'] or '-':12} key={'ya' if rec['key'] else '-'} ({int(time.time()-t0)}s)\", flush=True)\n    time.sleep(random.uniform(1.0,2.5))\nprint(\"\\nringkasan:\", stats)\nprint(\"api_win dengan key:\", len(api_keys))\nprint(\"total waktu:\", int(time.time()-t0), \"detik\")"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && ls -1 nm*.py nm*.sh 2>/dev/null; echo \"=== nmbatch.py head ===\"; head -40 nmbatch.py 2>/dev/null",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": -1,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "f96587f7-727a-4db9-911d-cb2f2357dcdd",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

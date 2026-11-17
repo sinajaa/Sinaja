@@ -1,0 +1,28 @@
+{
+  "id": "2561c1c7-333e-460a-a4a7-370c71b2943e",
+  "timestamp": "2026-11-17T11:55:13.173841",
+  "source": "user",
+  "parent_id": "d4b02900-d056-40ed-b45a-d942d7834d59",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Coba custom api key Lightvela sebelumnya dong yang udh bisa connect tapi api key yang baru"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

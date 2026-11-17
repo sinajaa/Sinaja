@@ -1,0 +1,28 @@
+{
+  "id": "462773e9-ab03-4f02-b584-b7ec1f758ee6",
+  "timestamp": "2026-11-17T10:51:17.617776",
+  "source": "agent",
+  "parent_id": "403b6541-cb01-45d8-9d88-06682610b406",
+  "llm_message": {
+    "role": "assistant",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Sudah jelas. Jawaban jujurnya:\n\n## Tidak, tidak ada di profil LLM\n\nDari dokumentasi resmi OpenHands, halaman **Settings \u2192 LLM \u2192 Advanced** hanya punya **3 field**:\n\n| Field | Ada? |\n|---|---|\n| **Custom Model** | \u2705 |\n| **Base URL** | \u2705 |\n| **API Key** | \u2705 |\n| **Max Output Tokens** | \u274c **tidak ada** |\n| **Temperature** | \u274c **tidak ada** |\n\n**Jadi saya salah tadi.** Saya sebut \"Max Output Tokens: 8000\" dan \"Temperature: 0.7\" \u2014 padahal kedua field itu **tidak ada di halaman LLM profile**.\n\nMaaf, itu kelalaian saya. Saya menulis dari asumsi, bukan dari dokumen.\n\n## Juga tidak ada \"extra body\"\n\nDokumen menyebut Advanced hanya *Custom Model, Base URL, API Key*. **Tidak ada kotak `force_string_serializer`.**\n\nArtinya: **flag itu tidak bisa dipasang lewat GUI OpenHands.** Persis seperti masalah yang sudah kamu alami di GUI nomask.\n\n## Lalu `max_tokens` diatur di mana?\n\nTidak di profil LLM. Kemungkinan ada di tempat lain:\n\n| Lokasi | Kemungkinan |\n|---|---|\n| **Settings \u2192 Application** | \u26a0\ufe0f mungkin ada max tokens global |\n| `config.toml` (env/self-host) | \u2705 pasti ada, tapi Cloud tidak kasih akses |\n| Per-conversation settings | \u26a0\ufe0f belum pasti |\n\nSaya belum verifikasi ini. Kalau kamu mau, saya cek halaman **Application Settings**.\n\n## Yang penting: apakah ini masalah?\n\nKabar baiknya \u2014 **mungkin tidak masalah sama sekali.**\n\nSebab OpenHands punya nilai default `max_tokens` sendiri. Kalau defaultnya sudah 4096 atau 8192, maka **`content` tidak akan kosong** dan deepseek jalan normal.\n\nYang tadi kosong karena saya tes dengan `max_tokens: 10` \u2014 angka ekstrem, bukan default OpenHands.\n\n## Jadi kesimpulan praktis\n\n**Yang perlu kamu isi hanya 3 field:**\n\n| Field | Nilai |\n|---|---|\n| Custom Model | `openai/deepseek_v4.1_flash_1017_uncensored` |\n| Base URL | `https://api.nomask.ai/v1` |\n| API Key | `nmk_live_g1r1I3MMlZDJaclmlAFylupkQulRriMVhSaVx3xR` |\n\nPerhatikan **prefix `openai/`** di Custom Model \u2014 dokumentasi bilang formatnya *\"provider sebagai prefix\"* (format litellm). Untuk endpoint OpenAI-compatible, prefix-nya `openai/`.\n\n## Kalau setelah itu masih error\n\nKemungkinan besar error-nya `content must be a string`, karena `force_string_serializer` tidak bisa dipasang di GUI.\n\n**Solusinya:** pakai model yang **tidak butuh flag** itu. Tapi dari uji saya, **semua model butuh flag** kalau `content` dikirim sebagai list.\n\nKecuali... OpenHands ternyata mengirim `content` sebagai **string**, bukan list. Itu yang perlu dibuktikan.\n\n## Saran\n\nCoba dulu isi 3 field itu dan **jangan** isi max tokens/temperature (karena tidak ada). Lalu kirim:\n\n```\njalankan: echo halo\n```\n\nHasilnya akan memberi tahu kita:\n\n| Hasil | Arti |\n|---|---|\n| Jalan \u2705 | selesai, tidak perlu apa-apa lagi |\n| `content must be a string` | perlu akal-akalan untuk flag |\n| Agen diam | perlu `max_tokens` lebih besar, cari di Application Settings |\n\nMau saya cek **Application Settings** dulu untuk memastikan ada tidaknya pengaturan max tokens?"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": "chatcmpl-xouz6JoXwftJqS0JfTkBsxQfzDYGv",
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

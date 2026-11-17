@@ -1,0 +1,24 @@
+{
+  "id": "8fd44ea1-363f-47b9-bb89-76cd76082a13",
+  "timestamp": "2026-11-17T11:08:51.440096",
+  "source": "environment",
+  "parent_id": "19272349-a0a4-4809-9cea-e14c699a0b6a",
+  "tool_name": "browser_get_state",
+  "tool_call_id": "chatcmpl-tool-9eda8f0331fcd33a",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "{\n  \"url\": \"https://app.all-hands.dev/settings/llm\",\n  \"title\": \"OpenHands\",\n  \"tabs\": [\n    {\n      \"url\": \"https://app.all-hands.dev/settings/llm\",\n      \"title\": \"OpenHands\"\n    }\n  ],\n  \"interactive_elements\": []\n}"
+      }
+    ],
+    "is_error": false,
+    "screenshot_data": null,
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "BrowserObservation"
+  },
+  "action_id": "12299213-2e02-4010-ae53-1f935d477aa7",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

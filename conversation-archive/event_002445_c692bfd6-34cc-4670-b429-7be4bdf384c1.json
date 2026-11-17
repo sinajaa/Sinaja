@@ -1,0 +1,37 @@
+{
+  "id": "c692bfd6-34cc-4670-b429-7be4bdf384c1",
+  "timestamp": "2026-11-17T11:46:01.386363",
+  "source": "agent",
+  "parent_id": "026ac094-e3bf-4627-a089-eb5f5370a412",
+  "thought": [
+    {
+      "cache_prompt": false,
+      "type": "text",
+      "text": ""
+    }
+  ],
+  "reasoning_content": null,
+  "thinking_blocks": [],
+  "responses_reasoning_item": null,
+  "action": {
+    "command": "cd /workspace/project && UA=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/131.0.0.0\"; curl -s --max-time 60 -A \"$UA\" -X POST \"https://api.hexapi.io/v1/chat/completions\" -H \"Authorization: Bearer hex_T8z8XEHwlwOgNN9MYrUqQL77_5BZ7a6tZjuUWDxnjhg\" -H \"Content-Type: application/json\" -d '{\"model\":\"glm-5.3-uncensored\",\"messages\":[{\"role\":\"user\",\"content\":\"hi\"}],\"max_tokens\":10}' -w \"\\n[%{http_code}]\\n\" | head -c 350",
+    "is_input": false,
+    "timeout": 150.0,
+    "reset": false,
+    "kind": "TerminalAction"
+  },
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-96f3e75447d277b3",
+  "tool_call": {
+    "id": "chatcmpl-tool-96f3e75447d277b3",
+    "responses_item_id": null,
+    "name": "terminal",
+    "arguments": "{\"command\": \"cd /workspace/project && UA=\\\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/131.0.0.0\\\"; curl -s --max-time 60 -A \\\"$UA\\\" -X POST \\\"https://api.hexapi.io/v1/chat/completions\\\" -H \\\"Authorization: Bearer hex_T8z8XEHwlwOgNN9MYrUqQL77_5BZ7a6tZjuUWDxnjhg\\\" -H \\\"Content-Type: application/json\\\" -d '{\\\"model\\\":\\\"glm-5.3-uncensored\\\",\\\"messages\\\":[{\\\"role\\\":\\\"user\\\",\\\"content\\\":\\\"hi\\\"}],\\\"max_tokens\\\":10}' -w \\\"\\\\n[%{http_code}]\\\\n\\\" | head -c 350\", \"summary\": \"Test HEX with correct model name\", \"security_risk\": \"MEDIUM\", \"timeout\": 150}",
+    "origin": "completion"
+  },
+  "llm_response_id": "chatcmpl-CA0DyuGFFCh2raSHlKFCuicGZg5iw",
+  "security_risk": "MEDIUM",
+  "critic_result": null,
+  "summary": "Test HEX with correct model name",
+  "kind": "ActionEvent"
+}

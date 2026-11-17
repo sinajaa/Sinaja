@@ -1,0 +1,28 @@
+{
+  "id": "2186bc8c-4353-44de-988b-74b6fa093056",
+  "timestamp": "2026-11-17T11:54:14.635303",
+  "source": "user",
+  "parent_id": "6e799089-98bd-4c65-95ba-0a167d5d92d9",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Kalo 404 itu kenapa"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

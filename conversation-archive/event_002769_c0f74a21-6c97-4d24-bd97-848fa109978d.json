@@ -1,0 +1,28 @@
+{
+  "id": "c0f74a21-6c97-4d24-bd97-848fa109978d",
+  "timestamp": "2026-11-17T12:37:50.132459",
+  "source": "user",
+  "parent_id": "77ae3fd3-e8a7-4ea8-b496-25d2da602075",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Sudah saya ganti modelnya apa udh sesuai "
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "befb5c59-85e5-4993-9822-014720e878a7",
+  "timestamp": "2026-11-17T11:40:01.135787",
+  "source": "user",
+  "parent_id": "5aa6f0e0-3d44-408a-8725-7f81c248ee7c",
+  "llm_message": {
+    "role": "user",
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "Yang allmodels.io yang gagal lainnya juga ikut kebawa kan"
+      }
+    ],
+    "tool_calls": null,
+    "tool_call_id": null,
+    "name": null,
+    "reasoning_content": null,
+    "thinking_blocks": [],
+    "responses_reasoning_item": null
+  },
+  "llm_response_id": null,
+  "activated_skills": [],
+  "extended_content": [],
+  "sender": null,
+  "critic_result": null,
+  "kind": "MessageEvent"
+}

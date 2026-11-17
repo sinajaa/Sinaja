@@ -1,0 +1,36 @@
+{
+  "id": "2da06754-613c-43ba-92e5-5b75aaca04ec",
+  "timestamp": "2026-11-17T13:25:31.659595",
+  "source": "environment",
+  "parent_id": "a76f35c7-83ed-4e25-8939-328ce20f6595",
+  "tool_name": "terminal",
+  "tool_call_id": "chatcmpl-tool-9acd1034dc896e62",
+  "observation": {
+    "content": [
+      {
+        "cache_prompt": false,
+        "type": "text",
+        "text": "=== /api/models ===\n{\"overall\":\"online\",\"checkedAt\":\"2026-11-17T13:25:06.215Z\",\"trafficOpen\":true,\"editions\":[{\"id\":\"release-lebrel/deepseek-v4.1-flash-uncensored\",\"modelId\":\"lebrel/deepseek-v4.1-flash-uncensored\",\"displayName\":\"DeepSeek V4.1 Flash \u00b7 Lebrel Uncensored\",\"baseModel\":\"DeepSeek V4.1 Flash-1017\",\"lifecycle\":\"published\",\"availability\":\"online\",\"selectable\":true,\"pricing\":{\"version\":\"deepseek-v41-20261028\",\"effectiveAt\":\"2026-10-28T20:00:00.000Z\",\"currencyUnit\":\"microusd\",\"tokenDenominator\":1000000,\"roundingMode\":\"ceil_per_request\",\"inputMicrousdPerMillionTokens\":330000,\"cachedInputMicrousdPerMillionTokens\":10000,\"outputMicrousdPerMillionTokens\":1320000,\"longInputMicrousdPerMillionTokens\":330000,\"longCachedInputMicrousdPerMillionTokens\":10000,\"longOutputMicrousdPerMillionTokens\":1320000,\"reservationSafetyBps\":12000,\"missingUsagePolicy\":\"refund\",\"longContextThresholdTokens\":262144},\"context\":{\"nat\n\n=== /status ===\n System status \u2014 Lebrel /* cyrillic-ext */ @font-face { font-family: 'Geist'; font-style: normal; font-weight: 100 900; font-display: swap; src: url(/_next/static/_vinext_fonts/geist-8ac0455e797f/geist-ff2310f5.woff2) format('woff2'); unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; } /* cyrillic */ @font-face { font-family: 'Geist'; font-style: normal; font-weight: 100 900; font-display: swap; src: url(/_next/static/_vinext_fonts/geist-8ac0455e797f/geist-875ccdd4.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116"
+      }
+    ],
+    "is_error": false,
+    "command": "cd /workspace/project && echo \"=== /api/models ===\"; curl -s --max-time 25 -A \"Mozilla/5.0\" \"https://lebrel.ai/api/models\" | head -c 900; echo; echo; echo \"=== /status ===\"; curl -s --max-time 25 -A \"Mozilla/5.0\" \"https://lebrel.ai/status\" | python3 -c \"\nimport sys,re,html\ns=sys.stdin.read(); s=re.sub(r'<script.*?</script>','',s,flags=re.S)\nt=html.unescape(re.sub(r'<[^>]+>',' ',s)); t=re.sub(r'\\s+',' ',t); print(t[:600])\n\"",
+    "exit_code": 0,
+    "timeout": false,
+    "metadata": {
+      "exit_code": 0,
+      "pid": 7406,
+      "username": "openhands",
+      "hostname": "runtime-gtkdklkawwwyuevn-776bdf6f5d-c27d5",
+      "working_dir": "/workspace/project",
+      "py_interpreter_path": "/usr/local/bin/python",
+      "prefix": "",
+      "suffix": "\n[The command completed with exit code 0.]"
+    },
+    "full_output_save_dir": "/var/openhands/conversations/8b55afd6edc2411eb5a9e28e0dd097c1/observations",
+    "kind": "TerminalObservation"
+  },
+  "action_id": "2f9130c7-2ee8-448a-8ad3-bba4e9350529",
+  "extended_content": [],
+  "kind": "ObservationEvent"
+}

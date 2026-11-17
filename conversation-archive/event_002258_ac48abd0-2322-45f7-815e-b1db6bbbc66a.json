@@ -1,0 +1,15 @@
+{
+  "id": "ac48abd0-2322-45f7-815e-b1db6bbbc66a",
+  "timestamp": "2026-11-17T11:13:44.782291",
+  "source": "environment",
+  "parent_id": "53dd909c-80e3-4cf1-bcb9-9dee29caf00d",
+  "code": "LLMBadRequestError",
+  "detail": "litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek_v4.1_flash_1017_uncensored\n Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers",
+  "classification": {
+    "kind": "config",
+    "retryable": false,
+    "user_action": "settings",
+    "error_id": null
+  },
+  "kind": "ConversationErrorEvent"
+}
