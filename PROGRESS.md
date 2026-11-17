@@ -1,6 +1,6 @@
 # Progress
 
-Updated 2026-11-17 18:15 UTC. Branch `makefun-game`, remote
+Updated 2026-11-17 18:30 UTC. Branch `makefun-game`, remote
 `github.com/sinajaa/Sinaja`.
 
 ## Where the work stands
@@ -81,8 +81,8 @@ stay in `tools/` and are not part of the entry.
   defensively but the siren loop and engine pitch have only been reviewed in code.
 - Performance pass on lower-end GPUs: 2048 shadow map, ~20k building boxes and
   point lights are fine in software Chromium but could be trimmed.
-- Gameplay polish: car damage smoke/fire, mission retry after death, more
-  pedestrians near the boardwalk, a proper pause menu.
+- Gameplay polish: car damage smoke/fire, mission retry after death, a proper pause
+  menu, and denser crowds on the boardwalk.
 - Bounty submission itself (see below). The dossier is built, but the entry has
   not been opened and no submission has been made.
 
