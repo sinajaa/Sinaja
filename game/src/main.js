@@ -9,6 +9,7 @@ import { spawnTraffic, spawnParked, updateTraffic, Vehicle } from './vehicles.js
 import { spawnPedestrians, updatePedestrians } from './pedestrians.js';
 import { Player, chaseCamera } from './player.js';
 import { Police } from './police.js';
+import { Chopper } from './chopper.js';
 import { Wanted } from './wanted.js';
 import { Missions } from './missions.js';
 import { Effects, castShot } from './combat.js';
@@ -42,6 +43,7 @@ class Game {
     this.player.pos.set(47, 0, 86);
     this.effects = new Effects(this.scene);
     this.police = new Police(this.scene, this.effects);
+    this.chopper = null;
     this.missions = new Missions(this.scene, this.effects);
     this.wanted = new Wanted();
     this.hud = new Hud();
@@ -266,6 +268,7 @@ class Game {
     this.player.health = 100;
     this.wanted.clear();
     this.police.clear();
+    if (this.chopper) { this.chopper.dispose(); this.chopper = null; }
     this.money = Math.max(0, this.money - 100);
     this.inCar = false;
     this.playerCar = null;
@@ -411,10 +414,21 @@ class Game {
         this.spawnPoliceWave();
         this.wantedSpawn = 5;
       }
+      if (this.wanted.stars >= 4 && !this.chopper) {
+        this.chopper = new Chopper(this.scene, this.effects);
+        this.hud.toast('AIR UNIT INBOUND');
+      }
+      if (this.chopper) {
+        this.chopper.update(dt, this.inCar && this.playerCar ? this.playerCar.pos : this.player.pos, (amount) => {
+          this.player.damage(amount);
+          if (this.player.health <= 0) this.respawn();
+        });
+      }
       this.audio.setSiren(true);
     } else {
       this.audio.setSiren(false);
       if (this.police.cruisers.length && !this.screenshotMode) this.police.clear();
+      if (this.chopper) { this.chopper.dispose(); this.chopper = null; }
     }
 
     const change = this.wanted.update(dt, false);
@@ -427,7 +441,14 @@ class Game {
       this.missionPause = true;
       this.hud.showMission(job.title, 'MISSION COMPLETE', `${job.brief} The job paid $${job.reward}.`, () => {
         this.missionPause = false;
-        if (this.missions.index < this.missions.jobs.length) this.missions.startNext(this);
+        if (this.missions.index < this.missions.jobs.length) {
+          this.missions.startNext(this);
+        } else {
+          this.missionPause = true;
+          this.hud.showMission('Suncoast', 'ALL JOBS COMPLETE', `Riva's tab is settled and the Vultures are quiet. You have $${this.money.toLocaleString('en-US')} and the whole city to spend it in.`, () => {
+            this.missionPause = false;
+          });
+        }
       });
       this.hud.toast(`+$${job.reward}`);
     }

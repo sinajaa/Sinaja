@@ -38,6 +38,9 @@ const expression = `JSON.stringify({
   cops: (window.game?.police?.cruisers ?? []).map((c) => [c.pos.x, c.pos.z]),
   officers: window.game?.police?.officers?.length ?? 0,
   hostiles: (window.game?.missions?.hostiles ?? []).map((h) => [h.mesh.position.x, h.mesh.position.z]),
+  chopper: window.game?.chopper ? window.game.chopper.pos.toArray() : null,
+  chopperNdc: window.game?.chopper ? (() => { const v = window.game.chopper.pos.clone().project(window.game.camera); return [Number(v.x.toFixed(2)), Number(v.y.toFixed(2))]; })() : null,
+  stars: window.game?.wanted?.stars,
   player: window.game ? [window.game.player.pos.x, window.game.player.pos.z] : null,
   cam: window.game ? window.game.camera.position.toArray() : null
 })`;

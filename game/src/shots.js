@@ -63,12 +63,17 @@ export function applyShot(game, name, seed) {
     game.cine = { pos: [34, 6.5, 104], look: [38, 1, 152] };
     game.money = 3640;
     game.wanted.clear();
-    game.wanted.add(3, 'scene');
+    game.wanted.add(4, 'scene');
     game.police.spawnCruiser(18, 148, Math.PI);
     game.police.spawnCruiser(56, 154, Math.PI);
     game.police.update(0.2, game.playerCar.pos, game.playerCar, game.colliders, () => {});
     game.police.spawnOfficer(22, 150);
     game.police.spawnOfficer(52, 156);
+    for (let i = 0; i < 45; i++) game.update(1 / 60);
+    if (game.chopper) {
+      game.chopper.pos.set(16, 17, 138);
+      game.chopper.group.position.copy(game.chopper.pos);
+    }
     poseCars(game, [
       [33.4, 112, 0], [40.6, 120, Math.PI], [30, 176, 0], [44, 190, Math.PI],
     ]);

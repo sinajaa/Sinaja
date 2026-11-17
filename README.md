@@ -42,9 +42,10 @@ In a car: W and S are throttle and brake/reverse, A and D steer, Shift is boost.
   you.
 - Pedestrians walking block loops, and a pistol with tracers, muzzle flash and sparks.
 - A five-star wanted meter, SCPD cruisers with flashing bars, officers who get out and
-  shoot, and a siren.
+  shoot, a siren, and at four stars an air unit with a searchlight and rotor wash.
 - Four jobs from Riva: meet at the pier, deliver a stolen car, clear the tower, and
-  lose the cops before going home. Each pays and advances the save.
+  lose the cops before going home. Each pays, advances the save, and the last one ends
+  on an all-jobs-complete card.
 - HUD with health, money, stars, clock, district, objective, speedometer, dialogue and
   a live minimap.
 - Synthesised audio (engine, siren, gunshot, menu click) through WebAudio.
@@ -87,6 +88,7 @@ game/src/vehicles.js        car meshes, arcade physics, traffic, parked cars
 game/src/pedestrians.js     walkers and hostile crew
 game/src/player.js          on-foot controller and chase camera
 game/src/police.js          cruisers, officers, squad AI
+game/src/chopper.js         air unit at four stars
 game/src/wanted.js          star meter and heat decay
 game/src/missions.js        four jobs, markers, hostiles
 game/src/combat.js          tracers, flashes, bursts, hitscan

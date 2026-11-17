@@ -1,6 +1,6 @@
 # Progress
 
-Updated 2026-11-17 18:05 UTC. Branch `makefun-game`, remote
+Updated 2026-11-17 18:15 UTC. Branch `makefun-game`, remote
 `github.com/sinajaa/Sinaja`.
 
 ## Where the work stands
@@ -31,8 +31,10 @@ a dossier from them.
 - Player: third-person controller, sprint, camera orbit, enter/exit car, pistol
   with hitscan, tracers, muzzle flash, reload, ammo.
 - Crime: wanted stars, heat decay, SCPD cruisers that chase and fire, officers who
-  deploy and shoot, siren, hit-and-run detection.
-- Missions: four jobs with markers, dialogue, hostiles, rewards and progression.
+  deploy and shoot, siren, hit-and-run detection, and an air unit with a searchlight
+  at four stars.
+- Missions: four jobs with markers, dialogue, hostiles, rewards, progression and an
+  all-jobs-complete card.
 - Presentation: HUD (health, money, stars, clock, district, objective, speed),
   dialogue box, toasts, mission panel, live minimap, synthesised audio, save slot.
 - Screenshots: `screenshots/1-street.jpg`, `2-car.jpg`, `3-chase.jpg`,
@@ -58,7 +60,7 @@ and played the whole job chain:
 
 ```
 shot=[1,1]  job1=[1,1400]  job2=[2,1700]  hostiles=3  job3=[3,2200]
-job4=[4,3100]  chase=[1,94.5,3]  respawn=[100,0,3000]
+job4=[4,3100]  chase=[1,90.5,4]  chopper=yes  respawn=[100,0,3000]
 ```
 
 Every job advanced its index and paid its reward, a pistol shot killed a pedestrian

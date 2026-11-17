@@ -93,12 +93,14 @@ const expression = `(async () => {
   g.hud.hideMission();
   g.missionPause = false;
   g.wanted.clear();
-  g.wanted.add(3);
+  g.wanted.add(4);
   g.spawnPoliceWave();
   const x = g.player.pos.x;
   const z = g.player.pos.z;
   step(150);
   out.chase = [g.police.cruisers.length, Number(g.player.health.toFixed(1)), g.wanted.stars];
+  out.chopper = g.chopper ? 'yes' : 'no';
+  out.chopperPos = g.chopper ? g.chopper.pos.toArray().map((n) => Number(n.toFixed(0))) : null;
   out.playerMoved = Number(Math.hypot(g.player.pos.x - x, g.player.pos.z - z).toFixed(1));
 
   g.player.health = 0;
