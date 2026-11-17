@@ -21,6 +21,10 @@
   #money { color:var(--gold); font-weight:800; font-size:19px; letter-spacing:.5px; }
   #wanted { display:flex; gap:4px; font-size:20px; color:rgba(255,255,255,.18); letter-spacing:2px; }
   #wanted .lit { color:#ffcf4d; text-shadow:0 0 12px rgba(255,190,50,.9); }
+  #brand { position:absolute; top:16px; left:50%; transform:translateX(-50%); text-align:center;
+    text-shadow:0 2px 18px rgba(0,0,0,.8); }
+  #brand .b1 { display:block; font-size:15px; font-weight:900; letter-spacing:7px; color:#ffe9c2; }
+  #brand .b2 { display:block; margin-top:2px; font-size:9px; letter-spacing:6px; color:rgba(255,204,102,.85); }
   #topright { position:absolute; top:18px; right:18px; padding:10px 14px; text-align:right; }
   #clock { font-size:18px; font-weight:700; letter-spacing:1px; }
   #district { font-size:11px; text-transform:uppercase; letter-spacing:2px; color:#9fb3d9; margin-top:2px; }
@@ -76,6 +80,7 @@
     <div id="money">$0</div>
     <div id="wanted">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
   </div>
+  <div id="brand"><span class="b1">SUNCOAST</span><span class="b2">NEON TIDE</span></div>
   <div id="topright" class="panel"><div id="clock">17:40</div><div id="district">Suncoast</div></div>
   <div id="objective" class="panel"><b>OBJECTIVE</b> <span id="objtext">Explore the city</span></div>
   <div id="minimapwrap" class="panel"><canvas id="minimap" width="360" height="360"></canvas></div>

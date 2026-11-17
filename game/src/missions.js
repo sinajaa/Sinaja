@@ -79,7 +79,7 @@ export class Missions {
     this.marker.visible = true;
     if (job.type === 'kill') {
       for (let i = 0; i < job.targets; i++) {
-        const mesh = buildPerson({ random: () => (i + 1) / 3.4 }, true);
+        const mesh = buildPerson(() => (i + 1) / 3.4, true);
         const a = (i / job.targets) * Math.PI * 2;
         mesh.position.set(spot.x + Math.cos(a) * 6, 0.14, spot.z + Math.sin(a) * 6);
         mesh.userData.kind = 'hostile';

@@ -45,7 +45,7 @@ export function applyShot(game, name, seed) {
     game.cameraPitch = 0.14;
     game.cameraHeight = 4.0;
     game.cameraDistance = 10.5;
-    game.cine = { pos: [27, 8, 26], look: [44, 1.2, 62] };
+    game.cine = { pos: [30, 5.5, 34], look: [42, 1.2, 64] };
     game.money = 2480;
     poseCars(game, [
       [33.4, 78, 0], [40.6, 88, Math.PI], [33.4, 106, 0], [40.6, 118, Math.PI],
@@ -54,7 +54,7 @@ export function applyShot(game, name, seed) {
     game.missions.index = 1;
     game.missions.startNext(game);
   } else if (name === 'chase') {
-    game.spawnPlayerCar(37, 128, 0, 'sports', 0x2f3a44);
+    game.spawnPlayerCar(37, 128, 0, 'sports', 0xe8542f);
     game.playerCar.speed = 14;
     game.cameraYaw = 0;
     game.cameraPitch = 0.16;
@@ -75,12 +75,12 @@ export function applyShot(game, name, seed) {
     game.missions.index = 2;
     game.missions.startNext(game);
   } else if (name === 'mission') {
-    game.teleport(56, -40, 2.45);
-    game.cameraYaw = 2.45 + Math.PI;
+    game.teleport(64, -58, 2.4);
+    game.cameraYaw = 2.4 + Math.PI;
     game.cameraPitch = 0.12;
     game.cameraHeight = 3.4;
     game.cameraDistance = 8.5;
-    game.cine = { pos: [41, 12, -8], look: [74, 1, -74] };
+    game.cine = { pos: [50, 5, -44], look: [76, 2, -78] };
     game.money = 1890;
     game.wanted.clear();
     game.wanted.add(1, 'scene');

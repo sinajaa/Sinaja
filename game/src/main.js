@@ -52,6 +52,7 @@ class Game {
     this.playerCar = null;
     this.running = false;
     this.paused = false;
+    this.missionPause = false;
     this.cameraYaw = 0;
     this.cameraPitch = 0.14;
     this.cameraHeight = 2.0;
@@ -72,30 +73,6 @@ class Game {
     this.hud.update(this.hudState());
     this.loop = this.loop.bind(this);
     requestAnimationFrame(this.loop);
-    if (params.get('debug')) {
-      setTimeout(() => {
-        const ray = new THREE.Raycaster();
-        const counts = {};
-        const targets = [this.city.group, ...this.traffic.map((c) => c.mesh), ...this.peds.map((p) => p.mesh)];
-        for (let gy = 0; gy < 9; gy++) {
-          for (let gx = 0; gx < 16; gx++) {
-            ray.setFromCamera(new THREE.Vector2((gx + 0.5) / 8 - 1, 1 - (gy + 0.5) / 4.5), this.camera);
-            const hits = ray.intersectObjects(targets, true);
-            let kind = 'sky';
-            if (hits.length) {
-              let node = hits[0].object;
-              while (node && !node.userData.kind) node = node.parent;
-              kind = node?.userData.kind ?? hits[0].object.name ?? hits[0].object.geometry?.type ?? 'other';
-            }
-            counts[kind] = (counts[kind] || 0) + 1;
-          }
-        }
-        const prj = (p) => { const v = p.clone().project(this.camera); return `${v.x.toFixed(2)},${v.y.toFixed(2)}`; };
-        const extra = this.inCar && this.playerCar ? ` car=${prj(this.playerCar.pos.clone().setY(1))}` : '';
-        const cops = this.police.cruisers.map((c) => prj(c.pos.clone().setY(1))).join('|');
-        document.title = `DBG cam=${this.camera.position.toArray().map((n) => n.toFixed(1))} ${JSON.stringify(counts)}${extra} cops=${cops}`;
-      }, 3000);
-    }
     if (this.shotName) applyShot(this, this.shotName, Number(params.get('seed')) || 1);
   }
 
@@ -192,7 +169,7 @@ class Game {
   }
 
   toggleCar() {
-    if (!this.running || this.paused) return;
+    if (!this.running || this.paused || this.missionPause) return;
     if (this.inCar) { this.exitCar(); return; }
     let best = null;
     let bestD = 5.2;
@@ -447,7 +424,9 @@ class Game {
     if (job) {
       this.money += job.reward;
       this.save();
+      this.missionPause = true;
       this.hud.showMission(job.title, 'MISSION COMPLETE', `${job.brief} The job paid $${job.reward}.`, () => {
+        this.missionPause = false;
         if (this.missions.index < this.missions.jobs.length) this.missions.startNext(this);
       });
       this.hud.toast(`+$${job.reward}`);
@@ -481,7 +460,7 @@ class Game {
   loop() {
     requestAnimationFrame(this.loop);
     const dt = Math.min(0.05, this.clock.getDelta());
-    if (this.running && !this.paused) {
+    if (this.running && !this.paused && !this.missionPause) {
       this.update(dt);
     } else {
       this.player.mesh.rotation.y += dt * 0.1;
@@ -493,4 +472,5 @@ class Game {
   }
 }
 
-new Game();
+const game = new Game();
+window.game = game;

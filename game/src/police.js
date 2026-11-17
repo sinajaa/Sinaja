@@ -24,7 +24,7 @@ export class Police {
   }
 
   spawnOfficer(x, z) {
-    const mesh = buildPerson({ random: () => 0.4 }, false);
+    const mesh = buildPerson(() => 0.4, false);
     mesh.children[0].material.color.setHex(0x24406e);
     mesh.userData.kind = 'police';
     mesh.position.set(x, 0.14, z);
@@ -71,7 +71,7 @@ export class Police {
       if (dist < 20 && !car.ai.deployed) {
         car.ai.deployed = true;
         for (const side of [-1, 1]) {
-          const mesh = buildPerson({ random: () => 0.5 }, false);
+          const mesh = buildPerson(() => 0.5, false);
           mesh.children[0].material.color.setHex(0x24406e);
           mesh.userData.kind = 'police';
           mesh.position.set(car.pos.x + side * 1.6, 0.14, car.pos.z);
